@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="LabelCellView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="问题类型:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfW-Pf-tKR">
+                    <rect key="frame" x="10" y="0.0" width="105" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="暂无数据" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kYM-TW-eCs">
+                    <rect key="frame" x="120" y="10" width="180" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skO-31-nPj">
+                    <rect key="frame" x="0.0" y="39" width="320" height="1"/>
+                    <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="gVk-JA-MIA"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="kYM-TW-eCs" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="120" id="EF9-sv-AYF"/>
+                <constraint firstItem="skO-31-nPj" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="Ktr-EF-2qf"/>
+                <constraint firstItem="kYM-TW-eCs" firstAttribute="centerY" secondItem="hfW-Pf-tKR" secondAttribute="centerY" id="P8O-hn-V9A"/>
+                <constraint firstItem="hfW-Pf-tKR" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="10" id="Sfs-yh-XyE"/>
+                <constraint firstItem="hfW-Pf-tKR" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="Swd-kG-LmP"/>
+                <constraint firstAttribute="bottom" secondItem="hfW-Pf-tKR" secondAttribute="bottom" id="TlA-78-Nd2"/>
+                <constraint firstAttribute="bottom" secondItem="skO-31-nPj" secondAttribute="bottom" id="WKv-BU-rbe"/>
+                <constraint firstAttribute="trailing" secondItem="kYM-TW-eCs" secondAttribute="trailing" constant="20" id="kCV-uE-8vD"/>
+                <constraint firstItem="kYM-TW-eCs" firstAttribute="leading" secondItem="hfW-Pf-tKR" secondAttribute="trailing" constant="5" id="rbF-M7-UeO"/>
+                <constraint firstAttribute="trailing" secondItem="skO-31-nPj" secondAttribute="trailing" id="zIo-fw-hfk"/>
+            </constraints>
+            <connections>
+                <outlet property="content" destination="kYM-TW-eCs" id="xLp-Zg-upn"/>
+                <outlet property="name" destination="hfW-Pf-tKR" id="A7C-hw-WTu"/>
+            </connections>
+            <point key="canvasLocation" x="278" y="341"/>
+        </collectionReusableView>
+    </objects>
+</document>

@@ -1,0 +1,71 @@
+//
+//  IntelligencePrefixHeader.pch
+//  intelligence
+//
+//  Created by 光耀 on 16/7/21.
+//  Copyright © 2016年 guangyao. All rights reserved.
+//
+
+#ifndef IntelligencePrefixHeader_pch
+#define IntelligencePrefixHeader_pch
+
+#import "AccountManager.h"
+#import "AccountModel.h"
+#import "Default.h"
+#import "OtherHeader.h"
+#import "HTTPSessionManager.h"
+#import "CoreStatus.h"
+#import "MJExtension.h"
+#import "MJRefresh.h"
+#import "AccountManager.h"
+#import "UIView+Extension.h"
+#import "Masonry.h"
+#import "UIImage+Extension.h"
+#import "BaseNavigationViewController.h"
+#import "UIImageView+WebCache.h"
+#import "UIViewController+MMDrawerController.h"
+#import "UIScrollView+EmptyDataSet.h"
+#import "LabelSize.h"
+#import "TypeHeader.h"
+#import "SHTextView.h"
+#import "NSString+FindFace.h"
+#import "TXTimeChoose.h"
+//字符串拼接
+#define GETSTRING_WITH(x,y) [NSString stringWithFormat:@"%@%@",x,y]
+#define SettingContent(item) item.content.length?item.content:@""
+#define SettingContents(item) item.content.length?item.content:@"已提交"
+//无网络
+#define ISWUWANGLUO [CoreStatus currentNetWorkStatus] == CoreNetWorkStatusNone
+
+#define USERDEFAULT [NSUserDefaults standardUserDefaults]
+
+#define LEFTWIDTH 220
+#define SEARCHWIDTH 108
+#define kNavBarHeight 64
+#define CELLHEIGHT 45
+// 个人中心设置的背景色
+#define APPCOLOR UIColorFromRGB(0xF1F1F1)
+#define font(size) [UIFont systemFontOfSize:(size)]
+#define boldFont(size)  [UIFont boldSystemFontOfSize:(size)]
+/** 屏幕高度*/
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+/** 屏幕宽度*/
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kIPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define kIPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define kIPhone4s ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define kIPhone6plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? (CGSizeEqualToSize(CGSizeMake(1125, 2001), [[UIScreen mainScreen] currentMode].size) || CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size)) : NO)
+
+/** 定义一个叫weakSelf的弱指针引用这self*/
+#define WEAKSELF typeof(self) __weak weakSelf = self;
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+//使用十六进制的颜色
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#define LabelWidth(label) [LabelSize widthOfLabel:label];
+#define  KCode(code) [response[@"errcode"] isEqualToString:code]
+#define kNavigationBarBGColor RGBCOLOR(7, 62, 139)
+#endif /* IntelligencePrefixHeader_pch */

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="DailyDetailsFooterView">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="135"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ls-tH-Wd5">
+                    <rect key="frame" x="180" y="0.0" width="0.0" height="135"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" id="XNH-yB-Gqu"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6X-ge-nfn">
+                    <rect key="frame" x="30" y="5" width="135" height="125"/>
+                    <color key="backgroundColor" red="0.027450980392156862" green="0.23921568627450979" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="取消">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <real key="value" value="22.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnCancelClick:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="SKS-OY-Chu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKa-qb-2AE">
+                    <rect key="frame" x="195" y="5" width="135" height="125"/>
+                    <color key="backgroundColor" red="0.027450980392156862" green="0.23921568627450979" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="保存">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <real key="value" value="22.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnSaveClick:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="Ru3-fJ-Cf1"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="gKa-qb-2AE" firstAttribute="leading" secondItem="9Ls-tH-Wd5" secondAttribute="trailing" constant="15" id="2Td-IB-ypI"/>
+                <constraint firstAttribute="trailing" secondItem="gKa-qb-2AE" secondAttribute="trailing" constant="30" id="2WS-RB-mqF"/>
+                <constraint firstAttribute="bottom" secondItem="A6X-ge-nfn" secondAttribute="bottom" constant="5" id="3HX-VT-vYE"/>
+                <constraint firstItem="A6X-ge-nfn" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="30" id="3eE-2O-RzS"/>
+                <constraint firstItem="9Ls-tH-Wd5" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="Acf-32-n4g"/>
+                <constraint firstItem="9Ls-tH-Wd5" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="HsQ-9e-94p"/>
+                <constraint firstItem="gKa-qb-2AE" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="5" id="Hyy-ff-bBH"/>
+                <constraint firstAttribute="bottom" secondItem="9Ls-tH-Wd5" secondAttribute="bottom" id="KYq-UY-CaQ"/>
+                <constraint firstItem="9Ls-tH-Wd5" firstAttribute="leading" secondItem="A6X-ge-nfn" secondAttribute="trailing" constant="15" id="eat-sc-RhL"/>
+                <constraint firstItem="A6X-ge-nfn" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="5" id="pw4-ea-4sK"/>
+                <constraint firstAttribute="bottom" secondItem="gKa-qb-2AE" secondAttribute="bottom" constant="5" id="uMB-Bn-U0M"/>
+            </constraints>
+            <connections>
+                <outlet property="btnCancel" destination="A6X-ge-nfn" id="Xde-qL-4zm"/>
+                <outlet property="btnSave" destination="gKa-qb-2AE" id="UEW-sL-Pim"/>
+            </connections>
+            <point key="canvasLocation" x="319" y="344.5"/>
+        </collectionReusableView>
+    </objects>
+</document>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="RunlineCell" selectionStyle="default" indentationWidth="10" rowHeight="135" id="KGk-i7-Jjw" customClass="RunlineCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="134.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="工作序号：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5K-ge-nmp">
+                        <rect key="frame" x="14" y="46" width="87" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="工作班成员：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3T-MG-XPs">
+                        <rect key="frame" x="14" y="75" width="104" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="工作任务：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xr-uw-SeG">
+                        <rect key="frame" x="14" y="104" width="87" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6za-6H-riQ">
+                        <rect key="frame" x="14" y="17" width="52" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xrk-V3-Mu2">
+                        <rect key="frame" x="139" y="17" width="168" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbN-QV-TTe">
+                        <rect key="frame" x="139" y="46" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKt-g1-xl0">
+                        <rect key="frame" x="139" y="75" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Tq-dw-LES">
+                        <rect key="frame" x="139" y="104" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="RbN-QV-TTe" firstAttribute="trailing" secondItem="Xrk-V3-Mu2" secondAttribute="trailing" id="0ng-Dm-fiH"/>
+                    <constraint firstItem="RbN-QV-TTe" firstAttribute="centerY" secondItem="G5K-ge-nmp" secondAttribute="centerY" id="2sj-oN-8il"/>
+                    <constraint firstItem="1xr-uw-SeG" firstAttribute="leading" secondItem="6za-6H-riQ" secondAttribute="leading" id="57m-aq-CWW"/>
+                    <constraint firstItem="RbN-QV-TTe" firstAttribute="leading" secondItem="Xrk-V3-Mu2" secondAttribute="leading" id="JjJ-c8-nbp"/>
+                    <constraint firstItem="G5K-ge-nmp" firstAttribute="leading" secondItem="6za-6H-riQ" secondAttribute="leading" id="N3y-gY-jci"/>
+                    <constraint firstItem="Xrk-V3-Mu2" firstAttribute="leading" secondItem="6za-6H-riQ" secondAttribute="trailing" constant="73" id="N5o-9f-W1a"/>
+                    <constraint firstItem="6za-6H-riQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="9" id="SgX-Un-VIn"/>
+                    <constraint firstItem="1Tq-dw-LES" firstAttribute="leading" secondItem="Xrk-V3-Mu2" secondAttribute="leading" id="TsC-4t-29e"/>
+                    <constraint firstItem="V3T-MG-XPs" firstAttribute="leading" secondItem="6za-6H-riQ" secondAttribute="leading" id="UdX-4r-m5N"/>
+                    <constraint firstItem="Xrk-V3-Mu2" firstAttribute="centerY" secondItem="6za-6H-riQ" secondAttribute="centerY" id="Vzl-gA-16J"/>
+                    <constraint firstItem="V3T-MG-XPs" firstAttribute="top" secondItem="G5K-ge-nmp" secondAttribute="bottom" constant="9" id="ced-Dj-iEq"/>
+                    <constraint firstItem="G5K-ge-nmp" firstAttribute="top" secondItem="6za-6H-riQ" secondAttribute="bottom" constant="9" id="kYO-dw-GQn"/>
+                    <constraint firstItem="1Tq-dw-LES" firstAttribute="centerY" secondItem="1xr-uw-SeG" secondAttribute="centerY" id="lFk-48-8Cl"/>
+                    <constraint firstItem="SKt-g1-xl0" firstAttribute="trailing" secondItem="Xrk-V3-Mu2" secondAttribute="trailing" id="plC-YY-V1F"/>
+                    <constraint firstItem="1Tq-dw-LES" firstAttribute="trailing" secondItem="Xrk-V3-Mu2" secondAttribute="trailing" id="ptK-zv-4uj"/>
+                    <constraint firstItem="SKt-g1-xl0" firstAttribute="centerY" secondItem="V3T-MG-XPs" secondAttribute="centerY" id="rZE-CS-Oaq"/>
+                    <constraint firstItem="1xr-uw-SeG" firstAttribute="top" secondItem="V3T-MG-XPs" secondAttribute="bottom" constant="9" id="sQT-26-syo"/>
+                    <constraint firstItem="SKt-g1-xl0" firstAttribute="leading" secondItem="Xrk-V3-Mu2" secondAttribute="leading" id="uEr-kP-BCS"/>
+                    <constraint firstItem="6za-6H-riQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="6" id="vNi-DP-TD4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="four" destination="1Tq-dw-LES" id="Vuv-Bn-gg1"/>
+                <outlet property="one" destination="Xrk-V3-Mu2" id="uJM-sa-e9R"/>
+                <outlet property="three" destination="SKt-g1-xl0" id="w8n-Eg-HfZ"/>
+                <outlet property="two" destination="RbN-QV-TTe" id="KIP-rP-nKe"/>
+            </connections>
+            <point key="canvasLocation" x="32" y="49.5"/>
+        </tableViewCell>
+    </objects>
+</document>

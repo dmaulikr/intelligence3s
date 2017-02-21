@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="PromptView">
+            <rect key="frame" x="0.0" y="0.0" width="334" height="202"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFj-pv-3zp">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrE-TT-evo">
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.10196078431372549" green="0.46274509803921571" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="HrE-TT-evo" firstAttribute="centerX" secondItem="vFj-pv-3zp" secondAttribute="centerX" id="3af-5r-b5o"/>
+                        <constraint firstItem="HrE-TT-evo" firstAttribute="centerY" secondItem="vFj-pv-3zp" secondAttribute="centerY" id="Lst-8Y-FbT"/>
+                        <constraint firstAttribute="height" constant="40" id="iso-5Q-Cdq"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jak-1I-VWz">
+                    <color key="backgroundColor" red="0.80784313725490198" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="W7x-RC-Ex1"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhG-zL-1co">
+                    <color key="backgroundColor" red="0.80784313730000001" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="rXv-da-Ftn"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5jn-U8-eVQ">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="gja-jF-7XK"/>
+                    </constraints>
+                    <color key="tintColor" red="0.97606928660000003" green="0.97606928660000003" blue="0.97606928660000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="正式 http://eamapp.mywind.com.cn:9080">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" title="正式 http://eamapp.mywind.com.cn:9080">
+                        <color key="titleColor" red="0.14117647059999999" green="0.43137254899999999" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btnClick:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="hlF-nJ-6g2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9T-4p-akO">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="chk-hR-uaE"/>
+                    </constraints>
+                    <color key="tintColor" red="0.97606928660000003" green="0.97606928660000003" blue="0.97606928660000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="开发 http://deveamapp.mywind.com.cn:9080">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" title="开发 http://deveamapp.mywind.com.cn:9080">
+                        <color key="titleColor" red="0.14117647059999999" green="0.43137254899999999" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btnClick:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="EkV-Lh-GJ2"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vFj-pv-3zp" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="6uB-3z-7SJ"/>
+                <constraint firstAttribute="trailing" secondItem="Jak-1I-VWz" secondAttribute="trailing" id="7DF-gA-jJX"/>
+                <constraint firstItem="Jak-1I-VWz" firstAttribute="top" secondItem="5jn-U8-eVQ" secondAttribute="bottom" id="9C2-pC-88D"/>
+                <constraint firstAttribute="trailing" secondItem="vFj-pv-3zp" secondAttribute="trailing" id="Dmo-cI-HnA"/>
+                <constraint firstItem="MhG-zL-1co" firstAttribute="top" secondItem="e9T-4p-akO" secondAttribute="bottom" id="EOY-zd-j3W"/>
+                <constraint firstAttribute="trailing" secondItem="e9T-4p-akO" secondAttribute="trailing" id="JTa-MF-tT8"/>
+                <constraint firstAttribute="trailing" secondItem="5jn-U8-eVQ" secondAttribute="trailing" id="RSO-zs-UcA"/>
+                <constraint firstItem="5jn-U8-eVQ" firstAttribute="top" secondItem="vFj-pv-3zp" secondAttribute="bottom" id="aJe-76-YlM"/>
+                <constraint firstItem="e9T-4p-akO" firstAttribute="top" secondItem="Jak-1I-VWz" secondAttribute="bottom" id="dSm-AZ-fS8"/>
+                <constraint firstItem="Jak-1I-VWz" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="k94-nz-QR8"/>
+                <constraint firstItem="MhG-zL-1co" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="s0v-DG-Mik"/>
+                <constraint firstAttribute="trailing" secondItem="MhG-zL-1co" secondAttribute="trailing" id="tU7-U6-jIL"/>
+                <constraint firstItem="5jn-U8-eVQ" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="10" id="vgv-BR-zir"/>
+                <constraint firstItem="vFj-pv-3zp" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="wl6-jb-Z5G"/>
+                <constraint firstItem="e9T-4p-akO" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="10" id="wv3-ct-ixI"/>
+            </constraints>
+            <connections>
+                <outlet property="btn1" destination="5jn-U8-eVQ" id="4rJ-J4-nOC"/>
+                <outlet property="btn2" destination="e9T-4p-akO" id="IFg-pQ-qzH"/>
+            </connections>
+            <point key="canvasLocation" x="304" y="353"/>
+        </collectionReusableView>
+    </objects>
+</document>

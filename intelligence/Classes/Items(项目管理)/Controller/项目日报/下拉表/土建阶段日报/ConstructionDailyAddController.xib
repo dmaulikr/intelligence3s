@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConstructionDailyAddController">
+            <connections>
+                <outlet property="rootScrollView" destination="fg1-i0-pep" id="A2t-8t-4Zn"/>
+                <outlet property="rootView" destination="7ss-wt-AYH" id="yLp-Wb-PxC"/>
+                <outlet property="rootViewHeight" destination="jiq-nD-EIn" id="oaO-oA-TPQ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fg1-i0-pep">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ss-wt-AYH">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1000" id="jiq-nD-EIn"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="7ss-wt-AYH" firstAttribute="centerX" secondItem="fg1-i0-pep" secondAttribute="centerX" id="Hr3-HV-FNi"/>
+                        <constraint firstItem="7ss-wt-AYH" firstAttribute="leading" secondItem="fg1-i0-pep" secondAttribute="leading" id="Ohb-89-86E"/>
+                        <constraint firstItem="7ss-wt-AYH" firstAttribute="top" secondItem="fg1-i0-pep" secondAttribute="top" id="RUp-4s-aUw"/>
+                        <constraint firstAttribute="trailing" secondItem="7ss-wt-AYH" secondAttribute="trailing" id="l5c-CS-3gK"/>
+                        <constraint firstAttribute="bottom" secondItem="7ss-wt-AYH" secondAttribute="bottom" id="zP3-ID-AWW"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="fg1-i0-pep" secondAttribute="bottom" id="JRg-r3-4eI"/>
+                <constraint firstItem="fg1-i0-pep" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="e6q-ZS-old"/>
+                <constraint firstItem="fg1-i0-pep" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uG5-hd-0KV"/>
+                <constraint firstAttribute="trailing" secondItem="fg1-i0-pep" secondAttribute="trailing" id="xHs-Yp-4xt"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

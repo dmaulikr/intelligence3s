@@ -1,0 +1,345 @@
+//
+//  TripReportAddViewController.m
+//  intelligence
+//
+//  Created by chris on 2016/11/22.
+//  Copyright © 2016年 guangyao. All rights reserved.
+//
+
+#import "TripReportAddViewController.h"
+#import "ProblemItemLBView.h"
+#import "ProblemItemLLIView.h"
+#import "ProblemItemLTView.h"
+#import "DailyDetailsFooterView.h"
+#import "DTKDropdownMenuView.h"
+#import "SoapUtil.h"
+#import "ChooseItemNoController.h"
+#import "ChoiceWorkView.h"
+#import "DailyDetailChoosePersonController.h"
+
+@interface TripReportAddViewController ()<UITextFieldDelegate>
+{
+    NSString *personid;
+}
+@property (weak, nonatomic) IBOutlet UIScrollView *rootScrollView;
+@property (weak, nonatomic) IBOutlet UIView *rootView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *rootViewHeight;
+@property (nonatomic, strong) DailyDetailsFooterView *footerView;
+//姓名:
+@property (nonatomic, strong) ProblemItemLLIView *firstRow;
+//描述：
+@property (nonatomic, strong) ProblemItemLLIView *secondRow;
+//部门：
+@property (nonatomic, strong) ProblemItemLLIView *thirdRow;
+//录入人：
+@property (nonatomic, strong) ProblemItemLLIView *forthRow;
+//出差项目:
+@property (nonatomic, strong) ProblemItemLLIView *fifthRow;
+//出差地点:
+@property (nonatomic, strong) ProblemItemLLIView *sixthRow;
+//出差日期：
+@property (nonatomic, strong) ProblemItemLLIView *seventhRow;
+//出差是由：
+@property (nonatomic, strong) ProblemItemLLIView *eighthRow;
+//工作内容：
+@property (nonatomic, strong) ProblemItemLLIView *ninthRow;
+//录入时间
+@property (nonatomic, strong) ProblemItemLLIView *tenthRow;
+
+@property (nonatomic, strong) TXTimeChoose * timeYear1;
+
+@end
+
+@implementation TripReportAddViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self addViews];
+    [self addScrollFooterView];
+    [self addBlocks];
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+-(void)addViews
+{
+    self.firstRow = [ProblemItemLLIView showXibView];
+    self.firstRow.type = ProblemItemTypeDefaultLL;
+    self.firstRow.frame = CGRectMake(0, 0, ScreenWidth, 45);
+    self.firstRow.titleLabel.text = @"出差人工号:";
+    self.firstRow.contentLabel.text = @"工号";
+    [self.rootView addSubview:self.firstRow];
+    
+    self.secondRow = [ProblemItemLLIView showXibView];
+    self.secondRow.type = ProblemItemTypeDefaultLT;
+    self.secondRow.titleLabel.text = @"描述:";
+    self.secondRow.contentTextField.delegate = self;
+    self.secondRow.contentTextField.tag = 2;
+    [self.rootView addSubview:self.secondRow];
+    [self.secondRow mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.firstRow.mas_bottom).offset(0);
+        make.left.equalTo(self.view.mas_left).offset(0);
+        make.right.equalTo(self.view.mas_right).offset(0);
+        make.height.mas_equalTo(45);
+    }];
+    
+    self.thirdRow = [ProblemItemLLIView showXibView];
+    self.thirdRow.type = ProblemItemTypeDefaultLL;
+    self.thirdRow.titleLabel.text = @"部门编号:";
+    [self.rootView addSubview:self.thirdRow];
+    [self.thirdRow mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.secondRow.mas_bottom).offset(0);
+        make.left.equalTo(self.view.mas_left).offset(0);
+        make.right.equalTo(self.view.mas_right).offset(0);
+        make.height.mas_equalTo(45);
+    }];
+    
+    self.forthRow = [ProblemItemLLIView showXibView];
+    self.forthRow.type = ProblemItemTypeDefaultLL;
+    self.forthRow.titleLabel.text = @"录入人:";
+    AccountModel *account = [AccountManager account];
+    self.forthRow.contentLabel.text =account.userName;
+    self.forthRow.contentLabel.textColor = [UIColor blackColor];
+    [self.rootView addSubview:self.forthRow];
+    [self.forthRow mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.thirdRow.mas_bottom).offset(0);
+        make.left.equalTo(self.view.mas_left).offset(0);
+        make.right.equalTo(self.view.mas_right).offset(0);
+        make.height.mas_equalTo(45);
+    }];
+    
+    self.fifthRow = [ProblemItemLLIView showXibView];
+    self.fifthRow.type = ProblemItemTypeDefaultLL;
+    self.fifthRow.titleLabel.text = @"出差项目编号:";
+    [self.rootView addSubview:self.fifthRow];
+    [self.fifthRow mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.forthRow.mas_bottom).offset(0);
+        make.left.equalTo(self.view.mas_left).offset(0);
+        make.right.equalTo(self.view.mas_right).offset(0);
+        make.height.mas_equalTo(45);
+    }];
+    
+    self.sixthRow = [ProblemItemLLIView showXibView];
+    self.sixthRow.type = ProblemItemTypeDefaultLT;
+    self.sixthRow.titleLabel.text = @"出差地点:";
+    [self.rootView addSubview:self.sixthRow];
+    [self.sixthRow mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.fifthRow.mas_bottom).offset(0);
+        make.left.equalTo(self.view.mas_left).offset(0);
+        make.right.equalTo(self.view.mas_right).offset(0);
+        make.height.mas_equalTo(45);
+    }];
+    
+    self.seventhRow = [ProblemItemLLIView showXibView];
+    self.seventhRow.type = ProblemItemTypeDefaultLL;
+    self.seventhRow.titleLabel.text = @"出差日期:";
+    self.seventhRow.contentLabel.textColor = [UIColor blackColor];
+    
+    [self.rootView addSubview:self.seventhRow];
+    [self.seventhRow mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.sixthRow.mas_bottom).offset(0);
+        make.left.equalTo(self.view.mas_left).offset(0);
+        make.right.equalTo(self.view.mas_right).offset(0);
+        make.height.mas_equalTo(45);
+    }];
+    
+    self.eighthRow = [ProblemItemLLIView showXibView];
+    self.eighthRow.type = ProblemItemTypeDefaultLT;
+    
+    self.eighthRow.titleLabel.text = @"出差事由:";
+    [self.rootView addSubview:self.eighthRow];
+    [self.eighthRow mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.seventhRow.mas_bottom).offset(0);
+        make.left.equalTo(self.view.mas_left).offset(0);
+        make.right.equalTo(self.view.mas_right).offset(0);
+        make.height.mas_equalTo(45);
+    }];
+    
+    self.ninthRow = [ProblemItemLLIView showXibView];
+    self.ninthRow.type = ProblemItemTypeDefaultLV;
+    self.ninthRow.titleLabel.text = @"工作内容:";
+
+    self.ninthRow.contentLabel.textColor = [UIColor blackColor];
+    
+    [self.rootView addSubview:self.ninthRow];
+    
+    [self.ninthRow mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.eighthRow.mas_bottom).offset(0);
+        make.left.equalTo(self.view.mas_left).offset(0);
+        make.right.equalTo(self.view.mas_right).offset(0);
+        make.height.mas_equalTo(90);
+    }];
+    
+    self.tenthRow = [ProblemItemLLIView showXibView];
+    self.tenthRow.type = ProblemItemTypeDefaultLL;
+    self.tenthRow.titleLabel.text = @"录入时间:";
+    self.tenthRow.contentLabel.textColor = [UIColor blackColor];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    self.tenthRow.contentLabel.text = [formatter stringFromDate:[NSDate date]];
+    
+    [self.rootView addSubview:self.tenthRow];
+    
+    [self.tenthRow mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.ninthRow.mas_bottom).offset(0);
+        make.left.equalTo(self.view.mas_left).offset(0);
+        make.right.equalTo(self.view.mas_right).offset(0);
+        make.height.mas_equalTo(45);
+    }];
+}
+
+- (void)addScrollFooterView{
+    WEAKSELF
+    self.footerView = [DailyDetailsFooterView showXibView];
+    self.footerView.frame = CGRectMake(0, ScreenHeight - 55, ScreenWidth, 55);
+    self.footerView.executeBtnCancelClick = ^(){
+        NSLog(@"取消");
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+    };
+    self.footerView.executeBtnSaveClick = ^(){
+        NSLog(@"保存");
+        [weakSelf updata];
+    };
+    [self.view addSubview:self.footerView];
+}
+- (void)addBlocks
+{
+    WEAKSELF
+    self.firstRow.executeTapContentLabel = ^()
+    {
+         NSLog(@"选择工号");
+        DailyDetailChoosePersonController *vc = [[DailyDetailChoosePersonController alloc] init];
+        vc.title = @"选择联系人";
+        vc.exetuceClickCell = ^(ChoosePersonModel *model){
+            
+            if (model.PERSONID.length > 0) {
+                weakSelf.firstRow.contentLabel.text = model.PERSONID;
+                weakSelf.firstRow.contentLabel.textColor = [UIColor blackColor];
+            }else{
+                weakSelf.firstRow.contentLabel.text = @"暂无数据";
+                weakSelf.firstRow.contentLabel.textColor = UIColorFromRGB(0xCBCBCF);
+            }
+            if(model.DEPARTMENT.length > 0)
+            {
+                weakSelf.thirdRow.contentLabel.text = model.DEPARTDESC;
+                weakSelf.thirdRow.contentLabel.textColor = [UIColor blackColor];
+            }else{
+                weakSelf.thirdRow.contentLabel.text = @"暂无数据";
+                weakSelf.thirdRow.contentLabel.textColor = UIColorFromRGB(0xCBCBCF);
+            }
+        };
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+
+    self.fifthRow.executeTapContentLabel = ^()
+    {
+         NSLog(@"选择项目");
+        ChooseItemNoController *choose = [[ChooseItemNoController alloc]init];
+        choose.executeClickCell = ^(ChooseItemNoModel *model){
+            if (model.PRONUM.length > 0) {
+                weakSelf.fifthRow.contentLabel.text = model.PRONUM;
+                weakSelf.fifthRow.contentLabel.textColor = [UIColor blackColor];
+            }else{
+                weakSelf.fifthRow.contentLabel.text = @"暂无数据";
+                weakSelf.fifthRow.contentLabel.textColor = UIColorFromRGB(0xCBCBCF);
+            }
+        };
+        [weakSelf.navigationController pushViewController:choose animated:YES];
+    };
+    self.eighthRow.executeTapContentLabel = ^()
+    {
+         NSLog(@"选择出差时间");
+    };
+    self.seventhRow.executeTapContentLabel= ^()
+    {
+       [weakSelf.view addSubview:weakSelf.timeYear1];
+    };
+
+
+}
+- (void)updata
+{
+    WEAKSELF
+    SoapUtil *soap = [[SoapUtil alloc]initWithNameSpace:@"http://www.ibm.com/maximo" andEndpoint:[NSString stringWithFormat:@"%@/meaweb/services/MOBILESERVICE",BASE_URL]];
+    soap.DicBlock = ^(NSDictionary *dic){
+        SVHUD_Stop;
+        if ([dic[@"status"] isEqualToString:@""]) {
+            HUDNormal(@"保存失败稍后再试");
+        }else{
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        }
+    };
+    
+    NSDictionary *dict = @{};
+    NSArray *relationShip = @[dict];
+    
+
+    
+    NSDictionary *dic = @{
+                          @"ACOUNT":self.firstRow.contentLabel.text,//出差人工号
+                          @"DESCRIPTION":self.secondRow.contentTextField.text,//描述
+                          @"DEPTNUM":self.thirdRow.contentLabel.text,//部门编号
+                          @"CREATEBY":self.forthRow.contentLabel.text,//录入人
+                          @"PROJECT":self.fifthRow.contentLabel.text,//项目编号
+                          @"TOPLACE":self.sixthRow.contentTextField.text,//地点
+                          @"TRIPDATE":self.seventhRow.contentTextField.text,//出差日期
+                          @"TRIPCONTENT":self.eighthRow.contentTextField.text,//出差事由
+                          @"WORKCONTENT":self.ninthRow.contentTextView.text,//工作内容
+                          @"CREATEDATE":self.tenthRow.contentLabel.text,//录入时间
+                          @"relationShip":relationShip
+                          };
+    
+    /*
+     DESCRIPTION;//描述
+     ACOUNT;//出差人编号
+     DEPTNUM;//部门编号
+     CREATEBY;//录入人;
+     CREATEDATE;//录入日期
+     TRIPDATE;//出差日期
+     PROJECT;//出差项目
+     TOPLACE;//出差地点
+     TRIPCONTENT;//出差事由
+     WORKCONTENT;//工作内容
+     */
+    AccountModel *account = [AccountManager account];
+    NSString *strPersonId = account.personId;
+    
+    NSArray *arr = @[
+                     @{@"json" : [self dictionaryToJson:dic]},
+                     @{@"flag" : @"1"},
+                     @{@"mboObjectName" : @"UDTRIPREPORT"},
+                     @{@"mboKey" : @"SERIALNUMBER"},
+                     @{@"personId" : strPersonId}
+                     ];
+    
+    [soap requestMethods:@"mobileserviceInsertMbo" withDate:arr];
+}
+- (NSString*)dictionaryToJson:(NSDictionary *)dic
+{
+    NSError *parseError = nil;
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
+    
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    NSLog(@"最终值 %@",textField.text);
+    return;
+}
+- (TXTimeChoose *)timeYear1{
+    WEAKSELF
+    if (!_timeYear1) {
+        self.timeYear1 = [[TXTimeChoose alloc]initWithFrame:self.view.bounds type:UIDatePickerModeDate];
+        self.timeYear1.backString = ^(NSDate *data){
+            weakSelf.seventhRow.contentLabel.text = [weakSelf.timeYear1 stringFromDate:data];
+        };
+    }
+    return _timeYear1;
+}
+@end

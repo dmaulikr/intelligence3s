@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="行项目号" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mv2-Ye-tB7">
+                    <rect key="frame" x="15" y="11" width="79" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.14117647058823529" green="0.43137254901960786" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="物料描述" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DS-bC-wOl">
+                    <rect key="frame" x="124" y="11" width="78" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.14117647059999999" green="0.43137254899999999" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="物料描述" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHF-Eb-NPi">
+                    <rect key="frame" x="232" y="11" width="78" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.14117647059999999" green="0.43137254899999999" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hue-V3-HZU">
+                    <rect key="frame" x="330" y="11" width="30" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="9ci-qa-4fm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.14117647059999999" green="0.43137254899999999" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eHF-Eb-NPi" firstAttribute="width" secondItem="mv2-Ye-tB7" secondAttribute="width" id="0Lx-RI-oGE"/>
+                <constraint firstItem="mv2-Ye-tB7" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="15" id="2oA-X5-YhC"/>
+                <constraint firstItem="eHF-Eb-NPi" firstAttribute="centerY" secondItem="4DS-bC-wOl" secondAttribute="centerY" id="9va-eW-meR"/>
+                <constraint firstItem="4DS-bC-wOl" firstAttribute="centerY" secondItem="mv2-Ye-tB7" secondAttribute="centerY" id="DrJ-nx-M5C"/>
+                <constraint firstAttribute="trailing" secondItem="Hue-V3-HZU" secondAttribute="trailing" constant="15" id="Nzh-Zk-OJ0"/>
+                <constraint firstItem="Hue-V3-HZU" firstAttribute="centerY" secondItem="eHF-Eb-NPi" secondAttribute="centerY" id="b6f-5u-cXQ"/>
+                <constraint firstItem="mv2-Ye-tB7" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="ie4-mM-fUz"/>
+                <constraint firstItem="eHF-Eb-NPi" firstAttribute="leading" secondItem="4DS-bC-wOl" secondAttribute="trailing" constant="30" id="im2-9a-0Tu"/>
+                <constraint firstItem="4DS-bC-wOl" firstAttribute="width" secondItem="mv2-Ye-tB7" secondAttribute="width" id="lbH-fB-SVL"/>
+                <constraint firstItem="Hue-V3-HZU" firstAttribute="leading" secondItem="eHF-Eb-NPi" secondAttribute="trailing" constant="20" id="ogn-Po-tsE"/>
+                <constraint firstItem="4DS-bC-wOl" firstAttribute="leading" secondItem="mv2-Ye-tB7" secondAttribute="trailing" constant="30" id="yTg-Jn-LVw"/>
+            </constraints>
+            <point key="canvasLocation" x="317.5" y="205"/>
+        </collectionReusableView>
+    </objects>
+</document>

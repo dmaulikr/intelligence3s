@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "MainViewController.h"
+#import "TabBarController.h"
 #import "IQKeyboardManager.h"
 #import <PgySDK/PgyManager.h>
 #import <PgyUpdate/PgyUpdateManager.h>
@@ -31,13 +32,15 @@
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
     AccountModel *account = [AccountManager account];
-    if (account.userName.length > 0) {
-        MainViewController *main = [[MainViewController alloc]init];
-        self.window.rootViewController = main;
-    }else{
-        LoginViewController *main = [[LoginViewController alloc] init];
-         self.window.rootViewController = main;
-    }
+    
+//    if (account.userName.length > 0) {
+//        MainViewController *main = [[MainViewController alloc]init];
+//        self.window.rootViewController = main;
+//    }else{
+//        LoginViewController *main = [[LoginViewController alloc] init];
+//         self.window.rootViewController = main;
+//    }
+    self.window.rootViewController = [[TabBarController alloc] init];
     [self.window makeKeyAndVisible];
     
     // Required

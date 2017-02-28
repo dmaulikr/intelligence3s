@@ -157,7 +157,7 @@
                           @"imei":openID
                           };
     SVHUD_NO_Stop(@"正在登陆");
-    //NSString *str = [USERDEFAULT objectForKey:@"server"];
+    
     self.task = [HTTPSessionManager postWithUrl:@"/maximo/mobile/system/login" params:dic success:^(id response) {
         if(KCode(@"USER-S-104")||KCode(@"USER-S-101")){
             SVHUD_Stop

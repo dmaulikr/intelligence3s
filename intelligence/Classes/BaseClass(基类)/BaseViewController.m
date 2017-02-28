@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = APPCOLOR;
-    [self setupLeftMenuButton];
+    //[self setupLeftMenuButton];
     // Do any additional setup after loading the view.
 }
 -(void)setupLeftMenuButton{

@@ -88,8 +88,8 @@
     _workDebug = workDebug;
     self.topName.text = @"风机编号:";
     self.bottomName.text = @"调试负责人:";
-    self.topWidth.constant = 70;
-    self.bottomWidth.constant = 90;
+    self.topWidth.constant = 100;
+    self.bottomWidth.constant = 120;
     self.top.text = workDebug.WINDDRIVENGENERATORNUM.length?workDebug.WINDDRIVENGENERATORNUM:@"暂无编号";
 
     self.bottom.text = workDebug.RESPONSIBLEPERSON.length?workDebug.RESPONSIBLEPERSON:@"暂无描述";
@@ -409,17 +409,18 @@
     self.topWidth.constant = 40;
     self.bottomWidth.constant = 40;
     self.top.text = dailyWork.RUNLOGDATE;
-    self.bottom.text = dailyWork.WEATHER.length ? self.dailyWork.WEATHER : @"暂无描述";
+    self.bottom.text = dailyWork.DESCRIPTION.length ? self.dailyWork.DESCRIPTION : @"暂无描述";
 }
 
 - (void)setConstruction:(ConstructionModel *)construction{
+    
     _construction = construction;
     self.topName.text = @"日期:";
     self.bottomName.text = @"项目负责人:";
     self.topWidth.constant = 110;
     self.bottomWidth.constant = 110;
     self.top.text = construction.CREATEDATE;
-    self.bottom.text = construction.PERSONID.length ? self.construction.PERSONID : @"暂无描述";
+    self.bottom.text = construction.PERSONDESC.length ? self.construction.PERSONDESC : @"暂无描述";
 }
 
 - (void)setHoisting:(HoistingModel *)hoisting{

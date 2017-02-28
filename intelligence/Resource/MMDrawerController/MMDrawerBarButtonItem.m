@@ -239,7 +239,6 @@
 }
 
 -(instancetype)initWithTarget:(id)target action:(SEL)action{
-//    UIImage *image = [UIImage imageNamed:@"ic_drawer"]
     
     if((floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1)){
         return [self initWithImage:[self.class drawerButtonItemImage]

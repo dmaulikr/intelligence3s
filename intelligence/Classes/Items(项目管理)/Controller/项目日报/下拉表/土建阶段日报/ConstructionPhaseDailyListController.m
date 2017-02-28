@@ -113,11 +113,13 @@
             [self.dataArray removeAllObjects];
         }
         _arrayCount = _dataArray.count;
-                NSArray *array = response[@"result"][@"resultlist"];
-                for (NSDictionary *dic in array) {
-                    LedgerModel *stock = [LedgerModel mj_objectWithKeyValues:dic];
-                    [self.dataArray addObject:stock];
-                }
+        NSArray *array = response[@"result"][@"resultlist"];
+        
+        for (NSDictionary *dic in array) {
+            ConstructionModel *stock = [ConstructionModel mj_objectWithKeyValues:dic];
+            [self.dataArray addObject:stock];
+        }
+        
         if (data) {
             // 结束刷新
             [self.tableview.mj_header endRefreshing];
@@ -131,6 +133,7 @@
         }
         
         [self.tableview reloadData];
+        NSLog(@"self.tableview.delegate %@",self.tableview.delegate);
         //        [self settingDegate];
     } fail:^(NSError *error) {
         SVHUD_Stop
@@ -171,10 +174,11 @@
 
 #pragma mark - UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
     if (self.constrution) {
-        return 1;
+        return self.dataArray.count;
     }else{
-        return 0;
+        return self.dataArray.count;
     }
 }
 
@@ -183,11 +187,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSLog(@"indexPath %ld",(long)indexPath.row);
+    
     StockViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Dailycell"];
     if (!cell) {
         cell = [StockViewCell stockViewCell];
     }
-    cell.construction = self.constrution;
+    cell.construction = [self.dataArray objectAtIndex:indexPath.section];
     return cell;
 }
 

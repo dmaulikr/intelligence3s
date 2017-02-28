@@ -18,6 +18,7 @@
 #import "DailyDetailChoosePersonController.h"
 #import "SoapUtil.h"
 #import "ShareConstruction.h"
+#import "DailylogActivityViewController.h"
 @interface RunLogAddViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *rootScrollView;
 @property (weak, nonatomic) IBOutlet UIView *rootView;
@@ -211,6 +212,33 @@
 }
 - (void)updata
 {
+    if ([[self determineString:self.firstRow.contentTextField.text] isEqualToString:@""]) {
+        HUDNormal(@"请选择中心编号");
+        return;
+    }else if ([[self determineString:self.secondRow.contentTextField.text] isEqualToString:@""]){
+        HUDNormal(@"请选择中心");
+        return;
+    }else if ([[self determineString:self.thirdRow.contentLabel.text] isEqualToString:@""]){
+        HUDNormal(@"请选择项目编号");
+        return;
+    }else if ([[self determineString:self.forthRow.contentTextField.text] isEqualToString:@""]){
+        HUDNormal(@"请选择项目描述");
+        return;
+    }else if ([[self determineString:self.fifthRow.contentLabel.text] isEqualToString:@""]){
+        HUDNormal(@"请选择年");
+        return;
+    }else if ([[self determineString:self.sixthRow.contentLabel.text] isEqualToString:@""]){
+        HUDNormal(@"请选择月");
+        return;
+    }else if ([[self determineString:self.seventhRow.contentLabel.text] isEqualToString:@""]){
+        HUDNormal(@"请选择负责人");
+        return;
+    }else if ([[self determineString:self.eighthRow.contentTextField.text] isEqualToString:@""]){
+        HUDNormal(@"请填写负责人描述");
+        return;
+    }
+    
+    
     WEAKSELF
     SoapUtil *soap = [[SoapUtil alloc]initWithNameSpace:@"http://www.ibm.com/maximo" andEndpoint:[NSString stringWithFormat:@"%@/meaweb/services/MOBILESERVICE",BASE_URL]];
     soap.DicBlock = ^(NSDictionary *dic){
@@ -221,57 +249,53 @@
             [weakSelf.navigationController popViewControllerAnimated:YES];
         }
     };
-    NSDictionary *dict = @{};
-    
-    NSArray *relationShip = @[dict];
-    
-    
-    
-    NSDictionary *dic = @{
-                          @"BRANCH":self.firstRow.contentLabel.text,//中心编号
-                          @"BRANCHDESC":self.firstRow.contentLabel.text,//中心描述
-                          @"PRONUM":self.firstRow.contentLabel.text,//项目编号
-                          @"PRODESC":self.firstRow.contentLabel.text,//项目描述
-                          @"YEAR":self.firstRow.contentLabel.text,//年
-                          @"MONTH":self.firstRow.contentLabel.text,//月
-                          @"PROHEAD":self.firstRow.contentLabel.text,//负责人
-                          @"NAME1":self.firstRow.contentLabel.text,//负责人描述
-                          @"CREATER":self.firstRow.contentLabel.text,//录入人编号
-                          @"CREATENAME":self.firstRow.contentLabel.text,//录入人描述
-                          @"CREATETIME":self.firstRow.contentLabel.text,//录入时间
-                          };
-    
-    /*
-      DESCRIPTION;//描述
-      BRANCH;//中心编号
-      BRANCHDESC;//中心描述
-      PRONUM;//项目编号
-      PRODESC;//项目描述
-      YEAR;//年
-      MONTH;//月
-      PROHEAD;//负责人
-      NAME1;//负责人描述
-      CREATER;//录入人编号
-      CREATENAME;//录入人描述
-      CREATETIME;//录入时间
-     */
-    
-    AccountModel *account = [AccountManager account];
-    NSString *strPersonId = account.personId;
-    
     ShareConstruction *shareConstruction = [ShareConstruction sharedConstruction];
     
     NSArray * runlines = shareConstruction.runlineModels;
     
+    NSMutableArray * runlinesDic = [NSMutableArray array];
+    
+    NSArray *relationShip;
+    
+    if (runlines.count>0) {
+        runlinesDic = [Runliner mj_keyValuesArrayWithObjectArray:runlines];
+        relationShip = runlinesDic;
+    }
+    else
+    {
+        NSDictionary *dict = @{};
+        relationShip = @[dict];
+    }
+    NSDictionary *dic = @{
+                          @"BRANCH":[self determineString:self.firstRow.contentTextField.text],//中心编号
+                          @"BRANCHDESC":[self determineString:self.secondRow.contentTextField.text],//中心描述
+                          @"PRONUM":[self determineString:self.thirdRow.contentLabel.text],//项目编号
+                          //@"PRODESC":[self determineString:self.forthRow.contentTextField.text],//项目描述
+                          @"YEAR":[self determineString:self.fifthRow.contentLabel.text],//年
+                          @"MONTH":[self determineString:self.sixthRow.contentLabel.text],//月
+                          @"PROHEAD":[self determineString:self.seventhRow.contentLabel.text],//负责人
+                          @"NAME1":[self determineString:self.eighthRow.contentTextField.text],//负责人描述
+                          @"CREATER":[self determineString:self.ninthRow.contentLabel.text],//录入人编号
+                          @"CREATENAME":[self determineString:self.tenthRow.contentLabel.text],//录入人描述
+                          @"CREATETIME":[self determineString:self.eleventhRow.contentLabel.text],//录入时间
+                          @"DESCRIPTION":[NSString stringWithFormat:@"%@%@_%@运行记录",
+                                         [self determineString:self.tenthRow.contentLabel.text],
+                                         [self determineString:self.tenthRow.contentLabel.text],
+                                         [self determineString:self.forthRow.contentTextField.text]],
+                          @"relationShip": relationShip
+                          };
+    AccountModel *account = [AccountManager account];
+    NSString *strPersonId = account.personId;
+    
+
+ 
     NSArray *arr = @[
                      @{@"json" : [self dictionaryToJson:dic]},
                      @{@"flag" : @"1"},
                      @{@"mboObjectName" : @"UDRUNLOGR"},
                      @{@"mboKey" : @"LOGNUM"},
                      @{@"personId" : strPersonId},
-                     @{@"relationShip":runlines}
                      ];
-    
     [soap requestMethods:@"mobileserviceInsertMbo" withDate:arr];
 }
 - (void)addBlocks
@@ -359,7 +383,10 @@
 - (void)addRightNavBarItem{
     WEAKSELF
     DTKDropdownItem *item0 = [DTKDropdownItem itemWithTitle:@"工作日志活动" iconName:@"ic_gzrz" callBack:^(NSUInteger index, id info) {
-        
+        DailylogActivityViewController * log = [[DailylogActivityViewController alloc] init];
+        log.title=@"工作日志活动列表";
+        log.LOGNUM = @"";
+        [weakSelf.navigationController pushViewController:log animated:YES];
     }];
     DTKDropdownMenuView *menuView = [DTKDropdownMenuView dropdownMenuViewWithType:dropDownTypeRightItem frame:CGRectMake(0, 0, 40.f, 40.f) dropdownItems:@[item0] icon:@"more"];
     
@@ -381,5 +408,13 @@
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
     
     return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+}
+- (NSString *)determineString:(NSString *)str{
+    
+    if([str isEqualToString:@"暂无数据"] ||str.length==0){
+        return @"";
+    }else{
+        return str;
+    }
 }
 @end

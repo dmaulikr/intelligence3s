@@ -148,6 +148,10 @@
 		832BF22C1DE3EA62006973E0 /* TripReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 832BF22A1DE3EA62006973E0 /* TripReportViewController.xib */; };
 		832BF2331DE3EBA9006973E0 /* TripReportAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 832BF2311DE3EBA9006973E0 /* TripReportAddViewController.xib */; };
 		832BF2391DE3EC50006973E0 /* TripReportDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 832BF2371DE3EC50006973E0 /* TripReportDetailsViewController.xib */; };
+		8342A5E31E63F6BB0078B161 /* CollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8342A5E11E63F6BB0078B161 /* CollectionReusableView.m */; };
+		8342A5E41E63F6BB0078B161 /* CollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8342A5E21E63F6BB0078B161 /* CollectionReusableView.xib */; };
+		8349B2741E5D308E00766A87 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8349B2721E5D308E00766A87 /* GTMBase64.m */; };
+		8349B2771E5D30D200766A87 /* UIImage+base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8349B2761E5D30D200766A87 /* UIImage+base64.m */; };
 		834C7B261E35B12800B96CCE /* JSChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834C7B241E35B12800B96CCE /* JSChartViewController.m */; };
 		834C7B271E35B12800B96CCE /* JSChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 834C7B251E35B12800B96CCE /* JSChartViewController.xib */; };
 		8350D0B81DED1EC400A77E15 /* PgySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8350D0B61DED1EC400A77E15 /* PgySDK.framework */; };
@@ -161,6 +165,11 @@
 		835FBD441DE288C9006CBC43 /* RunLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835FBD421DE288C9006CBC43 /* RunLogViewController.xib */; };
 		835FBD4E1DE2D090006CBC43 /* RunLogAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835FBD4C1DE2D090006CBC43 /* RunLogAddViewController.xib */; };
 		835FBD531DE2D0C8006CBC43 /* RunLogDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835FBD511DE2D0C8006CBC43 /* RunLogDetailsViewController.xib */; };
+		8378BB051E63C3500060DB8A /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8378BB041E63C3500060DB8A /* TabBarController.m */; };
+		8378BB091E63C8460060DB8A /* FunctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8378BB071E63C8460060DB8A /* FunctionViewController.m */; };
+		8378BB0A1E63C8470060DB8A /* FunctionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8378BB081E63C8460060DB8A /* FunctionViewController.xib */; };
+		8378BB0E1E63C9260060DB8A /* MyselfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8378BB0C1E63C9260060DB8A /* MyselfViewController.m */; };
+		8378BB0F1E63C9260060DB8A /* MyselfViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8378BB0D1E63C9260060DB8A /* MyselfViewController.xib */; };
 		838DD37C1DF26C11002198B5 /* ITEMNUMTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838DD37A1DF26C11002198B5 /* ITEMNUMTableViewCell.xib */; };
 		838DD3811DF26C3A002198B5 /* ITEMDESCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838DD37F1DF26C3A002198B5 /* ITEMDESCTableViewCell.xib */; };
 		838DD38A1DF26DC1002198B5 /* LOCATIONTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838DD3881DF26DC1002198B5 /* LOCATIONTableViewCell.xib */; };
@@ -1588,6 +1597,14 @@
 		832BF2371DE3EC50006973E0 /* TripReportDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TripReportDetailsViewController.xib; sourceTree = "<group>"; };
 		832BF23A1DE3F4D5006973E0 /* TripReportModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripReportModel.h; sourceTree = "<group>"; };
 		832BF23B1DE3F4D5006973E0 /* TripReportModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripReportModel.m; sourceTree = "<group>"; };
+		8342A5E01E63F6BB0078B161 /* CollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionReusableView.h; sourceTree = "<group>"; };
+		8342A5E11E63F6BB0078B161 /* CollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionReusableView.m; sourceTree = "<group>"; };
+		8342A5E21E63F6BB0078B161 /* CollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionReusableView.xib; sourceTree = "<group>"; };
+		8349B2711E5D308E00766A87 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		8349B2721E5D308E00766A87 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		8349B2731E5D308E00766A87 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		8349B2751E5D30D200766A87 /* UIImage+base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+base64.h"; sourceTree = "<group>"; };
+		8349B2761E5D30D200766A87 /* UIImage+base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+base64.m"; sourceTree = "<group>"; };
 		834B9D9C1DE4306E005D2334 /* BSJSONEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSJSONEncoder.h; sourceTree = "<group>"; };
 		834B9D9D1DE4306E005D2334 /* BSJSONEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJSONEncoder.m; sourceTree = "<group>"; };
 		834B9DA01DE4306E005D2334 /* NSArray+BSJSONAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BSJSONAdditions.h"; sourceTree = "<group>"; };
@@ -1622,6 +1639,14 @@
 		835FBD4F1DE2D0C8006CBC43 /* RunLogDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunLogDetailsViewController.h; sourceTree = "<group>"; };
 		835FBD501DE2D0C8006CBC43 /* RunLogDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunLogDetailsViewController.m; sourceTree = "<group>"; };
 		835FBD511DE2D0C8006CBC43 /* RunLogDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RunLogDetailsViewController.xib; sourceTree = "<group>"; };
+		8378BB031E63C3500060DB8A /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		8378BB041E63C3500060DB8A /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		8378BB061E63C8460060DB8A /* FunctionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionViewController.h; sourceTree = "<group>"; };
+		8378BB071E63C8460060DB8A /* FunctionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionViewController.m; sourceTree = "<group>"; };
+		8378BB081E63C8460060DB8A /* FunctionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FunctionViewController.xib; sourceTree = "<group>"; };
+		8378BB0B1E63C9260060DB8A /* MyselfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyselfViewController.h; sourceTree = "<group>"; };
+		8378BB0C1E63C9260060DB8A /* MyselfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyselfViewController.m; sourceTree = "<group>"; };
+		8378BB0D1E63C9260060DB8A /* MyselfViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyselfViewController.xib; sourceTree = "<group>"; };
 		838DD3781DF26C11002198B5 /* ITEMNUMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITEMNUMTableViewCell.h; sourceTree = "<group>"; };
 		838DD3791DF26C11002198B5 /* ITEMNUMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITEMNUMTableViewCell.m; sourceTree = "<group>"; };
 		838DD37A1DF26C11002198B5 /* ITEMNUMTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITEMNUMTableViewCell.xib; sourceTree = "<group>"; };
@@ -2086,6 +2111,14 @@
 				224C41D01D43457B004A0797 /* LeftViewController.xib */,
 				224C41D11D43457B004A0797 /* MainViewController.h */,
 				224C41D21D43457B004A0797 /* MainViewController.m */,
+				8378BB031E63C3500060DB8A /* TabBarController.h */,
+				8378BB041E63C3500060DB8A /* TabBarController.m */,
+				8378BB061E63C8460060DB8A /* FunctionViewController.h */,
+				8378BB071E63C8460060DB8A /* FunctionViewController.m */,
+				8378BB081E63C8460060DB8A /* FunctionViewController.xib */,
+				8378BB0B1E63C9260060DB8A /* MyselfViewController.h */,
+				8378BB0C1E63C9260060DB8A /* MyselfViewController.m */,
+				8378BB0D1E63C9260060DB8A /* MyselfViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2099,6 +2132,9 @@
 				224C41DC1D434AB2004A0797 /* LeftViewCell.h */,
 				224C41DD1D434AB2004A0797 /* LeftViewCell.m */,
 				224C41DE1D434AB2004A0797 /* LeftViewCell.xib */,
+				8342A5E01E63F6BB0078B161 /* CollectionReusableView.h */,
+				8342A5E11E63F6BB0078B161 /* CollectionReusableView.m */,
+				8342A5E21E63F6BB0078B161 /* CollectionReusableView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2410,6 +2446,11 @@
 				83988F581E2086A60058E307 /* JPUSHService.h */,
 				227803201D41E62000B10BF6 /* AppDelegate.h */,
 				227803211D41E62000B10BF6 /* AppDelegate.m */,
+				8349B2711E5D308E00766A87 /* GTMBase64.h */,
+				8349B2721E5D308E00766A87 /* GTMBase64.m */,
+				8349B2731E5D308E00766A87 /* GTMDefines.h */,
+				8349B2751E5D30D200766A87 /* UIImage+base64.h */,
+				8349B2761E5D30D200766A87 /* UIImage+base64.m */,
 				227803221D41E62000B10BF6 /* OtherHeader.h */,
 			);
 			path = "Other(其他)";
@@ -3951,6 +3992,7 @@
 				22C655721D5E0CFB00E80BCC /* HoistingDebugDailyController.xib in Resources */,
 				83CCE3DA1DF10528003DB584 /* StockQueryViewController.xib in Resources */,
 				224C41D51D43457B004A0797 /* LeftViewController.xib in Resources */,
+				8342A5E41E63F6BB0078B161 /* CollectionReusableView.xib in Resources */,
 				227FE2B21D52351900B30171 /* ProblemDetailsLLCell.xib in Resources */,
 				22A7CDBD1D4494B5008B3638 /* CheckingWorkController.xib in Resources */,
 				838DD38F1DF26DD9002198B5 /* BINNUMTableViewCell.xib in Resources */,
@@ -3966,6 +4008,7 @@
 				83CCE3E51DF11DAE003DB584 /* StockQueryTableViewCell.xib in Resources */,
 				2243B3B31D7D9FE000836B36 /* DailyWorkDetailsController.xib in Resources */,
 				221F5EC11D4657D6007B3AAF /* ApprovalPopupSheetFrontView.xib in Resources */,
+				8378BB0A1E63C8470060DB8A /* FunctionViewController.xib in Resources */,
 				22AF0F9C1D5471E80094A498 /* ArrowCellView.xib in Resources */,
 				22A45E461D680EA200AF48BA /* WorkPlanViewController.xib in Resources */,
 				22A7CD6E1D43CE73008B3638 /* StockViewCell.xib in Resources */,
@@ -3983,6 +4026,7 @@
 				227FE2BA1D52357800B30171 /* ProblemDetailsLLICells.xib in Resources */,
 				22DED6121D684C5300BE4E57 /* RemedialMeasuresCell.xib in Resources */,
 				225904251D41170E005C2E15 /* LaunchScreen.storyboard in Resources */,
+				8378BB0F1E63C9260060DB8A /* MyselfViewController.xib in Resources */,
 				22A7CD691D43B9EC008B3638 /* StockViewControllers.xib in Resources */,
 				22A45DF31D63234E00AF48BA /* FaultTaskViewController.xib in Resources */,
 				838DD38A1DF26DC1002198B5 /* LOCATIONTableViewCell.xib in Resources */,
@@ -4284,6 +4328,7 @@
 				83B0149B1E08D79300D65FF7 /* AddTaskXViewController.m in Sources */,
 				83B0149C1E08D79300D65FF7 /* AddTaskXViewController.xib in Sources */,
 				83B0149D1E08D79300D65FF7 /* AddCheckViewController.h in Sources */,
+				8378BB0E1E63C9260060DB8A /* MyselfViewController.m in Sources */,
 				83B0149E1E08D79300D65FF7 /* AddCheckViewController.m in Sources */,
 				83B0149F1E08D79300D65FF7 /* AddCheckViewController.xib in Sources */,
 				83B014A01E08D79300D65FF7 /* CheckWorkViewController.h in Sources */,
@@ -4583,6 +4628,7 @@
 				83B015C81E08D79400D65FF7 /* ProblemDetailsCell.m in Sources */,
 				83B015C91E08D79400D65FF7 /* ProblemDetailsCell.xib in Sources */,
 				83B015CA1E08D79400D65FF7 /* LedgerModel.h in Sources */,
+				8378BB051E63C3500060DB8A /* TabBarController.m in Sources */,
 				83B015CB1E08D79400D65FF7 /* LedgerModel.m in Sources */,
 				83B015CC1E08D79400D65FF7 /* DailyModel.h in Sources */,
 				83B015CD1E08D79400D65FF7 /* DailyModel.m in Sources */,
@@ -4623,6 +4669,7 @@
 				83B015F01E08D79400D65FF7 /* ProcessDetailsCell.m in Sources */,
 				83B015F11E08D79400D65FF7 /* ProcessDetailsCell.xib in Sources */,
 				83B015F21E08D79400D65FF7 /* ProcessDetailsFooterView.h in Sources */,
+				8378BB091E63C8460060DB8A /* FunctionViewController.m in Sources */,
 				83B015F31E08D79400D65FF7 /* ProcessDetailsFooterView.m in Sources */,
 				83B015F41E08D79400D65FF7 /* ProcessDetailsFooterView.xib in Sources */,
 				83B015F51E08D79400D65FF7 /* ProcessApprovalPopupWindowView.h in Sources */,
@@ -4642,6 +4689,7 @@
 				83B016031E08D79400D65FF7 /* LOCATIONTableViewCell.h in Sources */,
 				83B016041E08D79400D65FF7 /* LOCATIONTableViewCell.m in Sources */,
 				83B016051E08D79400D65FF7 /* LOCATIONTableViewCell.xib in Sources */,
+				8349B2771E5D30D200766A87 /* UIImage+base64.m in Sources */,
 				83B016061E08D79400D65FF7 /* ITEMDESCTableViewCell.h in Sources */,
 				83B016071E08D79400D65FF7 /* ITEMDESCTableViewCell.m in Sources */,
 				83B016081E08D79400D65FF7 /* ITEMDESCTableViewCell.xib in Sources */,
@@ -4715,6 +4763,7 @@
 				83B0164C1E08D79500D65FF7 /* StockModel.h in Sources */,
 				83B0164D1E08D79500D65FF7 /* StockModel.m in Sources */,
 				83B0164E1E08D79500D65FF7 /* DetailStockModel.h in Sources */,
+				8349B2741E5D308E00766A87 /* GTMBase64.m in Sources */,
 				83B0164F1E08D79500D65FF7 /* DetailStockModel.m in Sources */,
 				83B016501E08D79500D65FF7 /* StockViewCell.h in Sources */,
 				83B016511E08D79500D65FF7 /* StockViewCell.m in Sources */,
@@ -4836,6 +4885,7 @@
 				83B016C51E08D79500D65FF7 /* UITableView+SDAutoTableViewCellHeight.h in Sources */,
 				83B016C61E08D79500D65FF7 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				83B016C71E08D79500D65FF7 /* UIView+SDAutoLayout.h in Sources */,
+				8342A5E31E63F6BB0078B161 /* CollectionReusableView.m in Sources */,
 				83B016C81E08D79500D65FF7 /* UIView+SDAutoLayout.m in Sources */,
 				83B016C91E08D79500D65FF7 /* NSArray+Log.h in Sources */,
 				83B016CA1E08D79500D65FF7 /* NSArray+Log.m in Sources */,

@@ -26,6 +26,7 @@
 @property (nonatomic, copy) NSString *TAMERAOG;
 @property (nonatomic, copy) NSString *VEHICLERECORDS;
 @property (nonatomic, copy) NSString *mboObjectName;
+@property (nonatomic, copy) NSString *PERSONDESC;
 
 @property (nonatomic, strong) NSDictionary *dic;
 

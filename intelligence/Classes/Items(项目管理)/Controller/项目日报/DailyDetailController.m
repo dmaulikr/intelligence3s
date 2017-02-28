@@ -363,6 +363,7 @@
                 HUDNormal(@"缺少项目编号");
                 return;
             }
+            //土建阶段日报
             ConstructionPhaseDailyListController *vc = [[ConstructionPhaseDailyListController alloc] init];
             vc.requestStr = self.daily.PRONUM;
             vc.PRORUNLOGNUM = self.daily.PRORUNLOGNUM;
@@ -373,12 +374,14 @@
                 HUDNormal(@"缺少项目编号");
                 return;
             }
+            //吊装调试日报
             HoistingDebugDailyController *vc = [[HoistingDebugDailyController alloc] init];
             vc.requestStr = self.daily.PRONUM;
             vc.PRORUNLOGNUM = self.daily.PRORUNLOGNUM;
             [self.navigationController pushViewController:vc animated:YES];
         }break;
         case 2:{
+            //工作日报
             DailyWorkController *vc = [[DailyWorkController alloc] init];
             vc.requestStr = self.daily.PRONUM;
             vc.PRORUNLOGNUM = self.daily.PRORUNLOGNUM;
@@ -386,6 +389,7 @@
             [self.navigationController pushViewController:vc animated:YES];
         }break;
         case 3:{
+            //工装管理
             ToolingManagementController *vc = [[ToolingManagementController alloc] init];
             vc.requestStr = self.daily.PRONUM;
             vc.PRORUNLOGNUM = self.daily.PRORUNLOGNUM;

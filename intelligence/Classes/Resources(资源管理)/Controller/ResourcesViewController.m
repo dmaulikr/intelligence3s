@@ -72,7 +72,7 @@ static NSString *cellIdentifier = @"ItemsCollectionViewCell";
                             @{@"title":@"加油记录",@"icon":@"ic_jyjl"},
                             @{@"title":@"维修记录",@"icon":@"ic_wxjl"},
                             @{@"title":@"库存查询",@"icon":@"ic_query"},
-                            @{@"title":@"图表",@"icon":@"ic_chart"},
+//                            @{@"title":@"图表",@"icon":@"ic_chart"},
                             ];
 }
 

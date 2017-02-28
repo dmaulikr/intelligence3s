@@ -13,37 +13,5 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "intelligence/Classes/AppOps(&#x8fd0;&#x7ef4;&#x7ba1;&#x7406;)/Controller/&#x5de1;&#x68c0;&#x5355;/&#x4e0b;&#x62c9;&#x8868;&#x63a7;&#x5236;&#x5668;/InspectProjectController.m"
-            timestampString = "508925029.445935"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "-initRefresh"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "intelligence/Classes/AppOps(&#x8fd0;&#x7ef4;&#x7ba1;&#x7406;)/Controller/&#x5de1;&#x68c0;&#x5355;/&#x4e0b;&#x62c9;&#x8868;&#x63a7;&#x5236;&#x5668;/InspectProjectController.m"
-            timestampString = "508925043.080688"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "-initRefresh"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

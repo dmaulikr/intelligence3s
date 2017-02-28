@@ -265,6 +265,7 @@
     soap.DicBlock = ^(NSDictionary *dic){
         SVHUD_Stop
         if ([dic[@"success"] isEqualToString:@"成功"]) {
+             WHUDNormal(@"新建工单成功");
             [weakSelf.navigationController popViewControllerAnimated:NO];
             if(weakSelf.Open){
                 [weakSelf.dics setValue:dic[@"WONUM"] forKey:@"WONUM"];

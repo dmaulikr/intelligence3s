@@ -106,8 +106,6 @@ static NSString *cellIdentifier = @"ItemsCollectionViewCell";
         RunLogViewController *runlog = [[RunLogViewController alloc] init];
         view = runlog;
     }
-    
-    
     [self.navigationController pushViewController:view animated:YES];
 }
 

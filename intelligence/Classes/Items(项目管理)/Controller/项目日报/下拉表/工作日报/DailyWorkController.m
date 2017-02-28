@@ -118,8 +118,7 @@
         for (NSDictionary *dic in array) {
             
             NSLog(@"dic %@",dic);
-            
-              LedgerModel *stock = [LedgerModel mj_objectWithKeyValues:dic];
+              DailyWorkModel *stock = [DailyWorkModel mj_objectWithKeyValues:dic];
               [self.dataArray addObject:stock];
             }
         
@@ -176,10 +175,11 @@
 
 #pragma mark - UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
     if (self.dailyWork) {
-        return 1;
+        return self.dataArray.count;
     }else{
-        return 0;
+        return self.dataArray.count;
     }
 }
 
@@ -192,7 +192,7 @@
     if (!cell) {
         cell = [StockViewCell stockViewCell];
     }
-    cell.dailyWork = self.dailyWork;
+    cell.dailyWork = [self.dataArray objectAtIndex:indexPath.section];
     return cell;
 }
 
@@ -228,7 +228,6 @@
     }else{
         text = @"";
     }
-    
     
     NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
                                  NSForegroundColorAttributeName: UIColorFromRGB(0x878787)};
@@ -267,8 +266,6 @@
 {
     // Do something
 }
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     

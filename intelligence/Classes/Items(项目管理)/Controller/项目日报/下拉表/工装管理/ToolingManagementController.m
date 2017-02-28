@@ -116,7 +116,7 @@
         _arrayCount = _dataArray.count;
                 NSArray *array = response[@"result"][@"resultlist"];
                 for (NSDictionary *dic in array) {
-                    LedgerModel *stock = [LedgerModel mj_objectWithKeyValues:dic];
+                    ToolingManagementModel *stock = [ToolingManagementModel mj_objectWithKeyValues:dic];
                     [self.dataArray addObject:stock];
                 }
         if (data) {
@@ -172,10 +172,11 @@
 
 #pragma mark - UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
     if (self.toolingManagement) {
-        return 1;
+        return self.dataArray.count;
     }else{
-        return 0;
+        return self.dataArray.count;
     }
 }
 
@@ -184,11 +185,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     StockViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Dailycell"];
     if (!cell) {
         cell = [StockViewCell stockViewCell];
     }
-    cell.toolingManagement = self.toolingManagement;
+    cell.toolingManagement = [self.dataArray objectAtIndex:indexPath.section];
     return cell;
 }
 

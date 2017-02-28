@@ -251,7 +251,6 @@
     }else{
         stock = self.searchDArray[type];
     }
-    NSLog(@"----%@",stock.PRORUNLOGNUM);
     return stock;
 }
 

@@ -183,7 +183,7 @@
 		83988F641E2087180058E307 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83988F631E2087180058E307 /* UIKit.framework */; };
 		83988F661E2087270058E307 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83988F651E2087270058E307 /* Security.framework */; };
 		83988F681E20873A0058E307 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 83988F671E20873A0058E307 /* libz.tbd */; };
-		83988F6A1E2087540058E307 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83988F691E2087540058E307 /* UserNotifications.framework */; };
+		83988F6A1E2087540058E307 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83988F691E2087540058E307 /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		83988F6C1E2087620058E307 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 83988F6B1E2087620058E307 /* libresolv.tbd */; };
 		83B0141E1E08D79300D65FF7 /* BusinessXViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 228C731B1DD43AC20068560B /* BusinessXViewController.h */; };
 		83B0141F1E08D79300D65FF7 /* BusinessXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228C731C1DD43AC20068560B /* BusinessXViewController.m */; };
@@ -3953,7 +3953,7 @@
 					225904111D41170E005C2E15 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 58B892Q45V;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -5067,8 +5067,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mywind.eam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "17ebda15-f2fa-4e14-b150-32f3a9ebaf6c";
-				PROVISIONING_PROFILE_SPECIFIER = deveam;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -5081,7 +5081,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = intelligence/intelligence.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: GUANGDONG MINGYANG WIND POWER INDUSTRY GROUP CO.,LTD.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 58B892Q45V;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5098,8 +5098,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mywind.eam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "21dcf346-68fe-4d96-abdb-1c3ebc9a7b38";
-				PROVISIONING_PROFILE_SPECIFIER = eam;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

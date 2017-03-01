@@ -51,8 +51,7 @@
     UITapGestureRecognizer *clearMemoryTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clearMemoryViewTap:)];
     [self.clearMemoryView addGestureRecognizer:clearMemoryTap];
     
-//    UITapGestureRecognizer *logOutTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(logOutViewTap:)];
-//    [self.logOutView addGestureRecognizer:logOutTap];
+
 }
 
 - (void)clearMemoryViewTap:(UIGestureRecognizer *)tap{

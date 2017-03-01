@@ -32,7 +32,7 @@
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
     AccountModel *account = [AccountManager account];
-    
+    //2.5
 //    if (account.userName.length > 0) {
 //        MainViewController *main = [[MainViewController alloc]init];
 //        self.window.rootViewController = main;
@@ -40,6 +40,8 @@
 //        LoginViewController *main = [[LoginViewController alloc] init];
 //         self.window.rootViewController = main;
 //    }
+    
+    //2.6
     self.window.rootViewController = [[TabBarController alloc] init];
     [self.window makeKeyAndVisible];
     

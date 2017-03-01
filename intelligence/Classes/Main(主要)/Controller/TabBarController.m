@@ -10,7 +10,7 @@
 #import "ProcessViewController.h"
 #import "FunctionViewController.h"
 #import "MyselfViewController.h"
-
+#import "LoginViewController.h"
 @interface TabBarController ()
 
 @end
@@ -19,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     
     FunctionViewController * function = [[FunctionViewController alloc]init];
     BaseNavigationViewController * navigationController1 = [[BaseNavigationViewController alloc] initWithRootViewController:function];
@@ -33,10 +32,13 @@
     self.viewControllers=@[navigationController1,navigationController2,navigationController3];
     
     NSArray *items = self.tabBar.items;
+    self.tabBar.tintColor=[UIColor colorWithRed:43.0/255.0 green:90.0/255.0 blue:156.0/255.0 alpha:1];
+    self.tabBar.unselectedItemTintColor = [UIColor blackColor];
     UITabBarItem *functionItem = items[0];
     functionItem.image = [[UIImage imageNamed:@"ic_function.png"]
                       imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     functionItem.title=@"功能";
+    
     functionItem.selectedImage = [[UIImage imageNamed:@"ic_function_down.png"]
                               imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
@@ -46,7 +48,9 @@
     processItem.title=@"待办事项";
     processItem.selectedImage = [[UIImage imageNamed:@"ic_float_down.png"]
                             imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
+    //processItem.badgeColor=[UIColor colorWithRed:43.0/255.0 green:90.0/255.0 blue:156.0/255.0 alpha:1];
+    processItem.badgeColor=[UIColor redColor];
+    processItem.badgeValue=@"9";
     UITabBarItem *myselfItem = items[2];
     myselfItem.image = [[UIImage imageNamed:@"ic_me.png"]
                          imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

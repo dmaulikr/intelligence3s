@@ -22,7 +22,7 @@
 @property(nonatomic,strong)UITableView *tableview;
 @property (nonatomic,strong) NSMutableArray *dataArray;
 @property (nonatomic,strong) NSMutableArray *searchArray;
-
+@property BOOL needReRefresh;
 @end
 
 @implementation ProcessViewController
@@ -67,8 +67,20 @@
     _numberSearch = 1;
     [self requestData:1 isUpdata:YES];
     [self initRefresh];
+    self.needReRefresh=NO;
 }
-
+-(void)viewWillDisappear:(BOOL)animated
+{
+    self.needReRefresh=YES;
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    if (self.needReRefresh) {
+        if (_number==1) {
+            [self requestData:1 isUpdata:YES];
+        }
+    }
+}
 -(void)settingDegate{
     WEAKSELF
     static dispatch_once_t onceToken;

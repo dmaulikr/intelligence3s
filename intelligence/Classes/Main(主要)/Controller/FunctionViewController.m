@@ -10,6 +10,22 @@
 #import "ItemsCollectionViewCell.h"
 #import "FauWorkViewController.h"
 #import "CollectionReusableView.h"
+#import "FaultAppViewController.h"
+#import "PollingViewController.h"
+#import "RunLogViewController.h"
+#import "TravelRViewController.h"
+#import "OilRViewController.h"
+#import "MaintainRViewController.h"
+#import "StockQueryViewController.h"
+#import "JSChartViewController.h"
+
+#import "LedgerItemsController.h"
+#import "DailyItemsController.h"
+#import "ProblemItemsController.h"
+#import "TripReportViewController.h"
+#import "StockViewControllers.h"
+#import "LoginViewController.h"
+
 static NSString * cellIdentifier = @"FunctionItemsCollectionViewCell";
 static NSString * kheaderIdentifier =@"headerIdentifier";
 static NSString * kfooterIdentifier =@"footerIdentifier";
@@ -37,6 +53,13 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
         make.left.mas_equalTo(self.view.mas_left);
     }];
     // Do any additional setup after loading the view from its nib.
+    AccountModel *account = [AccountManager account];
+    if (account.userName.length <= 0) {
+        LoginViewController *login = [[LoginViewController alloc] init];
+        [self presentViewController:login animated:login completion:^{
+            
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,15 +70,15 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
     //创建瀑布流约束
     MyFlowLayout *layout = [[MyFlowLayout alloc]init];
     //设置行间距
-    layout.lineSpace = 20;
+    layout.lineSpace = 10;
     //设置列间距
-    layout.columnsSpace = 20;
+    layout.columnsSpace = 0;
     //要布局的列数为3
-    layout.numberOfColumns = 3;
+    layout.numberOfColumns = 4;
     //设置宽高比
     layout.scal = CGSizeMake(1, 1);
     //设置section 的 上 左 下 右 边 ：top, left, bottom, right
-    layout.sectionInsert = UIEdgeInsetsMake(20, 20, 20, 20);
+    layout.sectionInsert = UIEdgeInsetsMake(10, 0, 10, 0);
     [layout setHeaderReferenceSize:CGSizeMake(ScreenWidth, 25)];
     [layout setFooterReferenceSize:CGSizeMake(ScreenWidth, 5)];
     //[layout setFooterReferenceSize:CGSizeMake(ScreenWidth, 20)];
@@ -89,31 +112,32 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
 }
 -(void)addData{
     self.operationArray0 = @[
-                            @{@"title":@"故障工单",@"icon":@"ic_udreport"},
-                            @{@"title":@"终验收工单",@"icon":@"ic_aa"},
-                            @{@"title":@"调试工单",@"icon":@"ic_dc"},
-                            @{@"title":@"排查工单",@"icon":@"ic_sp"},
-                            @{@"title":@"技改工单",@"icon":@"ic_tp"},
-                            @{@"title":@"定检工单",@"icon":@"ic_ws"},
+                            @{@"title":@"故障工单",@"icon":@"ic_gd_gz"},
+                            @{@"title":@"调试工单",@"icon":@"ic_gd_ts"},
+                            @{@"title":@"巡检工单",@"icon":@"ic_gd_xj"},
+                            @{@"title":@"定检工单",@"icon":@"ic_gd_dj"},
+                            @{@"title":@"排查工单",@"icon":@"ic_gd_pc"},
+                            @{@"title":@"技改工单",@"icon":@"ic_gd_jg"},
+                            @{@"title":@"终验收工单",@"icon":@"ic_gd_zys"},
                             ];
     
     self.operationArray1 = @[
                             @{@"title":@"项目台账",@"icon":@"ic_udrro"},
                             @{@"title":@"项目日报",@"icon":@"ic_udrro_log"},
                             @{@"title":@"问题联络单",@"icon":@"ic_udfeedback"},
-                            @{@"title":@"出差总结报告",@"icon":@"ic_trip"},
+                            @{@"title":@"出差报告",@"icon":@"ic_trip"},
                             ];
     
     self.operationArray2 = @[
+                            @{@"title":@"运行记录",@"icon":@"ic_udfeedback"},
                             @{@"title":@"故障提报单",@"icon":@"ic_udreport"},
-                            @{@"title":@"巡检单",@"icon":@"ic_udinspo"},
-                            @{@"title":@"运行记录",@"icon":@"ic_udfeedback"}
                             ];
     
     self.operationArray3 = @[
                             @{@"title":@"行驶记录",@"icon":@"ic_xsjl"},
                             @{@"title":@"加油记录",@"icon":@"ic_jyjl"},
-                            @{@"title":@"维修记录",@"icon":@"ic_wxjl"},
+                            @{@"title":@"车辆维修",@"icon":@"ic_wxjl"},
+                            @{@"title":@"库存盘点",@"icon":@"ic_stock"},
                             @{@"title":@"库存查询",@"icon":@"ic_query"},
                             @{@"title":@"图表",@"icon":@"ic_chart"},
                             ];
@@ -181,7 +205,7 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
 //定义每个UICollectionViewCell 的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake((ScreenWidth -80)/3, (ScreenWidth -80)/3);
+    return CGSizeMake((ScreenWidth -0)/4, (ScreenWidth -0)/4);
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -191,6 +215,7 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
  */
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    if(indexPath.section==0){
     NSString *worktype;
     NSString *name;
     NSString *appid;
@@ -207,14 +232,6 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
             type = ChoiceTypeFR;
             break;
         case 1:
-            worktype = @"AA";//终验收工单
-            appid = @"UDZYSWO";
-            objectname = @"WORKORDER";
-            orderby = @"WONUM desc";
-            name = @"终验收工单";
-            type = ChoiceTypeAA;
-            break;
-        case 2:
             worktype = @"DC";//调试工单
             appid = @"DEBUGORDER";
             objectname = @"DEBUGWORKORDER";
@@ -222,7 +239,24 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
             name = @"调试工单";
             type = ChoiceTypeDC;
             break;
+        case 2:
+            {
+            PollingViewController *polling = [[PollingViewController alloc]init];
+           
+            [self.navigationController pushViewController:polling animated:YES];
+                return;
+            }
+            break;
         case 3:
+            worktype = @"WS";//定检工单
+            appid = @"UDDJWO";
+            objectname = @"WORKORDER";
+            orderby = @"WORKORDERID desc";
+            name = @"定检工单";
+            type = ChoiceTypeTP;
+          
+            break;
+        case 4:
             worktype = @"SP";//排查工单
             appid = @"UDPCWO";
             objectname = @"WORKORDER";
@@ -230,7 +264,7 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
             name = @"排查工单";
             type = ChoiceTypeSP;
             break;
-        case 4:
+        case 5:
             worktype = @"TP";//技改工单
             appid = @"UDJGWO";
             objectname = @"WORKORDER";
@@ -238,14 +272,15 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
             name = @"技改工单";
             type = ChoiceTypeTPS;
             break;
-        case 5:
-            worktype = @"WS";//定检工单
-            appid = @"UDDJWO";
+        case 6:
+            worktype = @"AA";//终验收工单
+            appid = @"UDZYSWO";
             objectname = @"WORKORDER";
-            orderby = @"WORKORDERID desc";
-            name = @"定检工单";
-            type = ChoiceTypeTP;
+            orderby = @"WONUM desc";
+            name = @"终验收工单";
+            type = ChoiceTypeAA;
             break;
+        
         default:
             break;
     }
@@ -257,6 +292,69 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
     fauWork.objectname = objectname;
     fauWork.orderby = orderby;
     [self.navigationController pushViewController:fauWork animated:YES];
+    }
+    if(indexPath.section==1)
+    {
+        UIViewController *view;
+        if (indexPath.row == 0) {
+            LedgerItemsController *ledger = [[LedgerItemsController alloc]init];
+            view = ledger;
+        }else if (indexPath.row == 1){
+            DailyItemsController *daily = [[DailyItemsController alloc]init];
+            view = daily;
+        }else if (indexPath.row == 2){
+            ProblemItemsController *problem = [[ProblemItemsController alloc]init];
+            view = problem;
+        }
+        else if (indexPath.row == 3){
+            NSLog(@"跳到出差总结报告");
+            TripReportViewController * trip = [[TripReportViewController alloc] init];
+            trip.title = @"出差总结报告";
+            view = trip;
+        }
+        [self.navigationController pushViewController:view animated:YES];
+    }
+    if(indexPath.section==2)
+    {
+        UIViewController *view;
+        if (indexPath.row == 0) {
+            NSLog(@"跳转到运行记录");
+            RunLogViewController *runlog = [[RunLogViewController alloc] init];
+            view = runlog;
+        }else if (indexPath.row == 1){
+            FaultAppViewController *fault = [[FaultAppViewController alloc]init];
+            view = fault;
+        }
+        [self.navigationController pushViewController:view animated:YES];
+    }
+    if(indexPath.section==3)
+    {
+        UIViewController *view;
+        if (indexPath.row == 0) {
+            TravelRViewController *travel = [[TravelRViewController alloc]init];
+            view = travel;
+        }else if (indexPath.row == 1){
+            OilRViewController *oil = [[OilRViewController alloc]init];
+            view = oil;
+        }else if (indexPath.row == 2){
+            MaintainRViewController *maintain = [[MaintainRViewController alloc]init];
+            view = maintain;
+        }else if (indexPath.row == 3){
+            StockViewControllers *stock = [[StockViewControllers alloc]init];
+            view = stock;
+        
+        }else if (indexPath.row == 4){
+            NSLog(@"库存查询");
+            StockQueryViewController * stockQuery = [[StockQueryViewController alloc] init];
+            view = stockQuery;
+        }else if (indexPath.row == 5){
+            NSLog(@"库存查询");
+            JSChartViewController * chartView = [[JSChartViewController alloc] init];
+            view = chartView;
+        }
+        [self.navigationController pushViewController:view animated:YES];
+    }
+    
 }
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     
@@ -292,8 +390,6 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
             default:
                 break;
         }
-       
-        
     }
     else if ([kind isEqualToString:UICollectionElementKindSectionFooter]){
         

@@ -230,10 +230,13 @@
                 [USERDEFAULT removeObjectForKey:@"userName"];
                 [USERDEFAULT removeObjectForKey:@"password"];
             }
-
+//不跳转
+//            MainViewController *main = [[MainViewController alloc]init];
+//            [self presentViewController:main animated:NO completion:nil];
+            [self dismissViewControllerAnimated:YES completion:^{
+                
+            }];
             
-            MainViewController *main = [[MainViewController alloc]init];
-            [self presentViewController:main animated:NO completion:nil];
         }else if (KCode(@"USER-E-100")){
             SVHUD_ERROR(@"账号密码错误");
         }else if(KCode(@"USER-E-103")){

@@ -282,7 +282,7 @@
             if (self.blackBlock) {
                 self.blackBlock(@"排查工单保存成功");
             }
-            [weakSelf.navigationController popViewControllerAnimated:NO];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
         }
     };
     NSMutableArray *arrayst = [NSMutableArray array];

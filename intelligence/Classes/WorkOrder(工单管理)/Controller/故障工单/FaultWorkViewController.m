@@ -254,7 +254,7 @@
             if (weakSelf.updataModel) {
                 weakSelf.updataModel();
             }
-            [weakSelf.navigationController popViewControllerAnimated:NO];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
         }else{
             HUDJuHua(dic[@"errorMsg"]);
         }

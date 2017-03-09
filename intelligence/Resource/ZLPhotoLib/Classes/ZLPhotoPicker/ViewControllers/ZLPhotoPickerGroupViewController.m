@@ -136,7 +136,7 @@
     assetsVc.groupVc = self;
     assetsVc.maxCount = self.maxCount;
     [self hideWaitingAnimation];
-    [self.navigationController pushViewController:assetsVc animated:NO];
+    [self.navigationController pushViewController:assetsVc animated:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

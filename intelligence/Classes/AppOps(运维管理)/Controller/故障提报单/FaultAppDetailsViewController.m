@@ -810,15 +810,15 @@
     };
     
     self.nineteenthRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateFifteenthRowWithHeight:textHeight animated:NO];
+        [weakSelf updateFifteenthRowWithHeight:textHeight animated:YES];
     };
     
     self.twentiethRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateSixteenthRowWithHeight:textHeight animated:NO];
+        [weakSelf updateSixteenthRowWithHeight:textHeight animated:YES];
     };
     
     self.twentyfirstRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateSeventeenthRowWithHeight:textHeight animated:NO];
+        [weakSelf updateSeventeenthRowWithHeight:textHeight animated:YES];
     };
 }
 

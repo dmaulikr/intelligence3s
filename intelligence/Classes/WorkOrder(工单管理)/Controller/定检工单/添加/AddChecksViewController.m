@@ -195,7 +195,7 @@
     soap.DicBlock = ^(NSDictionary *dic){
         SVHUD_Stop
         if ([dic[@"success"] isEqualToString:@"成功"]) {
-            [weakSelf.navigationController popViewControllerAnimated:NO];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
         }
         else
         {

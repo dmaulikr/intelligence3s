@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 #import "UIViewController+MMDrawerController.h"
 #import "MMDrawerBarButtonItem.h"
+#import "QRCodeViewController.h"
 @interface BaseViewController ()
 @end
 
@@ -17,12 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = APPCOLOR;
-    //[self setupLeftMenuButton];
+    [self setupLeftMenuButton];
     // Do any additional setup after loading the view.
 }
 -(void)setupLeftMenuButton{
+    
     UIButton *addImg = [UIButton buttonWithType:UIButtonTypeCustom];
-    [addImg setImage:[UIImage imageNamed:@"ic_drawer"] forState:UIControlStateNormal];
+    [addImg setImage:[UIImage imageNamed:@"qrcode"] forState:UIControlStateNormal];
     [addImg addTarget:self action:@selector(leftDrawerButtonPress:) forControlEvents:UIControlEventTouchUpInside];
     addImg.frame = CGRectMake(0, 5, 30, 30);
     
@@ -34,8 +36,11 @@
 
 #pragma mark - Button Handlers
 -(void)leftDrawerButtonPress:(id)sender{
-    SVHUD_Stop
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    NSLog(@"分享二维码");
+    QRCodeViewController* qrvc = [[QRCodeViewController alloc] init];
+    [self presentViewController:qrvc animated:YES completion:nil];
+    //SVHUD_Stop
+    //[self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
 

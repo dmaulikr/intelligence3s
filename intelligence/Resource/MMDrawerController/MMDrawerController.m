@@ -419,7 +419,7 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
     if(oldCenterViewController){
         [oldCenterViewController willMoveToParentViewController:nil];
         if(animated == NO){
-            [oldCenterViewController beginAppearanceTransition:NO animated:NO];
+            [oldCenterViewController beginAppearanceTransition:NO animated:YES];
         }
         [oldCenterViewController.view removeFromSuperview];
         if(animated == NO){
@@ -440,7 +440,7 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
     if(animated == NO){
         // If drawer is offscreen, then viewWillAppear: will take care of this
         if(self.view.window) {
-            [self.centerViewController beginAppearanceTransition:YES animated:NO];
+            [self.centerViewController beginAppearanceTransition:YES animated:YES];
             [self.centerViewController endAppearanceTransition];
         }
         [self.centerViewController didMoveToParentViewController:self];
@@ -461,7 +461,7 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
     // This needs to be refactored so the appearance logic is easier
     // to follow across the multiple close/setter methods
     if (animated && forwardAppearanceMethodsToCenterViewController) {
-        [oldCenterViewController beginAppearanceTransition:NO animated:NO];
+        [oldCenterViewController beginAppearanceTransition:NO animated:YES];
     }
     
     [self setCenterViewController:newCenterViewController animated:animated];
@@ -660,7 +660,7 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
         [CATransaction
          setCompletionBlock:^{
              [sideDrawerViewController endAppearanceTransition];
-             [sideDrawerViewController beginAppearanceTransition:NO animated:NO];
+             [sideDrawerViewController beginAppearanceTransition:NO animated:YES];
              [sideDrawerViewController endAppearanceTransition];
              if(completion){
                  completion(YES);
@@ -846,7 +846,7 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
     }
 
     if (currentSideViewController != nil) {
-        [currentSideViewController beginAppearanceTransition:NO animated:NO];
+        [currentSideViewController beginAppearanceTransition:NO animated:YES];
         [currentSideViewController.view removeFromSuperview];
         [currentSideViewController endAppearanceTransition];
         [currentSideViewController willMoveToParentViewController:nil];
@@ -870,7 +870,7 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
         if((self.openSide == drawerSide) &&
            [self.childControllerContainerView.subviews containsObject:self.centerContainerView]){
             [self.childControllerContainerView insertSubview:viewController.view belowSubview:self.centerContainerView];
-            [viewController beginAppearanceTransition:YES animated:NO];
+            [viewController beginAppearanceTransition:YES animated:YES];
             [viewController endAppearanceTransition];
         }
         else{
@@ -885,7 +885,7 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
 }
 
 -(void)setCenterViewController:(UIViewController *)centerViewController{
-    [self setCenterViewController:centerViewController animated:NO];
+    [self setCenterViewController:centerViewController animated:YES];
 }
 
 -(void)setShowsShadow:(BOOL)showsShadow{
@@ -933,11 +933,11 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
 }
 
 -(void)setMaximumLeftDrawerWidth:(CGFloat)maximumLeftDrawerWidth{
-    [self setMaximumLeftDrawerWidth:maximumLeftDrawerWidth animated:NO completion:nil];
+    [self setMaximumLeftDrawerWidth:maximumLeftDrawerWidth animated:YES completion:nil];
 }
 
 -(void)setMaximumRightDrawerWidth:(CGFloat)maximumRightDrawerWidth{
-    [self setMaximumRightDrawerWidth:maximumRightDrawerWidth animated:NO completion:nil];
+    [self setMaximumRightDrawerWidth:maximumRightDrawerWidth animated:YES completion:nil];
 }
 
 -(void)setShowsStatusBarBackgroundView:(BOOL)showsDummyStatusBar{
@@ -1085,11 +1085,11 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
             if(self.openSide != visibleSide){
                 //Handle disappearing the visible drawer
                 UIViewController * sideDrawerViewController = [self sideDrawerViewControllerForSide:self.openSide];
-                [sideDrawerViewController beginAppearanceTransition:NO animated:NO];
+                [sideDrawerViewController beginAppearanceTransition:NO animated:YES];
                 [sideDrawerViewController endAppearanceTransition];
 
                 //Drawer is about to become visible
-                [self prepareToPresentDrawer:visibleSide animated:NO];
+                [self prepareToPresentDrawer:visibleSide animated:YES];
                 [visibleSideDrawerViewController endAppearanceTransition];
                 [self setOpenSide:visibleSide];
             }

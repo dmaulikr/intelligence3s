@@ -178,7 +178,7 @@
 
 - (void)setProgress:(CGFloat)progress
 {
-    [self setProgress:progress animated:NO];
+    [self setProgress:progress animated:YES];
 }
 
 - (void)setProgress:(CGFloat)progress animated:(BOOL)animated

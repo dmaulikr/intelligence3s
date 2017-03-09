@@ -142,7 +142,7 @@
         add.Open = ^(NSDictionary *dic){
             FaultWorkViewController *details = [[FaultWorkViewController alloc]init];
             details.stock = [FauWorkModel mj_objectWithKeyValues:dic];
-            [weakSelf.navigationController pushViewController:details animated:NO];
+            [weakSelf.navigationController pushViewController:details animated:YES];
         };
         add.objectname = _objectname;
         add.orderby = _orderby;
@@ -154,7 +154,7 @@
         check.OpenCheck = ^(NSDictionary *dic){
             CheckWorkViewController *check = [[CheckWorkViewController alloc]init];
             check.stock = [FauWorkModel mj_objectWithKeyValues:dic];
-            [weakSelf.navigationController pushViewController:check animated:NO];
+            [weakSelf.navigationController pushViewController:check animated:YES];
         };
         [self.navigationController pushViewController:check animated:YES];
     }else if ([self.name isEqualToString:@"定检工单"]){

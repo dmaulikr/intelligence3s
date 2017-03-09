@@ -337,7 +337,7 @@ static CGFloat BOTTOM_HEIGHT = 60;
     browserVc.photos = photos;
     browserVc.delegate = self;
     browserVc.currentIndex = indexPath.item;
-    [self presentViewController:browserVc animated:NO completion:nil];
+    [self presentViewController:browserVc animated:YES completion:nil];
 }
 
 - (void)deleteImageView:(ZLCameraImageView *)imageView{

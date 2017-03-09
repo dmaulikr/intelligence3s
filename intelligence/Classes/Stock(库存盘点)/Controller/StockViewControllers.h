@@ -10,6 +10,8 @@
 #import "StockViewCell.h"
 #import "StockModel.h"
 #import "DetailsStockViewController.h"
-@interface StockViewControllers : BaseLeftSearchViewController
+#import "BaseSearchViewController.h"
+
+@interface StockViewControllers : BaseSearchViewController
 @property (nonatomic,assign)StockType stcokType;
 @end

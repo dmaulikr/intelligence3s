@@ -122,21 +122,21 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
                             ];
     
     self.operationArray1 = @[
-                            @{@"title":@"项目台账",@"icon":@"ic_udrro"},
-                            @{@"title":@"项目日报",@"icon":@"ic_udrro_log"},
-                            @{@"title":@"问题联络单",@"icon":@"ic_udfeedback"},
-                            @{@"title":@"出差报告",@"icon":@"ic_trip"},
+                            @{@"title":@"项目台账",@"icon":@"ic_xm_tj"},
+                            @{@"title":@"项目日报",@"icon":@"ic_xm_rb"},
+                            @{@"title":@"问题联络单",@"icon":@"ic_xm_wt"},
+                            @{@"title":@"出差报告",@"icon":@"ic_xm_cc"},
                             ];
     
     self.operationArray2 = @[
-                            @{@"title":@"运行记录",@"icon":@"ic_udfeedback"},
-                            @{@"title":@"故障提报单",@"icon":@"ic_udreport"},
+                            @{@"title":@"运行记录",@"icon":@"ic_yw_yxjl"},
+                            @{@"title":@"故障提报单",@"icon":@"ic_yw_gztb"},
                             ];
     
     self.operationArray3 = @[
-                            @{@"title":@"行驶记录",@"icon":@"ic_xsjl"},
-                            @{@"title":@"加油记录",@"icon":@"ic_jyjl"},
-                            @{@"title":@"车辆维修",@"icon":@"ic_wxjl"},
+                            @{@"title":@"行驶记录",@"icon":@"ic_zy_xs"},
+                            @{@"title":@"加油记录",@"icon":@"ic_zy_jy"},
+                            @{@"title":@"车辆维修",@"icon":@"ic_zy_wx"},
                             @{@"title":@"库存盘点",@"icon":@"ic_stock"},
                             @{@"title":@"库存查询",@"icon":@"ic_query"},
                             @{@"title":@"图表",@"icon":@"ic_chart"},
@@ -242,7 +242,7 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
         case 2:
             {
             PollingViewController *polling = [[PollingViewController alloc]init];
-           
+            polling.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:polling animated:YES];
                 return;
             }
@@ -291,6 +291,7 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
     fauWork.appid = appid;
     fauWork.objectname = objectname;
     fauWork.orderby = orderby;
+    fauWork.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:fauWork animated:YES];
     }
     if(indexPath.section==1)
@@ -312,6 +313,7 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
             trip.title = @"出差总结报告";
             view = trip;
         }
+        view.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:view animated:YES];
     }
     if(indexPath.section==2)
@@ -325,6 +327,7 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
             FaultAppViewController *fault = [[FaultAppViewController alloc]init];
             view = fault;
         }
+        view.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:view animated:YES];
     }
     if(indexPath.section==3)
@@ -348,10 +351,11 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
             StockQueryViewController * stockQuery = [[StockQueryViewController alloc] init];
             view = stockQuery;
         }else if (indexPath.row == 5){
-            NSLog(@"库存查询");
+            NSLog(@"图表");
             JSChartViewController * chartView = [[JSChartViewController alloc] init];
             view = chartView;
         }
+        view.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:view animated:YES];
     }
     

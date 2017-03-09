@@ -251,31 +251,31 @@
     };
     
     self.secondRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updatesecondRowWithHeight:textHeight animated:NO];
+        [weakSelf updatesecondRowWithHeight:textHeight animated:YES];
     };
     
     self.forthRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateforthRowWithHeight:textHeight animated:NO];
+        [weakSelf updateforthRowWithHeight:textHeight animated:YES];
     };
     
     self.fifthRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updatefifthRowWithHeight:textHeight animated:NO];
+        [weakSelf updatefifthRowWithHeight:textHeight animated:YES];
     };
     
     self.eighthRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateeighthRowWithHeight:textHeight animated:NO];
+        [weakSelf updateeighthRowWithHeight:textHeight animated:YES];
     };
     
     self.ninthRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateninthRowWithHeight:textHeight animated:NO];
+        [weakSelf updateninthRowWithHeight:textHeight animated:YES];
     };
     
     self.eleventhRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateeleventhRowWithHeight:textHeight animated:NO];
+        [weakSelf updateeleventhRowWithHeight:textHeight animated:YES];
     };
     
     self.twelfthRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updatetwelfthRowWithHeight:textHeight animated:NO];
+        [weakSelf updatetwelfthRowWithHeight:textHeight animated:YES];
     };
     
 }

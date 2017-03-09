@@ -298,7 +298,7 @@
             if (self.blackBlock) {
                 self.blackBlock(@"修改定检工单成功");
             }
-            [weakSelf.navigationController popViewControllerAnimated:NO];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
         }
     };
     NSMutableArray *arrayst = [NSMutableArray array];

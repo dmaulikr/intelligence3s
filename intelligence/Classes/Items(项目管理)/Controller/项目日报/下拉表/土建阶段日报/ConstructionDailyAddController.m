@@ -321,23 +321,23 @@
     };
     
     self.fifthRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateFifthRowWithHeight:textHeight animated:NO];
+        [weakSelf updateFifthRowWithHeight:textHeight animated:YES];
     };
     
     self.sixthRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateSixthRowWithHeight:textHeight animated:NO];
+        [weakSelf updateSixthRowWithHeight:textHeight animated:YES];
     };
     
     self.seventhRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateSeventhRowWithHeight:textHeight animated:NO];
+        [weakSelf updateSeventhRowWithHeight:textHeight animated:YES];
     };
     
     self.ninthRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateNinthRowWithHeight:textHeight animated:NO];
+        [weakSelf updateNinthRowWithHeight:textHeight animated:YES];
     };
     
     self.tenthRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateTenthRowWithHeight:textHeight animated:NO];
+        [weakSelf updateTenthRowWithHeight:textHeight animated:YES];
     };
     
     self.eleventhRow.executeTapContentLabel = ^(){

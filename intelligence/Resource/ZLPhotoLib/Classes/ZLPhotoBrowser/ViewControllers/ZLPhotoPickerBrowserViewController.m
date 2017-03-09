@@ -259,7 +259,7 @@ static NSString *_cellIdentifier = @"collectionViewCell";
         mainView.hidden = NO;
         mainView.alpha = 1.0;
         CGRect originalFrame = CGRectZero;
-        [weakSelf dismissViewControllerAnimated:NO completion:nil];
+        [weakSelf dismissViewControllerAnimated:YES completion:nil];
         
         // 缩放动画
         if(weakSelf.status == UIViewAnimationAnimationStatusZoom){
@@ -352,7 +352,7 @@ static NSString *_cellIdentifier = @"collectionViewCell";
             [mainBgView removeFromSuperview];
             
             [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
-            [weakSelf dismissViewControllerAnimated:NO completion:nil];
+            [weakSelf dismissViewControllerAnimated:YES completion:nil];
         }];
     };
     
@@ -596,7 +596,7 @@ static NSString *_cellIdentifier = @"collectionViewCell";
         if (([vc isKindOfClass:[UITableViewController class]] || [vc isKindOfClass:[UICollectionView class]]) && weakVc.navigationController != nil && self.navigationHeight == 0) {
             self.navigationHeight = CGRectGetMaxY(weakVc.navigationController.navigationBar.frame);
         }
-        [weakVc presentViewController:self animated:NO completion:nil];
+        [weakVc presentViewController:self animated:YES completion:nil];
     }
 }
 

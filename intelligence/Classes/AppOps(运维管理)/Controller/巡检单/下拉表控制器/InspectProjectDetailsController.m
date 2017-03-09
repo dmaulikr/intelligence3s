@@ -288,7 +288,7 @@
 - (void)addBlocks{
     WEAKSELF
     self.seventhRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateSeventhRowWithHeight:textHeight animated:NO];
+        [weakSelf updateSeventhRowWithHeight:textHeight animated:YES];
     };
 }
 

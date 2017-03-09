@@ -220,7 +220,7 @@
     if (self.status == ZLPickerCollectionViewShowOrderStatusTimeDesc) {
         if (!self.firstLoadding && self.contentSize.height > [[UIScreen mainScreen] bounds].size.height) {
             // 滚动到最底部（最新的）
-            [self scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.dataArray.count - 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
+            [self scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:self.dataArray.count - 1 inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
             // 展示图片数
             self.contentOffset = CGPointMake(self.contentOffset.x, self.contentOffset.y + 100);
             self.firstLoadding = YES;
@@ -228,7 +228,7 @@
     }else if (self.status == ZLPickerCollectionViewShowOrderStatusTimeAsc){
         // 滚动到最底部（最新的）
         if (!self.firstLoadding && self.contentSize.height > [[UIScreen mainScreen] bounds].size.height) {
-            [self scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionTop animated:NO];
+            [self scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
             // 展示图片数
             self.contentOffset = CGPointMake(self.contentOffset.x, -self.contentInset.top);
             self.firstLoadding = YES;

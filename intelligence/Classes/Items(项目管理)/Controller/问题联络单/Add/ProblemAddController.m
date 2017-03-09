@@ -252,7 +252,7 @@
     };
     
     self.firstSection_forthRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateFirstSection_forthRowWithHeight:textHeight animated:NO];
+        [weakSelf updateFirstSection_forthRowWithHeight:textHeight animated:YES];
     };
     
     self.firstSection_firstRow.executeTapContentLabel = ^(){

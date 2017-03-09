@@ -899,7 +899,7 @@
 - (void)addFirstBlocks{
     WEAKSELF
     self.firstSection_sixthRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateFirstSection_forthRowWithHeight:textHeight animated:NO];
+        [weakSelf updateFirstSection_forthRowWithHeight:textHeight animated:YES];
     };
     
     self.firstSection_thirdRow.executeTapContentLabel = ^(){
@@ -1027,7 +1027,7 @@
     };
     
     self.sixthSection_thirdRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateSixthSection_thirdRowWithHeight:textHeight animated:NO];
+        [weakSelf updateSixthSection_thirdRowWithHeight:textHeight animated:YES];
     };
     
 }
@@ -1035,7 +1035,7 @@
 - (void)addSeventhBlocks{
     WEAKSELF
     self.seventhSection_secondRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateSeventhSection_secondRowWithHeight:textHeight animated:NO];
+        [weakSelf updateSeventhSection_secondRowWithHeight:textHeight animated:YES];
     };
 }
 

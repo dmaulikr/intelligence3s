@@ -8,13 +8,11 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
-#import "MainViewController.h"
 #import "TabBarController.h"
 #import "IQKeyboardManager.h"
-#import <PgySDK/PgyManager.h>
-#import <PgyUpdate/PgyUpdateManager.h>
 // 引 JPush功能所需头 件
 #import "JPUSHService.h"
+#import "JANALYTICSService.h"
 // iOS10注册APNs所需头 件
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max 
 #import <UserNotifications/UserNotifications.h>
@@ -28,18 +26,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];//白色
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];//白色
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
-    AccountModel *account = [AccountManager account];
-    //2.5
-//    if (account.userName.length > 0) {
-//        MainViewController *main = [[MainViewController alloc]init];
-//        self.window.rootViewController = main;
-//    }else{
-//        LoginViewController *main = [[LoginViewController alloc] init];
-//         self.window.rootViewController = main;
-//    }
     
     //2.6
     self.window.rootViewController = [[TabBarController alloc] init];
@@ -66,14 +56,14 @@
                  apsForProduction:NO
             advertisingIdentifier:@"123"];
     
-    // 设置用户反馈界面激活方式为摇一摇
-    [[PgyManager sharedPgyManager] setFeedbackActiveType:kPGYFeedbackActiveTypeShake];
-    //启动基本SDK
-    [[PgyManager sharedPgyManager] startManagerWithAppId:@"5c896f805ad5482b3d290e6bcfca3c8f"];
-    //启动更新检查SDK
-    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"5c896f805ad5482b3d290e6bcfca3c8f"];
-
+    JANALYTICSLaunchConfig * config = [[JANALYTICSLaunchConfig alloc] init];
     
+    config.appKey = @"53c93662bb6246e7f9f79b9a";
+    
+    config.channel = @"mywind";
+    
+    [JANALYTICSService setupWithConfig:config];
+
     return YES;
 }
 

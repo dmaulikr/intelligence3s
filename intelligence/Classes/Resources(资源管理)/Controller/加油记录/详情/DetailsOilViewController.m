@@ -188,7 +188,7 @@
             if (self.BackUpda) {
                 self.BackUpda(dic);
             }
-            [weakSelf.navigationController popViewControllerAnimated:NO];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
         }
     };
     NSString *strs;

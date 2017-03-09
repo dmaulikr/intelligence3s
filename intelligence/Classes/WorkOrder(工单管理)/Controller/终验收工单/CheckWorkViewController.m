@@ -148,7 +148,7 @@
             if (self.blackBlock) {
                 self.blackBlock(@"终验收工单修改成功");
             }
-            [weakSelf.navigationController popViewControllerAnimated:NO];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
         }else{
             HUDJuHua(dic[@"errorMsg"]);
         }

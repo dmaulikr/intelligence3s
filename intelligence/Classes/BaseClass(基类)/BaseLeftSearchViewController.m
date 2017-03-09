@@ -9,6 +9,8 @@
 #import "BaseLeftSearchViewController.h"
 #import "UIViewController+MMDrawerController.h"
 #import "MMDrawerBarButtonItem.h"
+#import "QRCodeViewController.h"
+
 @interface BaseLeftSearchViewController ()
 {
     UIView *_naView;
@@ -21,12 +23,12 @@
     [super viewDidLoad];
     self.view.backgroundColor = APPCOLOR;
     [self createNav];
-    //[self setupLeftMenuButton];
+    [self setupLeftMenuButton];
     // Do any additional setup after loading the view.
 }
 -(void)setupLeftMenuButton{
     UIButton *addImg = [UIButton buttonWithType:UIButtonTypeCustom];
-    [addImg setImage:[UIImage imageNamed:@"ic_drawer"] forState:UIControlStateNormal];
+    [addImg setImage:[UIImage imageNamed:@"qrcode"] forState:UIControlStateNormal];
     [addImg addTarget:self action:@selector(leftDrawerButtonPress:) forControlEvents:UIControlEventTouchUpInside];
     addImg.frame = CGRectMake(0, 5, 30, 30);
     
@@ -38,13 +40,16 @@
 
 #pragma mark - Button Handlers
 -(void)leftDrawerButtonPress:(id)sender{
-    SVHUD_Stop
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    NSLog(@"分享二维码");
+    QRCodeViewController* qrvc = [[QRCodeViewController alloc] init];
+    [self presentViewController:qrvc animated:YES completion:nil];
+    //SVHUD_Stop
+    //[self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
 -(void)createNav{
     _naView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, 44)];
-    _naView.backgroundColor = RGBCOLOR(189, 189, 195);
+    _naView.backgroundColor = RGBCOLOR(46, 93, 154);
     [self.view addSubview:_naView];
     [_naView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_top).offset(64);
@@ -60,7 +65,7 @@
     _searchBar.keyboardType = UIKeyboardAppearanceDefault;
     _searchBar.placeholder = @"搜索";
     _searchBar.delegate = self;
-    _searchBar.barTintColor = RGBCOLOR(189, 189, 195);
+    _searchBar.barTintColor = RGBCOLOR(46, 93, 154);
     _searchBar.searchBarStyle = UISearchBarStyleDefault;
     _searchBar.barStyle = UIBarStyleDefault;
     [_naView addSubview:_searchBar];

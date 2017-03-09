@@ -287,6 +287,7 @@
     }else{
         vc.process = self.searchArray[indexPath.section];
     }
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

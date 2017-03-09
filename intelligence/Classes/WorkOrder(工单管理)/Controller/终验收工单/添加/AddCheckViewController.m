@@ -158,7 +158,7 @@
     soap.DicBlock = ^(NSDictionary *dic){
         SVHUD_Stop
         if ([dic[@"success"] isEqualToString:@"成功"]) {
-            [weakSelf.navigationController popViewControllerAnimated:NO];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
             if(weakSelf.OpenCheck){
                 [weakSelf.dics setValue:dic[@"WONUM"] forKey:@"WONUM"];
                 [weakSelf.dics setValue:model.displayName forKey:@"CREATENAME"];

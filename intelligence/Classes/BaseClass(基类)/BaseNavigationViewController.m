@@ -41,10 +41,10 @@
         UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
         // 设置导航栏按钮
         viewController.navigationItem.leftBarButtonItem = rightItem;
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"closeMMD" object:nil];
+        //[[NSNotificationCenter defaultCenter]postNotificationName:@"closeMMD" object:nil];
     }
     //父类push
-    [super pushViewController:viewController animated:animated];
+    [super pushViewController:viewController animated:YES];
 }
 /** pop退出*/
 - (void)back
@@ -53,7 +53,7 @@
     NSLog(@"--%ld",self.viewControllers.count);
     if (self.viewControllers.count == 2) {
         NSLog(@"打开");
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"openMMD" object:nil];
+        //[[NSNotificationCenter defaultCenter]postNotificationName:@"openMMD" object:nil];
     }
 #pragma mark - 这里用的是self, 因为self就是当前正在使用的导航控制器
     [self popViewControllerAnimated:YES];

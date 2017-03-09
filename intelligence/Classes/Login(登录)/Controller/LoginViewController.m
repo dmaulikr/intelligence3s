@@ -8,9 +8,8 @@
 
 #import "LoginViewController.h"
 #import "ChoiceServerView.h"
-#import "MainViewController.h"
 #import "OpenUDID.h"
-#import <PgyUpdate/PgyUpdateManager.h>
+
 #import "JPUSHService.h"
 @interface LoginViewController ()
 {
@@ -39,10 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createUI];
-//    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"5c896f805ad5482b3d290e6bcfca3c8f"];
-//    [[PgyUpdateManager sharedPgyManager] checkUpdate];
         //检查更新
-
 }
 -(void)update
 {
@@ -218,7 +214,7 @@
             }else if (_number == 2){
                 str = @"开发环境";
             }else if (_number == 3){
-                str = @"开发环境";
+                str = @"测试环境";
             }
             account.name = str;
             [AccountManager saveAccount:account];
@@ -230,11 +226,8 @@
                 [USERDEFAULT removeObjectForKey:@"userName"];
                 [USERDEFAULT removeObjectForKey:@"password"];
             }
-//不跳转
-//            MainViewController *main = [[MainViewController alloc]init];
-//            [self presentViewController:main animated:NO completion:nil];
             [self dismissViewControllerAnimated:YES completion:^{
-                
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindUpdateNumberOfTask" object:nil];
             }];
             
         }else if (KCode(@"USER-E-100")){

@@ -109,7 +109,7 @@
         if ([self.delegate respondsToSelector:@selector(changeheight:)]) {
                             [self.delegate changeheight:self.contentSize.height];
                         }
-        [self setContentOffset:CGPointMake(0, 0) animated:NO];
+        [self setContentOffset:CGPointMake(0, 0) animated:YES];
     }
     
 }

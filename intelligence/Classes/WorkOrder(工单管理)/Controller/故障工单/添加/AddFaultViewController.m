@@ -266,7 +266,7 @@
         SVHUD_Stop
         if ([dic[@"success"] isEqualToString:@"成功"]) {
              WHUDNormal(@"新建工单成功");
-            [weakSelf.navigationController popViewControllerAnimated:NO];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
             if(weakSelf.Open){
                 [weakSelf.dics setValue:dic[@"WONUM"] forKey:@"WONUM"];
                 [weakSelf.dics setValue:weakSelf.LL1Model.BRANCHDESC forKey:@"BRANCH"];

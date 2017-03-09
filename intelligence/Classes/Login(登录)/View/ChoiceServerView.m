@@ -74,13 +74,11 @@
         
     }];
 }
-
 /** 展示到view上*/
 -(void)ShowInView:(UIView *)view
 {
     [[[UIApplication sharedApplication].windows firstObject] addSubview:self];
 }
-
 /** 取消按钮动画*/
 -(void)CancelButtonAction
 {

@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="编号:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDq-zn-OxF">
@@ -27,19 +27,19 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="描述:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDV-fD-glM">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="描述:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDV-fD-glM">
                         <rect key="frame" x="10" y="35" width="120" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc8-lG-CXE">
-                        <rect key="frame" x="135" y="18" width="165" height="0.0"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc8-lG-CXE">
+                        <rect key="frame" x="147" y="18" width="153" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3u-dS-EUS">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3u-dS-EUS">
                         <rect key="frame" x="135" y="45" width="165" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,15 +57,14 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Kc8-lG-CXE" secondAttribute="trailing" constant="20" id="1S2-R3-d24"/>
+                    <constraint firstItem="T3u-dS-EUS" firstAttribute="trailing" secondItem="Kc8-lG-CXE" secondAttribute="trailing" id="0YP-hj-MyI"/>
                     <constraint firstAttribute="trailing" secondItem="T3u-dS-EUS" secondAttribute="trailing" constant="20" id="2wJ-k2-SXh"/>
                     <constraint firstItem="CDq-zn-OxF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="3Ss-bG-tXV"/>
                     <constraint firstItem="T3u-dS-EUS" firstAttribute="centerY" secondItem="BDV-fD-glM" secondAttribute="centerY" id="8fZ-s9-Qie"/>
                     <constraint firstAttribute="trailing" secondItem="Zfs-9g-sUF" secondAttribute="trailing" constant="10" id="AaL-hQ-adK"/>
                     <constraint firstItem="bh2-3E-jq7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BP7-Us-5W9"/>
-                    <constraint firstItem="Kc8-lG-CXE" firstAttribute="leading" secondItem="CDq-zn-OxF" secondAttribute="trailing" constant="5" id="EIl-tf-Jnf"/>
                     <constraint firstItem="Kc8-lG-CXE" firstAttribute="centerY" secondItem="CDq-zn-OxF" secondAttribute="centerY" id="GvY-a3-i1g"/>
-                    <constraint firstItem="BDV-fD-glM" firstAttribute="top" secondItem="CDq-zn-OxF" secondAttribute="bottom" constant="7" id="OfZ-Sf-DH7"/>
+                    <constraint firstItem="BDV-fD-glM" firstAttribute="top" secondItem="CDq-zn-OxF" secondAttribute="bottom" constant="14" id="OfZ-Sf-DH7"/>
                     <constraint firstItem="CDq-zn-OxF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="TZB-Jo-E79"/>
                     <constraint firstItem="Zfs-9g-sUF" firstAttribute="leading" secondItem="bh2-3E-jq7" secondAttribute="trailing" constant="10" id="aZH-5c-cmb"/>
                     <constraint firstItem="T3u-dS-EUS" firstAttribute="leading" secondItem="BDV-fD-glM" secondAttribute="trailing" constant="5" id="nxV-Or-Jna"/>

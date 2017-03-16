@@ -81,7 +81,7 @@
     NSDictionary *requestDic = @{@"appid":@"UDPERSON",
                                  @"objectname":@"PERSON",
                                  @"curpage":@(page),
-                                 @"showcount":@(999),
+                                 @"showcount":@(20),
                                  @"option":@"read",
                                  @"condition":dic};
     NSString *requestJson = kDictionaryToJson(requestDic)
@@ -171,7 +171,7 @@
                           @"PERSONID":str,
                           @"DISPLAYNAME":str
                           };
-    NSDictionary *dic2 = @{@"STATUS" :@"=活动"};
+    NSDictionary *dic2 = @{@"STATUS" :@"活动"};
     NSDictionary *requestDic = @{
                                  @"appid"     :@"UDPERSON",
                                  @"objectname":@"PERSON",

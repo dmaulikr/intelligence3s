@@ -3921,7 +3921,7 @@
 					225904111D41170E005C2E15 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 58B892Q45V;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -5023,8 +5023,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mywind.eam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "191c0392-a317-4806-8e8a-81b97a329ff1";
+				PROVISIONING_PROFILE_SPECIFIER = deveam;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -5037,7 +5037,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = intelligence/intelligence.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: GUANGDONG MINGYANG WIND POWER INDUSTRY GROUP CO.,LTD.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 58B892Q45V;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5054,8 +5054,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mywind.eam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "e87d2dce-db2d-4578-a0a3-295f13705a48";
+				PROVISIONING_PROFILE_SPECIFIER = eam;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

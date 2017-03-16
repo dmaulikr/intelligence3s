@@ -19,7 +19,11 @@
 
 @interface TripReportAddViewController ()<UITextFieldDelegate>
 {
-    NSString *personid;
+    NSString * personid;
+    NSString * CREATER_DISPLAYNAME;
+    NSString * DEPTNAME;
+    NSString * NAME1;
+    NSString * PROJECTNAME;
 }
 @property (weak, nonatomic) IBOutlet UIScrollView *rootScrollView;
 @property (weak, nonatomic) IBOutlet UIView *rootView;
@@ -219,14 +223,17 @@
             if (model.PERSONID.length > 0) {
                 weakSelf.firstRow.contentLabel.text = model.PERSONID;
                 weakSelf.firstRow.contentLabel.textColor = [UIColor blackColor];
+                NAME1 = model.DISPLAYNAME;
             }else{
                 weakSelf.firstRow.contentLabel.text = @"暂无数据";
                 weakSelf.firstRow.contentLabel.textColor = UIColorFromRGB(0xCBCBCF);
             }
             if(model.DEPARTMENT.length > 0)
             {
-                weakSelf.thirdRow.contentLabel.text = model.DEPARTDESC;
+                weakSelf.thirdRow.contentLabel.text = model.DEPARTMENT;
+                NSLog(@"%@",[model mj_keyValues]);
                 weakSelf.thirdRow.contentLabel.textColor = [UIColor blackColor];
+                DEPTNAME = model.DEPARTDESC;
             }else{
                 weakSelf.thirdRow.contentLabel.text = @"暂无数据";
                 weakSelf.thirdRow.contentLabel.textColor = UIColorFromRGB(0xCBCBCF);
@@ -243,6 +250,8 @@
             if (model.PRONUM.length > 0) {
                 weakSelf.fifthRow.contentLabel.text = model.PRONUM;
                 weakSelf.fifthRow.contentLabel.textColor = [UIColor blackColor];
+                NSLog(@"%@",[model mj_keyValues]);
+                PROJECTNAME = model.DESCRIPTION;
             }else{
                 weakSelf.fifthRow.contentLabel.text = @"暂无数据";
                 weakSelf.fifthRow.contentLabel.textColor = UIColorFromRGB(0xCBCBCF);
@@ -273,26 +282,35 @@
             [weakSelf.navigationController popViewControllerAnimated:YES];
         }
     };
+    AccountModel *account = [AccountManager account];
+    NSLog(@"%@",[account mj_keyValues]);
+    NSString *strPersonId = account.personId;
+    CREATER_DISPLAYNAME = account.displayName;
     
-    NSDictionary *dict = @{};
+    
+    NSDictionary *dict = @{@"":@""};
     NSArray *relationShip = @[dict];
     
-
-    
     NSDictionary *dic = @{
-                          @"ACOUNT":self.firstRow.contentLabel.text,//出差人工号
-                          @"DESCRIPTION":self.secondRow.contentTextField.text,//描述
-                          @"DEPTNUM":self.thirdRow.contentLabel.text,//部门编号
-                          @"CREATEBY":self.forthRow.contentLabel.text,//录入人
-                          @"PROJECT":self.fifthRow.contentLabel.text,//项目编号
-                          @"TOPLACE":self.sixthRow.contentTextField.text,//地点
-                          @"TRIPDATE":self.seventhRow.contentTextField.text,//出差日期
-                          @"TRIPCONTENT":self.eighthRow.contentTextField.text,//出差事由
-                          @"WORKCONTENT":self.ninthRow.contentTextView.text,//工作内容
-                          @"CREATEDATE":self.tenthRow.contentLabel.text,//录入时间
+                          @"ACOUNT":self.firstRow.contentLabel.text.length>0?self.firstRow.contentLabel.text:@"",//出差人工号
+                          @"DEPTNUM":self.thirdRow.contentLabel.text.length>0?self.thirdRow.contentLabel.text:@"",//部门编号
+                          @"CREATEBY":self.forthRow.contentLabel.text.length>0?self.forthRow.contentLabel.text:@"",//录入人
+                          @"PROJECT":self.fifthRow.contentLabel.text.length>0?self.fifthRow.contentLabel.text:@"",//项目编号
+                          @"TOPLACE":self.sixthRow.contentTextField.text.length>0?self.sixthRow.contentTextField.text:@"",//地点
+                          @"TRIPDATE":self.seventhRow.contentLabel.text.length>0?self.seventhRow.contentLabel.text:@"",//出差日期
+                          @"TRIPCONTENT":self.eighthRow.contentTextField.text.length>0?self.eighthRow.contentTextField.text:@"",//出差事由
+                          @"WORKCONTENT":self.ninthRow.contentTextView.text.length>0?self.ninthRow.contentTextView.text:@"",//工作内容
+                          @"CREATEDATE":self.tenthRow.contentLabel.text.length>0?self.tenthRow.contentLabel.text:@"",//录入时间
+                          //@"CREATER.DISPLAYNAME":CREATER_DISPLAYNAME?CREATER_DISPLAYNAME:@"",
+                          //@"DEPTNAME":DEPTNAME?DEPTNAME:@"",
+                          @"DESCRIPTION":[NSString stringWithFormat:@"%@%@_的出差总结报告",self.tenthRow.contentLabel.text,NAME1],
+                          @"NAME1":NAME1?NAME1:@"",
+                          //@"PROJECTNAME":PROJECTNAME?PROJECTNAME:@"",
+                          //@"SERIALNUMBER":strPersonId,
+                          //@"TRIPCODE":@"",
                           @"relationShip":relationShip
                           };
-    
+//    {,,"DEPTNUM":"18","DESCRIPTION":"t","NAME1":"A10239","PROJECT":"S1-20100020","TOPLACE":"y","TRIPCONTENT":"f\n","TRIPDATE":"2017-3-13 00:00:00","WORKCONTENT":"r","relationShip":[{"":""}]}
     /*
      DESCRIPTION;//描述
      ACOUNT;//出差人编号
@@ -305,8 +323,7 @@
      TRIPCONTENT;//出差事由
      WORKCONTENT;//工作内容
      */
-    AccountModel *account = [AccountManager account];
-    NSString *strPersonId = account.personId;
+
     
     NSArray *arr = @[
                      @{@"json" : [self dictionaryToJson:dic]},

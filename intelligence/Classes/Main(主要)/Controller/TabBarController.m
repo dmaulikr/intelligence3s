@@ -11,14 +11,16 @@
 #import "FunctionViewController.h"
 #import "MyselfViewController.h"
 #import "LoginViewController.h"
-
-@interface TabBarController ()
+#import <CoreLocation/CoreLocation.h>
+#import "JANALYTICSService.h"
+@interface TabBarController ()<CLLocationManagerDelegate>
 
 @end
 
 @implementation TabBarController
 {
     NSArray *items;
+    CLLocationManager *locationManager;
 }
 
 - (void)viewDidLoad {
@@ -29,9 +31,11 @@
     BaseNavigationViewController * navigationController1 = [[BaseNavigationViewController alloc] initWithRootViewController:function];
     
     ProcessViewController * process = [[ProcessViewController alloc]init];
+    
     BaseNavigationViewController * navigationController2 = [[BaseNavigationViewController alloc]initWithRootViewController:process];
     
     MyselfViewController * myself = [[MyselfViewController alloc] init];
+    
      BaseNavigationViewController * navigationController3 = [[BaseNavigationViewController alloc]initWithRootViewController:myself];
     
     self.viewControllers=@[navigationController1,navigationController2,navigationController3];
@@ -62,8 +66,55 @@
     myselfItem.selectedImage = [[UIImage imageNamed:@"ic_me_down.png"]
                                  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate=self;
+    
+    if ([CLLocationManager locationServicesEnabled]) {
+        
+        [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+        if ([[[UIDevice currentDevice]systemVersion]floatValue] >= 8.0) {
+            [locationManager requestWhenInUseAuthorization];
+        }
+        [locationManager startUpdatingLocation];
+        NSLog(@"定位可用");
+    }
+    else
+    {
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"定位" message:@"定位服务不可用，请在设置中允许EAM使用定位服务" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction * comfrimAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+        UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+        
+        [alert addAction:comfrimAction];
+        [alert addAction:cancelAction];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
     
 }
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray<CLLocation *> *)locations
+{
+    CLLocation * location = [locations objectAtIndex:0];
+    
+    JANALYTICSLoginEvent * event = [[JANALYTICSLoginEvent alloc] init];
+    
+    event.success = YES;
+    
+    event.method = @"登陆";
+    
+    event.extra = @{@"经度":[NSString stringWithFormat:@"%f",location.coordinate.longitude], @"纬度":[NSString stringWithFormat:@"%f",location.coordinate.latitude]};
+    
+    [JANALYTICSService eventRecord:event];
+    
+    NSLog(@"经度 %@",[NSString stringWithFormat:@"%f",location.coordinate.longitude]);
+    NSLog(@"纬度 %@",[NSString stringWithFormat:@"%f",location.coordinate.latitude]);
+    
+    [locationManager stopUpdatingHeading];
+    
+    locationManager.delegate=nil;
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
     [self requestNumberOfTask];

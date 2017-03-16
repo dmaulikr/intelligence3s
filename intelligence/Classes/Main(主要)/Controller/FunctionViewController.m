@@ -139,7 +139,7 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
                             @{@"title":@"车辆维修",@"icon":@"ic_zy_wx"},
                             @{@"title":@"库存盘点",@"icon":@"ic_stock"},
                             @{@"title":@"库存查询",@"icon":@"ic_query"},
-                            @{@"title":@"图表",@"icon":@"ic_chart"},
+                            //@{@"title":@"图表",@"icon":@"ic_chart"},
                             ];
 
     

@@ -8,6 +8,7 @@
 
 #import "BasePushViewController.h"
 #import "SoapUtil.h"
+#import "JANALYTICSService.h"
 @interface BasePushViewController ()
 
 @end
@@ -69,5 +70,15 @@
     
     [soap requestMethods:@"mobileservicecheckWFPRequired" withDate:@[@{@"appId":appId},@{@"objectName":objectName},@{@"wfpStatus":status}]];
     
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [JANALYTICSService startLogPageView:NSStringFromClass([self class])];
+    NSLog(@"进入页面 %@",NSStringFromClass([self class]));
+}
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [JANALYTICSService stopLogPageView:NSStringFromClass([self class])];
+    NSLog(@"退出页面 %@",NSStringFromClass([self class]));
 }
 @end

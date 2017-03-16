@@ -38,6 +38,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createUI];
+    [self.remember setHidden:YES];
+    
         //检查更新
 }
 -(void)update

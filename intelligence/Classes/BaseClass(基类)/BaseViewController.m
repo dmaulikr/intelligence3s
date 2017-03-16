@@ -10,6 +10,7 @@
 #import "UIViewController+MMDrawerController.h"
 #import "MMDrawerBarButtonItem.h"
 #import "QRCodeViewController.h"
+#import "JANALYTICSService.h"
 @interface BaseViewController ()
 @end
 
@@ -48,6 +49,16 @@
 - (void)dealloc
 {
     [self.task cancel];
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [JANALYTICSService startLogPageView:NSStringFromClass([self class])];
+    NSLog(@"进入页面 %@",NSStringFromClass([self class]));
+}
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [JANALYTICSService stopLogPageView:NSStringFromClass([self class])];
+    NSLog(@"退出页面 %@",NSStringFromClass([self class]));
 }
 /** 视图将要消失*/
 - (void)viewWillDisappear:(BOOL)animated

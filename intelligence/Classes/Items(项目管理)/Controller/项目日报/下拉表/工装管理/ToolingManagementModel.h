@@ -2,8 +2,8 @@
 //  ToolingManagementModel.h
 //  intelligence
 //
-//  Created by 丁进宇 on 16/9/5.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/9/5.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

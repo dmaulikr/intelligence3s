@@ -2,8 +2,8 @@
 //  BaseSearchViewController.m
 //  intelligence
 //
-//  Created by 光耀 on 16/7/23.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/7/23.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "BaseSearchViewController.h"
@@ -72,12 +72,12 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [JANALYTICSService startLogPageView:NSStringFromClass([self class])];
-    NSLog(@"进入页面 %@",NSStringFromClass([self class]));
+    
 }
 -(void)viewDidDisappear:(BOOL)animated
 {
     [JANALYTICSService stopLogPageView:NSStringFromClass([self class])];
-    NSLog(@"退出页面 %@",NSStringFromClass([self class]));
+    
 }
 /** 视图将要消失*/
 - (void)viewWillDisappear:(BOOL)animated

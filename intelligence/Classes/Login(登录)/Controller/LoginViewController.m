@@ -2,8 +2,8 @@
 //  LoginViewController.m
 //  intelligence
 //
-//  Created by 光耀 on 16/7/21.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/7/21.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "LoginViewController.h"
@@ -230,6 +230,9 @@
             }
             [self dismissViewControllerAnimated:YES completion:^{
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindUpdateNumberOfTask" object:nil];
+                
+                //通知上报统计信息
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"LOGIN",@"ACTIONNAME":@"登陆"}];
             }];
             
         }else if (KCode(@"USER-E-100")){

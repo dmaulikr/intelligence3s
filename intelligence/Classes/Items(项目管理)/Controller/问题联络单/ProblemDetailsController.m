@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by  on 16/7/31.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "ProblemDetailsController.h"
@@ -152,6 +152,7 @@
             }
         }
     }];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"WORKORDER",@"ACTIONNAME":@"查看问题联络单"}];
 }
 
 - (void)addNotification{
@@ -941,6 +942,7 @@
     WEAKSELF
     
     self.forthSection_firstRow.executeTapContentLabel = ^(){
+        
         SupportDepartmentController *vc = [[SupportDepartmentController alloc] init];
         vc.executeCellClick = ^(SupportDepartmentModel *model){
             if (model.DESCRIPTION.length > 0) {

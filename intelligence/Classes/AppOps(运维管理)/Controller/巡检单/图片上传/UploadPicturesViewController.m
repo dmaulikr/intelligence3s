@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by  on 16/8/10.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "UploadPicturesViewController.h"
@@ -222,7 +222,6 @@ static NSInteger MAXChooseImage = 9;
         NSString *imageFileName = [NSString stringWithFormat:@"%@.png", str];
         UIImage *image = asset.originImage;
         //压缩图片
-        NSData *imageData = UIImageJPEGRepresentation(image, 0.7);
         NSString *byteArray =[NSString stringWithFormat:@"%@",[image imageToBase64]];
         NSArray *arr = @[
                          @{@"filename":imageFileName},

@@ -2,8 +2,8 @@
 //  FlightNumberViewController.h
 //  intelligence
 //
-//  Created by 光耀 on 16/10/25.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/10/25.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "BaseSearchViewController.h"

@@ -2,8 +2,8 @@
 //  DebugWorkViewController.m
 //  intelligence
 //
-//  Created by 光耀 on 16/7/24.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/7/24.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "DebugWorkViewController.h"
@@ -65,6 +65,7 @@
             }
         }
     }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"WORKORDER_DC",@"ACTIONNAME":@"查看调试工单"}];
 }
 - (void)addRightNavBarItem{
     WEAKSELF

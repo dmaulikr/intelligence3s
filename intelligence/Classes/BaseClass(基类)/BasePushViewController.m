@@ -2,8 +2,8 @@
 //  BasePushViewController.m
 //  intelligence
 //
-//  Created by 光耀 on 16/7/24.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/7/24.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "BasePushViewController.h"
@@ -44,8 +44,6 @@
     {
         return;
     }
-    NSLog(@"查询必填字段");
-    
     SoapUtil *soap = [[SoapUtil alloc]initWithNameSpace:@"http://www.ibm.com/maximo" andEndpoint:[NSString stringWithFormat:@"%@/meaweb/services/MOBILESERVICE",BASE_URL]];
     
     soap.DicBlock = ^(NSDictionary *dic)
@@ -74,11 +72,9 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [JANALYTICSService startLogPageView:NSStringFromClass([self class])];
-    NSLog(@"进入页面 %@",NSStringFromClass([self class]));
 }
 -(void)viewDidDisappear:(BOOL)animated
 {
     [JANALYTICSService stopLogPageView:NSStringFromClass([self class])];
-    NSLog(@"退出页面 %@",NSStringFromClass([self class]));
 }
 @end

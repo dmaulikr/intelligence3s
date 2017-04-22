@@ -2,8 +2,8 @@
 //  TechnologyViewController.m
 //  intelligence
 //
-//  Created by 光耀 on 16/7/24.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/7/24.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "TechnologyViewController.h"
@@ -114,6 +114,7 @@
             }
         }
     }];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"WORKORDER",@"ACTIONNAME":@"查看技改工单"}];
 }
 - (void)addRightNavBarItem{
     WEAKSELF

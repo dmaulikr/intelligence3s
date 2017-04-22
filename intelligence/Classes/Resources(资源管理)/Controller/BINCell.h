@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by chris on 2016/12/9.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

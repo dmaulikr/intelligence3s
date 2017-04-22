@@ -161,6 +161,11 @@
 		8350D0C11DED23CB00A77E15 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8350D0C01DED23CB00A77E15 /* AudioToolbox.framework */; };
 		8350D0C31DED23DE00A77E15 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8350D0C21DED23DE00A77E15 /* SystemConfiguration.framework */; };
 		8351B7D61DFA7F1900F2E30E /* BINCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8351B7D41DFA7F1900F2E30E /* BINCell.xib */; };
+		835F19F51EA4A7F400788BD9 /* ProrunlogcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F19F31EA4A7F400788BD9 /* ProrunlogcViewController.m */; };
+		835F19F61EA4A7F400788BD9 /* ProrunlogcViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835F19F41EA4A7F400788BD9 /* ProrunlogcViewController.xib */; };
+		835F19FA1EA4A83B00788BD9 /* ProrunlogcDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F19F81EA4A83B00788BD9 /* ProrunlogcDetailViewController.m */; };
+		835F19FB1EA4A83B00788BD9 /* ProrunlogcDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835F19F91EA4A83B00788BD9 /* ProrunlogcDetailViewController.xib */; };
+		835F19FE1EA4AAD600788BD9 /* UDPRORUNLOGC.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F19FD1EA4AAD600788BD9 /* UDPRORUNLOGC.m */; };
 		835FBD441DE288C9006CBC43 /* RunLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835FBD421DE288C9006CBC43 /* RunLogViewController.xib */; };
 		835FBD4E1DE2D090006CBC43 /* RunLogAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835FBD4C1DE2D090006CBC43 /* RunLogAddViewController.xib */; };
 		835FBD531DE2D0C8006CBC43 /* RunLogDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835FBD511DE2D0C8006CBC43 /* RunLogDetailsViewController.xib */; };
@@ -1610,6 +1615,14 @@
 		8351B7D21DFA7F1900F2E30E /* BINCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINCell.h; sourceTree = "<group>"; };
 		8351B7D31DFA7F1900F2E30E /* BINCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BINCell.m; sourceTree = "<group>"; };
 		8351B7D41DFA7F1900F2E30E /* BINCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BINCell.xib; sourceTree = "<group>"; };
+		835F19F21EA4A7F400788BD9 /* ProrunlogcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProrunlogcViewController.h; sourceTree = "<group>"; };
+		835F19F31EA4A7F400788BD9 /* ProrunlogcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProrunlogcViewController.m; sourceTree = "<group>"; };
+		835F19F41EA4A7F400788BD9 /* ProrunlogcViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProrunlogcViewController.xib; sourceTree = "<group>"; };
+		835F19F71EA4A83B00788BD9 /* ProrunlogcDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProrunlogcDetailViewController.h; sourceTree = "<group>"; };
+		835F19F81EA4A83B00788BD9 /* ProrunlogcDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProrunlogcDetailViewController.m; sourceTree = "<group>"; };
+		835F19F91EA4A83B00788BD9 /* ProrunlogcDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProrunlogcDetailViewController.xib; sourceTree = "<group>"; };
+		835F19FC1EA4AAD600788BD9 /* UDPRORUNLOGC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPRORUNLOGC.h; sourceTree = "<group>"; };
+		835F19FD1EA4AAD600788BD9 /* UDPRORUNLOGC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPRORUNLOGC.m; sourceTree = "<group>"; };
 		835FBD401DE288C9006CBC43 /* RunLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunLogViewController.h; sourceTree = "<group>"; };
 		835FBD411DE288C9006CBC43 /* RunLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunLogViewController.m; sourceTree = "<group>"; };
 		835FBD421DE288C9006CBC43 /* RunLogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RunLogViewController.xib; sourceTree = "<group>"; };
@@ -3539,6 +3552,7 @@
 		22C6557D1D5F134600E80BCC /* 工作日报 */ = {
 			isa = PBXGroup;
 			children = (
+				835F19F11EA4A09200788BD9 /* 工作日志活动子表 */,
 				22C6557F1D5F143F00E80BCC /* DailyWorkController.h */,
 				22C655801D5F143F00E80BCC /* DailyWorkController.m */,
 				22C655811D5F143F00E80BCC /* DailyWorkController.xib */,
@@ -3703,6 +3717,21 @@
 				8351B7D41DFA7F1900F2E30E /* BINCell.xib */,
 			);
 			name = BIN;
+			sourceTree = "<group>";
+		};
+		835F19F11EA4A09200788BD9 /* 工作日志活动子表 */ = {
+			isa = PBXGroup;
+			children = (
+				835F19F21EA4A7F400788BD9 /* ProrunlogcViewController.h */,
+				835F19F31EA4A7F400788BD9 /* ProrunlogcViewController.m */,
+				835F19F41EA4A7F400788BD9 /* ProrunlogcViewController.xib */,
+				835F19F71EA4A83B00788BD9 /* ProrunlogcDetailViewController.h */,
+				835F19F81EA4A83B00788BD9 /* ProrunlogcDetailViewController.m */,
+				835F19F91EA4A83B00788BD9 /* ProrunlogcDetailViewController.xib */,
+				835F19FC1EA4AAD600788BD9 /* UDPRORUNLOGC.h */,
+				835F19FD1EA4AAD600788BD9 /* UDPRORUNLOGC.m */,
+			);
+			name = "工作日志活动子表";
 			sourceTree = "<group>";
 		};
 		835FBD3E1DE28138006CBC43 /* 出差总结报告 */ = {
@@ -4064,6 +4093,7 @@
 				22C6557C1D5E101300E80BCC /* HoistingDebugAddController.xib in Resources */,
 				22A45E5C1D681CA600AF48BA /* AddMaterielsViewController.xib in Resources */,
 				22AF0FDF1D5726610094A498 /* DetailsOilViewController.xib in Resources */,
+				835F19F61EA4A7F400788BD9 /* ProrunlogcViewController.xib in Resources */,
 				22AF10021D57830C0094A498 /* FooterView.xib in Resources */,
 				22A7CD4A1D437552008B3638 /* AppOpsViewController.xib in Resources */,
 				22A7CDAE1D44946A008B3638 /* FaultWorkViewController.xib in Resources */,
@@ -4073,6 +4103,7 @@
 				2216AB3D1D5887FE007B7ACF /* ProblemItemLBView.xib in Resources */,
 				223CBE2F1D597B31002129E0 /* FaultAppDetailsViewController.xib in Resources */,
 				224C41DB1D4345A6004A0797 /* LeftHeaderView.xib in Resources */,
+				835F19FB1EA4A83B00788BD9 /* ProrunlogcDetailViewController.xib in Resources */,
 				22A7CDD41D44D89C008B3638 /* DailyItemsController.xib in Resources */,
 				22AF102D1D5978620094A498 /* AddFaultViewController.xib in Resources */,
 				832BF2391DE3EC50006973E0 /* TripReportDetailsViewController.xib in Resources */,
@@ -4183,6 +4214,7 @@
 				83B0142C1E08D79300D65FF7 /* AddMaterielsViewController.h in Sources */,
 				83B0142D1E08D79300D65FF7 /* AddMaterielsViewController.m in Sources */,
 				83B0142E1E08D79300D65FF7 /* AddMaterielsViewController.xib in Sources */,
+				835F19FE1EA4AAD600788BD9 /* UDPRORUNLOGC.m in Sources */,
 				83B0142F1E08D79300D65FF7 /* MaterViewController.h in Sources */,
 				83B014301E08D79300D65FF7 /* MaterViewController.m in Sources */,
 				83B014311E08D79300D65FF7 /* MaterViewController.xib in Sources */,
@@ -4421,6 +4453,7 @@
 				83B0151E1E08D79400D65FF7 /* BSJSONEncoder.m in Sources */,
 				83B0151F1E08D79400D65FF7 /* NSArray+BSJSONAdditions.h in Sources */,
 				83B015201E08D79400D65FF7 /* NSArray+BSJSONAdditions.m in Sources */,
+				835F19FA1EA4A83B00788BD9 /* ProrunlogcDetailViewController.m in Sources */,
 				83B015211E08D79400D65FF7 /* NSDictionary+BSJSONAdditions.h in Sources */,
 				83B015221E08D79400D65FF7 /* NSDictionary+BSJSONAdditions.m in Sources */,
 				83B015231E08D79400D65FF7 /* NSScanner+BSJSONAdditions.h in Sources */,
@@ -4509,6 +4542,7 @@
 				83B015791E08D79400D65FF7 /* ConstructionDailyAddController.h in Sources */,
 				83B0157A1E08D79400D65FF7 /* ConstructionDailyAddController.m in Sources */,
 				83B0157B1E08D79400D65FF7 /* ConstructionDailyAddController.xib in Sources */,
+				835F19F51EA4A7F400788BD9 /* ProrunlogcViewController.m in Sources */,
 				83B0157C1E08D79400D65FF7 /* ConstructionModel.h in Sources */,
 				83B0157D1E08D79400D65FF7 /* ConstructionModel.m in Sources */,
 				83B0157E1E08D79400D65FF7 /* ConstructionPhaseDailyController.h in Sources */,

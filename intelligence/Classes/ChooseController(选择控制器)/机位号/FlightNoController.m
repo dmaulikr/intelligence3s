@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by  on 16/8/17.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "FlightNoController.h"

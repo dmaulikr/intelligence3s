@@ -2,8 +2,8 @@
 //  DetailsTravelViewController.m
 //  intelligence
 //
-//  Created by 光耀 on 16/8/7.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/8/7.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "DetailsTravelViewController.h"
@@ -91,6 +91,7 @@
     [self addTwo];
     [self addThree];
     [self addFours];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"UDCARDRIVELOG",@"ACTIONNAME":@"查看行驶记录"}];
 }
 - (void)addRightNavBarItem{
     WEAKSELF

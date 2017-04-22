@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by chris on 2017/1/23.
-//  Copyright © 2017年 guangyao. All rights reserved.
+//  Copyright © 2017年 chris. All rights reserved.
 //
 
 #import "JSChartViewController.h"

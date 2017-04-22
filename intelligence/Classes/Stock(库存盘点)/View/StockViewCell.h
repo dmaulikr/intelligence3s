@@ -2,8 +2,8 @@
 //  StockViewCell.h
 //  intelligence
 //
-//  Created by 光耀 on 16/7/24.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/7/24.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -45,6 +45,7 @@
 #import "BusinessModel.h"
 #import "RunlogModel.h"
 #import "TripReportModel.h"
+#import "UDPRORUNLOGC.h"
 
 @interface StockViewCell : UITableViewCell
 @property (nonatomic,strong)RegularModel  *regular;
@@ -87,6 +88,7 @@
 @property (nonatomic, strong) ToolingManagementModel *toolingManagement;
 
 @property (nonatomic, strong) WorkDebugsModel *workDebug;
+@property (nonatomic, strong) UDPRORUNLOGC *udPRORUNLOGC;
 
 +(instancetype)stockViewCell;
 @end

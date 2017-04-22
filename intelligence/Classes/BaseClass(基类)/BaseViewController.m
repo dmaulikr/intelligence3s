@@ -2,8 +2,8 @@
 //  BaseViewController.m
 //  Recreation
 //
-//  Created by 光耀 on 16/3/14.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/3/14.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "BaseViewController.h"
@@ -20,7 +20,6 @@
     [super viewDidLoad];
     self.view.backgroundColor = APPCOLOR;
     [self setupLeftMenuButton];
-    // Do any additional setup after loading the view.
 }
 -(void)setupLeftMenuButton{
     
@@ -40,11 +39,7 @@
     NSLog(@"分享二维码");
     QRCodeViewController* qrvc = [[QRCodeViewController alloc] init];
     [self presentViewController:qrvc animated:YES completion:nil];
-    //SVHUD_Stop
-    //[self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
-
-
 /** 控制器取消的时候调用*/
 - (void)dealloc
 {
@@ -53,12 +48,10 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [JANALYTICSService startLogPageView:NSStringFromClass([self class])];
-    NSLog(@"进入页面 %@",NSStringFromClass([self class]));
 }
 -(void)viewDidDisappear:(BOOL)animated
 {
     [JANALYTICSService stopLogPageView:NSStringFromClass([self class])];
-    NSLog(@"退出页面 %@",NSStringFromClass([self class]));
 }
 /** 视图将要消失*/
 - (void)viewWillDisappear:(BOOL)animated

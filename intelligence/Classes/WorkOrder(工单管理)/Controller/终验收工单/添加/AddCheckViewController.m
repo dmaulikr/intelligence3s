@@ -2,8 +2,8 @@
 //  AddCheckViewController.m
 //  intelligence
 //
-//  Created by 光耀 on 16/8/9.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/8/9.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "AddCheckViewController.h"
@@ -158,6 +158,9 @@
     soap.DicBlock = ^(NSDictionary *dic){
         SVHUD_Stop
         if ([dic[@"success"] isEqualToString:@"成功"]) {
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"WORKORDER_AA",@"ACTIONNAME":@"终验收工单"}];
+            
             [weakSelf.navigationController popViewControllerAnimated:YES];
             if(weakSelf.OpenCheck){
                 [weakSelf.dics setValue:dic[@"WONUM"] forKey:@"WONUM"];

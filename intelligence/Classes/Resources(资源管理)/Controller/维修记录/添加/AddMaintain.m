@@ -2,8 +2,8 @@
 //  AddMaintain.m
 //  intelligence
 //
-//  Created by 光耀 on 16/8/7.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/8/7.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "AddMaintain.h"
@@ -106,6 +106,9 @@
     soap.DicBlock = ^(NSDictionary *dic){
         SVHUD_Stop
         if ([dic[@"success"] isEqualToString:@"成功"]) {
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"UDCARMAINLOG",@"ACTIONNAME":@"维修记录"}];
+            
             if (weakSelf.backName) {
                 weakSelf.backName(dic);
             }

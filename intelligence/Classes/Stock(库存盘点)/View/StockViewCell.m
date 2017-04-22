@@ -2,8 +2,8 @@
 //  StockViewCell.m
 //  intelligence
 //
-//  Created by 光耀 on 16/7/24.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/7/24.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "StockViewCell.h"
@@ -409,7 +409,7 @@
     self.topWidth.constant = 40;
     self.bottomWidth.constant = 40;
     self.top.text = dailyWork.RUNLOGDATE;
-    self.bottom.text = dailyWork.DESCRIPTION.length ? self.dailyWork.DESCRIPTION : @"暂无描述";
+    self.bottom.text = dailyWork.WEATHER.length ? self.dailyWork.WEATHER : @"暂无描述";
 }
 
 - (void)setConstruction:(ConstructionModel *)construction{
@@ -451,7 +451,16 @@
     self.top.text = @"";
     self.bottom.text = @"";
 }
-
+-(void)setUdPRORUNLOGC:(UDPRORUNLOGC *)udPRORUNLOGC
+{
+    _udPRORUNLOGC = udPRORUNLOGC;
+    self.topName.text = @"工作序号:";
+    self.bottomName.text = @"工作性质:";
+    self.topWidth.constant = 110;
+    self.bottomWidth.constant = 110;
+    self.top.text = udPRORUNLOGC.WORKNUM;
+    self.bottom.text = udPRORUNLOGC.WORKTYPE.length?udPRORUNLOGC.WORKTYPE:@"暂无描述";
+}
 
 
 

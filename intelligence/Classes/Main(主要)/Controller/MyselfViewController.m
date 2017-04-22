@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by chris on 2017/2/27.
-//  Copyright © 2017年 guangyao. All rights reserved.
+//  Copyright © 2017年 chris. All rights reserved.
 //
 
 #import "MyselfViewController.h"
@@ -192,9 +192,11 @@
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-services://?action=download-manifest&url=https://mykk.mywind.com.cn:8443/group1/M00/00/10/aaak5lcQe9mAGkAEAAACrY0gDzk3.plist"]];
             
         }];
+        
         UIAlertAction * Cancel = [UIAlertAction actionWithTitle:@"暂不更新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
         }];
+        
         [alert addAction:UpdateAction];
         [alert addAction:Cancel];
         

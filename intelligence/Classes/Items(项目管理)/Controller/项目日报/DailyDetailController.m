@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by  on 16/7/31.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "DailyDetailController.h"
@@ -54,6 +54,7 @@
     [self addRightNavBarItem];
     
     NSLog(@"项目日报详情 %@",[self.daily mj_JSONString]);
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"UDPRORUN",@"ACTIONNAME":@"查看项目日报"}];
 }
 
 - (void)addTableFooterView{

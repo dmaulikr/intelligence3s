@@ -3,7 +3,7 @@
 //  Recreation
 //
 //  Created by 李洋 on 16/5/12.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "AccountModel.h"

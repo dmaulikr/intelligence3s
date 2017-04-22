@@ -2,8 +2,8 @@
 //  HTTPSessionManager.m
 //  Recreation
 //
-//  Created by 闫光耀 on 16/5/11.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by 闫chris on 16/5/11.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #ifdef DEBUG

@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by chris on 2016/11/24.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "DailylogActivityAddViewController.h"
@@ -239,7 +239,7 @@
             weakSelf.firstRow.contentLabel.text = [weakSelf.timeYear_first stringFromDate:data];
             weakSelf.firstRow.contentLabel.textColor = [UIColor blackColor];
             [weakSelf.runLineDic setObject: weakSelf.firstRow.contentLabel.text forKey:@"LOGDATE"];
-            NSLog(@"dictionary %@",_runLineDic);
+            NSLog(@"dictionary %@",weakSelf.runLineDic);
         };
     }
     return _timeYear_first;

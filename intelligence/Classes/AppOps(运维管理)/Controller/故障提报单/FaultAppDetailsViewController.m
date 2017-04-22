@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by  on 16/8/9.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "FaultAppDetailsViewController.h"
@@ -113,6 +113,7 @@
             }
         }
     }];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"UDREPORT",@"ACTIONNAME":@"查看故障提报单"}];
 }
 
 
@@ -204,7 +205,7 @@
 
 - (void)updataForFirst{
     SVHUD_NO_Stop(@"生成中");
-    WEAKSELF
+
     SoapUtil *soap = [[SoapUtil alloc]initWithNameSpace:@"http://www.ibm.com/maximo" andEndpoint:[NSString stringWithFormat:@"%@/meaweb/services/MOBILESERVICE",BASE_URL]];
     soap.DicBlock = ^(NSDictionary *dic){
         SVHUD_Stop;

@@ -2,7 +2,7 @@
 //  OtherHeader.h
 //  智能风场管理
 //
-//  Created by 光耀 on 16/7/21.
+//  Created by chris on 16/7/21.
 //  Copyright © 2016年  刘向东. All rights reserved.
 //
 

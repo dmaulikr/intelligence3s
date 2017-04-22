@@ -2,8 +2,8 @@
 //  HoistingDebugAddController.m
 //  intelligence
 //
-//  Created by 丁进宇 on 16/8/12.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/8/12.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "HoistingDebugAddController.h"

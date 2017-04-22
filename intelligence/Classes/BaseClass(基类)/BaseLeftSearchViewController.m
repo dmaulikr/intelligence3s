@@ -2,8 +2,8 @@
 //  BaseLeftSearchViewController.m
 //  intelligence
 //
-//  Created by 光耀 on 16/7/25.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/7/25.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "BaseLeftSearchViewController.h"
@@ -40,12 +40,11 @@
 
 #pragma mark - Button Handlers
 -(void)leftDrawerButtonPress:(id)sender{
+    
     NSLog(@"分享二维码");
     QRCodeViewController* qrvc = [[QRCodeViewController alloc] init];
     [self presentViewController:qrvc animated:YES completion:nil];
-    //SVHUD_Stop
-    //[self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-}
+    }
 
 -(void)createNav{
     _naView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, 44)];
@@ -96,12 +95,10 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [JANALYTICSService startLogPageView:NSStringFromClass([self class])];
-    NSLog(@"进入页面 %@",NSStringFromClass([self class]));
 }
 -(void)viewDidDisappear:(BOOL)animated
 {
     [JANALYTICSService stopLogPageView:NSStringFromClass([self class])];
-    NSLog(@"退出页面 %@",NSStringFromClass([self class]));
 }
 /** 视图将要消失*/
 - (void)viewWillDisappear:(BOOL)animated

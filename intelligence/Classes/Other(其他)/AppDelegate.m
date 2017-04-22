@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  intelligence
 //
-//  Created by 光耀 on 16/7/21.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/7/21.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "AppDelegate.h"

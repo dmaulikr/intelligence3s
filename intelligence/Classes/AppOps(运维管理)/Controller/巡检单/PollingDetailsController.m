@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by  on 16/8/9.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "PollingDetailsController.h"
@@ -131,6 +131,7 @@
             }
         }
     }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"UDINSPO",@"ACTIONNAME":@"查看巡检工单"}];
 }
 
 - (void)addScrollFooterView{

@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by  on 16/8/13.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "DailyWorkController.h"
@@ -101,6 +101,7 @@
                                  @"curpage"   :@(page),
                                  @"showcount" :@(20),
                                  @"option"    :@"read",
+                                 @"orderby"   :@"RUNLOGDATE DESC",
                                  @"condition" :dic,
                                  };
     
@@ -208,7 +209,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     DailyWorkDetailsController *vc = [[DailyWorkDetailsController alloc] init];
+    vc.dailyWork = [self.dataArray objectAtIndex:indexPath.section];
+    vc.PRORUNLOGNUM = self.PRORUNLOGNUM;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

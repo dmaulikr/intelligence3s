@@ -2,8 +2,8 @@
 //  DetailsMaintainViewController.m
 //  intelligence
 //
-//  Created by 光耀 on 16/8/7.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/8/7.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "DetailsMaintainViewController.h"
@@ -90,6 +90,7 @@
     [self addOne];
     [self addTwo];
     [self addThree];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"UDCARMAINLOG",@"ACTIONNAME":@"查看维修记录"}];
 }
 
 - (void)addRightNavBarItem{

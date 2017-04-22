@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by chris on 2016/11/22.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "TripReportViewController.h"
@@ -45,6 +45,7 @@
     [self initTableView];
     [self request];
     [self setupRightMenuButton];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"WORKORDER",@"ACTIONNAME":@"查看出差总结报告"}];
 }
 
 -(void)setupRightMenuButton{

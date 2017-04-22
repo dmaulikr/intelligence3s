@@ -2,8 +2,8 @@
 //  AddFaultViewController.m
 //  intelligence
 //
-//  Created by 光耀 on 16/8/9.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/8/9.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "AddFaultViewController.h"
@@ -265,6 +265,9 @@
     soap.DicBlock = ^(NSDictionary *dic){
         SVHUD_Stop
         if ([dic[@"success"] isEqualToString:@"成功"]) {
+            
+             [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"WORKORDER_FR",@"ACTIONNAME":@"故障工单"}];
+            
              WHUDNormal(@"新建工单成功");
             [weakSelf.navigationController popViewControllerAnimated:YES];
             if(weakSelf.Open){

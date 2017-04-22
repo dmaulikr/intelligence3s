@@ -2,8 +2,8 @@
 //  IntelligencePrefixHeader.pch
 //  intelligence
 //
-//  Created by 光耀 on 16/7/21.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/7/21.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #ifndef IntelligencePrefixHeader_pch
@@ -44,7 +44,7 @@
 #define kNavBarHeight 64
 #define CELLHEIGHT 45
 // 个人中心设置的背景色
-#define APPCOLOR UIColorFromRGB(0xF1F1F1)
+#define APPCOLOR UIColorFromRGB(0xFFFFFF)
 #define font(size) [UIFont systemFontOfSize:(size)]
 #define boldFont(size)  [UIFont boldSystemFontOfSize:(size)]
 /** 屏幕高度*/

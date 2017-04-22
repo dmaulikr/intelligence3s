@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by chris on 2016/11/21.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "RunLogDetailsViewController.h"
@@ -63,6 +63,7 @@
     [self addScrollFooterView];
     [self addRightNavBarItem];
     // Do any additional setup after loading the view from its nib.
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"UDRUNLOG",@"ACTIONNAME":@"查看运行记录"}];
 }
 -(void)viewDidAppear:(BOOL)animated
 {

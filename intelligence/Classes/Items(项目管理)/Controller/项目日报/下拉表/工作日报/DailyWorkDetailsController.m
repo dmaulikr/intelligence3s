@@ -2,8 +2,8 @@
 //  DailyWorkDetailsController.m
 //  intelligence
 //
-//  Created by 丁进宇 on 16/9/5.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/9/5.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "DailyWorkDetailsController.h"
@@ -16,7 +16,7 @@
 
 #import "ChoiceWorkView.h"
 #import "ShareConstruction.h"
-#import "DailyWorkModel.h"
+#import "ProrunlogcViewController.h"
 
 
 @interface DailyWorkDetailsController ()
@@ -49,21 +49,11 @@
 // 平均风速:
 @property (nonatomic, strong) ProblemItemLTView *fifthRow;
 // 工作日至活动
-@property (nonatomic, strong) ProblemItemTitleView *sixthRow;
-// 工作性质：
-@property (nonatomic, strong) ProblemItemLLIView *seventhRow;
-// 工作班成员：
-@property (nonatomic, strong) ProblemItemLTView *eighthRow;
-// 工作任务：
-@property (nonatomic, strong) ProblemItemLTView *ninthRow;
-// 完成情况
-@property (nonatomic, strong) ProblemItemLLIView *tenthRow;
-// 异常情况说明
-@property (nonatomic, strong) ProblemItemLTView *eleventhRow;
-// 备注
-@property (nonatomic, strong) ProblemItemLTView *twelfthRow;
+@property (nonatomic, strong) ProblemItemLLIView *sixthRow;
 
-@property (nonatomic, strong) DailyWorkModel *dailyWork;
+
+
+
 
 
 @end
@@ -75,12 +65,10 @@
     self.title = @"工作日报详情";
     self.rootViewHeight.constant = 700;
     [self addViews];
-    ShareConstruction *shareConstruction = [ShareConstruction sharedConstruction];
-    self.dailyWork = shareConstruction.dailyWork;
     [self addBlocks];
     [self addScrollFooterView];
     [self addNotification];
-
+    [self setDailyWork:self.dailyWork];
 }
 
 - (void)setDailyWork:(DailyWorkModel *)dailyWork{
@@ -110,35 +98,35 @@
         self.fifthRow.placeholderLabel.text = @"";
     }
     
-    if (dailyWork.WORKTYPE.length > 0) {
-        self.seventhRow.contentLabel.text = dailyWork.WORKTYPE;
-        self.seventhRow.contentLabel.textColor = [UIColor blackColor];
-    }
+//    if (dailyWork.WORKTYPE.length > 0) {
+//        self.seventhRow.contentLabel.text = dailyWork.WORKTYPE;
+//        self.seventhRow.contentLabel.textColor = [UIColor blackColor];
+//    }
     
-    if (dailyWork.WORKPG.length > 0) {
-        self.eighthRow.contentText.text = dailyWork.WORKPG;
-        self.eighthRow.placeholderLabel.text = @"";
-    }
+//    if (dailyWork.WORKPG.length > 0) {
+//        self.eighthRow.contentText.text = dailyWork.WORKPG;
+//        self.eighthRow.placeholderLabel.text = @"";
+//    }
+//    
+//    if (dailyWork.WORKCRON.length > 0) {
+//        self.ninthRow.contentText.text = dailyWork.WORKCRON;
+//        self.ninthRow.placeholderLabel.text = @"";
+//    }
     
-    if (dailyWork.WORKCRON.length > 0) {
-        self.ninthRow.contentText.text = dailyWork.WORKCRON;
-        self.ninthRow.placeholderLabel.text = @"";
-    }
-    
-    if (dailyWork.COMPSTA.length > 0) {
-        self.tenthRow.contentLabel.text = dailyWork.COMPSTA;
-        self.tenthRow.contentLabel.textColor = [UIColor blackColor];
-    }
-    
-    if (dailyWork.SITUATION.length > 0) {
-        self.eleventhRow.contentText.text = dailyWork.SITUATION;
-        self.eleventhRow.placeholderLabel.text = @"";
-    }
-    
-    if (dailyWork.REMARK.length > 0) {
-        self.twelfthRow.contentText.text = dailyWork.REMARK;
-        self.twelfthRow.placeholderLabel.text = @"";
-    }
+//    if (dailyWork.COMPSTA.length > 0) {
+//        self.tenthRow.contentLabel.text = dailyWork.COMPSTA;
+//        self.tenthRow.contentLabel.textColor = [UIColor blackColor];
+//    }
+//    
+//    if (dailyWork.SITUATION.length > 0) {
+//        self.eleventhRow.contentText.text = dailyWork.SITUATION;
+//        self.eleventhRow.placeholderLabel.text = @"";
+//    }
+//    
+//    if (dailyWork.REMARK.length > 0) {
+//        self.twelfthRow.contentText.text = dailyWork.REMARK;
+//        self.twelfthRow.placeholderLabel.text = @"";
+//    }
 }
 
 
@@ -203,8 +191,10 @@
         make.height.mas_equalTo(60);
     }];
     
-    self.sixthRow = [ProblemItemTitleView showXibView];
+    self.sixthRow = [ProblemItemLLIView showXibView];
+    self.sixthRow.type = ProblemItemTypeDefaultLLI;
     self.sixthRow.titleLabel.text = @"工作日志活动:";
+    self.sixthRow.contentLabel.text =@"详情";
     [self.rootView addSubview:self.sixthRow];
     [self.sixthRow mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.fifthRow.mas_bottom).offset(0);
@@ -213,71 +203,72 @@
         make.height.mas_equalTo(40);
     }];
     
-    self.seventhRow = [ProblemItemLLIView showXibView];
-    self.seventhRow.type = ProblemItemTypeDefaultLLI;
-    self.seventhRow.titleLabel.text = @"工作性质:";
-    [self.rootView addSubview:self.seventhRow];
-    [self.seventhRow mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.sixthRow.mas_bottom).offset(0);
-        make.left.equalTo(self.view.mas_left).offset(0);
-        make.right.equalTo(self.view.mas_right).offset(0);
-        make.height.mas_equalTo(45);
-    }];
-    
-    self.eighthRow = [ProblemItemLTView showXibView];
-    self.eighthRow.type = ProblemItemLTViewTypeHiddenRedMark;
-    self.eighthRow.titleLabel.text = @"工作班成员:";
-    [self.rootView addSubview:self.eighthRow];
-    [self.eighthRow mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.seventhRow.mas_bottom).offset(0);
-        make.left.equalTo(self.view.mas_left).offset(0);
-        make.right.equalTo(self.view.mas_right).offset(0);
-        make.height.mas_equalTo(60);
-    }];
-    
-    self.ninthRow = [ProblemItemLTView showXibView];
-    self.ninthRow.type = ProblemItemLTViewTypeHiddenRedMark;
-    self.ninthRow.titleLabel.text = @"工作任务:";
-    [self.rootView addSubview:self.ninthRow];
-    [self.ninthRow mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.eighthRow.mas_bottom).offset(0);
-        make.left.equalTo(self.view.mas_left).offset(0);
-        make.right.equalTo(self.view.mas_right).offset(0);
-        make.height.mas_equalTo(60);
-    }];
-    
-    self.tenthRow = [ProblemItemLLIView showXibView];
-    self.tenthRow.type = ProblemItemTypeDefaultLLI;
-    self.tenthRow.titleLabel.text = @"完成情况:";
-    [self.rootView addSubview:self.tenthRow];
-    [self.tenthRow mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.ninthRow.mas_bottom).offset(0);
-        make.left.equalTo(self.view.mas_left).offset(0);
-        make.right.equalTo(self.view.mas_right).offset(0);
-        make.height.mas_equalTo(45);
-    }];
-    
-    self.eleventhRow = [ProblemItemLTView showXibView];
-    self.eleventhRow.type = ProblemItemLTViewTypeHiddenRedMark;
-    self.eleventhRow.titleLabel.text = @"异常情况说明:";
-    [self.rootView addSubview:self.eleventhRow];
-    [self.eleventhRow mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.tenthRow.mas_bottom).offset(0);
-        make.left.equalTo(self.view.mas_left).offset(0);
-        make.right.equalTo(self.view.mas_right).offset(0);
-        make.height.mas_equalTo(60);
-    }];
-    
-    self.twelfthRow = [ProblemItemLTView showXibView];
-    self.twelfthRow.type = ProblemItemLTViewTypeHiddenRedMark;
-    self.twelfthRow.titleLabel.text = @"备注:";
-    [self.rootView addSubview:self.twelfthRow];
-    [self.twelfthRow mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.eleventhRow.mas_bottom).offset(0);
-        make.left.equalTo(self.view.mas_left).offset(0);
-        make.right.equalTo(self.view.mas_right).offset(0);
-        make.height.mas_equalTo(60);
-    }];
+//
+//    self.seventhRow = [ProblemItemLLIView showXibView];
+//    self.seventhRow.type = ProblemItemTypeDefaultLLI;
+//    self.seventhRow.titleLabel.text = @"工作性质:";
+//    [self.rootView addSubview:self.seventhRow];
+//    [self.seventhRow mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.sixthRow.mas_bottom).offset(0);
+//        make.left.equalTo(self.view.mas_left).offset(0);
+//        make.right.equalTo(self.view.mas_right).offset(0);
+//        make.height.mas_equalTo(45);
+//    }];
+//    
+//    self.eighthRow = [ProblemItemLTView showXibView];
+//    self.eighthRow.type = ProblemItemLTViewTypeHiddenRedMark;
+//    self.eighthRow.titleLabel.text = @"工作班成员:";
+//    [self.rootView addSubview:self.eighthRow];
+//    [self.eighthRow mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.seventhRow.mas_bottom).offset(0);
+//        make.left.equalTo(self.view.mas_left).offset(0);
+//        make.right.equalTo(self.view.mas_right).offset(0);
+//        make.height.mas_equalTo(60);
+//    }];
+//    
+//    self.ninthRow = [ProblemItemLTView showXibView];
+//    self.ninthRow.type = ProblemItemLTViewTypeHiddenRedMark;
+//    self.ninthRow.titleLabel.text = @"工作任务:";
+//    [self.rootView addSubview:self.ninthRow];
+//    [self.ninthRow mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.eighthRow.mas_bottom).offset(0);
+//        make.left.equalTo(self.view.mas_left).offset(0);
+//        make.right.equalTo(self.view.mas_right).offset(0);
+//        make.height.mas_equalTo(60);
+//    }];
+//    
+//    self.tenthRow = [ProblemItemLLIView showXibView];
+//    self.tenthRow.type = ProblemItemTypeDefaultLLI;
+//    self.tenthRow.titleLabel.text = @"完成情况:";
+//    [self.rootView addSubview:self.tenthRow];
+//    [self.tenthRow mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.ninthRow.mas_bottom).offset(0);
+//        make.left.equalTo(self.view.mas_left).offset(0);
+//        make.right.equalTo(self.view.mas_right).offset(0);
+//        make.height.mas_equalTo(45);
+//    }];
+//    
+//    self.eleventhRow = [ProblemItemLTView showXibView];
+//    self.eleventhRow.type = ProblemItemLTViewTypeHiddenRedMark;
+//    self.eleventhRow.titleLabel.text = @"异常情况说明:";
+//    [self.rootView addSubview:self.eleventhRow];
+//    [self.eleventhRow mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.tenthRow.mas_bottom).offset(0);
+//        make.left.equalTo(self.view.mas_left).offset(0);
+//        make.right.equalTo(self.view.mas_right).offset(0);
+//        make.height.mas_equalTo(60);
+//    }];
+//    
+//    self.twelfthRow = [ProblemItemLTView showXibView];
+//    self.twelfthRow.type = ProblemItemLTViewTypeHiddenRedMark;
+//    self.twelfthRow.titleLabel.text = @"备注:";
+//    [self.rootView addSubview:self.twelfthRow];
+//    [self.twelfthRow mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.eleventhRow.mas_bottom).offset(0);
+//        make.left.equalTo(self.view.mas_left).offset(0);
+//        make.right.equalTo(self.view.mas_right).offset(0);
+//        make.height.mas_equalTo(60);
+//    }];
 }
 
 - (void)addBlocks{
@@ -297,23 +288,23 @@
         
     };
     
-    self.seventhRow.executeTapContentLabel = ^(){
-        ChoiceWorkView *work = [[ChoiceWorkView alloc]initWithFrame:weakSelf.view.bounds choice:ChoiceTypeNatureWork];
-        work.WorkBlock = ^(NSString *str){
-            weakSelf.seventhRow.contentLabel.text = str;
-            weakSelf.seventhRow.contentLabel.textColor = [UIColor blackColor];
-        };
-        [work ShowInView:weakSelf.view];
-    };
-    
-    self.tenthRow.executeTapContentLabel = ^(){
-        ChoiceWorkView *work = [[ChoiceWorkView alloc]initWithFrame:weakSelf.view.bounds choice:ChoiceTypeCompletion];
-        work.WorkBlock = ^(NSString *str){
-            weakSelf.tenthRow.contentLabel.text = str;
-            weakSelf.tenthRow.contentLabel.textColor = [UIColor blackColor];
-        };
-        [work ShowInView:weakSelf.view];
-    };
+//    self.seventhRow.executeTapContentLabel = ^(){
+//        ChoiceWorkView *work = [[ChoiceWorkView alloc]initWithFrame:weakSelf.view.bounds choice:ChoiceTypeNatureWork];
+//        work.WorkBlock = ^(NSString *str){
+//            weakSelf.seventhRow.contentLabel.text = str;
+//            weakSelf.seventhRow.contentLabel.textColor = [UIColor blackColor];
+//        };
+//        [work ShowInView:weakSelf.view];
+//    };
+//    
+//    self.tenthRow.executeTapContentLabel = ^(){
+//        ChoiceWorkView *work = [[ChoiceWorkView alloc]initWithFrame:weakSelf.view.bounds choice:ChoiceTypeCompletion];
+//        work.WorkBlock = ^(NSString *str){
+//            weakSelf.tenthRow.contentLabel.text = str;
+//            weakSelf.tenthRow.contentLabel.textColor = [UIColor blackColor];
+//        };
+//        [work ShowInView:weakSelf.view];
+//    };
     
     self.secondRow.executeTextHeightChage = ^(CGFloat textHeight){
         [weakSelf updatesecondRowWithHeight:textHeight animated:YES];
@@ -327,21 +318,28 @@
         [weakSelf updatefifthRowWithHeight:textHeight animated:YES];
     };
     
-    self.eighthRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateeighthRowWithHeight:textHeight animated:YES];
+    self.sixthRow.executeTapContentLabel = ^{
+        NSLog(@"跳到工作日志活动子表");
+        ProrunlogcViewController *plc = [[ProrunlogcViewController alloc] init];
+        plc.PRORUNLOGNUM = weakSelf.PRORUNLOGNUM;
+         plc.RUNLOGDATE = weakSelf.dailyWork.RUNLOGDATE;
+        [weakSelf.navigationController pushViewController:plc animated:YES];
     };
-    
-    self.ninthRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateninthRowWithHeight:textHeight animated:YES];
-    };
-    
-    self.eleventhRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updateeleventhRowWithHeight:textHeight animated:YES];
-    };
-    
-    self.twelfthRow.executeTextHeightChage = ^(CGFloat textHeight){
-        [weakSelf updatetwelfthRowWithHeight:textHeight animated:YES];
-    };
+//    self.eighthRow.executeTextHeightChage = ^(CGFloat textHeight){
+//        [weakSelf updateeighthRowWithHeight:textHeight animated:YES];
+//    };
+//    
+//    self.ninthRow.executeTextHeightChage = ^(CGFloat textHeight){
+//        [weakSelf updateninthRowWithHeight:textHeight animated:YES];
+//    };
+//    
+//    self.eleventhRow.executeTextHeightChage = ^(CGFloat textHeight){
+//        [weakSelf updateeleventhRowWithHeight:textHeight animated:YES];
+//    };
+//    
+//    self.twelfthRow.executeTextHeightChage = ^(CGFloat textHeight){
+//        [weakSelf updatetwelfthRowWithHeight:textHeight animated:YES];
+//    };
     
 }
 
@@ -398,12 +396,12 @@
                           @"WEATHER":[self determineString:self.thirdRow.contentLabel.text],
                           @"TEM":[self determineString:self.forthRow.contentText.text],
                           @"WINDSPEED":[self determineString:self.fifthRow.contentText.text],
-                          @"WORKTYPE":[self determineString:self.seventhRow.contentLabel.text],
-                          @"WORKPG":[self determineString:self.eighthRow.contentText.text],
-                          @"WORKCRON":[self determineString:self.ninthRow.contentText.text],
-                          @"COMPSTA":[self determineString:self.tenthRow.contentLabel.text],
-                          @"SITUATION":[self determineString:self.eleventhRow.contentText.text],
-                          @"REMARK":[self determineString:self.twelfthRow.contentText.text],
+////                          @"WORKTYPE":[self determineString:self.seventhRow.contentLabel.text],
+//                          @"WORKPG":[self determineString:self.eighthRow.contentText.text],
+//                          @"WORKCRON":[self determineString:self.ninthRow.contentText.text],
+//                          @"COMPSTA":[self determineString:self.tenthRow.contentLabel.text],
+//                          @"SITUATION":[self determineString:self.eleventhRow.contentText.text],
+//                          @"REMARK":[self determineString:self.twelfthRow.contentText.text],
                           @"mboObjectName" : @"UDPRORUNLOGC"
                           };
     ShareConstruction *shareConstruction = [ShareConstruction sharedConstruction];
@@ -517,111 +515,111 @@
 }
 
 - (void)updateeighthRowWithHeight:(CGFloat)height animated:(BOOL)animated {
-    if (height < 50) {
-        return;
-    }
-    CGFloat scrollHeight = height - lastTextHeight4;
-    lastTextHeight4 = height;
-    [self.eighthRow mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(height + 10);
-        self.rootViewHeight.constant += scrollHeight;
-    }];
-    
-    CGPoint scrollPoint = CGPointMake(self.rootScrollView.contentOffset.x, self.rootScrollView.contentOffset.y + scrollHeight);
-    CGRect rect = [self.eighthRow.contentText convertRect:self.eighthRow.contentText.bounds toView:self.view];
-    CGFloat bottom = ScreenHeight - rect.origin.y - rect.size.height;
-    if (bottom < keyboardHeight + 10) {
-        [self.rootScrollView setContentOffset:scrollPoint];
-    }
-    if (animated) {
-        [self.view setNeedsUpdateConstraints];
-        [self.view updateConstraintsIfNeeded];
-        
-        [UIView animateWithDuration:0.2 animations:^{
-            [self.view layoutIfNeeded];
-        }];
-    }
+//    if (height < 50) {
+//        return;
+//    }
+//    CGFloat scrollHeight = height - lastTextHeight4;
+//    lastTextHeight4 = height;
+//    [self.eighthRow mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.height.mas_equalTo(height + 10);
+//        self.rootViewHeight.constant += scrollHeight;
+//    }];
+//    
+//    CGPoint scrollPoint = CGPointMake(self.rootScrollView.contentOffset.x, self.rootScrollView.contentOffset.y + scrollHeight);
+//    CGRect rect = [self.eighthRow.contentText convertRect:self.eighthRow.contentText.bounds toView:self.view];
+//    CGFloat bottom = ScreenHeight - rect.origin.y - rect.size.height;
+//    if (bottom < keyboardHeight + 10) {
+//        [self.rootScrollView setContentOffset:scrollPoint];
+//    }
+//    if (animated) {
+//        [self.view setNeedsUpdateConstraints];
+//        [self.view updateConstraintsIfNeeded];
+//        
+//        [UIView animateWithDuration:0.2 animations:^{
+//            [self.view layoutIfNeeded];
+//        }];
+//    }
 }
 
 - (void)updateninthRowWithHeight:(CGFloat)height animated:(BOOL)animated {
     if (height < 50) {
         return;
     }
-    CGFloat scrollHeight = height - lastTextHeight5;
-    lastTextHeight5 = height;
-    [self.ninthRow mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(height + 10);
-        self.rootViewHeight.constant += scrollHeight;
-    }];
-    
-    CGPoint scrollPoint = CGPointMake(self.rootScrollView.contentOffset.x, self.rootScrollView.contentOffset.y + scrollHeight);
-    CGRect rect = [self.ninthRow.contentText convertRect:self.ninthRow.contentText.bounds toView:self.view];
-    CGFloat bottom = ScreenHeight - rect.origin.y - rect.size.height;
-    if (bottom < keyboardHeight + 10) {
-        [self.rootScrollView setContentOffset:scrollPoint];
-    }
-    if (animated) {
-        [self.view setNeedsUpdateConstraints];
-        [self.view updateConstraintsIfNeeded];
-        
-        [UIView animateWithDuration:0.2 animations:^{
-            [self.view layoutIfNeeded];
-        }];
-    }
+//    CGFloat scrollHeight = height - lastTextHeight5;
+//    lastTextHeight5 = height;
+//    [self.ninthRow mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.height.mas_equalTo(height + 10);
+//        self.rootViewHeight.constant += scrollHeight;
+//    }];
+//    
+//    CGPoint scrollPoint = CGPointMake(self.rootScrollView.contentOffset.x, self.rootScrollView.contentOffset.y + scrollHeight);
+//    CGRect rect = [self.ninthRow.contentText convertRect:self.ninthRow.contentText.bounds toView:self.view];
+//    CGFloat bottom = ScreenHeight - rect.origin.y - rect.size.height;
+//    if (bottom < keyboardHeight + 10) {
+//        [self.rootScrollView setContentOffset:scrollPoint];
+//    }
+//    if (animated) {
+//        [self.view setNeedsUpdateConstraints];
+//        [self.view updateConstraintsIfNeeded];
+//        
+//        [UIView animateWithDuration:0.2 animations:^{
+//            [self.view layoutIfNeeded];
+//        }];
+//    }
 }
 
 - (void)updateeleventhRowWithHeight:(CGFloat)height animated:(BOOL)animated {
-    if (height < 50) {
-        return;
-    }
-    CGFloat scrollHeight = height - lastTextHeight6;
-    lastTextHeight6 = height;
-    [self.eleventhRow mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(height + 10);
-        self.rootViewHeight.constant += scrollHeight;
-    }];
-    
-    CGPoint scrollPoint = CGPointMake(self.rootScrollView.contentOffset.x, self.rootScrollView.contentOffset.y + scrollHeight);
-    CGRect rect = [self.eleventhRow.contentText convertRect:self.eleventhRow.contentText.bounds toView:self.view];
-    CGFloat bottom = ScreenHeight - rect.origin.y - rect.size.height;
-    if (bottom < keyboardHeight + 10) {
-        [self.rootScrollView setContentOffset:scrollPoint];
-    }
-    if (animated) {
-        [self.view setNeedsUpdateConstraints];
-        [self.view updateConstraintsIfNeeded];
-        
-        [UIView animateWithDuration:0.2 animations:^{
-            [self.view layoutIfNeeded];
-        }];
-    }
+//    if (height < 50) {
+//        return;
+//    }
+//    CGFloat scrollHeight = height - lastTextHeight6;
+//    lastTextHeight6 = height;
+////    [self.eleventhRow mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.height.mas_equalTo(height + 10);
+//        self.rootViewHeight.constant += scrollHeight;
+//    }];
+//    
+//    CGPoint scrollPoint = CGPointMake(self.rootScrollView.contentOffset.x, self.rootScrollView.contentOffset.y + scrollHeight);
+//    CGRect rect = [self.eleventhRow.contentText convertRect:self.eleventhRow.contentText.bounds toView:self.view];
+//    CGFloat bottom = ScreenHeight - rect.origin.y - rect.size.height;
+//    if (bottom < keyboardHeight + 10) {
+//        [self.rootScrollView setContentOffset:scrollPoint];
+//    }
+//    if (animated) {
+//        [self.view setNeedsUpdateConstraints];
+//        [self.view updateConstraintsIfNeeded];
+//        
+//        [UIView animateWithDuration:0.2 animations:^{
+//            [self.view layoutIfNeeded];
+//        }];
+//    }
 }
 
 - (void)updatetwelfthRowWithHeight:(CGFloat)height animated:(BOOL)animated {
-    if (height < 50) {
-        return;
-    }
-    CGFloat scrollHeight = height - lastTextHeight7;
-    lastTextHeight7 = height;
-    [self.twelfthRow mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(height + 10);
-        self.rootViewHeight.constant += scrollHeight;
-    }];
-    
-    CGPoint scrollPoint = CGPointMake(self.rootScrollView.contentOffset.x, self.rootScrollView.contentOffset.y + scrollHeight);
-    CGRect rect = [self.twelfthRow.contentText convertRect:self.twelfthRow.contentText.bounds toView:self.view];
-    CGFloat bottom = ScreenHeight - rect.origin.y - rect.size.height;
-    if (bottom < keyboardHeight + 10) {
-        [self.rootScrollView setContentOffset:scrollPoint];
-    }
-    if (animated) {
-        [self.view setNeedsUpdateConstraints];
-        [self.view updateConstraintsIfNeeded];
-        
-        [UIView animateWithDuration:0.2 animations:^{
-            [self.view layoutIfNeeded];
-        }];
-    }
+//    if (height < 50) {
+//        return;
+//    }
+//    CGFloat scrollHeight = height - lastTextHeight7;
+//    lastTextHeight7 = height;
+//    [self.twelfthRow mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.height.mas_equalTo(height + 10);
+//        self.rootViewHeight.constant += scrollHeight;
+//    }];
+//    
+//    CGPoint scrollPoint = CGPointMake(self.rootScrollView.contentOffset.x, self.rootScrollView.contentOffset.y + scrollHeight);
+//    CGRect rect = [self.twelfthRow.contentText convertRect:self.twelfthRow.contentText.bounds toView:self.view];
+//    CGFloat bottom = ScreenHeight - rect.origin.y - rect.size.height;
+//    if (bottom < keyboardHeight + 10) {
+//        [self.rootScrollView setContentOffset:scrollPoint];
+//    }
+//    if (animated) {
+//        [self.view setNeedsUpdateConstraints];
+//        [self.view updateConstraintsIfNeeded];
+//        
+//        [UIView animateWithDuration:0.2 animations:^{
+//            [self.view layoutIfNeeded];
+//        }];
+//    }
 }
 
 

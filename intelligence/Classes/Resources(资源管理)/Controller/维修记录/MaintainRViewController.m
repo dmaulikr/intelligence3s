@@ -2,8 +2,8 @@
 //  MaintainRViewController.m
 //  intelligence
 //
-//  Created by 光耀 on 16/7/24.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/7/24.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "MaintainRViewController.h"
@@ -46,7 +46,7 @@
     [self setupRightMenuButton];
     [self requestData:1 isUpdata:YES];
     [self request];
-    
+
     
 }
 - (UITableView *)tableview{
@@ -252,7 +252,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60;
+    return 80;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

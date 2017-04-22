@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by chris on 2016/11/22.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "TripReportAddViewController.h"
@@ -16,6 +16,7 @@
 #import "ChooseItemNoController.h"
 #import "ChoiceWorkView.h"
 #import "DailyDetailChoosePersonController.h"
+#import "SupportDepartmentController.h"
 
 @interface TripReportAddViewController ()<UITextFieldDelegate>
 {
@@ -31,8 +32,6 @@
 @property (nonatomic, strong) DailyDetailsFooterView *footerView;
 //姓名:
 @property (nonatomic, strong) ProblemItemLLIView *firstRow;
-//描述：
-@property (nonatomic, strong) ProblemItemLLIView *secondRow;
 //部门：
 @property (nonatomic, strong) ProblemItemLLIView *thirdRow;
 //录入人：
@@ -61,6 +60,7 @@
     [self addViews];
     [self addScrollFooterView];
     [self addBlocks];
+    [self queryUserInfo];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -70,32 +70,21 @@
 }
 -(void)addViews
 {
+    AccountModel *account = [AccountManager account];
     self.firstRow = [ProblemItemLLIView showXibView];
     self.firstRow.type = ProblemItemTypeDefaultLL;
     self.firstRow.frame = CGRectMake(0, 0, ScreenWidth, 45);
     self.firstRow.titleLabel.text = @"出差人工号:";
-    self.firstRow.contentLabel.text = @"工号";
+    self.firstRow.contentLabel.text = [NSString stringWithFormat:@"%@(%@)",account.userName,account.displayName];
+    self.firstRow.contentLabel.textColor = [UIColor blackColor];
     [self.rootView addSubview:self.firstRow];
-    
-    self.secondRow = [ProblemItemLLIView showXibView];
-    self.secondRow.type = ProblemItemTypeDefaultLT;
-    self.secondRow.titleLabel.text = @"描述:";
-    self.secondRow.contentTextField.delegate = self;
-    self.secondRow.contentTextField.tag = 2;
-    [self.rootView addSubview:self.secondRow];
-    [self.secondRow mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.firstRow.mas_bottom).offset(0);
-        make.left.equalTo(self.view.mas_left).offset(0);
-        make.right.equalTo(self.view.mas_right).offset(0);
-        make.height.mas_equalTo(45);
-    }];
     
     self.thirdRow = [ProblemItemLLIView showXibView];
     self.thirdRow.type = ProblemItemTypeDefaultLL;
     self.thirdRow.titleLabel.text = @"部门编号:";
     [self.rootView addSubview:self.thirdRow];
     [self.thirdRow mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.secondRow.mas_bottom).offset(0);
+        make.top.equalTo(self.firstRow.mas_bottom).offset(0);
         make.left.equalTo(self.view.mas_left).offset(0);
         make.right.equalTo(self.view.mas_right).offset(0);
         make.height.mas_equalTo(45);
@@ -104,8 +93,8 @@
     self.forthRow = [ProblemItemLLIView showXibView];
     self.forthRow.type = ProblemItemTypeDefaultLL;
     self.forthRow.titleLabel.text = @"录入人:";
-    AccountModel *account = [AccountManager account];
-    self.forthRow.contentLabel.text =account.userName;
+    
+    self.forthRow.contentLabel.text =[NSString stringWithFormat:@"%@(%@)",account.userName,account.displayName];
     self.forthRow.contentLabel.textColor = [UIColor blackColor];
     [self.rootView addSubview:self.forthRow];
     [self.forthRow mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -140,7 +129,7 @@
     self.seventhRow = [ProblemItemLLIView showXibView];
     self.seventhRow.type = ProblemItemTypeDefaultLL;
     self.seventhRow.titleLabel.text = @"出差日期:";
-    self.seventhRow.contentLabel.textColor = [UIColor blackColor];
+    //self.seventhRow.contentLabel.textColor = [UIColor blackColor];
     
     [self.rootView addSubview:self.seventhRow];
     [self.seventhRow mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -183,7 +172,7 @@
     self.tenthRow.contentLabel.textColor = [UIColor blackColor];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
     self.tenthRow.contentLabel.text = [formatter stringFromDate:[NSDate date]];
     
     [self.rootView addSubview:self.tenthRow];
@@ -221,7 +210,7 @@
         vc.exetuceClickCell = ^(ChoosePersonModel *model){
             
             if (model.PERSONID.length > 0) {
-                weakSelf.firstRow.contentLabel.text = model.PERSONID;
+                weakSelf.firstRow.contentLabel.text = [NSString stringWithFormat:@"%@(%@)",model.PERSONID,model.DISPLAYNAME],
                 weakSelf.firstRow.contentLabel.textColor = [UIColor blackColor];
                 NAME1 = model.DISPLAYNAME;
             }else{
@@ -230,7 +219,7 @@
             }
             if(model.DEPARTMENT.length > 0)
             {
-                weakSelf.thirdRow.contentLabel.text = model.DEPARTMENT;
+                weakSelf.thirdRow.contentLabel.text =[NSString stringWithFormat:@"%@(%@)",model.DEPARTMENT,model.DEPARTDESC];
                 NSLog(@"%@",[model mj_keyValues]);
                 weakSelf.thirdRow.contentLabel.textColor = [UIColor blackColor];
                 DEPTNAME = model.DEPARTDESC;
@@ -241,7 +230,18 @@
         };
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
-
+    self.thirdRow.executeTapContentLabel = ^{
+        
+        SupportDepartmentController *vc = [[SupportDepartmentController alloc] init];
+        
+        vc.executeCellClick = ^(SupportDepartmentModel *model){
+            NSLog(@"选择部门 %@",model.DEPTNUM);
+            weakSelf.thirdRow.contentLabel.text =[NSString stringWithFormat:@"%@(%@)",model.DEPTNUM,model.DESCRIPTION];
+        };
+        
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+        
+    };
     self.fifthRow.executeTapContentLabel = ^()
     {
          NSLog(@"选择项目");
@@ -267,8 +267,6 @@
     {
        [weakSelf.view addSubview:weakSelf.timeYear1];
     };
-
-
 }
 - (void)updata
 {
@@ -292,9 +290,9 @@
     NSArray *relationShip = @[dict];
     
     NSDictionary *dic = @{
-                          @"ACOUNT":self.firstRow.contentLabel.text.length>0?self.firstRow.contentLabel.text:@"",//出差人工号
-                          @"DEPTNUM":self.thirdRow.contentLabel.text.length>0?self.thirdRow.contentLabel.text:@"",//部门编号
-                          @"CREATEBY":self.forthRow.contentLabel.text.length>0?self.forthRow.contentLabel.text:@"",//录入人
+                          @"ACOUNT":self.firstRow.contentLabel.text.length>0?[self.firstRow.contentLabel.text componentsSeparatedByString:@"("][0]:@"",//出差人工号
+                          @"DEPTNUM":self.thirdRow.contentLabel.text.length>0?[self.thirdRow.contentLabel.text componentsSeparatedByString:@"("][0]:@"",//部门编号
+                          @"CREATEBY":self.forthRow.contentLabel.text.length>0?[self.forthRow.contentLabel.text componentsSeparatedByString:@"("][0]:@"",//录入人
                           @"PROJECT":self.fifthRow.contentLabel.text.length>0?self.fifthRow.contentLabel.text:@"",//项目编号
                           @"TOPLACE":self.sixthRow.contentTextField.text.length>0?self.sixthRow.contentTextField.text:@"",//地点
                           @"TRIPDATE":self.seventhRow.contentLabel.text.length>0?self.seventhRow.contentLabel.text:@"",//出差日期
@@ -355,8 +353,42 @@
         self.timeYear1 = [[TXTimeChoose alloc]initWithFrame:self.view.bounds type:UIDatePickerModeDate];
         self.timeYear1.backString = ^(NSDate *data){
             weakSelf.seventhRow.contentLabel.text = [weakSelf.timeYear1 stringFromDate:data];
+            weakSelf.seventhRow.contentLabel.textColor = [UIColor blackColor];
         };
     }
     return _timeYear1;
+}
+//查询用户部门信息
+-(void)queryUserInfo
+{
+    AccountModel *account = [AccountManager account];
+    NSDictionary *dic = @{@"STATUS":@"=活动",@"PERSONID":account.userName};
+    
+    NSDictionary *requestDic = @{@"appid":@"UDPERSON",
+                                 @"objectname":@"PERSON",
+                                 @"curpage":@(0),
+                                 @"showcount":@(20),
+                                 @"option":@"read",
+                                 @"condition":dic};
+    NSString *requestJson = kDictionaryToJson(requestDic)
+    NSDictionary *dataDic = @{@"data":requestJson};
+    
+    self.task = [HTTPSessionManager getWithUrl:@"/maximo/mobile/common/api" params:dataDic success:^(id response) {
+        NSLog(@"response %@",response);
+        SVHUD_Stop
+        NSArray *array = response[@"result"][@"resultlist"];
+        if ([array count]==1) {
+            NSString *tmp =array[0][@"DEPARTMENT"];
+            
+            if (tmp.length>0) {
+                NSString *str = [NSString stringWithFormat:@"%@(%@)",array[0][@"DEPARTMENT"],array[0][@"DEPARTDESC"]];
+                NSLog(@"单个用户的部门信息 %@",str);
+                self.thirdRow.contentLabel.text=str?str:@"";
+                self.thirdRow.contentLabel.textColor=[UIColor blackColor];
+            }
+        }
+    } fail:^(NSError *error) {
+        SVHUD_ERROR(@"网络异常")
+    }];
 }
 @end

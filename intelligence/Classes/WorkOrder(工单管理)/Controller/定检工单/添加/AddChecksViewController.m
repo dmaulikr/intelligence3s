@@ -2,8 +2,8 @@
 //  AddCheckViewController.m
 //  intelligence
 //
-//  Created by 光耀 on 16/8/13.
-//  Copyright © 2016年 guangyao. All rights reserved.
+//  Created by chris on 16/8/13.
+//  Copyright © 2016年 chris. All rights reserved.
 //
 
 #import "AddChecksViewController.h"
@@ -196,6 +196,8 @@
         SVHUD_Stop
         if ([dic[@"success"] isEqualToString:@"成功"]) {
             [weakSelf.navigationController popViewControllerAnimated:YES];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"WORKORDER_WS",@"ACTIONNAME":@"定检工单"}];
         }
         else
         {

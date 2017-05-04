@@ -23,7 +23,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = APPCOLOR;
     [self createNav];
-    [self setupLeftMenuButton];
+    //[self setupLeftMenuButton];
     // Do any additional setup after loading the view.
 }
 -(void)setupLeftMenuButton{
@@ -41,10 +41,9 @@
 #pragma mark - Button Handlers
 -(void)leftDrawerButtonPress:(id)sender{
     
-    NSLog(@"分享二维码");
     QRCodeViewController* qrvc = [[QRCodeViewController alloc] init];
     [self presentViewController:qrvc animated:YES completion:nil];
-    }
+}
 
 -(void)createNav{
     _naView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, 44)];

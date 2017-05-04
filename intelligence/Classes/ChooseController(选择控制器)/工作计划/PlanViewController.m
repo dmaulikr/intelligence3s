@@ -127,7 +127,7 @@
     WEAKSELF
     self.LL1 = [PersonalSettingItem itemWithIcon:nil withContent:_model.TASKID withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"任务号:" type:PersonalSettingItemTypeLabels];
     
-    self.LT2 = [PersonalSettingItem itemWithIcon:nil withContent:_model.DESCRIPTION withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"描述:" type:PersonalSettingItemTypeText];
+    self.LT2 = [PersonalSettingItem itemWithIcon:nil withContent:_model.DESCRIPTION withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"描述:" type:PersonalSettingItemTypeLabels];
     
     self.LLI3 = [PersonalSettingItem itemWithIcon:nil withContent:_model.OWNER withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"负责人:" type:PersonalSettingItemTypeArrow];
     _LLI3.operation = ^{
@@ -154,11 +154,11 @@
     
     self.LLI5s = [PersonalSettingItem itemWithIcon:@"ic_choose_data" withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"计划完成时间:" type:PersonalSettingItemTypeArrow];
     
-    self.LT6 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"执行标准:" type:PersonalSettingItemTypeText];
+    self.LT6 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"执行标准:" type:PersonalSettingItemTypeLabels];
     
     self.LC7 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"已完成?:" type:PersonalSettingItemTypeChoice];
     
-    self.LL8 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"问题描述:" type:PersonalSettingItemTypeText];
+    self.LL8 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"问题描述:" type:PersonalSettingItemTypeLabels];
     
     self.LLI9 = [PersonalSettingItem itemWithIcon:@"ic_choose_data" withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"整改期限:" type:PersonalSettingItemTypeArrow];
     
@@ -178,7 +178,7 @@
         [weakSelf.navigationController pushViewController:daily animated:YES];
     };
     
-    self.LT11 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"整改方案:" type:PersonalSettingItemTypeText];
+    self.LT11 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"整改方案:" type:PersonalSettingItemTypeLabels];
     
     self.LL12 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"整改完成情况:" type:PersonalSettingItemTypeLabels];
     

@@ -13,13 +13,14 @@
 #import "ToolingManagementModel.h"
 #import "InspectProjectModel.h"
 #import "Runliner.h"
-
+#import "UDPRORUNLOGC.h"
 @interface ShareConstruction : NSObject
 @property (nonatomic, strong) ConstructionModel *construction;
 @property (nonatomic, strong) HoistingModel *hoisting;
 @property (nonatomic, strong) DailyWorkModel *dailyWork;
 @property (nonatomic, strong) ToolingManagementModel *toolingManagement;
 @property (nonatomic, strong) InspectProjectModel *inspectProject;
+@property (nonatomic, strong) UDPRORUNLOGC *udPRORUNLOGC;
 @property (nonatomic, strong) NSMutableArray * runlineModels;
 @property (nonatomic, strong) NSMutableDictionary * stockQueryCondicitonDictionary;
 

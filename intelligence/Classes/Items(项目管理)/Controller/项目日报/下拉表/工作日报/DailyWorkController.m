@@ -42,21 +42,44 @@
     [super viewWillAppear:animated];
     ShareConstruction *shareConstruction = [ShareConstruction sharedConstruction];
     self.dailyWork = shareConstruction.dailyWork;
+    if (self.dailyWork) {
+        
+            [self.dataArray addObject:self.dailyWork];
+    }
+
     [self.tableview reloadData];
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"工作日报列表";
     isShowEmpty = YES;
-//    SVHUD_NO_Stop(@"正在加载");
-//    _number = 1;
+    if(self.PRORUNLOGNUM.length==0)
+    {
+        self.PRORUNLOGNUM=@"";
+    }
+    if (self.requestStr.length==0)
+    {
+        self.requestStr=@"";
+    }
     [self setupRightMenuButton];
     [self requestData:1 isUpdata:YES];
     [self initTableView];
-//    [self addRefresh];
+ 
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    
+    ShareConstruction *shareConstruction = [ShareConstruction sharedConstruction];
+    
+    NSDictionary * dic = shareConstruction.dailyWork.dic;
+    
+    DailyWorkModel * one= [DailyWorkModel mj_objectWithKeyValues:dic];
+    
+
+}
 -(void)setupRightMenuButton{
     UIButton *addImg = [UIButton buttonWithType:UIButtonTypeCustom];
     [addImg setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
@@ -198,7 +221,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60;
+    return 90;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

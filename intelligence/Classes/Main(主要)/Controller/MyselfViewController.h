@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-
+#import "QRCodeViewController.h"
 @interface MyselfViewController : BaseViewController
 
 @end

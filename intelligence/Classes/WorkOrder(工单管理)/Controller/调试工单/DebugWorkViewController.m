@@ -326,7 +326,7 @@
     self.LL1 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.DEBUGWORKORDERNUM withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"工单号:" type:PersonalSettingItemTypeLabels];
     self.LL1.FieldName=@"DEBUGWORKORDERNUM";
     
-    self.LT2 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.DESCRIPTION withHeight:CELLHEIGHT+3  withClick:_isEdit withStar:NO title:@"描述:" type:PersonalSettingItemTypeText];
+    self.LT2 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.DESCRIPTION withHeight:CELLHEIGHT+3  withClick:_isEdit withStar:NO title:@"描述:" type:PersonalSettingItemTypeLabel];
     self.LT2.FieldName=@"DESCRIPTION";
     
     self.LL3 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PRONUM withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"项目编号:" type:PersonalSettingItemTypeLabels];

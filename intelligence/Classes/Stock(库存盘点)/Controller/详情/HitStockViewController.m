@@ -147,13 +147,13 @@
     
     self.LL4 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.MSEHL withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"单位:" type:PersonalSettingItemTypeLabels];
     
-//    self.LL4I = [PersonalSettingItem itemWithIcon:nil withContent:_stock.ACTUALQTY withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"账存数量:" type:PersonalSettingItemTypeText];
+//    self.LL4I = [PersonalSettingItem itemWithIcon:nil withContent:_stock.ACTUALQTY withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"账存数量:" type:PersonalSettingItemTypeLabel];
     
     
-    self.LT5 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.ACTUALQTY withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"实盘数量:" type:PersonalSettingItemTypeText];
+    self.LT5 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.ACTUALQTY withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"实盘数量:" type:PersonalSettingItemTypeLabel];
     
     
-    self.LT6 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.DIFFREASON withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"差异原因:" type:PersonalSettingItemTypeText];
+    self.LT6 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.DIFFREASON withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"差异原因:" type:PersonalSettingItemTypeLabel];
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.items = @[_LL1,_LL2,_LL3,_LL4,_LT5,_LT6];

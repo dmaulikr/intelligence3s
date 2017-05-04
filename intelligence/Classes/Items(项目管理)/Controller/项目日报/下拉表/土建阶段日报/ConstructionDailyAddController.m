@@ -293,15 +293,6 @@
     };
     
     self.thirdRow.executeTapContentLabel = ^(){
-//        FanNumViewController *fan = [[FanNumViewController alloc]init];
-//        fan.type = ChooseTypeFNI;
-//        fan.executeCellClick = ^(FanNumModle *mode){
-//            if (mode.ITEMNUM.length > 0) {
-//                weakSelf.thirdRow.contentLabel.text = mode.ITEMNUM;
-//                weakSelf.thirdRow.contentLabel.textColor = [UIColor blackColor];
-//            }
-//        };
-//        [weakSelf.navigationController pushViewController:fan animated:YES];
         FlightNoController *choose = [[FlightNoController alloc]init];
         choose.requestCoding = weakSelf.requestStr;
         choose.executeCellClick = ^(FlightNoModel *model){
@@ -362,11 +353,11 @@
     self.footerView = [DailyDetailsFooterView showXibView];
     self.footerView.frame = CGRectMake(0, ScreenHeight - 55, ScreenWidth, 55);
     self.footerView.executeBtnCancelClick = ^(){
-        NSLog(@"取消");
+
         [weakSelf.navigationController popViewControllerAnimated:YES];
     };
     self.footerView.executeBtnSaveClick = ^(){
-        NSLog(@"保存");
+
         [weakSelf updata];
         
     };
@@ -432,7 +423,7 @@
     
     NSDictionary *dic = @{
                           @"TYPE":@"add",
-                          @"PRORUNLOGNUM":self.PRORUNLOGNUM,
+                          @"PRORUNLOGNUM":self.PRORUNLOGNUM?self.PRORUNLOGNUM:@"",
                           @"CREATEDATE":[self determineString:self.firstRow.contentLabel.text],
                           @"PERSONDESC":[self determineString:self.secondRow.contentLabel.text],
                           @"PERSONID" :PERSONID,
@@ -457,9 +448,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-/**
- *  用于不同的请求 传的参数是json
- */
 - (NSString*)dictionaryToJson:(NSDictionary *)dic
 {
     NSError *parseError = nil;
@@ -470,6 +458,7 @@
 }
 
 - (NSString *)determineString:(NSString *)str{
+    
     if([str isEqualToString:@"暂无数据"] ||
        str.length < 1){
         return @"";
@@ -679,15 +668,4 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     //    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UIKeyboardWillShowNotification" object:nil];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

@@ -63,6 +63,7 @@
         [self addNav];
     }
     [self request];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
 }
 - (UITableView *)tableview{
     if (!_tableview) {
@@ -91,10 +92,8 @@
     _right.frame = CGRectMake(_narView.width_W-width-13 - 33, 5, width+13, 30);
     //添加监听事件
     [_right addTarget:self action:@selector(navClick) forControlEvents:UIControlEventTouchUpInside];
-//    if(self.Choice != ChoiceTypeClose){
         // 视图上添加按钮
         [_narView addSubview:_right];
-//    }
     
     UIButton *addImg = [UIButton buttonWithType:UIButtonTypeCustom];
     [addImg setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
@@ -168,12 +167,6 @@
     _tableview.dataSource = self;
     _tableview.delegate =self;
     [self.view addSubview:_tableview];
-//    [self.tableview mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(self.searchBar.mas_bottom);
-//        make.right.mas_equalTo(self.view.mas_right);
-//        make.bottom.mas_equalTo(self.view.mas_bottom);
-//        make.left.mas_equalTo(self.view.mas_left);
-//    }];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
@@ -581,10 +574,7 @@
             [getBtn setEnabled:YES];//设置可用
             [getBtn setUserInteractionEnabled:YES];
             //设置取消按钮字体的颜色“#0374f2”
-            
-            //            [getBtn setTitleColor:[UIColor colorWithHexString:@"#0374f2"] forState:UIControlStateReserved];
-            //
-            //            [getBtn setTitleColor:[UIColor colorWithHexString:@"#0374f2"] forState:UIControlStateDisabled];
+        
             return;
         }else{
             
@@ -652,15 +642,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end
 

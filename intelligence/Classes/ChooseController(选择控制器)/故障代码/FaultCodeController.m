@@ -74,9 +74,22 @@
 //全部加载
 - (void)requestData:(NSInteger)page isUpdata:(BOOL)data{
     // {'appid':'FAILURELIST','objectname':'FAILURELIST','curpage':1,'showcount':20,'option':'read','condition':{'PARENT':'15169'}}
-    NSDictionary *dic = @{
-                          @"PARENT" : self.requestCoding,
-                          };
+    NSDictionary *dic;
+    if (self.requestCoding.length>0) {
+        NSLog(@"根据故障类查询");
+        dic = @{
+                @"PARENT" : self.requestCoding,
+                };
+    }
+    else
+    {
+        NSLog(@"无条件查询");
+        dic = @{
+                @"TYPE" : @"问题",
+                };
+    }
+
+    
     NSDictionary *requestDic = @{@"appid":@"FAILURELIST",
                                  @"objectname":@"FAILURELIST",
                                  @"curpage":@(page),
@@ -233,7 +246,7 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60;
+    return 90;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

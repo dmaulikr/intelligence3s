@@ -36,9 +36,9 @@
     self.bottomWidth.constant = 38;
     self.topName.text = @"盘点单号:";
     self.bottomName.text = @"凭证号:";
-    self.rightlabel.text =stock.LOCDESC.length?stock.LOCDESC:@"";
+    //self.rightlabel.text =stock.LOCDESC.length?stock.LOCDESC:@"";
     self.top.text = stock.STOCKNUM;
-    self.bottom.text = stock.ZPDNUM.length?stock.ZPDNUM:@"暂无描述";;
+    self.bottom.text = stock.DESCRIPTION.length?stock.DESCRIPTION:@"暂无描述";;
 }
 //故障工单
 -(void)setFauWork:(FauWorkModel *)fauWork{
@@ -46,8 +46,8 @@
     [self clerText];
     self.topWidth.constant = 55;
     self.bottomWidth.constant = 38;
-    self.topName.text = @"工单号:";
-    self.bottomName.text = @"描述:";
+    self.topName.text = @"";
+    self.bottomName.text = @"";
     self.top.text = fauWork.WONUM;
     self.bottom.text = fauWork.DESCRIPTION.length?fauWork.DESCRIPTION:@"暂无描述";
 }
@@ -327,7 +327,7 @@
     self.topWidth.constant = 65;
     self.bottomWidth.constant = 65;
     self.top.text = travel.CARDRIVELOGNUM;
-    self.bottom.text = travel.LICENSENUM;
+    self.bottom.text = travel.DESCRIPTION;
 }
 
 -(void)setOil:(OilRModel *)oil{
@@ -338,7 +338,7 @@
     self.topWidth.constant = 65;
     self.bottomWidth.constant = 65;
     self.top.text = oil.CARFUELCHARGENUM;
-    self.bottom.text = oil.LICENSENUM;
+    self.bottom.text = oil.DESCRIPTION;
 }
 -(void)setMaters:(MaterielsModel *)maters{
     _maters = maters;

@@ -10,6 +10,8 @@
 
 @interface DailyWorkAddController : BasePushViewController
 
+@property (nonatomic, copy) NSString *requestStr;
+
 @property (nonatomic, copy) NSString *PRORUNLOGNUM;
 
 @end

@@ -458,7 +458,7 @@
     };
 
     
-    self.LT19 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:nil withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"计划定检风机台数:" type:PersonalSettingItemTypeText];
+    self.LT19 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:nil withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"计划定检风机台数:" type:PersonalSettingItemTypeLabels];
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.items = @[_LLI14,_LLI15,_LLI16,_LL17,_LLI18,_LT19];
@@ -485,7 +485,7 @@
     
     self.LC21 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"定检结果" type:PersonalSettingItemTypeChoice];
     
-    self.LT22 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"备注:" type:PersonalSettingItemTypeText];
+    self.LT22 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"备注:" type:PersonalSettingItemTypeLabels];
     
     self.LC23 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:nil withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"大部件发放:" type:PersonalSettingItemTypeChoice];
     

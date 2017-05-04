@@ -9,6 +9,9 @@
 #import "BasePushViewController.h"
 
 @interface ToolingManagementAddController : BasePushViewController
+
+@property (nonatomic, copy) NSString *requestStr;
+
 @property (nonatomic, copy) NSString *PRORUNLOGNUM;
 
 @end

@@ -14,9 +14,6 @@
     [super awakeFromNib];
     // Initialization code
 }
-
-
-
 + (instancetype)showXibView{
     return [[[NSBundle mainBundle] loadNibNamed:@"ProblemItemTitleView" owner:nil options:nil] lastObject];
 }

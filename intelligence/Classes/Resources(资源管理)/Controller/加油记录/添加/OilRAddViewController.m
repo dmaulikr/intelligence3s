@@ -187,9 +187,9 @@
         [weakSelf.view addSubview:weakSelf.timeYear];
     };
     
-    self.LT4 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"上次加油里程表读数:" type:PersonalSettingItemTypeText];
+    self.LT4 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"上次加油里程表读数:" type:PersonalSettingItemTypeLabel];
     
-    self.LT5 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"本次加油里程表读数:" type:PersonalSettingItemTypeText];
+    self.LT5 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"本次加油里程表读数:" type:PersonalSettingItemTypeLabel];
     
     
     self.LLI5I = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"油品号:" type:PersonalSettingItemTypeArrow];
@@ -212,17 +212,17 @@
         };
         [work ShowInView:weakSelf.view];
     };
-    self.LT7 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"单价:" type:PersonalSettingItemTypeText];
+    self.LT7 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"单价:" type:PersonalSettingItemTypeLabel];
     
-    self.LT8 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"加油费:" type:PersonalSettingItemTypeText];
+    self.LT8 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"加油费:" type:PersonalSettingItemTypeLabel];
     
-    self.LT9 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"发票号:" type:PersonalSettingItemTypeText];
+    self.LT9 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"发票号:" type:PersonalSettingItemTypeLabel];
     
-    self.LT10 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"加油地点:" type:PersonalSettingItemTypeText];
+    self.LT10 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"加油地点:" type:PersonalSettingItemTypeLabel];
     
     self.LC11 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"是否提交:" type:PersonalSettingItemTypeChoice];
     
-    self.LT12 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"备注:" type:PersonalSettingItemTypeText];
+    self.LT12 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"备注:" type:PersonalSettingItemTypeLabel];
     
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];

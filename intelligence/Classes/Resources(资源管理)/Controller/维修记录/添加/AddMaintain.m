@@ -212,13 +212,13 @@
         [weakSelf.view addSubview:weakSelf.timeYear2];
     };
     
-    self.LT5 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"维修单价:" type:PersonalSettingItemTypeText];
+    self.LT5 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"维修单价:" type:PersonalSettingItemTypeLabel];
     
-    self.LT6 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"维修数量:" type:PersonalSettingItemTypeText];
+    self.LT6 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"维修数量:" type:PersonalSettingItemTypeLabel];
     
-    self.LT7 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"维修总额:" type:PersonalSettingItemTypeText];
+    self.LT7 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"维修总额:" type:PersonalSettingItemTypeLabel];
     
-    self.LT8 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"维修发票号:" type:PersonalSettingItemTypeText];
+    self.LT8 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"维修发票号:" type:PersonalSettingItemTypeLabel];
     
     self.LLI9 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"维修类型:" type:PersonalSettingItemTypeArrow];
     _LLI9.operation =^{
@@ -230,17 +230,17 @@
         [work ShowInView:weakSelf.view];
     };
 
-    self.LT10 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"维修地点:" type:PersonalSettingItemTypeText];
+    self.LT10 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"维修地点:" type:PersonalSettingItemTypeLabel];
     
-    self.LT11 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"维修.保养.更换项目:" type:PersonalSettingItemTypeText];
+    self.LT11 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"维修.保养.更换项目:" type:PersonalSettingItemTypeLabel];
     
-    self.LT12 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"上次维修里程表读数:" type:PersonalSettingItemTypeText];
+    self.LT12 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"上次维修里程表读数:" type:PersonalSettingItemTypeLabel];
     
-    self.LT13 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"本次维修里程表读数:" type:PersonalSettingItemTypeText];
+    self.LT13 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"本次维修里程表读数:" type:PersonalSettingItemTypeLabel];
     
     self.LC14 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"是否提交:" type:PersonalSettingItemTypeChoice];
     
-    self.LT15 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"备注:" type:PersonalSettingItemTypeText];
+    self.LT15 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"备注:" type:PersonalSettingItemTypeLabel];
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.header = @"维修信息";

@@ -52,7 +52,7 @@
             return 2;
             break;
         case 1:
-            return 3;
+            return 4;
             break;
         case 2:
             return 1;
@@ -118,13 +118,18 @@
             [cell.detailTextLabel setAdjustsFontSizeToFitWidth:YES];
             cell.detailTextLabel.text=BASE_URL;
         }
-        else
+        else if (indexPath.row==2)
         {
             cell.textLabel.text=@"当前版本:";
             // app版本
             NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
             NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
             cell.detailTextLabel.text=[NSString stringWithFormat:@"%@（点击检查新版本)",app_Version];
+        }
+        else
+        {
+            cell.textLabel.text=@"二维码";
+            cell.detailTextLabel.text=@"点击以分享本app";
         }
     }
     else
@@ -154,6 +159,11 @@
         [self presentViewController:alert animated:YES completion:^{
             
         }];
+        
+    };
+    if (indexPath.section==1&&indexPath.row==3) {
+        QRCodeViewController* qrvc = [[QRCodeViewController alloc] init];
+        [self presentViewController:qrvc animated:YES completion:nil];
         
     };
     

@@ -32,25 +32,21 @@
     self.window.frame = [UIScreen mainScreen].bounds;
     
     //2.6
+    //BaseNavigationViewController * navigationController = [[BaseNavigationViewController alloc] initWithRootViewController:[[TabBarController alloc] init]];
+    
+    //self.window.rootViewController = navigationController;
     self.window.rootViewController = [[TabBarController alloc] init];
     [self.window makeKeyAndVisible];
     
-    // Required
-    // notice: 3.0.0及以后版本注册可以这样写，也可以继续 旧的注册 式
+
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
     entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
-        // 可以添加 定义categories
-        // NSSet<UNNotificationCategory *> *categories for iOS10 or later
-        // NSSet<UIUserNotificationCategory *> *categories for iOS8 and iOS9
+
     }
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
     
-    // Required
-    // init Push
-    // notice: 2.1.5版本的SDK新增的注册 法，改成可上报IDFA，如果没有使 IDFA直接传nil
-    // 如需继续使 pushConfig.plist 件声明appKey等配置内容，请依旧使 [JPUSHService setupWithOption:launchOptions] 式初始化。
-    
+
     [JPUSHService setupWithOption:launchOptions appKey:@"53c93662bb6246e7f9f79b9a"
                           channel:@"mywind"
                  apsForProduction:NO
@@ -63,7 +59,9 @@
     config.channel = @"mywind";
     
     [JANALYTICSService setupWithConfig:config];
-
+    
+    _createDataObject = [NSMutableArray array];
+    
     return YES;
 }
 

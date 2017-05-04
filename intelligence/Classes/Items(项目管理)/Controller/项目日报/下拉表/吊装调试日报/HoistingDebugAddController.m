@@ -442,31 +442,29 @@
      "DZCOMP":"试运行完成台数",
      "DZSTART":"预验收完成台数",
      */
-    
-    NSArray *relationShip = @[@{@"UDPRORUNLOGLINE2":@""}];
+    self.firstRow.contentLabel.text=[NSString stringWithFormat:@"%@ 00:00:00",self.firstRow.contentLabel.text];
     NSDictionary *dic = @{
-                          @"PRORUNLOGNUM":self.PRORUNLOGNUM,
+                          @"PRORUNLOGNUM":self.PRORUNLOGNUM?self.PRORUNLOGNUM:@"",
                           @"TYPE":@"add",
-                          
-                          @"CREATEDATE":self.firstRow.contentLabel.text,
-                          @"PERSONID":PERSONID,
-                          @"PROPHASE":self.forthRow.contentLabel.text,
-                          @"NAME":self.secondRow.contentLabel.text,
-                          @"WORKJOB":self.fifthRow.contentText.text,
-                          
-                          @"DZNUM":self.seventhRow.contentLabel.text,
-                          @"REMARK1":self.eighthRow.contentText.text,
-                          @"CLXPRODUCTION":self.ninthRow.contentText.text,
-                          @"COMPCHECKING":self.tenthRow.contentText.text,
-                          @"COMPRUNNING":self.eleventhRow.contentText.text,
-                          @"BASECOMP":self.twelfthRow.contentText.text,
-                          @"BPQPRODUCTION":self.thirteenthRow.contentText.text,
+                          @"CREATEDATE":self.firstRow.contentLabel.text?self.firstRow.contentLabel.text:@"",
+                          @"PERSONID":PERSONID?PERSONID:@"",
+                          @"PROPHASE":self.forthRow.contentLabel.text?self.forthRow.contentLabel.text:@"",
+                          @"NAME":self.secondRow.contentLabel.text?self.secondRow.contentLabel.text:@"",
+                          @"WORKJOB":self.fifthRow.contentText.text?self.fifthRow.contentText.text:@"",
+                          @"DZNUM":self.seventhRow.contentLabel.text?self.seventhRow.contentLabel.text:@"",
+                          @"REMARK1":self.eighthRow.contentText.text?self.eighthRow.contentText.text:@"",
+                          @"CLXPRODUCTION":self.ninthRow.contentText.text?self.ninthRow.contentText.text:@"",
+                          @"COMPCHECKING":self.tenthRow.contentText.text?self.tenthRow.contentText.text:@"",
+                          @"COMPRUNNING":self.eleventhRow.contentText.text?self.eleventhRow.contentText.text:@"",
+                          @"BASECOMP":self.twelfthRow.contentText.text?self.twelfthRow.contentText.text:@"",
+                          @"BPQPRODUCTION":self.thirteenthRow.contentText.text?self.thirteenthRow.contentText.text:@"",
 //                          "DEBUGGING":"电气安装完成累计数",
-                          @"DEBUGGING2":self.fourteenthRow.contentText.text,
-                          @"DEBUGGINGCHECK":self.fifteenthRow.contentText.text,
-                          @"DZCOMP":self.sixteenthRow.contentText.text,
-                          @"DZSTART":self.seventeenthRow.contentText.text,
+                          @"DEBUGGING2":self.fourteenthRow.contentText.text?self.fourteenthRow.contentText.text:@"",
+                          @"DEBUGGINGCHECK":self.fifteenthRow.contentText.text?self.fifteenthRow.contentText.text:@"",
+                          @"DZCOMP":self.sixteenthRow.contentText.text?self.sixteenthRow.contentText.text:@"",
+                          @"DZSTART":self.seventeenthRow.contentText.text?self.seventeenthRow.contentText.text:@"",
                           };
+    
     ShareConstruction *shareConstruction = [ShareConstruction sharedConstruction];
     shareConstruction.hoisting = [HoistingModel mj_objectWithKeyValues:dic];
     shareConstruction.hoisting.dic = dic;

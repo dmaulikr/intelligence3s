@@ -205,7 +205,6 @@
         [self saveClick];
     }
 }
-
 //保存
 -(void)saveClick{
     
@@ -912,11 +911,20 @@
     self.LL_28.FieldName=@"UDJGRESULT";
     
     
-    self.LT_28I = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDREMARK withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"没有编码的物料:" type:PersonalSettingItemTypeText];
-    self.LL_28.FieldName=@"UDREMARK";
+    self.LT_28I = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDREMARK withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"没有编码的物料:" type:PersonalSettingItemTypeLabels];
+    self.LT_28I.FieldName=@"UDREMARK";
     
+//    self.LT_28I.operation=^{
+//        
+//        BaseInputViewController *input = [[BaseInputViewController alloc] init];
+//        [input setTitle:@"没有编码的物料:"];
+//        [input.textView setText:weakSelf.LT_28I.content];
+//        [weakSelf presentViewController:input animated:YES completion:^{
+//            
+//        }];
+//    };
     
-    self.LT_29 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDPROBDESC withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"故障隐患描述:" type:PersonalSettingItemTypeText];
+    self.LT_29 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDPROBDESC withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"故障隐患描述:" type:PersonalSettingItemTypeLabels];
     
     self.LT_29.FieldName=@"UDPROBDESC";
     

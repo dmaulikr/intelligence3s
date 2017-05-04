@@ -53,6 +53,7 @@
     
     self.viewControllers=@[navigationController1,navigationController2,navigationController3];
     
+    
     items = self.tabBar.items;
     self.tabBar.tintColor=[UIColor colorWithRed:43.0/255.0 green:90.0/255.0 blue:156.0/255.0 alpha:1];
     self.tabBar.unselectedItemTintColor = [UIColor blackColor];
@@ -119,8 +120,6 @@
     CLLocation * location = [locations objectAtIndex:0];
    longitude=[NSString stringWithFormat:@"%f",location.coordinate.longitude];
    latitude=[NSString stringWithFormat:@"%f",location.coordinate.latitude];
-
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -215,10 +214,10 @@
     
     soap.DicBlock = ^(NSDictionary *dic){
         SVHUD_Stop
-        if ([dic[@"success"] isEqualToString:@"成功"])
-        {
-            NSLog(@"发送统计消息成功");
-        }
+//        if ([dic[@"success"] isEqualToString:@"成功"])
+//        {
+//            
+//        }
     };
     
     AccountModel *model = [AccountManager account];

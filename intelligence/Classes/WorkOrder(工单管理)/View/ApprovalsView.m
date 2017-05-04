@@ -145,7 +145,6 @@ static CGFloat maxWordNumber   = 100;
 
 //否
 -(void)backViewBtnSureClick:(UIButton *)sender{
-    NSLog(@"消失");
     [self dismiss];
 }
 //是

@@ -139,7 +139,7 @@
         
     };
     
-    self.LT2 = [PersonalSettingItem itemWithIcon:nil withContent:_model.FJLOCATION withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"机台数:" type:PersonalSettingItemTypeText];
+    self.LT2 = [PersonalSettingItem itemWithIcon:nil withContent:_model.FJLOCATION withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"机台数:" type:PersonalSettingItemTypeLabel];
     
     self.LLI3 = [PersonalSettingItem itemWithIcon:nil withContent:_model.DYNAMICDEBUGDATE withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"调试日期:" type:PersonalSettingItemTypeArrow];
     _LLI3.operation = ^{
@@ -161,7 +161,7 @@
         [weakSelf.view addSubview:weakSelf.timeYear4];
     };
     
-    self.LT7 = [PersonalSettingItem itemWithIcon:@"" withContent:_model.VESION withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"程序版本号:" type:PersonalSettingItemTypeText];
+    self.LT7 = [PersonalSettingItem itemWithIcon:@"" withContent:_model.VESION withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"程序版本号:" type:PersonalSettingItemTypeLabel];
     
     self.LLI8 = [PersonalSettingItem itemWithIcon:@"ic_choose_data" withContent:_model.RESPONSIBLEPERSON withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"调试负责人:" type:PersonalSettingItemTypeArrow];
     _LLI8.operation = ^{
@@ -222,9 +222,9 @@
         [weakSelf.navigationController pushViewController:daily animated:YES];
     };
     
-    self.LT13 = [PersonalSettingItem itemWithIcon:@"" withContent:_model.QUESTION withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"问题记录:" type:PersonalSettingItemTypeText];
+    self.LT13 = [PersonalSettingItem itemWithIcon:@"" withContent:_model.QUESTION withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"问题记录:" type:PersonalSettingItemTypeLabel];
     
-    self.LT14 = [PersonalSettingItem itemWithIcon:@"ic_choose_data" withContent:_model.DISPOSE withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"处理过程:" type:PersonalSettingItemTypeText];
+    self.LT14 = [PersonalSettingItem itemWithIcon:@"ic_choose_data" withContent:_model.DISPOSE withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"处理过程:" type:PersonalSettingItemTypeLabel];
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.items = @[_LLI1,_LT2,_LLI3,_LLI4,_LLI5,_LLI6,_LT7,_LLI8,_LLI9,_LLI10,_LLI11,_LLI12,_LT13,_LT14,];

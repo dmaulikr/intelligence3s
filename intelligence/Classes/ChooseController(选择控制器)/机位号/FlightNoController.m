@@ -74,7 +74,9 @@
 //全部加载
 - (void)requestData:(NSInteger)page isUpdata:(BOOL)data{
     // {'appid':'UDFANDETAILS','objectname':'UDFANDETAILS','curpage':1,'showcount':20,'option':'read','condition':{'PRONUM':'=S1-20140042'}}
+    
     NSDictionary *dic = @{@"PRONUM" : self.requestCoding};
+    
     NSDictionary *requestDic = @{@"appid":@"UDFANDETAILS",
                                  @"objectname":@"UDFANDETAILS",
                                  @"curpage":@(page),
@@ -234,7 +236,7 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60;
+    return 90;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

@@ -309,9 +309,9 @@
         }
     };
     
-    self.LL16 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.NUMBER2 withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"上次加油里程表读数:" type:PersonalSettingItemTypeText];
+    self.LL16 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.NUMBER2 withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"上次加油里程表读数:" type:PersonalSettingItemTypeLabel];
     
-    self.LL17 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.NUMBER1 withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"本次加油里程表读数:" type:PersonalSettingItemTypeText];
+    self.LL17 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.NUMBER1 withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"本次加油里程表读数:" type:PersonalSettingItemTypeLabel];
     
     self.LL18 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.NUMBER3 withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"里程差:" type:PersonalSettingItemTypeLabel];
     
@@ -319,17 +319,17 @@
     
     self.LL20 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.NUMBER5 withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"本次加油量:" type:PersonalSettingItemTypeLabel];
     
-    self.LL21 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PRICE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"单价:" type:PersonalSettingItemTypeText];
+    self.LL21 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PRICE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"单价:" type:PersonalSettingItemTypeLabel];
     
-    self.LL22 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.FUELCOST withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"加油费:" type:PersonalSettingItemTypeText];
+    self.LL22 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.FUELCOST withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"加油费:" type:PersonalSettingItemTypeLabel];
     
     self.LL23 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.LASTFUELCONSUMPTION withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"油耗:" type:PersonalSettingItemTypeLabel];
     
-    self.LL24 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.INVOICENUM withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"发票号:" type:PersonalSettingItemTypeText];
+    self.LL24 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.INVOICENUM withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"发票号:" type:PersonalSettingItemTypeLabel];
     
-    self.LL25 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PLACE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"加油地点:" type:PersonalSettingItemTypeText];
+    self.LL25 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PLACE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"加油地点:" type:PersonalSettingItemTypeLabel];
     
-    self.LL26 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.REMARK withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"备注:" type:PersonalSettingItemTypeText];
+    self.LL26 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.REMARK withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"备注:" type:PersonalSettingItemTypeLabel];
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.header = @"录入信息";

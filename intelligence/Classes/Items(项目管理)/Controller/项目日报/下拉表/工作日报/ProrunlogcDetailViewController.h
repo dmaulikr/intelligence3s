@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "BasePushViewController.h"
 #import "UDPRORUNLOGC.h"
-
+#import "DailyWorkModel.h"
 @interface ProrunlogcDetailViewController : BasePushViewController
 @property (nonatomic, strong)UDPRORUNLOGC* udPRORUNLOGC;
+@property (nonatomic, strong) DailyWorkModel *dailyWork;
 @end

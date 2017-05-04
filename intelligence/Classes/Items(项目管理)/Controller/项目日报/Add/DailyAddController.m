@@ -12,11 +12,17 @@
 #import "ChoiceWorkView.h"
 #import "ChooseItemNoController.h"
 #import "DailyDetailChoosePersonController.h"
+#import "DTKDropdownMenuView.h"
 
 #import "ChooseItemNoModel.h"
 #import "ChoosePersonModel.h"
 
 #import "SoapUtil.h"
+#import "ShareConstruction.h"
+#import "ConstructionDailyAddController.h"
+#import "HoistingDebugAddController.h"
+#import "DailyWorkController.h"
+#import "ToolingManagementAddController.h"
 
 @interface DailyAddController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *rootScrollView;
@@ -43,7 +49,7 @@
 // 状态：
 @property (nonatomic, strong) ProblemItemLLIView *ninthRow;
 
-
+@property (nonatomic, strong) NSString * PRONUM;
 
 @end
 
@@ -60,8 +66,79 @@
     [self addRows];
     [self addBlocks];
     [self addScrollFooterView];
+    [self addRightNavBarItem];
+}
+- (void)addRightNavBarItem{
+    __weak typeof(self) weakSelf = self;
+    DTKDropdownItem *item0 = [DTKDropdownItem itemWithTitle:@"土建阶段日报" iconName:@"ic_tujian" callBack:^(NSUInteger index, id info) {
+        NSLog(@"rightItem%lu",(unsigned long)index);
+        [weakSelf pushWithIndex:index];
+    }];
+    DTKDropdownItem *item1 = [DTKDropdownItem itemWithTitle:@"吊装调试日报" iconName:@"ic_diaozhuang" callBack:^(NSUInteger index, id info) {
+        NSLog(@"rightItem%lu",(unsigned long)index);
+        [weakSelf pushWithIndex:index];
+    }];
+    DTKDropdownItem *item2 = [DTKDropdownItem itemWithTitle:@"工作日报" iconName:@"ic_realinfo" callBack:^(NSUInteger index, id info) {
+        NSLog(@"rightItem%lu",(unsigned long)index);
+        [weakSelf pushWithIndex:index];
+    }];
+    DTKDropdownItem *item3 = [DTKDropdownItem itemWithTitle:@"工装管理" iconName:@"ic_gzgl" callBack:^(NSUInteger index, id info) {
+        NSLog(@"rightItem%lu",(unsigned long)index);
+        [weakSelf pushWithIndex:index];
+    }];
+    
+    DTKDropdownMenuView *menuView = [DTKDropdownMenuView dropdownMenuViewWithType:dropDownTypeRightItem frame:CGRectMake(0, 0, 44.f, 44.f) dropdownItems:@[item0,item1,item2,item3] icon:@"more"];
+    menuView.currentNav = self.navigationController;
+    
+    menuView.dropWidth = 150.f;
+    menuView.titleFont = [UIFont systemFontOfSize:18.f];
+    menuView.textColor = RGBCOLOR(102, 102, 102);
+    menuView.textFont = [UIFont systemFontOfSize:13.f];
+    menuView.cellSeparatorColor = RGBCOLOR(229, 229, 229);
+    menuView.textFont = [UIFont systemFontOfSize:14.f];
+    menuView.animationDuration = 0.2f;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:menuView];
 }
 
+- (void)pushWithIndex:(NSInteger)index
+{
+    NSLog(@"跳转页面");
+    switch (index) {
+        case 0:{
+
+            //土建阶段日报
+            ConstructionDailyAddController *vc = [[ConstructionDailyAddController alloc] init];
+            vc.requestStr = self.PRONUM;
+            vc.PRORUNLOGNUM = self.daily.PRORUNLOGNUM;
+            [self.navigationController pushViewController:vc animated:YES];
+        }break;
+        case 1:{
+            //吊装调试日报
+            HoistingDebugAddController *vc = [[HoistingDebugAddController alloc] init];
+            vc.requestStr = self.PRONUM;
+            vc.PRORUNLOGNUM = self.daily.PRORUNLOGNUM;
+            [self.navigationController pushViewController:vc animated:YES];
+        }break;
+        case 2:{
+            //工作日报
+            DailyWorkController *vc = [[DailyWorkController alloc] init];
+            vc.requestStr = self.PRONUM;
+            vc.PRORUNLOGNUM = self.daily.PRORUNLOGNUM;
+            
+            [self.navigationController pushViewController:vc animated:YES];
+        }break;
+        case 3:{
+            //工装管理
+            ToolingManagementAddController *vc = [[ToolingManagementAddController alloc] init];
+            vc.requestStr = self.PRONUM;
+            vc.PRORUNLOGNUM = self.daily.PRORUNLOGNUM;
+            [self.navigationController pushViewController:vc animated:YES];
+        }break;
+            
+        default:
+            break;
+    }
+}
 - (void)addRows{
     self.firstRow = [ProblemItemLLIView showXibView];
     self.firstRow.type = ProblemItemTypeDefaultLL;
@@ -167,7 +244,7 @@
         ChooseItemNoController *vc = [[ChooseItemNoController alloc] init];
         vc.title = @"选择项目";
         vc.executeClickCell = ^(ChooseItemNoModel *model){
-            weakSelf.daily.PRONUM = model.PRONUM;
+            weakSelf.PRONUM = model.PRONUM;
             if (model.PRONUM.length > 0) {
                 weakSelf.secondRow.contentLabel.text = model.PRONUM;
                 weakSelf.secondRow.contentLabel.textColor = [UIColor blackColor];
@@ -256,13 +333,37 @@
     self.footerView = [DailyDetailsFooterView showXibView];
     self.footerView.frame = CGRectMake(0, ScreenHeight - 55, ScreenWidth, 55);
     self.footerView.executeBtnCancelClick = ^(){
-        NSLog(@"取消");
+
         [weakSelf.navigationController popViewControllerAnimated:YES];
     };
     self.footerView.executeBtnSaveClick = ^(){
-        NSLog(@"保存");
+
+        
+        if (weakSelf.sixthRow.contentLabel.text.length==0||[weakSelf.sixthRow.contentLabel.text isEqualToString:@"暂无数据"]) {
+            WHUDNormal(@"年 未填写");
+            return ;
+        }
+        else if(![weakSelf isPureNumandCharacters:weakSelf.sixthRow.contentLabel.text])
+        {
+            
+            WHUDNormal(@"年 格式不对");
+            return ;
+        }
+        
+        if (weakSelf.seventhRow.contentLabel.text.length==0||[weakSelf.seventhRow.contentLabel.text isEqualToString:@"暂无数据"]) {
+            WHUDNormal(@"月 未填写");
+            return ;
+        }
+        else if(![weakSelf isPureNumandCharacters:weakSelf.seventhRow.contentLabel.text])
+        {
+            
+            WHUDNormal(@"月 格式不对");
+            return ;
+        }
+        
         [weakSelf updata];
     };
+    
     [self.view addSubview:self.footerView];
 }
 
@@ -271,37 +372,72 @@
     WEAKSELF
     SoapUtil *soap = [[SoapUtil alloc]initWithNameSpace:@"http://www.ibm.com/maximo" andEndpoint:[NSString stringWithFormat:@"%@/meaweb/services/MOBILESERVICE",BASE_URL]];
     soap.DicBlock = ^(NSDictionary *dic){
+        
+        NSLog(@"结果 %@",dic);
+        
         SVHUD_Stop;
         if ([dic[@"status"] isEqualToString:@""]) {
             HUDNormal(@"保存失败稍后再试");
         }else{
-//            NSString *str = dic[@"errorMsg"];
-//            NSString *str1 = @"工单=";
-//            NSRange range = [str rangeOfString:str1];//匹配得到的下标
-//            NSLog(@"rang:%@",NSStringFromRange(range));
-//            NSRange range1 = NSMakeRange(range.location + range.length, 6);
-//            NSString *string = [str substringWithRange:range1];//截取范围类的字符串
-//            NSLog(@"截取的值为：%@",string);
             NSString *str2 = [NSString stringWithFormat:@"编号%@日志新增成功",dic[@"PRORUNLOGNUM"]];
             HUDNormal(str2);
             [weakSelf.navigationController popViewControllerAnimated:YES];
         }
     };
-    NSDictionary *dict = @{};
-    NSArray *relationShip = @[dict];
+    //
+    ShareConstruction *shareConstruction = [ShareConstruction sharedConstruction];
+
     
-    NSDictionary *dic = @{
-                     @"CONTRACTS":@"",
-                     @"RESPONSID":@"",
-                     @"DESCRIPTION":self.firstRow.contentLabel.text,
-                     @"PRONUM":self.secondRow.contentLabel.text,
-                     @"UDPRORESC":self.fifthRow.contentLabel.text,
-                     @"YEAR":self.sixthRow.contentLabel.text,
-                     @"MONTH":self.seventhRow.contentLabel.text,
-                     @"PROSTAGE":self.eighthRow.contentLabel.text,
-                     @"STATUS":self.ninthRow.contentLabel.text,
-                     @"relationShip":relationShip,
-                     };
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    NSMutableArray *relationShip = [NSMutableArray array];
+    
+    NSMutableDictionary *dic =[NSMutableDictionary dictionaryWithDictionary:@{
+                                                                              @"CONTRACTS":@"",
+                                                                              @"RESPONSID":@"",
+                                                                              @"DESCRIPTION":self.firstRow.contentLabel.text,
+                                                                              @"PRONUM":self.secondRow.contentLabel.text,
+                                                                              @"UDPRORESC":self.fifthRow.contentLabel.text,
+                                                                              @"YEAR":self.sixthRow.contentLabel.text,
+                                                                              @"MONTH":self.seventhRow.contentLabel.text,
+                                                                              @"PROSTAGE":self.eighthRow.contentLabel.text,
+                                                                              @"STATUS":self.ninthRow.contentLabel.text,
+                                                                              @"relationShip":relationShip,
+                                                                              }];
+    //土建
+    if (shareConstruction.construction) {
+        NSLog(@"土建");
+         [dic setObject:[NSArray arrayWithObject:shareConstruction.construction.dic] forKey:@"UDPRORUNLOGLINE1"];
+        
+        
+        [dict setObject:@"" forKey:@"UDPRORUNLOGLINE1"];
+    }
+    //吊装
+    if (shareConstruction.hoisting) {
+        NSLog(@"吊装");
+        [dic setObject:[NSArray arrayWithObject:shareConstruction.hoisting.dic] forKey:@"UDPRORUNLOGLINE2"];
+       
+        [dict setObject:@"" forKey:@"UDPRORUNLOGLINE2"];
+    }
+    //工作日报
+    if (shareConstruction.dailyWork) {
+        NSLog(@"工作日报");
+         [dic setObject:[NSArray arrayWithObject:shareConstruction.dailyWork.dic] forKey:@"UDPRORUNLOGLINE"];
+       
+        [dict setObject:@"" forKey:@"UDPRORUNLOGLINE"];
+    }
+    //工装管理
+    if (shareConstruction.toolingManagement) {
+        
+        NSLog(@"工装管理");
+         [dic setObject:[NSArray arrayWithObject:shareConstruction.toolingManagement.dic] forKey:@"UDPRORUNLOGLINE4"];
+        
+        [dict setObject:@"" forKey:@"UDPRORUNLOGLINE4"];
+        
+    }
+    if (relationShip.count==0) {
+        [dict setObject:@"" forKey:@""];
+        [relationShip addObject:dict];
+    }
     AccountModel *account = [AccountManager account];
     NSArray *arr = @[
                      @{@"json" : [self dictionaryToJson:dic]},
@@ -328,18 +464,15 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+- (BOOL)isPureNumandCharacters:(NSString *)string
+{
+    string = [string stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]];
     
+    if(string.length > 0)
+    {
+        return NO;
+    } 
+    return YES;
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

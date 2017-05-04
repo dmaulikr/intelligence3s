@@ -63,7 +63,7 @@
     
     self.LLI3 = [PersonalSettingItem itemWithIcon:@"more_next_icon"  withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"相关故障工单:" type:PersonalSettingItemTypeArrow];
     
-    self.LT4 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"现场问题及进展情况描述:" type:PersonalSettingItemTypeText];
+    self.LT4 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"现场问题及进展情况描述:" type:PersonalSettingItemTypeLabel];
 
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.header = @"问题联络单基本信息";

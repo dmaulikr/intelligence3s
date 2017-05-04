@@ -651,7 +651,7 @@
         }
     };
     
-    self.LT21 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PCCOMPNUM withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"计划定检风机台数:" type:PersonalSettingItemTypeText];
+    self.LT21 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PCCOMPNUM withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"计划定检风机台数:" type:PersonalSettingItemTypeLabels];
     self.LT21.FieldName=@"PCCOMPNUM";
     
     

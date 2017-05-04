@@ -314,13 +314,13 @@
             [weakSelf.view addSubview:weakSelf.timeYear2];
             }
         };
-    self.LL15 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.PRICE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"维修单价:" type:PersonalSettingItemTypeText];
+    self.LL15 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.PRICE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"维修单价:" type:PersonalSettingItemTypeLabel];
     
-    self.LL16 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.MAINNUMBER withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"维修数量:" type:PersonalSettingItemTypeText];
+    self.LL16 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.MAINNUMBER withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"维修数量:" type:PersonalSettingItemTypeLabel];
     
-    self.LL17 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.TOTALPRICE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"维修总额:" type:PersonalSettingItemTypeText];
+    self.LL17 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.TOTALPRICE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"维修总额:" type:PersonalSettingItemTypeLabel];
     
-    self.LL18 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.INVOICENUM withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"维修发票号:" type:PersonalSettingItemTypeText];
+    self.LL18 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.INVOICENUM withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"维修发票号:" type:PersonalSettingItemTypeLabel];
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.header = @"维修信息";
@@ -330,17 +330,17 @@
 -(void)addThree{
     self.LL19 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.SERVICETYPE withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"维修类型:" type:PersonalSettingItemTypeLabels];
     
-    self.LL20 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.MAINPLACE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"维修地点:" type:PersonalSettingItemTypeText];
+    self.LL20 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.MAINPLACE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"维修地点:" type:PersonalSettingItemTypeLabel];
     
-    self.LL21 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.MAINCONTENT withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"维修.保养.更换项目:" type:PersonalSettingItemTypeText];
+    self.LL21 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.MAINCONTENT withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"维修.保养.更换项目:" type:PersonalSettingItemTypeLabel];
     
-    self.LL22 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.NUMBER2 withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"上次维修里程表读数:" type:PersonalSettingItemTypeText];
+    self.LL22 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.NUMBER2 withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"上次维修里程表读数:" type:PersonalSettingItemTypeLabel];
     
-    self.LL23 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.NUMBER1 withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"本次维修里程表读数:" type:PersonalSettingItemTypeText];
+    self.LL23 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.NUMBER1 withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"本次维修里程表读数:" type:PersonalSettingItemTypeLabel];
     
     self.LC24 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.COMISORNO withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"是否提交:" type:PersonalSettingItemTypeChoice];
     
-    self.LL25 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.REMARK withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"备注:" type:PersonalSettingItemTypeText];
+    self.LL25 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.REMARK withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"备注:" type:PersonalSettingItemTypeLabel];
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.header = @"维修信息";
     group.items = @[_LL19,_LL20,_LL21,_LL22,_LL23,_LC24,_LL25];

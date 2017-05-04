@@ -594,8 +594,8 @@
     
     _LLI_15.operation = ^{
         if (weakSelf.LLI_14.content.length ==0) {
-            WHUDNormal(@"请选择故障类");
-            return ;
+            
+            
         }
         FaultCodeController *fault = [[FaultCodeController alloc]init];
         fault.executeCellClick = ^(FaultCodeModel *model){
@@ -603,8 +603,12 @@
             weakSelf.LLI_15.content = model.FAILURECODE;
             weakSelf.LL_15_1.content = model.CODEDESC;
             [weakSelf.tableView reloadData];
+            [weakSelf queryFAILURECODE:model.PARENT];
         };
+        
         fault.requestCoding = weakSelf.faultmodel.FAILURELIST;
+        
+        
         [weakSelf.navigationController pushViewController:fault animated:YES];
     };
     self.LL_15_1 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"故障类型描述:" type:PersonalSettingItemTypeLabels];
@@ -654,9 +658,9 @@
     
     self.LL_27 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"累计停机时间:" type:PersonalSettingItemTypeLabels];
     
-    self.LT_27I = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"没有编码的物料:" type:PersonalSettingItemTypeText];
+    self.LT_27I = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"没有编码的物料:" type:PersonalSettingItemTypeLabel];
     
-    self.LT_28 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"故障隐患描述:" type:PersonalSettingItemTypeText];
+    self.LT_28 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"故障隐患描述:" type:PersonalSettingItemTypeLabel];
     
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
@@ -717,5 +721,37 @@
     return _timeYear4;
 }
 
+-(void)queryFAILURECODE:(NSString *)search
+{
+    WEAKSELF
+    NSDictionary *dic;
 
+        NSLog(@"根据故障类查询");
+        dic = @{
+                @"FAILURELIST" : search,
+                @"TYPE2":@"*"
+                };
+    NSDictionary *requestDic = @{@"appid":@"FAILURELIST",
+                                 @"objectname":@"FAILURELIST",
+                                 @"curpage":@(0),
+                                 @"showcount":@(20),
+                                 @"option":@"read",
+                                 @"condition":dic};
+    NSString *requestJson = kDictionaryToJson(requestDic)
+    NSDictionary *dataDic = @{@"data":requestJson};
+    
+    self.task = [HTTPSessionManager getWithUrl:@"/maximo/mobile/common/api" params:dataDic success:^(id response) {
+        NSArray *array = [FaultCodeModel mj_objectArrayWithKeyValuesArray:response[@"result"][@"resultlist"]];
+        
+        
+        if (array.count>0) {
+             weakSelf.LLI_14.content = [array[0] valueForKey:@"CODEDESC"];
+            
+        }
+        
+        
+    } fail:^(NSError *error) {
+ 
+    }];
+}
 @end

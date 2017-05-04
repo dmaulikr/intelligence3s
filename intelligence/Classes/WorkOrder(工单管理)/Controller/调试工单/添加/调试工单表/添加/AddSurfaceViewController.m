@@ -53,35 +53,35 @@
 }
 
 -(void)addUIOne{
-    self.LL1 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"风机编码:" type:PersonalSettingItemTypeText];
+    self.LL1 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"风机编码:" type:PersonalSettingItemTypeLabel];
     
     self.LT2 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"机台号:" type:PersonalSettingItemTypeLabels];
     
-    self.LL3 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"调试日期:" type:PersonalSettingItemTypeText];
+    self.LL3 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"调试日期:" type:PersonalSettingItemTypeLabel];
     
     self.LL4 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"并网运行日期:" type:PersonalSettingItemTypeLabels];
 
     
-    self.LL5 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"静态调试日期:" type:PersonalSettingItemTypeText];
+    self.LL5 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"静态调试日期:" type:PersonalSettingItemTypeLabel];
     
     self.LL6 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"动态调试日期:" type:PersonalSettingItemTypeLabels];
 
     
-    self.LT7 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"程序版本号:" type:PersonalSettingItemTypeText];
+    self.LT7 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"程序版本号:" type:PersonalSettingItemTypeLabel];
     
     self.LL8 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"调试责任人:" type:PersonalSettingItemTypeLabels];
 
     
-    self.LL9 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"调试组长:" type:PersonalSettingItemTypeText];
+    self.LL9 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"调试组长:" type:PersonalSettingItemTypeLabel];
     
     self.LL10 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"调试工程师1:" type:PersonalSettingItemTypeLabels];
 
     
-    self.LL11 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"调试工程师2:" type:PersonalSettingItemTypeText];
+    self.LL11 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"调试工程师2:" type:PersonalSettingItemTypeLabel];
     
     self.LL12 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"调试工程师3:" type:PersonalSettingItemTypeLabels];
 
-    self.LT13 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"问题记录:" type:PersonalSettingItemTypeText];
+    self.LT13 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"问题记录:" type:PersonalSettingItemTypeLabel];
     
     self.LT14 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"处理过程:" type:PersonalSettingItemTypeLabels];
     

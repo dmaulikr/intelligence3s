@@ -29,6 +29,15 @@
     {
         NSLog(@"新增、修改 %@",array);
     }
+    else if([method isEqualToString:@"wfservicewfGoOn"])
+    {
+        NSLog(@"审批工作流 %@",array);
+    }
+    else if([method isEqualToString:@"wfservicestartWF2"])
+    {
+        NSLog(@"启动工作流%@",array);
+    }
+
     
    NSString *methods = [NSString stringWithFormat:@"%@ xmlns=\"http://www.ibm.com/maximo\"",method];
     NSData *data = [self soapInvoke:methods params:array];
@@ -53,7 +62,7 @@
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
-    NSLog(@"%@",string);
+    //NSLog(@"%@",string);
     if(recordResults)
     {
         [soapResults appendString:string];
@@ -165,7 +174,7 @@
      "</soap:Envelope>\n"
      ];
 
-    NSLog(@"request：n%@\n", post);
+    //NSLog(@"request：n%@\n", post);
     
     return [self soapCall:method postData:post];
 }

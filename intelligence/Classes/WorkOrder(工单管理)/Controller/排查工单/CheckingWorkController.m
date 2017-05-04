@@ -538,19 +538,19 @@
     self.LC16.FieldName=@"PERINSPR";
 
     
-    self.LL17 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDREMARK withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"备注:" type:PersonalSettingItemTypeText];
+    self.LL17 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDREMARK withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"备注:" type:PersonalSettingItemTypeLabel];
     self.LL17.FieldName=@"UDREMARK";
     
-    self.LT18 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDZGMEASURE withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"故障处理方案:" type:PersonalSettingItemTypeText];
+    self.LT18 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDZGMEASURE withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"故障处理方案:" type:PersonalSettingItemTypeLabel];
     self.LT18.FieldName=@"UDZGMEASURE";
     
     self.LLI19 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"排查计划编号:" type:PersonalSettingItemTypeArrow];
     self.LLI19.FieldName=@"";
     
-    self.LT20 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PCCOMPNUM withHeight:CELLHEIGHT  withClick:_isClick withStar:YES title:@"计划完成台数:" type:PersonalSettingItemTypeText];
+    self.LT20 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PCCOMPNUM withHeight:CELLHEIGHT  withClick:_isClick withStar:YES title:@"计划完成台数:" type:PersonalSettingItemTypeLabel];
     self.LT20.FieldName=@"PCCOMPNUM";
     
-    self.LT21 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.REALCOMP withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"实际完成台数:" type:PersonalSettingItemTypeText];
+    self.LT21 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.REALCOMP withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"实际完成台数:" type:PersonalSettingItemTypeLabel];
     self.LT21.FieldName=@"REALCOMP";
 
     
@@ -566,14 +566,14 @@
         [work ShowInView:weakSelf.view];
     };
     
-    self.LT23 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDFJFOL withHeight:CELLHEIGHT  withClick:_isClick withStar:NO title:@"风机跟踪:" type:PersonalSettingItemTypeText];
+    self.LT23 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDFJFOL withHeight:CELLHEIGHT  withClick:_isClick withStar:NO title:@"风机跟踪:" type:PersonalSettingItemTypeLabel];
     self.LT23.FieldName=@"UDFJFOL";
     
     
-    self.LT24 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PCRESON withHeight:CELLHEIGHT  withClick:_isClick withStar:YES title:@"排查原因:" type:PersonalSettingItemTypeText];
+    self.LT24 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PCRESON withHeight:CELLHEIGHT  withClick:_isClick withStar:YES title:@"排查原因:" type:PersonalSettingItemTypeLabel];
     self.LT24.FieldName=@"PCRESON";
     
-    self.LT25 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDJGRESULT withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"排查结果:" type:PersonalSettingItemTypeText];
+    self.LT25 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDJGRESULT withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"排查结果:" type:PersonalSettingItemTypeLabel];
     self.LT25.FieldName=@"UDJGRESULT";
     
     

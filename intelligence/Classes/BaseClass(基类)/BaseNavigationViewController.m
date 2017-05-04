@@ -26,7 +26,7 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-
+    
     if (self.viewControllers.count > 0) { // 如果现在push的不是栈底控制器(最先push进来的那个控制器)
 
         //按钮的创建和设置
@@ -46,15 +46,14 @@
 }
 
 - (void)back
-{   [self.view setBackgroundColor:[UIColor whiteColor]];
+{  
     [self popViewControllerAnimated:YES];
-    SVHUD_Stop
+   // SVHUD_Stop
 }
 
 - (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     
 }
-
-
 @end

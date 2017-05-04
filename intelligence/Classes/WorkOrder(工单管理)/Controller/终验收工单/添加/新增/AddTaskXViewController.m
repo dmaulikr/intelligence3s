@@ -54,7 +54,7 @@
     WEAKSELF
     self.LL1 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"任务号:" type:PersonalSettingItemTypeLabels];
     
-    self.LT2 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"工作任务:" type:PersonalSettingItemTypeText];
+    self.LT2 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"工作任务:" type:PersonalSettingItemTypeLabel];
     
     self.LLI3 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"负责人:" type:PersonalSettingItemTypeArrow];
     
@@ -62,7 +62,7 @@
     
     self.LLI5 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"结束时间:" type:PersonalSettingItemTypeArrow];
     
-     self.LT6 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"执行标准:" type:PersonalSettingItemTypeText];
+     self.LT6 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"执行标准:" type:PersonalSettingItemTypeLabel];
     
      self.LC7 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"已完成:" type:PersonalSettingItemTypeChoice];
     
@@ -72,7 +72,7 @@
     
      self.LLI10 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"整改责任人:" type:PersonalSettingItemTypeArrow];
     
-     self.LT11 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"整改方案:" type:PersonalSettingItemTypeText];
+     self.LT11 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"整改方案:" type:PersonalSettingItemTypeLabel];
     
      self.LL12 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"整改完成情况:" type:PersonalSettingItemTypeLabel];
     

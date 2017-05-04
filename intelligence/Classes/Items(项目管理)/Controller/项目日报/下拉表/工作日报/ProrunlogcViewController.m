@@ -9,6 +9,7 @@
 #import "ProrunlogcViewController.h"
 #import "StockViewCell.h"
 #import "ProrunlogcDetailViewController.h"
+#import "AppDelegate.h"
 
 @interface ProrunlogcViewController ()<UITableViewDataSource,UITableViewDelegate,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 {
@@ -34,6 +35,15 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    AppDelegate*app=(AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    for (NSObject* one in app.createDataObject) {
+        if ([one isKindOfClass:[UDPRORUNLOGC class]]) {
+            [_dataArray addObject:one];
+        }
+    }
+    
     [self.tableview reloadData];
 }
 
@@ -41,7 +51,7 @@
     [super viewDidLoad];
     self.title = @"工作日报列表";
     isShowEmpty = YES;
-    //[self setupRightMenuButton];
+    [self setupRightMenuButton];
     [self requestData:1 isUpdata:YES];
     [self initTableView];
     //    [self addRefresh];
@@ -60,9 +70,9 @@
 
 -(void)rightButtonPress{
     
-//    DailyWorkAddController *vc = [[DailyWorkAddController alloc]init];
-//    vc.PRORUNLOGNUM = self.PRORUNLOGNUM;
-//    [self.navigationController pushViewController:vc animated:YES];
+    ProrunlogcDetailViewController *vc = [[ProrunlogcDetailViewController alloc]init];
+    vc.dailyWork=self.dailyWork;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 //创建tableview
@@ -187,7 +197,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60;
+    return 90;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -198,11 +208,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-//    DailyWorkDetailsController *vc = [[DailyWorkDetailsController alloc] init];
-//    vc.dailyWork = [self.dataArray objectAtIndex:indexPath.section];
-//    [self.navigationController pushViewController:vc animated:YES];
-    
+        
     ProrunlogcDetailViewController* vc = [[ProrunlogcDetailViewController alloc] init];
     vc.udPRORUNLOGC = [self.dataArray objectAtIndex:indexPath.section];
     [self.navigationController pushViewController:vc animated:YES];

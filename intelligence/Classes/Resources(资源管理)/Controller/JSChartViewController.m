@@ -16,11 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   [self.view setBackgroundColor:[UIColor blackColor]];
     self.webView=[[UIWebView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.view addSubview:self.webView];
     [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://192.168.117.37/chartsPage.html"]]];
     [self setReloadButton];
     self.title=@"库存余量";
+    
 }
 
 - (void)didReceiveMemoryWarning {

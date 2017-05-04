@@ -102,7 +102,7 @@
     
     self.LL2 = [PersonalSettingItem itemWithIcon:nil withContent:_model.ITEMDESC withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"物资描述:" type:PersonalSettingItemTypeLabels];
     
-    self.LT3 = [PersonalSettingItem itemWithIcon:nil withContent:_model.ITEMQTY withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"数量:" type:PersonalSettingItemTypeText];
+    self.LT3 = [PersonalSettingItem itemWithIcon:nil withContent:_model.ITEMQTY withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"数量:" type:PersonalSettingItemTypeLabels];
     
     self.LL4 = [PersonalSettingItem itemWithIcon:nil withContent:_model.ORDERUNIT withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"订购单位:" type:PersonalSettingItemTypeLabels];
     

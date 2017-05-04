@@ -115,7 +115,7 @@
     self.contentLabel.font = [UIFont systemFontOfSize:16.0];
     self.contentLabel.numberOfLines = 0;
     [self addSubview:self.contentLabel];
-    
+    //[self.contentTextField setTextAlignment:NSTextAlignmentRight];
     [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.titleLabel.mas_right).offset(5);
         make.centerY.equalTo(self.mas_centerY);
@@ -126,9 +126,9 @@
 - (void)createContentTextField{
     self.contentTextField = [[UITextField alloc] init];
     self.contentTextField.placeholder = @"暂无数据";
-//    self.contentTextField.textColor = UIColorFromRGB(0xCBCBCF);
     self.contentTextField.font = [UIFont systemFontOfSize:16.0];
     [self addSubview:self.contentTextField];
+    //[self.contentTextField setTextAlignment:NSTextAlignmentRight];
     [self.contentTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.titleLabel.mas_right).offset(5);
         make.top.equalTo(self.titleLabel.mas_top);
@@ -140,8 +140,9 @@
     self.contentTextView = [[UITextView alloc] init];
     //    self.contentTextField.textColor = UIColorFromRGB(0xCBCBCF);
     self.contentTextView.font = [UIFont systemFontOfSize:16.0];
-    self.contentTextView.contentMode=UIViewContentModeTop;
+    self.contentTextView.contentMode=UIViewContentModeRight;
     [self addSubview:self.contentTextView];
+    //[self.contentTextView setTextAlignment:NSTextAlignmentRight];
     [self.contentTextView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.titleLabel.mas_right).offset(5);
         make.top.equalTo(self.titleLabel.mas_top);
@@ -170,6 +171,7 @@
     self.contentLabel.font = [UIFont systemFontOfSize:16.0];
     self.contentLabel.numberOfLines = 0;
     [self addSubview:self.contentLabel];
+    //[self.contentLabel setTextAlignment:NSTextAlignmentRight];
     [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.titleLabel.mas_right).offset(5);
         make.centerY.equalTo(self.mas_centerY);

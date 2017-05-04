@@ -229,7 +229,7 @@
     
     NSDictionary *dic = @{
                           @"TYPE":@"add",
-                          @"PRORUNLOGNUM":self.PRORUNLOGNUM,
+                          @"PRORUNLOGNUM":self.PRORUNLOGNUM?self.PRORUNLOGNUM:@"",
                           @"RUNLOGDATE":[self determineString:self.firstRow.contentLabel.text],
                           @"TYPE":[self determineString:self.secondRow.contentLabel.text],
                           @"NUMBER1":[self determineString:self.thirdRow.contentText.text],

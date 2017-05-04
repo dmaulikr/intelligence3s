@@ -90,7 +90,7 @@
     
     self.LL2 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"物资描述:" type:PersonalSettingItemTypeLabels];
     
-    self.LT3 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"数量:" type:PersonalSettingItemTypeText];
+    self.LT3 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"数量:" type:PersonalSettingItemTypeLabels];
     
     self.LL4 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"订购单位:" type:PersonalSettingItemTypeLabels];
     
@@ -106,7 +106,7 @@
         [weakSelf.navigationController pushViewController:fan animated:YES];
     };
     
-    self.LL6 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"库房描述:" type:PersonalSettingItemTypeText];
+    self.LL6 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"库房描述:" type:PersonalSettingItemTypeLabels];
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.items = @[_LLI1,_LL2,_LT3,_LL4,_LLI5,_LL6];

@@ -559,18 +559,18 @@
     self.LC17.FieldName=@"";
     
     
-    self.LT18 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PCCOMPNUM withHeight:CELLHEIGHT  withClick:_isEditor withStar:YES title:@"机台号:" type:PersonalSettingItemTypeText];
+    self.LT18 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PCCOMPNUM withHeight:CELLHEIGHT  withClick:_isEditor withStar:YES title:@"机台号:" type:PersonalSettingItemTypeLabel];
     self.LT18.FieldName=@"";
     
     
-    self.LT19 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:_isEditor withStar:NO title:@"实际完成台数:" type:PersonalSettingItemTypeText];
+    self.LT19 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:_isEditor withStar:NO title:@"实际完成台数:" type:PersonalSettingItemTypeLabel];
     self.LT19.FieldName=@"";
     
     
-    self.LT20 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDFJFOL withHeight:CELLHEIGHT  withClick:_isEditor withStar:NO title:@"风机跟踪:" type:PersonalSettingItemTypeText];
+    self.LT20 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDFJFOL withHeight:CELLHEIGHT  withClick:_isEditor withStar:NO title:@"风机跟踪:" type:PersonalSettingItemTypeLabel];
     self.LT20.FieldName=@"";
     
-    self.LT21 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PCRESON withHeight:CELLHEIGHT  withClick:_isEditor withStar:YES title:@"技改原因:" type:PersonalSettingItemTypeText];
+    self.LT21 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PCRESON withHeight:CELLHEIGHT  withClick:_isEditor withStar:YES title:@"技改原因:" type:PersonalSettingItemTypeLabel];
     self.LT21.FieldName=@"";
     
     
@@ -589,7 +589,7 @@
         [work ShowInView:weakSelf.view];
     };
     
-    self.LT24 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDFJAPPNUM withHeight:CELLHEIGHT  withClick:_isEditor withStar:NO title:@"主控程序版本:" type:PersonalSettingItemTypeText];
+    self.LT24 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDFJAPPNUM withHeight:CELLHEIGHT  withClick:_isEditor withStar:NO title:@"主控程序版本:" type:PersonalSettingItemTypeLabel];
     self.LT24.FieldName=@"";
     
     

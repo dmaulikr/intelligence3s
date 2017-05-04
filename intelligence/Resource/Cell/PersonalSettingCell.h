@@ -10,7 +10,6 @@
 #import "TextViewCellView.h"
 #import "ArrowCellView.h"
 #import "LabelCellView.h"
-#import "TextViewCell.h"
 #import "ChoiceViewCell.h"
 #import "LabelsViewCell.h"
 @class PersonalSettingItem;
@@ -24,8 +23,6 @@
 @property (nonatomic, strong) ArrowCellView *arrowView;
 //文字
 @property (nonatomic, strong) LabelCellView *labelView;
-//textview
-@property (nonatomic, strong)TextViewCell *textViews;
 //选择
 @property (nonatomic, strong)ChoiceViewCell *choice;
 //显示Label

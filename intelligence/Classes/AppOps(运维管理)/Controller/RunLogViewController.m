@@ -295,7 +295,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80;
+    return 90;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -308,10 +308,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSLog(@"运行记录详情");
-//    PollingDetailsController *vc = [[PollingDetailsController alloc] init];
-//    vc.polling = [self chooseType:indexPath.section];
-//    vc.title = @"巡检单详情";
-//    [self.navigationController pushViewController:vc animated:YES];
     StockViewCell *cell= [tableView cellForRowAtIndexPath:indexPath];
     RunLogDetailsViewController * details = [[RunLogDetailsViewController alloc] init];
     details.runlogModel = cell.runlog;

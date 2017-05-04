@@ -69,12 +69,4 @@
     [soap requestMethods:@"mobileservicecheckWFPRequired" withDate:@[@{@"appId":appId},@{@"objectName":objectName},@{@"wfpStatus":status}]];
     
 }
--(void)viewDidAppear:(BOOL)animated
-{
-    [JANALYTICSService startLogPageView:NSStringFromClass([self class])];
-}
--(void)viewDidDisappear:(BOOL)animated
-{
-    [JANALYTICSService stopLogPageView:NSStringFromClass([self class])];
-}
 @end

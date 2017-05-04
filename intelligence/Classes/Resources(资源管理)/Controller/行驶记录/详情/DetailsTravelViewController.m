@@ -316,11 +316,11 @@
             [weakSelf.view addSubview:weakSelf.timeHour];
         }
     };
-    self.LL15 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.DEPARTURE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"出发地:" type:PersonalSettingItemTypeText];
+    self.LL15 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.DEPARTURE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"出发地:" type:PersonalSettingItemTypeLabel];
     
-    self.LL16 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.DESTINATION withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"目的地:" type:PersonalSettingItemTypeText];
+    self.LL16 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.DESTINATION withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"目的地:" type:PersonalSettingItemTypeLabel];
     
-    self.LL17 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.GOREASON withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"出车事由:" type:PersonalSettingItemTypeText];
+    self.LL17 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.GOREASON withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"出车事由:" type:PersonalSettingItemTypeLabel];
    
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
@@ -348,13 +348,13 @@
     
     self.LL20 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.STARTNUMBER withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"起始里程(公里):" type:PersonalSettingItemTypeLabel];
     
-    self.LL21 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.ENDNUMBER withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"结束里程(公里):" type:PersonalSettingItemTypeText];
+    self.LL21 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.ENDNUMBER withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"结束里程(公里):" type:PersonalSettingItemTypeLabel];
     
     self.LL22 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.LASTFUELCONSUMPTION withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"上次油耗(升):" type:PersonalSettingItemTypeLabel];
     
-    self.LL23 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.STANDARDFUELCONSUMPTION withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"标准油耗(升):" type:PersonalSettingItemTypeText];
+    self.LL23 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.STANDARDFUELCONSUMPTION withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"标准油耗(升):" type:PersonalSettingItemTypeLabel];
     
-    self.LL24 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.FEE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"路桥费(元):" type:PersonalSettingItemTypeText];
+    self.LL24 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.FEE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"路桥费(元):" type:PersonalSettingItemTypeLabel];
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.header = @"车辆行驶详情信息";

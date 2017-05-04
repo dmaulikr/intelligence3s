@@ -240,11 +240,11 @@
     _LLI9.operation = ^{
         [weakSelf.view addSubview:weakSelf.timeHour];
     };
-    self.LT10 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"出发地:" type:PersonalSettingItemTypeText];
+    self.LT10 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"出发地:" type:PersonalSettingItemTypeLabel];
     
-    self.LT11 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"目的地:" type:PersonalSettingItemTypeText];
+    self.LT11 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"目的地:" type:PersonalSettingItemTypeLabel];
     
-    self.LT12 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"出车事由:" type:PersonalSettingItemTypeText];
+    self.LT12 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"出车事由:" type:PersonalSettingItemTypeLabel];
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.header = @"车辆信息";
@@ -268,11 +268,11 @@
     
     self.LL15 = [PersonalSettingItem itemWithIcon:nil  withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"起始里程(公里):" type:PersonalSettingItemTypeLabels];
     
-    self.LT16 = [PersonalSettingItem itemWithIcon:nil  withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"结束里程(公里):" type:PersonalSettingItemTypeText];
+    self.LT16 = [PersonalSettingItem itemWithIcon:nil  withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"结束里程(公里):" type:PersonalSettingItemTypeLabel];
     
-    self.LT17 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"标准油耗(升):" type:PersonalSettingItemTypeText];
+    self.LT17 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"标准油耗(升):" type:PersonalSettingItemTypeLabel];
     
-    self.LT18 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"路桥费(元):" type:PersonalSettingItemTypeText];
+    self.LT18 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"路桥费(元):" type:PersonalSettingItemTypeLabel];
     
     self.LC19 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"是否提交:" type:PersonalSettingItemTypeChoice];
     

@@ -69,16 +69,6 @@
 {
     [self.task cancel];
 }
--(void)viewDidAppear:(BOOL)animated
-{
-    [JANALYTICSService startLogPageView:NSStringFromClass([self class])];
-    
-}
--(void)viewDidDisappear:(BOOL)animated
-{
-    [JANALYTICSService stopLogPageView:NSStringFromClass([self class])];
-    
-}
 /** 视图将要消失*/
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -92,15 +82,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

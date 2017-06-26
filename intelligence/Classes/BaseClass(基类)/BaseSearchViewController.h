@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface BaseSearchViewController : UIViewController<UISearchBarDelegate>
+#import "ViewController.h"
+@interface BaseSearchViewController : ViewController<UISearchBarDelegate>
 @property (nonatomic,strong)URLSessionTask *task;
 @property(nonatomic,strong)UISearchBar *searchBar;
 @end

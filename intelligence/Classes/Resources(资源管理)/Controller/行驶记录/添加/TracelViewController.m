@@ -245,6 +245,15 @@
     self.LT11 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"目的地:" type:PersonalSettingItemTypeLabel];
     
     self.LT12 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"出车事由:" type:PersonalSettingItemTypeLabel];
+    self.LT12.operation = ^ {
+        
+        [weakSelf popInputTextViewContent:weakSelf.LT12.content title:weakSelf.LT12.title compeletion:^(NSString *value) {
+            
+            weakSelf.LT12.content=value;
+            [weakSelf.tableView reloadData];
+            
+        }];
+    };
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.header = @"车辆信息";

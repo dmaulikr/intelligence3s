@@ -131,6 +131,13 @@
     self.LC7 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"已完成?:" type:PersonalSettingItemTypeChoice];
     
     self.LL8 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"问题描述:" type:PersonalSettingItemTypeLabels];
+    self.LL8.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LL8.content title:weakSelf.LL8.title compeletion:^(NSString *value) {
+            weakSelf.LL8.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
     
     self.LLI9 = [PersonalSettingItem itemWithIcon:@"ic_choose_data" withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"整改期限:" type:PersonalSettingItemTypeArrow];
     _LLI9.operation = ^{
@@ -150,9 +157,26 @@
     
     self.LT11 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"整改方案:" type:PersonalSettingItemTypeLabels];
     
+    self.LT11.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LT11.content title:weakSelf.LT11.title compeletion:^(NSString *value) {
+            weakSelf.LT11.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
+    
     self.LL12 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"整改完成情况:" type:PersonalSettingItemTypeLabels];
     
     self.LL13 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"备注:" type:PersonalSettingItemTypeLabels];
+    
+    self.LL13.operation  = ^{
+        
+        [weakSelf popInputTextViewContent:weakSelf.LL13.content title:weakSelf.LL13.title compeletion:^(NSString *value) {
+            weakSelf.LL13.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     if(_types == WorkTypeCheck){

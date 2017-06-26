@@ -27,7 +27,6 @@
     [self createUI];
     
 }
-
 - (void)createUI{
     leftLabel = [[UILabel alloc] init];
     leftLabel.font = [UIFont systemFontOfSize:16.0];
@@ -61,13 +60,6 @@
     .rightSpaceToView(contentView,margin)
     .heightIs(1);
 }
-
-//- (void)setLeftLabelWight:(CGFloat)leftLabelWight{
-//    _leftLabelWight = leftLabelWight;
-//    leftLabel.sd_layout.widthIs(leftLabelWight);
-//    rightLabel.sd_layout.leftSpaceToView(leftLabel,5);
-//}
-
 - (void)setIndex:(NSInteger)index withModel:(ProcessModel *)process{
     self.index = index;
     self.process = process;

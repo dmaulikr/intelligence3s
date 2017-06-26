@@ -242,6 +242,16 @@
     
     self.LT15 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"备注:" type:PersonalSettingItemTypeLabel];
     
+    self.LT15.operation  = ^{
+        
+        [weakSelf popInputTextViewContent:weakSelf.LT15.content title:weakSelf.LT15.title compeletion:^(NSString *value) {
+            weakSelf.LT15.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+
+    
+    
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.header = @"维修信息";
     group.items = @[_LLI3,_LLI4,_LT5,_LT6,_LT7,_LT8,_LLI9,_LT10,_LT11,_LT12,_LT13,_LC14,_LT15];

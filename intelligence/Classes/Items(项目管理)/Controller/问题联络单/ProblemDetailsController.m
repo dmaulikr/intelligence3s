@@ -360,6 +360,7 @@
 }
 
 - (void)addFirstViews{
+    WEAKSELF
     
     self.firstTitle = [ProblemItemTitleView showXibView];
     self.firstTitle.frame = CGRectMake(0, 0, ScreenWidth, 40);
@@ -456,6 +457,14 @@
         self.firstSection_sixthRow.contentText.text = self.problem.PROBLEMSITUATION;
         self.firstSection_sixthRow.contentText.textColor = [UIColor blackColor];
     }
+    
+    self.firstSection_sixthRow.executeTextHeightChage = ^(CGFloat textHeight) {
+        
+        [weakSelf popInputTextViewContent:weakSelf.firstSection_sixthRow.contentText.text title:weakSelf.firstSection_sixthRow.titleLabel.text compeletion:^(NSString *value) {
+            weakSelf.firstSection_sixthRow.contentText.text=value;
+        }];
+    };
+    
     CGFloat textViewHeight = [self computeTextViewHeight:self.firstSection_sixthRow.contentText];
     [self.SetingItems setValue:@"现场问题及进展描述" forKey:@"PROBLEMSITUATION"];
     [self.rootView addSubview:self.firstSection_sixthRow];
@@ -1223,9 +1232,10 @@
                 
             }];
             UIAlertAction * comfirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [alert addAction:cancel];
-                [alert addAction:comfirm];
+               
             }];
+            [alert addAction:cancel];
+            [alert addAction:comfirm];
             [self presentViewController:alert animated:YES completion:nil];
         }
         else

@@ -55,6 +55,13 @@
     self.LL1 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"任务号:" type:PersonalSettingItemTypeLabels];
     
     self.LT2 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"工作任务:" type:PersonalSettingItemTypeLabel];
+    self.LT2.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LT2.content title:weakSelf.LT2.title compeletion:^(NSString *value) {
+            weakSelf.LT2.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
     
     self.LLI3 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"负责人:" type:PersonalSettingItemTypeArrow];
     
@@ -67,6 +74,12 @@
      self.LC7 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"已完成:" type:PersonalSettingItemTypeChoice];
     
      self.LL8 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"问题描述:" type:PersonalSettingItemTypeLabels];
+    self.LL8.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LL8.content title:weakSelf.LL8.title compeletion:^(NSString *value) {
+            weakSelf.LL8.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
     
      self.LLI9 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"整改期限:" type:PersonalSettingItemTypeArrow];
     
@@ -74,9 +87,27 @@
     
      self.LT11 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"整改方案:" type:PersonalSettingItemTypeLabel];
     
+    self.LT11.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LT11.content title:weakSelf.LT11.title compeletion:^(NSString *value) {
+            weakSelf.LT11.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
+    
+    
      self.LL12 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"整改完成情况:" type:PersonalSettingItemTypeLabel];
     
      self.LL13 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"备注:" type:PersonalSettingItemTypeLabel];
+    
+    self.LL13.operation  = ^{
+        
+        [weakSelf popInputTextViewContent:weakSelf.LL13.content title:weakSelf.LL13.title compeletion:^(NSString *value) {
+            weakSelf.LL13.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
     
          PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.items = @[_LL1,_LT2,_LLI3,_LLI4,_LLI5,_LT6,_LC7,_LL8,_LLI9,_LLI10,_LT11,_LL12,_LL13];

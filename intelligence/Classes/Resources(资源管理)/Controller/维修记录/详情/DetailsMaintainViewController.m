@@ -328,6 +328,7 @@
     [_allGroups addObject:group];
 }
 -(void)addThree{
+    WEAKSELF
     self.LL19 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.SERVICETYPE withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"维修类型:" type:PersonalSettingItemTypeLabels];
     
     self.LL20 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.MAINPLACE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"维修地点:" type:PersonalSettingItemTypeLabel];
@@ -341,6 +342,15 @@
     self.LC24 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.COMISORNO withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"是否提交:" type:PersonalSettingItemTypeChoice];
     
     self.LL25 = [PersonalSettingItem itemWithIcon:nil withContent:_maintain.REMARK withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"备注:" type:PersonalSettingItemTypeLabel];
+    self.LL25.operation = ^{
+        
+        [weakSelf popInputTextViewContent:weakSelf.LL25.content title:weakSelf.LL25.title compeletion:^(NSString *value) {
+            
+            weakSelf.LL25.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.header = @"维修信息";
     group.items = @[_LL19,_LL20,_LL21,_LL22,_LL23,_LC24,_LL25];

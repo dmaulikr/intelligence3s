@@ -13,7 +13,6 @@
     UIImageView *_arrow;
     UIView *_view;
     UIButton *_button;
-   
 }
 
 @end
@@ -33,8 +32,6 @@
 //先将所有控件添加进来
 -(void)addAllSubViews{
     WEAKSELF
-
-    
     /** 图片(箭头)*/
     self.arrowView = [ArrowCellView arrowCellView];
     
@@ -140,9 +137,9 @@
     // 1.拿到一个标识先去缓存池中查找对应的Cell
     PersonalSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     // 2.如果缓存池中没有，才需要传入一个标识创建新的Cell
-    if (cell == nil) {
+    //if (cell == nil) {
         cell = [[PersonalSettingCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
+    //}
     
     return cell;
 }

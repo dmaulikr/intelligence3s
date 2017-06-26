@@ -53,7 +53,7 @@ static CGFloat MAXText = 200;
     }];
     
     textBottomLine = [[UIView alloc] init];
-    textBottomLine.backgroundColor = RGBCOLOR(97, 97, 97);
+    textBottomLine.backgroundColor = UIColorclear(0xCBCBCF);
     [self addSubview:textBottomLine];
     [textBottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.mas_bottom).offset(-10);
@@ -100,6 +100,7 @@ static CGFloat MAXText = 200;
 }
 
 - (void)setType:(ProblemItemLTViewType)type{
+    bottomLine.hidden = YES;
     _type = type;
     switch (type) {
         case ProblemItemLTViewTypeDefault:{
@@ -119,15 +120,15 @@ static CGFloat MAXText = 200;
 
 - (void)textViewDidBeginEditing:(UITextView *)textView{
     self.placeholderLabel.hidden = YES;
-    textBottomLine.backgroundColor = UIColorFromRGB(0x01D401);
+    textBottomLine.backgroundColor = UIColorclear(0xCBCBCF);
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView{
-    textBottomLine.backgroundColor = UIColorFromRGB(0xCBCBCF);
+    textBottomLine.backgroundColor = UIColorclear(0xCBCBCF);
     if (self.contentText.text.length) {
         self.placeholderLabel.hidden = YES;
     }else{
-        self.placeholderLabel.hidden = NO;
+        self.placeholderLabel.hidden = YES;
     }
 }
 
@@ -142,7 +143,7 @@ static CGFloat MAXText = 200;
 }
 
 - (void)textViewDidChangeSelection:(UITextView *)textView{
-    //fix ios7 bug (modified by 梦江宝鱼).
+    
     if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
         CGRect r = [textView caretRectForPosition:textView.selectedTextRange.end];
         CGFloat caretY =  MAX(r.origin.y - textView.frame.size.height + r.size.height + 8, 0);

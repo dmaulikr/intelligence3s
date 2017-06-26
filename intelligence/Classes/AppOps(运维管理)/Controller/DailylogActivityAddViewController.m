@@ -208,6 +208,15 @@
         make.height.mas_equalTo(45);
     }];
     
+    WEAKSELF
+    
+    self.eleventhRow.executeTapContentLabel = ^{
+        [weakSelf popInputTextViewContent:weakSelf.eleventhRow.contentTextField.text title:weakSelf.eleventhRow.titleLabel.text compeletion:^(NSString *value) {
+            weakSelf.eleventhRow.titleLabel.text=value;
+            
+        }];
+    };
+    
     self.twelfthRow = [ProblemItemLLIView showXibView];
     self.twelfthRow.type = ProblemItemTypeDefaultLT;
     self.twelfthRow.titleLabel.text = @"完成情况:";
@@ -230,6 +239,14 @@
         make.right.equalTo(self.view.mas_right).offset(0);
         make.height.mas_equalTo(45);
     }];
+    self.thirteenthRow.executeTapContentLabel  = ^{
+        
+        [weakSelf popInputTextViewContent:weakSelf.thirteenthRow.contentTextField.text title:weakSelf.thirteenthRow.titleLabel.text compeletion:^(NSString *value) {
+            
+            weakSelf.thirteenthRow.contentTextField.text=value;
+        }];
+    };
+    
 }
 - (TXTimeChoose *)timeYear_first{
     WEAKSELF

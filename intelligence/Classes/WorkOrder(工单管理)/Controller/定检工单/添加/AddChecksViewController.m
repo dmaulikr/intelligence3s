@@ -487,6 +487,14 @@
     
     self.LT22 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"备注:" type:PersonalSettingItemTypeLabels];
     
+    self.LT22.operation  = ^{
+        
+        [weakSelf popInputTextViewContent:weakSelf.LT22.content title:weakSelf.LT22.title compeletion:^(NSString *value) {
+            weakSelf.LT22.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
     self.LC23 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:nil withHeight:CELLHEIGHT  withClick:YES withStar:YES title:@"大部件发放:" type:PersonalSettingItemTypeChoice];
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ProblemModel.h"
-#import "BaseInputViewController.h"
+
 typedef enum {
     PersonalSettingItemTypeNone, // 什么也没有
     PersonalSettingItemTypeArrow, // 箭头

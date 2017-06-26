@@ -24,6 +24,7 @@
 
 #import "InspectProjectController.h"
 #import "ApprovalsView.h"
+#import "WfmListanceListViewController.h"
 @interface PollingDetailsController ()
 {
     NSString *yorn;
@@ -261,8 +262,14 @@
         NSLog(@"rightItem%lu",(unsigned long)index);
         [weakSelf pushWithIndex:index];
     }];
-    
-    DTKDropdownMenuView *menuView = [DTKDropdownMenuView dropdownMenuViewWithType:dropDownTypeRightItem frame:CGRectMake(0, 0, 44.f, 44.f) dropdownItems:@[item0,item1,item2] icon:@"more"];
+    DTKDropdownItem *item3 = [DTKDropdownItem itemWithTitle:@"工作流任务分配" iconName:@"ic_tujian" callBack:^(NSUInteger index, id info) {
+        NSLog(@"rightItem%lu",(unsigned long)index);
+        NSLog(@"工作流任务分配");
+        WfmListanceListViewController* vc= [[WfmListanceListViewController alloc] init];
+        vc.OWNERID=_polling.UDINSPOID;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    }];
+    DTKDropdownMenuView *menuView = [DTKDropdownMenuView dropdownMenuViewWithType:dropDownTypeRightItem frame:CGRectMake(0, 0, 44.f, 44.f) dropdownItems:@[item0,item1,item2,item3] icon:@"more"];
     menuView.currentNav = self.navigationController;
     
     menuView.dropWidth = 150.f;
@@ -1032,9 +1039,10 @@
                 
             }];
             UIAlertAction * comfirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [alert addAction:cancel];
-                [alert addAction:comfirm];
+                
             }];
+            [alert addAction:cancel];
+            [alert addAction:comfirm];
             [self presentViewController:alert animated:YES completion:nil];
         }
         else

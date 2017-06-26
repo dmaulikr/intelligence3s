@@ -80,6 +80,21 @@
 // 试运行开始
 @property (nonatomic, strong) ProblemItemLTView *fifteenthRow;
 // 试运行完成
+
+////试运行开始日期
+@property (nonatomic, strong) ProblemItemLLIView *fifteenthRow_2;
+////试运行完成日期
+@property (nonatomic, strong) ProblemItemLLIView *fifteenthRow_3;
+////预验收完成日期
+@property (nonatomic, strong) ProblemItemLLIView *fifteenthRow_4;
+
+
+@property (nonatomic, strong) TXTimeChoose *timeYear_first;
+
+@property (nonatomic, strong) TXTimeChoose *timeYear_second;
+
+@property (nonatomic, strong) TXTimeChoose *timeYear_third;
+
 @property (nonatomic, strong) ProblemItemLTView *sixteenthRow;
 // 预验收完成
 @property (nonatomic, strong) ProblemItemLTView *seventeenthRow;
@@ -91,7 +106,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"新增吊装调试日报";
-    self.rootViewHeight.constant = 1010;
+    self.rootViewHeight.constant = 1145;
     [self addViews];
     [self addBlocks];
     [self addScrollFooterView];
@@ -108,6 +123,7 @@
 }
 
 - (void)addViews{
+    WEAKSELF
     self.firstRow = [ProblemItemLLIView showXibView];
     self.firstRow.type = ProblemItemTypeDefaultLL;
     self.firstRow.frame = CGRectMake(0, 0, ScreenWidth, 45);
@@ -192,9 +208,19 @@
         make.height.mas_equalTo(60);
     }];
     
+    self.eighthRow.executeTextHeightChage = ^(CGFloat textHeight) {
+        
+        [weakSelf popInputTextViewContent:weakSelf.eighthRow.contentText.text title:weakSelf.eighthRow.titleLabel.text compeletion:^(NSString *value) {
+            
+            weakSelf.eighthRow.contentText.text=value;
+            
+        }];
+    };
+    
     self.ninthRow = [ProblemItemLTView showXibView];
     self.ninthRow.type = ProblemItemLTViewTypeHiddenRedMark;
     self.ninthRow.titleLabel.text = @"主机累计到货数:";
+     self.ninthRow.contentText.keyboardType=UIKeyboardTypeNumberPad;
     [self.rootView addSubview:self.ninthRow];
     [self.ninthRow mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.eighthRow.mas_bottom).offset(0);
@@ -206,6 +232,7 @@
     self.tenthRow = [ProblemItemLTView showXibView];
     self.tenthRow.type = ProblemItemLTViewTypeHiddenRedMark;
     self.tenthRow.titleLabel.text = @"轮毂累计到货数:";
+     self.tenthRow.contentText.keyboardType=UIKeyboardTypeNumberPad;
     [self.rootView addSubview:self.tenthRow];
     [self.tenthRow mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.ninthRow.mas_bottom).offset(0);
@@ -217,6 +244,7 @@
     self.eleventhRow = [ProblemItemLTView showXibView];
     self.eleventhRow.type = ProblemItemLTViewTypeHiddenRedMark;
     self.eleventhRow.titleLabel.text = @"叶片累计到货数:";
+    self.eleventhRow.contentText.keyboardType=UIKeyboardTypeNumberPad;
     [self.rootView addSubview:self.eleventhRow];
     [self.eleventhRow mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.tenthRow.mas_bottom).offset(0);
@@ -228,6 +256,7 @@
     self.twelfthRow = [ProblemItemLTView showXibView];
     self.twelfthRow.type = ProblemItemLTViewTypeHiddenRedMark;
     self.twelfthRow.titleLabel.text = @"基础浇筑完成累计数:";
+    self.twelfthRow.contentText.keyboardType=UIKeyboardTypeNumberPad;
     [self.rootView addSubview:self.twelfthRow];
     [self.twelfthRow mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.eleventhRow.mas_bottom).offset(0);
@@ -239,6 +268,7 @@
     self.thirteenthRow = [ProblemItemLTView showXibView];
     self.thirteenthRow.type = ProblemItemLTViewTypeHiddenRedMark;
     self.thirteenthRow.titleLabel.text = @"吊装完成累计数:";
+    self.thirteenthRow.contentText.keyboardType=UIKeyboardTypeNumberPad;
     [self.rootView addSubview:self.thirteenthRow];
     [self.thirteenthRow mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.twelfthRow.mas_bottom).offset(0);
@@ -250,6 +280,7 @@
     self.fourteenthRow = [ProblemItemLTView showXibView];
     self.fourteenthRow.type = ProblemItemLTViewTypeHiddenRedMark;
     self.fourteenthRow.titleLabel.text = @"安装验收完成累计数:";
+    self.fourteenthRow.contentText.keyboardType=UIKeyboardTypeNumberPad;
     [self.rootView addSubview:self.fourteenthRow];
     [self.fourteenthRow mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.thirteenthRow.mas_bottom).offset(0);
@@ -261,6 +292,7 @@
     self.fifteenthRow = [ProblemItemLTView showXibView];
     self.fifteenthRow.type = ProblemItemLTViewTypeHiddenRedMark;
     self.fifteenthRow.titleLabel.text = @"试运行台数:";
+    self.fifteenthRow.contentText.keyboardType=UIKeyboardTypeNumberPad;
     [self.rootView addSubview:self.fifteenthRow];
     [self.fifteenthRow mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.fourteenthRow.mas_bottom).offset(0);
@@ -268,13 +300,53 @@
         make.right.equalTo(self.view.mas_right).offset(0);
         make.height.mas_equalTo(60);
     }];
+    //试运行开始日期
+    self.fifteenthRow_2 = [ProblemItemLLIView showXibView];
+    self.fifteenthRow_2.type = ProblemItemTypeDefaultLLI;
+    self.fifteenthRow_2.titleLabel.text = @"试运行开始日期:";
+    self.fifteenthRow_2.rightImageView.image = [UIImage imageNamed:@"ic_choose_data"];
+    self.fifteenthRow_2.rightImageView.contentMode = UIViewContentModeScaleToFill;
+    [self.rootView addSubview:self.fifteenthRow_2];
+    [self.fifteenthRow_2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.fifteenthRow.mas_bottom).offset(0);
+        make.left.equalTo(self.view.mas_left).offset(0);
+        make.right.equalTo(self.view.mas_right).offset(0);
+        make.height.mas_equalTo(45);
+    }];
+    //试运行完成日期
+    self.fifteenthRow_3 = [ProblemItemLLIView showXibView];
+    self.fifteenthRow_3.type = ProblemItemTypeDefaultLLI;
+    self.fifteenthRow_3.titleLabel.text = @"试运行完成日期:";
+    self.fifteenthRow_3.rightImageView.image = [UIImage imageNamed:@"ic_choose_data"];
+    self.fifteenthRow_3.rightImageView.contentMode = UIViewContentModeScaleToFill;
+    [self.rootView addSubview:self.fifteenthRow_3];
+    [self.fifteenthRow_3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.fifteenthRow_2.mas_bottom).offset(0);
+        make.left.equalTo(self.view.mas_left).offset(0);
+        make.right.equalTo(self.view.mas_right).offset(0);
+        make.height.mas_equalTo(45);
+    }];
+    //预验收完成日期
+    self.fifteenthRow_4 = [ProblemItemLLIView showXibView];
+    self.fifteenthRow_4.type = ProblemItemTypeDefaultLLI;
+    self.fifteenthRow_4.titleLabel.text = @"预验收完成日期:";
+    self.fifteenthRow_4.rightImageView.image = [UIImage imageNamed:@"ic_choose_data"];
+    self.fifteenthRow_4.rightImageView.contentMode = UIViewContentModeScaleToFill;
+    [self.rootView addSubview:self.fifteenthRow_4];
+    [self.fifteenthRow_4 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.fifteenthRow_3.mas_bottom).offset(0);
+        make.left.equalTo(self.view.mas_left).offset(0);
+        make.right.equalTo(self.view.mas_right).offset(0);
+        make.height.mas_equalTo(45);
+    }];
     
     self.sixteenthRow = [ProblemItemLTView showXibView];
     self.sixteenthRow.type = ProblemItemLTViewTypeHiddenRedMark;
     self.sixteenthRow.titleLabel.text = @"试运行完成台数:";
+    self.sixteenthRow.contentText.keyboardType=UIKeyboardTypeNumberPad;
     [self.rootView addSubview:self.sixteenthRow];
     [self.sixteenthRow mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.fifteenthRow.mas_bottom).offset(0);
+        make.top.equalTo(self.fifteenthRow_4.mas_bottom).offset(0);
         make.left.equalTo(self.view.mas_left).offset(0);
         make.right.equalTo(self.view.mas_right).offset(0);
         make.height.mas_equalTo(60);
@@ -283,6 +355,7 @@
     self.seventeenthRow = [ProblemItemLTView showXibView];
     self.seventeenthRow.type = ProblemItemLTViewTypeHiddenRedMark;
     self.seventeenthRow.titleLabel.text = @"预验收完成台数:";
+    self.seventeenthRow.contentText.keyboardType=UIKeyboardTypeNumberPad;
     [self.rootView addSubview:self.seventeenthRow];
     [self.seventeenthRow mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.sixteenthRow.mas_bottom).offset(0);
@@ -318,15 +391,7 @@
     };
     
     self.seventhRow.executeTapContentLabel = ^(){
-//        FanNumViewController *fan = [[FanNumViewController alloc]init];
-//        fan.type = ChooseTypeFNI;
-//        fan.executeCellClick = ^(FanNumModle *mode){
-//            if (mode.ITEMNUM.length > 0) {
-//                weakSelf.seventhRow.contentLabel.text = mode.ITEMNUM;
-//                weakSelf.seventhRow.contentLabel.textColor = [UIColor blackColor];
-//            }
-//        };
-//        [weakSelf.navigationController pushViewController:fan animated:YES];
+        
         
         FlightNoController *choose = [[FlightNoController alloc]init];
         choose.requestCoding = weakSelf.requestStr;
@@ -384,7 +449,16 @@
     self.seventeenthRow.executeTextHeightChage = ^(CGFloat textHeight){
         [weakSelf updateseventeenthRowWithHeight:textHeight animated:YES];
     };
-    
+    self.fifteenthRow_2.executeTapContentLabel = ^(){
+        [weakSelf.view addSubview:weakSelf.timeYear_first];
+    };
+    self.fifteenthRow_3.executeTapContentLabel = ^(){
+        [weakSelf.view addSubview:weakSelf.timeYear_second];
+    };
+    self.fifteenthRow_4.executeTapContentLabel = ^(){
+        [weakSelf.view addSubview:weakSelf.timeYear_third];
+    };
+
 }
 
 - (void)addScrollFooterView{
@@ -459,7 +533,12 @@
                           @"BASECOMP":self.twelfthRow.contentText.text?self.twelfthRow.contentText.text:@"",
                           @"BPQPRODUCTION":self.thirteenthRow.contentText.text?self.thirteenthRow.contentText.text:@"",
 //                          "DEBUGGING":"电气安装完成累计数",
-                          @"DEBUGGING2":self.fourteenthRow.contentText.text?self.fourteenthRow.contentText.text:@"",
+                          @"DATE1":self.fifteenthRow_2.contentLabel.text?self.fifteenthRow_2.contentLabel.text:@"",
+                          @"DATE2":self.fifteenthRow_3.contentLabel.text?self.fifteenthRow_3.contentLabel.text:@"",
+                          @"DATE3":self.fifteenthRow_4.contentLabel.text?self.fifteenthRow_4.contentLabel.text:@"",
+                          
+                          @"DEBUGGING2":self.fourteenthRow.contentText.text?self.fourteenthRow.contentText.text:@
+                              "",
                           @"DEBUGGINGCHECK":self.fifteenthRow.contentText.text?self.fifteenthRow.contentText.text:@"",
                           @"DZCOMP":self.sixteenthRow.contentText.text?self.sixteenthRow.contentText.text:@"",
                           @"DZSTART":self.seventeenthRow.contentText.text?self.seventeenthRow.contentText.text:@"",
@@ -836,6 +915,40 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     //    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UIKeyboardWillShowNotification" object:nil];
 }
+- (TXTimeChoose *)timeYear_first{
+    WEAKSELF
+    if (!_timeYear_first) {
+        _timeYear_first = [[TXTimeChoose alloc]initWithFrame:self.view.bounds type:UIDatePickerModeDate];
+        _timeYear_first.backString = ^(NSDate *data){
+            weakSelf.fifteenthRow_2.contentLabel.text = [weakSelf.timeYear_first stringFromDate:data];
+            weakSelf.fifteenthRow_2.contentLabel.textColor = [UIColor blackColor];
+        };
+    }
+    return _timeYear_first;
+}
 
+- (TXTimeChoose *)timeYear_second{
+    WEAKSELF
+    if (!_timeYear_second) {
+        _timeYear_second = [[TXTimeChoose alloc]initWithFrame:self.view.bounds type:UIDatePickerModeDate];
+        _timeYear_second.backString = ^(NSDate *data){
+            weakSelf.fifteenthRow_3.contentLabel.text = [weakSelf.timeYear_second stringFromDate:data];
+            weakSelf.fifteenthRow_3.contentLabel.textColor = [UIColor blackColor];
+        };
+    }
+    return _timeYear_second;
+}
+
+- (TXTimeChoose *)timeYear_third{
+    WEAKSELF
+    if (!_timeYear_third) {
+        _timeYear_third = [[TXTimeChoose alloc]initWithFrame:self.view.bounds type:UIDatePickerModeDate];
+        _timeYear_third.backString = ^(NSDate *data){
+            weakSelf.fifteenthRow_4.contentLabel.text = [weakSelf.timeYear_third stringFromDate:data];
+            weakSelf.fifteenthRow_4.contentLabel.textColor = [UIColor blackColor];
+        };
+    }
+    return _timeYear_third;
+}
 
 @end

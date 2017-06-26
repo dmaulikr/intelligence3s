@@ -7,7 +7,6 @@
 //
 
 #import "BaseSearchViewController.h"
-
 @interface FauWorkViewController : BaseSearchViewController
 @property (nonatomic,assign)ChoiceType Choice;
 @property (nonatomic,strong)NSString *name;
@@ -15,5 +14,6 @@
 @property (nonatomic,strong)NSString *appid;
 @property (nonatomic,strong)NSString *objectname;
 @property (nonatomic,strong)NSString *orderby;
+
 @end
 

@@ -57,6 +57,7 @@
 }
 //第一部分
 -(void)addOne{
+    WEAKSELF
     self.LLI1 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"问题类型:" type:PersonalSettingItemTypeArrow];
     
     self.LLI2 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"紧急程度:" type:PersonalSettingItemTypeArrow];
@@ -64,6 +65,15 @@
     self.LLI3 = [PersonalSettingItem itemWithIcon:@"more_next_icon"  withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"相关故障工单:" type:PersonalSettingItemTypeArrow];
     
     self.LT4 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"现场问题及进展情况描述:" type:PersonalSettingItemTypeLabel];
+    
+    self.LT4.operation  = ^ {
+        
+        [weakSelf popInputTextViewContent:weakSelf.LT4.content title:weakSelf.LT4.title compeletion:^(NSString *value) {
+            weakSelf.LT4.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
 
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.header = @"问题联络单基本信息";

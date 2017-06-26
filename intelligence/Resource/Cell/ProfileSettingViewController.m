@@ -34,15 +34,9 @@
     }];
 
     _allGroups = [NSMutableArray array];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadDataFromNSNotificationCenter) name:@"tableviewreloaddata" object:nil];
 
 }
--(void)reloadDataFromNSNotificationCenter
-{
-    if (_tableView) {
-        [_tableView reloadData];
-    }
-}
+
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -95,8 +89,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     PersonalSettingGroup *group = _allGroups[indexPath.section];
     PersonalSettingItem *item = group.items[indexPath.row];
-    //return item.height;
-    return 90;
+    return item.height;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return CGFLOAT_MIN;

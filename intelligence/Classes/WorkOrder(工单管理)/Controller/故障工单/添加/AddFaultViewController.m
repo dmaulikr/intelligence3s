@@ -20,6 +20,8 @@
 #import "WorkPlanViewController.h"
 #import "MaterielsViewController.h"
 #import "CauseProblemViewController.h"
+#import "TextInputViewController.h"
+#import "UIViewController+MJPopupViewController.h"
 @interface AddFaultViewController ()<UIAlertViewDelegate>
 /** ------第一部分----*/
 /** 中心*/
@@ -660,7 +662,24 @@
     
     self.LT_27I = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"没有编码的物料:" type:PersonalSettingItemTypeLabel];
     
+    
+    self.LT_27I.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LT_27I.content title:weakSelf.LT_27I.title compeletion:^(NSString *value) {
+            weakSelf.LT_27I.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
     self.LT_28 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"故障隐患描述:" type:PersonalSettingItemTypeLabel];
+    
+    self.LT_28.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LT_28.content title:weakSelf.LT_28.title compeletion:^(NSString *value) {
+            weakSelf.LT_28.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
+    
     
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
@@ -754,4 +773,5 @@
  
     }];
 }
+
 @end

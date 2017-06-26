@@ -183,6 +183,7 @@
 }
 
 - (void)addFirstViews{
+    WEAKSELF
     self.firstTitle = [ProblemItemTitleView showXibView];
     self.firstTitle.frame = CGRectMake(0, 0, ScreenWidth, 40);
     self.firstTitle.titleLabel.text = @"问题联络单基本信息";
@@ -231,6 +232,12 @@
         make.right.equalTo(self.view.mas_right);
         make.height.mas_equalTo(60);
     }];
+    self.firstSection_forthRow.executeTextHeightChage = ^(CGFloat textHeight) {
+        
+        [weakSelf popInputTextViewContent:weakSelf.firstSection_forthRow.contentText.text title:weakSelf.firstSection_forthRow.titleLabel.text compeletion:^(NSString *value) {
+            weakSelf.firstSection_forthRow.contentText.text=value;
+        }];
+    };
 }
 
 - (void)addFirstBlocks{

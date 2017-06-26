@@ -193,6 +193,9 @@
     NSString * dateString = [df stringFromDate:[NSDate date]];
     AccountModel * accout = [AccountManager account];
     
+    if (accout==nil) {
+        return;
+    }
     info = @{@"USERNAME":accout.userName,
              @"TIMESTAMP":dateString,
              
@@ -214,10 +217,7 @@
     
     soap.DicBlock = ^(NSDictionary *dic){
         SVHUD_Stop
-//        if ([dic[@"success"] isEqualToString:@"成功"])
-//        {
-//            
-//        }
+
     };
     
     AccountModel *model = [AccountManager account];

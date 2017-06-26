@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface BaseViewController : UIViewController
+#import "ViewController.h"
+@interface BaseViewController : ViewController
 @property (nonatomic,strong)URLSessionTask *task;
 @end

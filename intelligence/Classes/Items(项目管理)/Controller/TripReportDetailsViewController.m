@@ -12,7 +12,7 @@
 #import "ProblemItemLTView.h"
 #import "DailyDetailsFooterView.h"
 #import "DTKDropdownMenuView.h"
-
+#import "ApprovalsView.h"
 @interface TripReportDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *rootScrollView;
 @property (weak, nonatomic) IBOutlet UIView *rootView;
@@ -49,6 +49,8 @@
     NSLog(@"%@",[self.model mj_keyValues]);
     [self addViews];
     [self addScrollFooterView];
+    [self addRightNavBarItem];
+
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -71,6 +73,7 @@
  */
 -(void)addViews
 {
+    WEAKSELF
     self.firstRow = [ProblemItemLLIView showXibView];
     self.firstRow.type = ProblemItemTypeDefaultLT;
     self.firstRow.frame = CGRectMake(0, 0, ScreenWidth, 45);
@@ -149,6 +152,12 @@
         make.right.equalTo(self.view.mas_right).offset(0);
         make.height.mas_equalTo(90);
     }];
+    self.seventhRow.executeTapContentLabel = ^{
+        
+        [weakSelf popInputTextViewContent:weakSelf.seventhRow.contentTextView.text title:weakSelf.seventhRow.titleLabel.text compeletion:^(NSString *value) {
+            weakSelf.seventhRow.contentTextView.text=value;
+        }];
+    };
     
     self.eighthRow = [ProblemItemLLIView showXibView];
     self.eighthRow.type = ProblemItemTypeDefaultLV;
@@ -162,6 +171,13 @@
         make.right.equalTo(self.view.mas_right).offset(0);
         make.height.mas_equalTo(90);
     }];
+    
+    self.eighthRow.executeTapContentLabel = ^{
+        
+        [weakSelf popInputTextViewContent:weakSelf.eighthRow.contentTextView.text title:weakSelf.eighthRow.titleLabel.text compeletion:^(NSString *value) {
+            weakSelf.eighthRow.contentTextView.text=value;
+        }];
+    };
     
     self.ninthRow = [ProblemItemLLIView showXibView];
     self.ninthRow.type = ProblemItemTypeDefaultLT;
@@ -223,9 +239,67 @@
     };
     [self.view addSubview:self.footerView];
 }
+- (void)addRightNavBarItem{
+    WEAKSELF
+
+    DTKDropdownItem *item = [DTKDropdownItem itemWithTitle:@"发送工作流" iconName:@"ic_flower" callBack:^(NSUInteger index, id info) {
+        [weakSelf sendData];
+    }];
+    
+    
+    DTKDropdownMenuView *menuView = [DTKDropdownMenuView dropdownMenuViewWithType:dropDownTypeRightItem frame:CGRectMake(0, 0,40.f, 40.f) dropdownItems:@[item] icon:@"more"];
+    
+    
+    menuView.currentNav = self.navigationController;
+    
+    menuView.dropWidth = 150.f;
+    //    menuView.titleFont = [UIFont systemFontOfSize:18.f];
+    menuView.textColor = RGBCOLOR(102, 102, 102);
+    menuView.textFont = [UIFont systemFontOfSize:13.f];
+    menuView.cellSeparatorColor = RGBCOLOR(229, 229, 229);
+    //    menuView.textFont = [UIFont systemFontOfSize:14.f];
+    menuView.animationDuration = 0.2f;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:menuView];
+}
 - (void)updata
 {
     
 }
-
+//发送工作流
+-(void)sendData{
+    if ([_model.STATUS isEqualToString:@"已取消"]||[_model.STATUS isEqualToString:@"已关闭"]||[_model.STATUS isEqualToString:@"已完成"]) {
+        
+        NSString *str = [NSString stringWithFormat:@"%@状态,不能发起工作流",_model.STATUS];
+        HUDJuHua(str);
+        return;
+    }
+    
+    NSString *str;
+    NSString *str1;
+    BOOL isOne;
+    if([_model.STATUS isEqualToString:@"新建"]){
+        str = @"工作流启动成功";
+        str1 = @"工作流启动失败";
+        isOne = YES;
+    }else{
+        str = @"审批成功";
+        str1 = @"审批失败";
+        isOne = NO;
+    }
+    ApprovalsView *popupView = [[ApprovalsView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) withNumber:isOne];
+    popupView.processname = @"TRIPREPORT";
+    popupView.mbo = @"UDTRIPREPORT";
+    popupView.keyValue = _model.UDTRIPREPORTID;
+    popupView.key = @"UDTRIPREPORTID";
+    popupView.CloseBlick = ^(NSDictionary *dic){
+        
+        if ([dic[@"success"] isEqualToString:@"成功"]||[dic[@"msg"] isEqualToString:@"工作流启动成功"]||[dic[@"status"] isEqualToString:@"等待批准"]) {
+            HUDNormal(str);
+        }else{
+            HUDNormal(str1);
+        }
+        
+    };
+    [popupView show];
+}
 @end

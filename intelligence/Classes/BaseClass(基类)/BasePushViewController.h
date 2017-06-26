@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface BasePushViewController : UIViewController
+#import "ViewController.h"
+@interface BasePushViewController : ViewController
 @property (nonatomic,strong)URLSessionTask *task;
 @property (nonatomic,strong) __block NSMutableArray *RequiredFields;
 @property (nonatomic,strong) __block NSMutableDictionary *SetingItems;

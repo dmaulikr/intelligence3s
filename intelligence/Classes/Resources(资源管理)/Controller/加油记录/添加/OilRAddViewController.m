@@ -220,10 +220,29 @@
     
     self.LT10 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"加油地点:" type:PersonalSettingItemTypeLabel];
     
+    self.LT10.operation = ^ {
+        
+        [weakSelf popInputTextViewContent:weakSelf.LT10.content title:weakSelf.LT10.title compeletion:^(NSString *value) {
+            
+            weakSelf.LT10.content=value;
+            [weakSelf.tableView reloadData];
+            
+        }];
+    };
+    
+    
     self.LC11 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"是否提交:" type:PersonalSettingItemTypeChoice];
     
     self.LT12 = [PersonalSettingItem itemWithIcon:nil withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"备注:" type:PersonalSettingItemTypeLabel];
-    
+    self.LT12.operation = ^ {
+        
+        [weakSelf popInputTextViewContent:weakSelf.LT12.content title:weakSelf.LT12.title compeletion:^(NSString *value) {
+            
+            weakSelf.LT12.content=value;
+            [weakSelf.tableView reloadData];
+            
+        }];
+    };
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.header = @"加油记录详细信息";

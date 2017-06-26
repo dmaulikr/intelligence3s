@@ -178,6 +178,7 @@
 }
 
 - (void)addViews{
+    WEAKSELF
     self.firstRow = [ProblemItemLLIView showXibView];
     self.firstRow.type = ProblemItemTypeDefaultLL;
     self.firstRow.frame = CGRectMake(0, 0, ScreenWidth, 45);
@@ -272,6 +273,13 @@
         make.right.equalTo(self.view.mas_right).offset(0);
         make.height.mas_equalTo(60);
     }];
+    self.ninthRow.executeTextHeightChage = ^(CGFloat textHeight) {
+        
+        [weakSelf popInputTextViewContent:weakSelf.ninthRow.contentText.text title:weakSelf.ninthRow.titleLabel.text compeletion:^(NSString *value) {
+            weakSelf.ninthRow.contentText.text=value;
+        }];
+    };
+    
     
     self.tenthRow = [ProblemItemLTView showXibView];
     self.tenthRow.type = ProblemItemLTViewTypeHiddenRedMark;
@@ -283,15 +291,26 @@
         make.right.equalTo(self.view.mas_right).offset(0);
         make.height.mas_equalTo(60);
     }];
+    self.tenthRow.executeTextHeightChage = ^(CGFloat textHeight) {
+        [weakSelf popInputTextViewContent:weakSelf.tenthRow.contentText.text title:weakSelf.tenthRow.titleLabel.text compeletion:^(NSString *value) {
+            weakSelf.tenthRow.contentText.text=value;
+        }];
+    };
     
     self.eleventhRow = [ProblemItemLLIView showXibView];
     self.eleventhRow.type = ProblemItemTypeDefaultLLI;
     self.eleventhRow.titleLabel.text = @"基础开挖:";
     self.eleventhRow.rightImageView.image = [UIImage imageNamed:@"ic_choose_data"];
     self.eleventhRow.rightImageView.contentMode = UIViewContentModeScaleToFill;
+    
+    
+    
     //    AccountModel *model = [AccountManager account];
     //    self.eleventhRow.contentLabel.textColor = [UIColor blackColor];
     //    self.eleventhRow.contentLabel.text = model.userName;
+    
+    
+    
     [self.rootView addSubview:self.eleventhRow];
     [self.eleventhRow mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.tenthRow.mas_bottom).offset(0);

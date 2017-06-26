@@ -140,6 +140,14 @@
     
     self.LT7 = [PersonalSettingItem itemWithIcon:@"" withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"程序版本号:" type:PersonalSettingItemTypeLabel];
     
+    self.LT7.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LT7.content title:weakSelf.LT7.title compeletion:^(NSString *value) {
+            weakSelf.LT7.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
+    
     self.LLI8 = [PersonalSettingItem itemWithIcon:@"ic_choose_data" withContent:@"" withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"调试负责人:" type:PersonalSettingItemTypeArrow];
     _LLI8.operation = ^{
         DailyDetailChoosePersonController *daily = [[DailyDetailChoosePersonController alloc]init];
@@ -201,7 +209,23 @@
 
     self.LT13 = [PersonalSettingItem itemWithIcon:@"" withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"问题记录:" type:PersonalSettingItemTypeLabel];
     
+    self.LT13.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LT13.content title:weakSelf.LT13.title compeletion:^(NSString *value) {
+            weakSelf.LT13.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
+    
     self.LT14 = [PersonalSettingItem itemWithIcon:@"ic_choose_data" withContent:@"" withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"处理过程:" type:PersonalSettingItemTypeLabel];
+    
+    self.LT14.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LT14.content title:weakSelf.LT14.title compeletion:^(NSString *value) {
+            weakSelf.LT14.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
 
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.items = @[_LLI1,_LT2,_LLI3,_LLI4,_LLI5,_LLI6,_LT7,_LLI8,_LLI9,_LLI10,_LLI11,_LLI12,_LT13,_LT14,];

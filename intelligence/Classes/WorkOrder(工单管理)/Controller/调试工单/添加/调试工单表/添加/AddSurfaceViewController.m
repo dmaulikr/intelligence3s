@@ -53,6 +53,7 @@
 }
 
 -(void)addUIOne{
+    WEAKSELF
     self.LL1 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"风机编码:" type:PersonalSettingItemTypeLabel];
     
     self.LT2 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"机台号:" type:PersonalSettingItemTypeLabels];
@@ -69,6 +70,13 @@
     
     self.LT7 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"程序版本号:" type:PersonalSettingItemTypeLabel];
     
+    self.LT7.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LT7.content title:weakSelf.LT7.title compeletion:^(NSString *value) {
+            weakSelf.LT7.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
     self.LL8 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"调试责任人:" type:PersonalSettingItemTypeLabels];
 
     
@@ -83,9 +91,32 @@
 
     self.LT13 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"问题记录:" type:PersonalSettingItemTypeLabel];
     
+    self.LT13.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LT13.content title:weakSelf.LT13.title compeletion:^(NSString *value) {
+            weakSelf.LT13.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
     self.LT14 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"处理过程:" type:PersonalSettingItemTypeLabels];
     
+    self.LT14.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LT14.content title:weakSelf.LT14.title compeletion:^(NSString *value) {
+            weakSelf.LT14.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
     self.LT15 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"备注:" type:PersonalSettingItemTypeLabels];
+    
+    self.LT15.operation  = ^{
+        
+        [weakSelf popInputTextViewContent:weakSelf.LT15.content title:weakSelf.LT15.title compeletion:^(NSString *value) {
+            weakSelf.LT15.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.items = @[_LL1,_LT2,_LL3,_LL4,_LL5,_LL6,_LT7,_LL8,_LL9,_LL10,_LL11,_LL12,_LT13,_LT14,_LT15,];
     [_allGroups addObject:group];

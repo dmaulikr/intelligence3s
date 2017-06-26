@@ -70,6 +70,7 @@
 }
 -(void)addViews
 {
+    WEAKSELF
     AccountModel *account = [AccountManager account];
     self.firstRow = [ProblemItemLLIView showXibView];
     self.firstRow.type = ProblemItemTypeDefaultLL;
@@ -150,11 +151,26 @@
         make.right.equalTo(self.view.mas_right).offset(0);
         make.height.mas_equalTo(45);
     }];
+    self.eighthRow.executeTapContentLabel = ^{
+        
+        [weakSelf popInputTextViewContent:weakSelf.eighthRow.contentTextField.text title:weakSelf.eighthRow.titleLabel.text compeletion:^(NSString *value) {
+            weakSelf.eighthRow.contentTextField.text=value;
+        }];
+    };
+    
     
     self.ninthRow = [ProblemItemLLIView showXibView];
     self.ninthRow.type = ProblemItemTypeDefaultLV;
     self.ninthRow.titleLabel.text = @"工作内容:";
 
+    
+    self.ninthRow.executeTapContentLabel = ^{
+        
+        [weakSelf popInputTextViewContent:weakSelf.ninthRow.contentLabel.text title:weakSelf.ninthRow.titleLabel.text compeletion:^(NSString *value) {
+            weakSelf.ninthRow.contentLabel.text=value;
+        }];
+    };
+    
     self.ninthRow.contentLabel.textColor = [UIColor blackColor];
     
     [self.rootView addSubview:self.ninthRow];

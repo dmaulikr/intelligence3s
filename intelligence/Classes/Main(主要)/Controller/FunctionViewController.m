@@ -25,7 +25,7 @@
 #import "TripReportViewController.h"
 #import "StockViewControllers.h"
 #import "LoginViewController.h"
-
+#import "DataFactory.h"
 static NSString * cellIdentifier = @"FunctionItemsCollectionViewCell";
 static NSString * kheaderIdentifier =@"headerIdentifier";
 static NSString * kfooterIdentifier =@"footerIdentifier";
@@ -60,6 +60,9 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
             
         }];
     }
+    //测试通用方法
+    [[[DataFactory alloc] init] readData];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -268,7 +271,7 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
             worktype = @"TP";//技改工单
             appid = @"UDJGWO";
             objectname = @"WORKORDER";
-            orderby = @"WORKORDERID desc";
+            orderby = @"WONUM desc";
             name = @"技改工单";
             type = ChoiceTypeTPS;
             break;

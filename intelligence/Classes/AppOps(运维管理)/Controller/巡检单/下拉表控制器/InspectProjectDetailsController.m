@@ -167,6 +167,7 @@
 }
 
 - (void)createUI{
+    WEAKSELF
     self.firstRow = [ProblemItemLLIView showXibView];
     self.firstRow.type = ProblemItemTypeDefaultLL;
     self.firstRow.frame = CGRectMake(0, 0, ScreenWidth, 45);
@@ -237,6 +238,11 @@
         make.right.equalTo(self.view.mas_right).offset(0);
         make.height.mas_equalTo(fifthRowHeight);
     }];
+    self.fifthRow.executeTapContentLabel = ^{
+        [weakSelf popInputTextViewContent:weakSelf.fifthRow.contentLabel.text title:weakSelf.fifthRow.titleLabel.text compeletion:^(NSString *value) {
+            weakSelf.fifthRow.contentLabel.text=value;
+        }];
+    };
     
     self.sixthRow = [ProblemItemLLIView showXibView];
     self.sixthRow.type = ProblemItemTypeDefaultLL;

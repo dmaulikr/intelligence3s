@@ -8,6 +8,7 @@
 
 #import "ProfileSettingViewController.h"
 #import "FauWorkModel.h"
+#import "WfmListanceListViewController.h"
 @interface CheckingWorkController : ProfileSettingViewController
 @property (nonatomic,strong)FauWorkModel *stock;
 @property (nonatomic,copy)NSString *objectname;

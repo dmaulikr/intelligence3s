@@ -190,6 +190,7 @@
 }
 
 - (void)addViews{
+    WEAKSELF
     self.firstRow = [ProblemItemLLIView showXibView];
     self.firstRow.type = ProblemItemTypeDefaultLL;
     self.firstRow.frame = CGRectMake(0, 0, ScreenWidth, 45);
@@ -241,6 +242,14 @@
         make.right.equalTo(self.view.mas_right).offset(0);
         make.height.mas_equalTo(60);
     }];
+    self.fifthRow.executeTextHeightChage = ^(CGFloat textHeight) {
+        
+        [weakSelf popInputTextViewContent:weakSelf.fifthRow.contentText.text title:weakSelf.fifthRow.titleLabel.text compeletion:^(NSString *value) {
+            weakSelf.fifthRow.contentText.text=value;
+        }];
+    };
+    
+    
     
     self.sixthRow = [ProblemItemTitleView showXibView];
     self.sixthRow.titleLabel.text = @"详细工作内容:";
@@ -251,6 +260,9 @@
         make.right.equalTo(self.view.mas_right).offset(0);
         make.height.mas_equalTo(40);
     }];
+    
+
+    
     
     self.seventhRow = [ProblemItemLLIView showXibView];
     self.seventhRow.type = ProblemItemTypeDefaultLLI;
@@ -273,6 +285,15 @@
         make.right.equalTo(self.view.mas_right).offset(0);
         make.height.mas_equalTo(60);
     }];
+    
+    self.eighthRow.executeTextHeightChage = ^(CGFloat textHeight) {
+        
+        [weakSelf popInputTextViewContent:weakSelf.eighthRow.contentText.text title:weakSelf.eighthRow.titleLabel.text compeletion:^(NSString *value) {
+            
+            weakSelf.eighthRow.contentText.text=value;
+            
+        }];
+    };
     
     self.ninthRow = [ProblemItemLTView showXibView];
     self.ninthRow.type = ProblemItemLTViewTypeHiddenRedMark;

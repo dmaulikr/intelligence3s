@@ -102,6 +102,7 @@
 }
 
 - (void)addViews{
+    WEAKSELF
     self.firstRow = [ProblemItemLLIView showXibView];
     self.firstRow.type = ProblemItemTypeDefaultLL;
     self.firstRow.frame = CGRectMake(0, 0, ScreenWidth, 45);
@@ -294,6 +295,15 @@
         make.right.equalTo(self.view.mas_right).offset(0);
         make.height.mas_equalTo(60);
     }];
+    self.seventeenthRow.executeTextHeightChage = ^(CGFloat textHeight) {
+        
+        [weakSelf popInputTextViewContent:weakSelf.seventeenthRow.contentText.text title:weakSelf.seventeenthRow.titleLabel.text compeletion:^(NSString *value) {
+            
+            weakSelf.seventeenthRow.contentText.text=value;
+
+        }];
+    };
+    
 }
 
 - (void)addBlocks{

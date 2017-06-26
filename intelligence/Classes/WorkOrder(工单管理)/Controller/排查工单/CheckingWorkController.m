@@ -127,7 +127,15 @@
         [weakSelf pushWithIndex:index];
     }];
     
-    DTKDropdownMenuView *menuView = [DTKDropdownMenuView dropdownMenuViewWithType:dropDownTypeRightItem frame:CGRectMake(0, 0, 40.f, 40.f) dropdownItems:@[item0,item1,item2] icon:@"more"];
+    DTKDropdownItem *item3 = [DTKDropdownItem itemWithTitle:@"工作流任务分配" iconName:@"ic_tujian" callBack:^(NSUInteger index, id info) {
+        NSLog(@"rightItem%lu",(unsigned long)index);
+        NSLog(@"工作流任务分配");
+        WfmListanceListViewController* vc= [[WfmListanceListViewController alloc] init];
+        vc.OWNERID=_stock.WORKORDERID;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    }];
+    
+    DTKDropdownMenuView *menuView = [DTKDropdownMenuView dropdownMenuViewWithType:dropDownTypeRightItem frame:CGRectMake(0, 0, 40.f, 40.f) dropdownItems:@[item0,item1,item2,item3] icon:@"more"];
     menuView.currentNav = self.navigationController;
     
     menuView.dropWidth = 130.f;
@@ -537,12 +545,34 @@
     self.LC16 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PERINSPR withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"排查结果:" type:PersonalSettingItemTypeChoice];
     self.LC16.FieldName=@"PERINSPR";
 
+    self.LC16.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LC16.content title:weakSelf.LC16.title compeletion:^(NSString *value) {
+            weakSelf.LC16.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
     
     self.LL17 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDREMARK withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"备注:" type:PersonalSettingItemTypeLabel];
     self.LL17.FieldName=@"UDREMARK";
     
+    self.LL17.operation  = ^{
+        
+        [weakSelf popInputTextViewContent:weakSelf.LL17.content title:weakSelf.LL17.title compeletion:^(NSString *value) {
+            weakSelf.LL17.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
+    
     self.LT18 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDZGMEASURE withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"故障处理方案:" type:PersonalSettingItemTypeLabel];
     self.LT18.FieldName=@"UDZGMEASURE";
+    
+    self.LT18.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LT18.content title:weakSelf.LT18.title compeletion:^(NSString *value) {
+            weakSelf.LT18.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
     
     self.LLI19 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"排查计划编号:" type:PersonalSettingItemTypeArrow];
     self.LLI19.FieldName=@"";
@@ -573,9 +603,23 @@
     self.LT24 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PCRESON withHeight:CELLHEIGHT  withClick:_isClick withStar:YES title:@"排查原因:" type:PersonalSettingItemTypeLabel];
     self.LT24.FieldName=@"PCRESON";
     
+    self.LT24.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LT24.content title:weakSelf.LT24.title compeletion:^(NSString *value) {
+            weakSelf.LT24.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
+    
     self.LT25 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDJGRESULT withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"排查结果:" type:PersonalSettingItemTypeLabel];
     self.LT25.FieldName=@"UDJGRESULT";
     
+    self.LT25.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LT25.content title:weakSelf.LT25.title compeletion:^(NSString *value) {
+            weakSelf.LT25.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.items = @[_LLI15,_LC16,_LL17,_LT18,_LLI19,_LT20,_LT21,_LLI22,_LT24,_LT25,];
@@ -639,9 +683,10 @@
                 
             }];
             UIAlertAction * comfirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [alert addAction:cancel];
-                [alert addAction:comfirm];
+                
             }];
+            [alert addAction:cancel];
+            [alert addAction:comfirm];
             [self presentViewController:alert animated:YES completion:nil];
         }
         else

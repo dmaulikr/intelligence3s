@@ -12,46 +12,47 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="LabelsViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <rect key="frame" x="0.0" y="0.0" width="503" height="70"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="问题类型:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJh-uQ-LhU">
-                    <rect key="frame" x="16" y="8" width="288" height="20"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <rect key="frame" x="8" y="26" width="71" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="uq3-Ag-Ni6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.16574287409999999" green="0.35476964709999997" blue="0.61214405299999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mi-us-M1b">
-                    <rect key="frame" x="17" y="36" width="287" height="14"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gp3-R1-Hab">
+                    <rect key="frame" x="0.0" y="69" width="503" height="1"/>
+                    <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="vE4-jm-fRx"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mi-us-M1b">
+                    <rect key="frame" x="466" y="26.5" width="29" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gp3-R1-Hab">
-                    <rect key="frame" x="0.0" y="66" width="320" height="4"/>
-                    <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="4" id="vE4-jm-fRx"/>
-                    </constraints>
-                </view>
             </subviews>
             <constraints>
-                <constraint firstItem="lJh-uQ-LhU" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="16" id="C5Z-5c-RRs"/>
-                <constraint firstAttribute="bottom" secondItem="gp3-R1-Hab" secondAttribute="bottom" id="M6S-2I-Ns1"/>
-                <constraint firstItem="8Mi-us-M1b" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="16" id="QNw-S3-8vc"/>
-                <constraint firstAttribute="trailing" secondItem="gp3-R1-Hab" secondAttribute="trailing" id="Ury-1Y-rsd"/>
-                <constraint firstItem="gp3-R1-Hab" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="Y7p-JF-sJQ"/>
-                <constraint firstAttribute="bottom" secondItem="gp3-R1-Hab" secondAttribute="bottom" id="YVy-PG-GNV"/>
-                <constraint firstAttribute="trailing" secondItem="8Mi-us-M1b" secondAttribute="trailing" constant="16" id="hrd-01-mWw"/>
-                <constraint firstItem="8Mi-us-M1b" firstAttribute="top" secondItem="lJh-uQ-LhU" secondAttribute="bottom" constant="8" id="otI-ia-ksF"/>
-                <constraint firstAttribute="trailing" secondItem="lJh-uQ-LhU" secondAttribute="trailing" constant="16" id="ufR-rA-8Q3"/>
-                <constraint firstItem="lJh-uQ-LhU" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="8" id="vw1-Og-zXS"/>
+                <constraint firstAttribute="trailing" secondItem="8Mi-us-M1b" secondAttribute="trailing" constant="8" id="3ZH-8q-JSi"/>
+                <constraint firstItem="lJh-uQ-LhU" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="8" id="Avr-AX-gF3"/>
+                <constraint firstItem="gp3-R1-Hab" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="TmS-RT-yVF"/>
+                <constraint firstItem="8Mi-us-M1b" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="Zwe-GT-0VP"/>
+                <constraint firstItem="lJh-uQ-LhU" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="lbD-zb-nbi"/>
+                <constraint firstAttribute="bottom" secondItem="gp3-R1-Hab" secondAttribute="bottom" id="nVJ-iP-EWz"/>
+                <constraint firstItem="8Mi-us-M1b" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lJh-uQ-LhU" secondAttribute="trailing" constant="50" id="oPI-gE-onj"/>
+                <constraint firstAttribute="trailing" secondItem="gp3-R1-Hab" secondAttribute="trailing" id="pfj-kw-4nW"/>
             </constraints>
             <connections>
                 <outlet property="content" destination="8Mi-us-M1b" id="b3C-5c-qgT"/>
                 <outlet property="name" destination="lJh-uQ-LhU" id="blI-jh-pyP"/>
             </connections>
-            <point key="canvasLocation" x="318" y="277"/>
+            <point key="canvasLocation" x="409.5" y="277"/>
         </collectionReusableView>
     </objects>
 </document>

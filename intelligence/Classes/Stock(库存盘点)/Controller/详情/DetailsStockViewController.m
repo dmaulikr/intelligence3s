@@ -325,9 +325,10 @@
                 
             }];
             UIAlertAction * comfirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [alert addAction:cancel];
-                [alert addAction:comfirm];
+                
             }];
+            [alert addAction:cancel];
+            [alert addAction:comfirm];
             [self presentViewController:alert animated:YES completion:nil];
         }
         else

@@ -19,17 +19,6 @@
     item.click = click;
     item.height = height;
     item.isStar = star;
-    if (type==PersonalSettingItemTypeLabels) {
-        item.operation = ^{
-            BaseInputViewController *input = [[BaseInputViewController alloc] init];
-            UIViewController * currentVC =[self getCurrentVC];
-            input.item=item;
-            [currentVC presentViewController:input animated:YES completion:^{
-                [input.textView setText:item.content];
-            }];
-            
-        };
-    }
     return item;
 }
 //显示

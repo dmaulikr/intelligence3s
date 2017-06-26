@@ -25,4 +25,6 @@
 @property (nonatomic, copy) NSString * TOPLACE;//出差地点
 @property (nonatomic, copy) NSString * TRIPCONTENT;//出差事由
 @property (nonatomic, copy) NSString * WORKCONTENT;//工作内容
+@property (nonatomic, copy) NSString * UDTRIPREPORTID;//表ID
+@property (nonatomic, copy) NSString * STATUS;//状态
 @end

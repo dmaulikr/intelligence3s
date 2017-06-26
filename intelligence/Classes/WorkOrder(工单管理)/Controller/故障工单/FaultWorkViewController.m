@@ -23,6 +23,10 @@
 #import "CauseProblemViewController.h"
 #import "FinalNumViewController.h"
 #import "ApprovalsView.h"
+#import "TextInputViewController.h"
+#import "UIViewController+MJPopupViewController.h"
+#import "WfmListanceListViewController.h"
+
 @interface FaultWorkViewController ()<UIAlertViewDelegate>
 /** ------第一部分----*/
 /** 工单号*/
@@ -176,7 +180,7 @@
 }
 -(void)viewDidAppear:(BOOL)animated
 {
-    NSLog(@"%f",self.tableView.frame.origin.x);
+
 }
 -(void)addFooter{
     FooterView *footer = [FooterView footerView];
@@ -437,6 +441,8 @@
 }
 - (void)addRightNavBarItem{
     WEAKSELF
+    
+
     DTKDropdownItem *item0 = [DTKDropdownItem itemWithTitle:@"工作计划" iconName:@"ic_woactivity" callBack:^(NSUInteger index, id info) {
         NSLog(@"rightItem%lu",(unsigned long)index);
         [weakSelf pushWithIndex:index];
@@ -457,7 +463,17 @@
         [weakSelf pushWithIndex:index];
     }];
     
-    DTKDropdownMenuView *menuView = [DTKDropdownMenuView dropdownMenuViewWithType:dropDownTypeRightItem frame:CGRectMake(0, 0,40.f, 40.f) dropdownItems:@[item0,item1,item2,item3,item4,] icon:@"more"];
+    DTKDropdownItem *item5 = [DTKDropdownItem itemWithTitle:@"工作流任务分配" iconName:@"ic_tujian" callBack:^(NSUInteger index, id info) {
+        NSLog(@"rightItem%lu",(unsigned long)index);
+        NSLog(@"工作流任务分配");
+        WfmListanceListViewController* vc= [[WfmListanceListViewController alloc] init];
+        vc.OWNERID=_stock.WORKORDERID;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    }];
+    
+    DTKDropdownMenuView *menuView = [DTKDropdownMenuView dropdownMenuViewWithType:dropDownTypeRightItem frame:CGRectMake(0, 0,40.f, 40.f) dropdownItems:@[item0,item1,item2,item3,item4,item5] icon:@"more"];
+    
+    
     menuView.currentNav = self.navigationController;
     
     menuView.dropWidth = 150.f;
@@ -814,11 +830,11 @@
     self.LLI_16I.FieldName=@"GZWTDESC";
     
     
-    self.LL_17 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:_stock.UDGZDJ withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"故障等级:" type:PersonalSettingItemTypeLabels];
+    self.LL_17 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:_stock.UDGZDJ withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"故障等级:" type:PersonalSettingItemTypeLabel];
     self.LL_17.FieldName=@"UDGZDJ";
     
     
-    self.LL_18 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:_stock.UDGZTYPE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"故障类型:" type:PersonalSettingItemTypeLabels];
+    self.LL_18 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:_stock.UDGZTYPE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"故障类型:" type:PersonalSettingItemTypeLabel];
     self.LL_18.FieldName=@"UDGZTYPE";
     
     
@@ -907,26 +923,33 @@
     };
 
     
-    self.LL_28 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDJGRESULT withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"累计停机时间:" type:PersonalSettingItemTypeLabels];
+    self.LL_28 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDJGRESULT withHeight:CELLHEIGHT  withClick:NO withStar:NO title:@"累计停机时间:" type:PersonalSettingItemTypeLabel];
     self.LL_28.FieldName=@"UDJGRESULT";
     
     
-    self.LT_28I = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDREMARK withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"没有编码的物料:" type:PersonalSettingItemTypeLabels];
+    self.LT_28I = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDREMARK withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"没有编码的物料:" type:PersonalSettingItemTypeLabel];
     self.LT_28I.FieldName=@"UDREMARK";
     
-//    self.LT_28I.operation=^{
-//        
-//        BaseInputViewController *input = [[BaseInputViewController alloc] init];
-//        [input setTitle:@"没有编码的物料:"];
-//        [input.textView setText:weakSelf.LT_28I.content];
-//        [weakSelf presentViewController:input animated:YES completion:^{
-//            
-//        }];
-//    };
+    self.LT_28I.operation=^{
+        
+        [weakSelf popInputTextViewContent:weakSelf.LT_28I.content title:weakSelf.LT_28I.title compeletion:^(NSString *value) {
+            weakSelf.LT_28I.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
     
-    self.LT_29 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDPROBDESC withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"故障隐患描述:" type:PersonalSettingItemTypeLabels];
+    self.LT_29 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.UDPROBDESC withHeight:CELLHEIGHT  withClick:YES withStar:NO title:@"故障隐患描述:" type:PersonalSettingItemTypeLabel];
     
     self.LT_29.FieldName=@"UDPROBDESC";
+    
+    
+    self.LT_29.operation=^{
+        
+        [weakSelf popInputTextViewContent:weakSelf.LT_29.content title:weakSelf.LT_29.title compeletion:^(NSString *value) {
+            weakSelf.LT_29.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     
@@ -1049,9 +1072,10 @@
                 
             }];
             UIAlertAction * comfirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [alert addAction:cancel];
-                [alert addAction:comfirm];
+               
             }];
+            [alert addAction:cancel];
+            [alert addAction:comfirm];
             [self presentViewController:alert animated:YES completion:nil];
         }
         else
@@ -1059,7 +1083,24 @@
             compeletion(YES);
         }
     }
+}
+-(void)popInputTextViewContent:(NSString*)content title:(NSString*)title  compeletion:(void(^)(NSString * value))compeletion
+{
+    TextInputViewController *popTextView = [[TextInputViewController alloc] initWithNibName:@"TextInputViewController" bundle:[NSBundle mainBundle]];
+    [self presentPopupViewController:popTextView animationType:MJPopupViewAnimationFade];
     
+    popTextView.titleLabel.text=title;
+    popTextView.content.text=content;
+    [popTextView.content becomeFirstResponder];
+
+    popTextView.save=^(NSString *content)
+    {
+        compeletion(content);
+        [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+    };
+    popTextView.cancel = ^{
+        [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+    };
     
 }
 @end

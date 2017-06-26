@@ -320,7 +320,7 @@
 }
 
 - (void)addViews{
-    
+    WEAKSELF
     self.firstRow = [ProblemItemLLIView showXibView];
     self.firstRow.type = ProblemItemTypeDefaultLL;
     self.firstRow.frame = CGRectMake(0, 0, ScreenWidth, 45);
@@ -648,6 +648,15 @@
         self.twentyfirstRow.placeholderLabel.hidden = YES;
         self.twentyfirstRow.contentText.textColor = [UIColor blackColor];
     }
+    self.twentyfirstRow.executeTextHeightChage = ^(CGFloat textHeight) {
+        
+        [weakSelf popInputTextViewContent:weakSelf.twentyfirstRow.contentText.text title:weakSelf.twentyfirstRow.titleLabel.text compeletion:^(NSString *value) {
+            
+            weakSelf.twentyfirstRow.contentText.text=value;
+            
+        }];
+    };
+    
     [self.SetingItems setValue:@"备注" forKey:@"REMARK"];
     [self.rootView addSubview:self.twentyfirstRow];
     [self.twentyfirstRow mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -1093,9 +1102,10 @@
                 
             }];
             UIAlertAction * comfirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [alert addAction:cancel];
-                [alert addAction:comfirm];
+               
             }];
+            [alert addAction:cancel];
+            [alert addAction:comfirm];
             [self presentViewController:alert animated:YES completion:nil];
         }
         else

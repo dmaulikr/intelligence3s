@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.content.enabled = NO;
+    //self.content.enabled = NO;
 }
 +(instancetype)labelCellView{
     return [[[NSBundle mainBundle]loadNibNamed:@"LabelCellView" owner:nil options:nil] lastObject];
@@ -21,7 +21,10 @@
     _item = item;
     self.name.text = item.title;
     self.content.text = item.content;
-    self.content.enabled = NO;
+    if(item.operation){
+    [self.content setUserInteractionEnabled:NO];
+    }
+    //self.content.enabled = NO;
 }
 
 @end

@@ -322,6 +322,15 @@
     
     self.LL17 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.GOREASON withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"出车事由:" type:PersonalSettingItemTypeLabel];
    
+    self.LL17.operation = ^ {
+        
+        [weakSelf popInputTextViewContent:weakSelf.LL17.content title:weakSelf.LL17.title compeletion:^(NSString *value) {
+            
+            weakSelf.LL17.content=value;
+            [weakSelf.tableView reloadData];
+            
+        }];
+    };
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.header = @"出车信息";

@@ -130,7 +130,15 @@
         [weakSelf pushWithIndex:index];
     }];
     
-    DTKDropdownMenuView *menuView = [DTKDropdownMenuView dropdownMenuViewWithType:dropDownTypeRightItem frame:CGRectMake(0, 0, 40.f, 40.f) dropdownItems:@[item0,item1,item2] icon:@"more"];
+    DTKDropdownItem *item3 = [DTKDropdownItem itemWithTitle:@"工作流任务分配" iconName:@"ic_tujian" callBack:^(NSUInteger index, id info) {
+        NSLog(@"rightItem%lu",(unsigned long)index);
+        NSLog(@"工作流任务分配");
+        WfmListanceListViewController* vc= [[WfmListanceListViewController alloc] init];
+        vc.OWNERID=_stock.WORKORDERID;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    }];
+    
+    DTKDropdownMenuView *menuView = [DTKDropdownMenuView dropdownMenuViewWithType:dropDownTypeRightItem frame:CGRectMake(0, 0, 40.f, 40.f) dropdownItems:@[item0,item1,item2,item3] icon:@"more"];
     menuView.currentNav = self.navigationController;
     
     menuView.dropWidth = 130.f;
@@ -571,6 +579,14 @@
     self.LT20.FieldName=@"";
     
     self.LT21 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PCRESON withHeight:CELLHEIGHT  withClick:_isEditor withStar:YES title:@"技改原因:" type:PersonalSettingItemTypeLabel];
+    self.LT21.operation = ^{
+        [weakSelf popInputTextViewContent:weakSelf.LT21.content title:weakSelf.LT21.title compeletion:^(NSString *value) {
+            weakSelf.LT21.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
+    
     self.LT21.FieldName=@"";
     
     
@@ -658,9 +674,10 @@
                 
             }];
             UIAlertAction * comfirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [alert addAction:cancel];
-                [alert addAction:comfirm];
+                
             }];
+            [alert addAction:cancel];
+            [alert addAction:comfirm];
             [self presentViewController:alert animated:YES completion:nil];
         }
         else

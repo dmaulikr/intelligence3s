@@ -329,7 +329,26 @@
     
     self.LL25 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.PLACE withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"加油地点:" type:PersonalSettingItemTypeLabel];
     
+    self.LL25.operation = ^ {
+        
+        [weakSelf popInputTextViewContent:weakSelf.LL25.content title:weakSelf.LL25.title compeletion:^(NSString *value) {
+            
+            weakSelf.LL25.content=value;
+            [weakSelf.tableView reloadData];
+            
+        }];
+    };
+    
     self.LL26 = [PersonalSettingItem itemWithIcon:nil withContent:_stock.REMARK withHeight:CELLHEIGHT  withClick:_isEdit withStar:NO title:@"备注:" type:PersonalSettingItemTypeLabel];
+    self.LL26.operation = ^{
+        
+        [weakSelf popInputTextViewContent:weakSelf.LL26.content title:weakSelf.LL26.title compeletion:^(NSString *value) {
+            
+            weakSelf.LL26.content=value;
+            [weakSelf.tableView reloadData];
+        }];
+    };
+    
     
     PersonalSettingGroup *group = [[PersonalSettingGroup alloc] init];
     group.header = @"录入信息";

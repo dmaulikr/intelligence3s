@@ -89,6 +89,9 @@
 
 @property (nonatomic, strong) WorkDebugsModel *workDebug;
 @property (nonatomic, strong) UDPRORUNLOGC *udPRORUNLOGC;
+@property (weak, nonatomic) IBOutlet UILabel *top;
+@property (weak, nonatomic) IBOutlet UILabel *bottom;
+@property (strong, nonatomic) IBOutlet UILabel *index;
 
 +(instancetype)stockViewCell;
 @end

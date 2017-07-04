@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,32 +20,45 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kc8-lG-CXE">
-                        <rect key="frame" x="16" y="16" width="288" height="21.5"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <rect key="frame" x="64" y="12" width="240" height="19.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <color key="textColor" red="0.16574287409999999" green="0.35476964709999997" blue="0.61214405299999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="空" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3u-dS-EUS">
-                        <rect key="frame" x="16" y="45.5" width="288" height="19.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <rect key="frame" x="56" y="35.5" width="252" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lel-eA-Pso">
+                        <rect key="frame" x="12" y="25" width="32" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="DcB-JP-MEj"/>
+                            <constraint firstAttribute="width" constant="32" id="z3P-V3-YXO"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="Kc8-lG-CXE" secondAttribute="trailing" constant="8" id="FOe-h3-Z32"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="T3u-dS-EUS" secondAttribute="trailing" constant="8" id="Hwm-Iq-eFb"/>
-                    <constraint firstItem="T3u-dS-EUS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="Je3-zE-sNK"/>
-                    <constraint firstItem="Kc8-lG-CXE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="Mpu-pj-xDg"/>
-                    <constraint firstItem="Kc8-lG-CXE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="RAd-Sz-bwW"/>
-                    <constraint firstItem="T3u-dS-EUS" firstAttribute="top" secondItem="Kc8-lG-CXE" secondAttribute="bottom" constant="8" id="hbq-A9-8tl"/>
+                    <constraint firstItem="Lel-eA-Pso" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="4" id="FSC-Zv-Hbh"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="T3u-dS-EUS" secondAttribute="trailing" constant="4" id="Hwm-Iq-eFb"/>
+                    <constraint firstItem="T3u-dS-EUS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="48" id="Je3-zE-sNK"/>
+                    <constraint firstItem="Kc8-lG-CXE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="56" id="Mpu-pj-xDg"/>
+                    <constraint firstItem="Kc8-lG-CXE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="RAd-Sz-bwW"/>
+                    <constraint firstItem="T3u-dS-EUS" firstAttribute="top" secondItem="Kc8-lG-CXE" secondAttribute="bottom" constant="4" id="hbq-A9-8tl"/>
+                    <constraint firstItem="Lel-eA-Pso" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qMw-fP-sDg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="bottom" destination="T3u-dS-EUS" id="tKe-70-MJV"/>
+                <outlet property="index" destination="Lel-eA-Pso" id="DNl-qU-gQO"/>
                 <outlet property="top" destination="Kc8-lG-CXE" id="Fb4-LQ-HR2"/>
             </connections>
-            <point key="canvasLocation" x="199" y="32"/>
+            <point key="canvasLocation" x="-115" y="21"/>
         </tableViewCell>
     </objects>
 </document>

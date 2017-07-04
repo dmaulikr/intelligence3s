@@ -18,6 +18,7 @@
 #import "MaintainRViewController.h"
 #import "StockQueryViewController.h"
 #import "JSChartViewController.h"
+#import "TableViewController.h"
 
 #import "LedgerItemsController.h"
 #import "DailyItemsController.h"
@@ -60,9 +61,7 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
             
         }];
     }
-    //测试通用方法
-    [[[DataFactory alloc] init] readData];
-    
+    //测试通用方法    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -122,6 +121,7 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
                             @{@"title":@"排查工单",@"icon":@"ic_gd_pc"},
                             @{@"title":@"技改工单",@"icon":@"ic_gd_jg"},
                             @{@"title":@"终验收工单",@"icon":@"ic_gd_zys"},
+                            @{@"title":@"预警排查工单",@"icon":@"ic_gd_yjpc"},
                             ];
     
     self.operationArray1 = @[
@@ -283,7 +283,16 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
             name = @"终验收工单";
             type = ChoiceTypeAA;
             break;
-        
+        case 7:
+            {
+                NSLog(@"预警排查工单");
+                TableViewController *tableView = [[TableViewController alloc]init];
+                tableView.type=@"预警排查工单";
+                tableView.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:tableView animated:YES];
+                return;
+            }
+            break;
         default:
             break;
     }

@@ -195,6 +195,8 @@
         cell = [StockViewCell stockViewCell];
     }
     cell.construction = [self.dataArray objectAtIndex:indexPath.section];
+    [cell.index setText:[NSString stringWithFormat:@"%ld",(long)indexPath.section+1]];
+
     return cell;
 }
 

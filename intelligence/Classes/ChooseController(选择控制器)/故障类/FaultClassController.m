@@ -234,6 +234,8 @@
         cell = [StockViewCell stockViewCell];
     }
     cell.faultClass = [self modelTypeWithIndex:indexPath.section];
+    [cell.index setText:[NSString stringWithFormat:@"%ld",(long)indexPath.section+1]];
+
     return cell;
 }
 

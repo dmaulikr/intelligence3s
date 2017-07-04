@@ -191,6 +191,8 @@
         cell = [StockViewCell stockViewCell];
     }
     cell.toolingManagement = [self.dataArray objectAtIndex:indexPath.section];
+    [cell.index setText:[NSString stringWithFormat:@"%ld",(long)indexPath.section+1]];
+
     return cell;
 }
 

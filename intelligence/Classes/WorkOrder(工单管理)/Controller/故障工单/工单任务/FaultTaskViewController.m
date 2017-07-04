@@ -63,6 +63,8 @@
     if (!cell) {
         cell = [StockViewCell stockViewCell];
     }
+    [cell.index setText:[NSString stringWithFormat:@"%ld",(long)indexPath.section+1]];
+
     return cell;
 }
 

@@ -204,6 +204,7 @@
         cell = [StockViewCell stockViewCell];
     }
     cell.options = [self chooseType:indexPath.section];
+    [cell.index setText:[NSString stringWithFormat:@"%ld",(long)indexPath.section+1]];
     return cell;
 }
 

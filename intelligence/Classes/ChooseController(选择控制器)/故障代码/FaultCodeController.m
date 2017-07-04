@@ -230,7 +230,8 @@
     if (!cell) {
         cell = [StockViewCell stockViewCell];
     }
-    cell.faultCode = [self modelTypeWithIndex:indexPath.section];
+   cell.faultCode = [self modelTypeWithIndex:indexPath.section];
+    [cell.index setText:[NSString stringWithFormat:@"%ld",(long)indexPath.section+1]];
     return cell;
 }
 

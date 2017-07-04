@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TableViewController">
+            <connections>
+                <outlet property="searchbar" destination="BXC-Tb-Dn7" id="94m-Xd-aWK"/>
+                <outlet property="table" destination="UoD-mw-kky" id="zz4-Hh-cAE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="Tab">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="BXC-Tb-Dn7">
+                    <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                    <color key="barTintColor" red="0.17003688216209412" green="0.3547624945640564" blue="0.61213338375091553" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <scopeButtonTitles>
+                        <string>Title</string>
+                        <string>Title</string>
+                    </scopeButtonTitles>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UoD-mw-kky">
+                    <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="UoD-mw-kky" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="87A-a5-ps4"/>
+                <constraint firstAttribute="trailing" secondItem="BXC-Tb-Dn7" secondAttribute="trailing" id="8l6-1D-rde"/>
+                <constraint firstAttribute="trailing" secondItem="UoD-mw-kky" secondAttribute="trailing" id="RLp-pp-ydh"/>
+                <constraint firstAttribute="bottom" secondItem="UoD-mw-kky" secondAttribute="bottom" id="SRG-3q-Xbh"/>
+                <constraint firstItem="UoD-mw-kky" firstAttribute="top" secondItem="BXC-Tb-Dn7" secondAttribute="bottom" id="U4I-iG-8hy"/>
+                <constraint firstItem="BXC-Tb-Dn7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dCN-ZW-9Mq"/>
+                <constraint firstItem="BXC-Tb-Dn7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="v8X-qc-91R"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <point key="canvasLocation" x="75.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

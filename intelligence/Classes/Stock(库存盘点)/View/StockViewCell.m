@@ -9,8 +9,7 @@
 #import "StockViewCell.h"
 
 @interface StockViewCell ()
-@property (weak, nonatomic) IBOutlet UILabel *top;
-@property (weak, nonatomic) IBOutlet UILabel *bottom;
+
 @property (weak, nonatomic) IBOutlet UILabel *topName;
 @property (weak, nonatomic) IBOutlet UILabel *bottomName;
 @property (strong, nonatomic) IBOutlet UILabel *rightlabel;

@@ -165,6 +165,9 @@
 		835FBD441DE288C9006CBC43 /* RunLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835FBD421DE288C9006CBC43 /* RunLogViewController.xib */; };
 		835FBD4E1DE2D090006CBC43 /* RunLogAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835FBD4C1DE2D090006CBC43 /* RunLogAddViewController.xib */; };
 		835FBD531DE2D0C8006CBC43 /* RunLogDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835FBD511DE2D0C8006CBC43 /* RunLogDetailsViewController.xib */; };
+		836557D21F00E895009A96EC /* MetaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836557D11F00E895009A96EC /* MetaTableViewController.m */; };
+		836557D61F00EFFB009A96EC /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836557D41F00EFFB009A96EC /* TableViewController.m */; };
+		836557D71F00EFFB009A96EC /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 836557D51F00EFFB009A96EC /* TableViewController.xib */; };
 		8378BB051E63C3500060DB8A /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8378BB041E63C3500060DB8A /* TabBarController.m */; };
 		8378BB091E63C8460060DB8A /* FunctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8378BB071E63C8460060DB8A /* FunctionViewController.m */; };
 		8378BB0A1E63C8470060DB8A /* FunctionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8378BB081E63C8460060DB8A /* FunctionViewController.xib */; };
@@ -904,7 +907,14 @@
 		83CCE3DA1DF10528003DB584 /* StockQueryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83CCE3D81DF10528003DB584 /* StockQueryViewController.xib */; };
 		83CCE3E01DF11393003DB584 /* ConditionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83CCE3DE1DF11393003DB584 /* ConditionViewController.xib */; };
 		83CCE3E51DF11DAE003DB584 /* StockQueryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83CCE3E31DF11DAE003DB584 /* StockQueryTableViewCell.xib */; };
+		83DAB3891F04919B00C379C4 /* YJPC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DAB3881F04919B00C379C4 /* YJPC_ViewController.m */; };
+		83DAB38F1F04AC4900C379C4 /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DAB38E1F04AC4900C379C4 /* NSArray+Extension.m */; };
 		83E6BFC91EBAD124004E076E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E6BFC81EBAD124004E076E /* ViewController.m */; };
+		83F45A671F0333F000662991 /* UDWARNINGWO.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F45A661F0333F000662991 /* UDWARNINGWO.m */; };
+		83FAEF4E1F0B221100C00722 /* ZZZC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FAEF4D1F0B221100C00722 /* ZZZC_ViewController.m */; };
+		83FAEF511F0B223600C00722 /* FDJZC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FAEF501F0B223600C00722 /* FDJZC_ViewController.m */; };
+		83FAEF541F0B225400C00722 /* CLXGSZZC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FAEF531F0B225400C00722 /* CLXGSZZC_ViewController.m */; };
+		83FAEF571F0B239A00C00722 /* PCXXXX_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FAEF561F0B239A00C00722 /* PCXXXX_ViewController.m */; };
 		BF4C1B60942E58885E4B47A6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EE2354F908FFC559336A37 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -1610,6 +1620,11 @@
 		835FBD4F1DE2D0C8006CBC43 /* RunLogDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunLogDetailsViewController.h; sourceTree = "<group>"; };
 		835FBD501DE2D0C8006CBC43 /* RunLogDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunLogDetailsViewController.m; sourceTree = "<group>"; };
 		835FBD511DE2D0C8006CBC43 /* RunLogDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RunLogDetailsViewController.xib; sourceTree = "<group>"; };
+		836557D01F00E895009A96EC /* MetaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaTableViewController.h; sourceTree = "<group>"; };
+		836557D11F00E895009A96EC /* MetaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaTableViewController.m; sourceTree = "<group>"; };
+		836557D31F00EFFB009A96EC /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		836557D41F00EFFB009A96EC /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		836557D51F00EFFB009A96EC /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
 		8378BB031E63C3500060DB8A /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		8378BB041E63C3500060DB8A /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		8378BB061E63C8460060DB8A /* FunctionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionViewController.h; sourceTree = "<group>"; };
@@ -1685,8 +1700,22 @@
 		83CCE3E31DF11DAE003DB584 /* StockQueryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StockQueryTableViewCell.xib; sourceTree = "<group>"; };
 		83CCE3E61DF16C69003DB584 /* StockQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockQuery.h; sourceTree = "<group>"; };
 		83CCE3E71DF16C69003DB584 /* StockQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockQuery.m; sourceTree = "<group>"; };
+		83DAB3871F04919B00C379C4 /* YJPC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJPC_ViewController.h; sourceTree = "<group>"; };
+		83DAB3881F04919B00C379C4 /* YJPC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJPC_ViewController.m; sourceTree = "<group>"; };
+		83DAB38D1F04AC4900C379C4 /* NSArray+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extension.h"; sourceTree = "<group>"; };
+		83DAB38E1F04AC4900C379C4 /* NSArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
 		83E6BFC71EBAD124004E076E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		83E6BFC81EBAD124004E076E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		83F45A651F0333F000662991 /* UDWARNINGWO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDWARNINGWO.h; sourceTree = "<group>"; };
+		83F45A661F0333F000662991 /* UDWARNINGWO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDWARNINGWO.m; sourceTree = "<group>"; };
+		83FAEF4C1F0B221100C00722 /* ZZZC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZZC_ViewController.h; sourceTree = "<group>"; };
+		83FAEF4D1F0B221100C00722 /* ZZZC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZZC_ViewController.m; sourceTree = "<group>"; };
+		83FAEF4F1F0B223600C00722 /* FDJZC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDJZC_ViewController.h; sourceTree = "<group>"; };
+		83FAEF501F0B223600C00722 /* FDJZC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDJZC_ViewController.m; sourceTree = "<group>"; };
+		83FAEF521F0B225400C00722 /* CLXGSZZC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLXGSZZC_ViewController.h; sourceTree = "<group>"; };
+		83FAEF531F0B225400C00722 /* CLXGSZZC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLXGSZZC_ViewController.m; sourceTree = "<group>"; };
+		83FAEF551F0B239A00C00722 /* PCXXXX_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCXXXX_ViewController.h; sourceTree = "<group>"; };
+		83FAEF561F0B239A00C00722 /* PCXXXX_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCXXXX_ViewController.m; sourceTree = "<group>"; };
 		8733AE4A1618B3D5401F4EEB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		ACEF6463DAE8723D8CFFCCFF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E2EE2354F908FFC559336A37 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2109,6 +2138,11 @@
 				832A69011E66CA9800B5C657 /* QRCodeViewController.xib */,
 				834EEE501EFCEF2B0055C0EC /* DataFactory.h */,
 				834EEE511EFCEF2B0055C0EC /* DataFactory.m */,
+				836557D01F00E895009A96EC /* MetaTableViewController.h */,
+				836557D11F00E895009A96EC /* MetaTableViewController.m */,
+				836557D31F00EFFB009A96EC /* TableViewController.h */,
+				836557D41F00EFFB009A96EC /* TableViewController.m */,
+				836557D51F00EFFB009A96EC /* TableViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3015,6 +3049,7 @@
 		22A7CD4C1D4379CD008B3638 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				83DAB3861F04914F00C379C4 /* 预警排查工单 */,
 				83AC9ECB1ED7C31200A549D3 /* 工作流 */,
 				22A7CD9A1D4492A2008B3638 /* 定检工单 */,
 				22A7CD991D449286008B3638 /* 技改工单 */,
@@ -3060,6 +3095,8 @@
 			children = (
 				22A7CD7A1D4454EA008B3638 /* FauWorkModel.h */,
 				22A7CD7B1D4454EA008B3638 /* FauWorkModel.m */,
+				83F45A651F0333F000662991 /* UDWARNINGWO.h */,
+				83F45A661F0333F000662991 /* UDWARNINGWO.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3888,6 +3925,25 @@
 			name = "筛选条件";
 			sourceTree = "<group>";
 		};
+		83DAB3861F04914F00C379C4 /* 预警排查工单 */ = {
+			isa = PBXGroup;
+			children = (
+				83DAB3871F04919B00C379C4 /* YJPC_ViewController.h */,
+				83DAB3881F04919B00C379C4 /* YJPC_ViewController.m */,
+				83DAB38D1F04AC4900C379C4 /* NSArray+Extension.h */,
+				83DAB38E1F04AC4900C379C4 /* NSArray+Extension.m */,
+				83FAEF4C1F0B221100C00722 /* ZZZC_ViewController.h */,
+				83FAEF4D1F0B221100C00722 /* ZZZC_ViewController.m */,
+				83FAEF4F1F0B223600C00722 /* FDJZC_ViewController.h */,
+				83FAEF501F0B223600C00722 /* FDJZC_ViewController.m */,
+				83FAEF521F0B225400C00722 /* CLXGSZZC_ViewController.h */,
+				83FAEF531F0B225400C00722 /* CLXGSZZC_ViewController.m */,
+				83FAEF551F0B239A00C00722 /* PCXXXX_ViewController.h */,
+				83FAEF561F0B239A00C00722 /* PCXXXX_ViewController.m */,
+			);
+			name = "预警排查工单";
+			sourceTree = "<group>";
+		};
 		AB63435F0A2A552320234A41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -4071,6 +4127,7 @@
 				22DED6251D69A5F400BE4E57 /* InspectProjectDetailsController.xib in Resources */,
 				22A45E4E1D6817DB00AF48BA /* AddWorkPlanViewController.xib in Resources */,
 				2208BBC21D44FBE600C84888 /* DTKDropdownMenuView.bundle in Resources */,
+				836557D71F00EFFB009A96EC /* TableViewController.xib in Resources */,
 				22AF10271D58DDA40094A498 /* HitStockViewController.xib in Resources */,
 				22AF0FD91D57117E0094A498 /* DetailsTravelViewController.xib in Resources */,
 				221F5EC61D465AD3007B3AAF /* ApprovalPopupSheetBackView.xib in Resources */,
@@ -4206,6 +4263,7 @@
 				83B014261E08D79300D65FF7 /* RegularModel.m in Sources */,
 				83B014271E08D79300D65FF7 /* MaterielsViewController.h in Sources */,
 				83B014281E08D79300D65FF7 /* MaterielsViewController.m in Sources */,
+				83FAEF571F0B239A00C00722 /* PCXXXX_ViewController.m in Sources */,
 				83B014291E08D79300D65FF7 /* MaterielsViewController.xib in Sources */,
 				83B0142A1E08D79300D65FF7 /* MaterielsModel.h in Sources */,
 				83B0142B1E08D79300D65FF7 /* MaterielsModel.m in Sources */,
@@ -4295,6 +4353,7 @@
 				83B0147D1E08D79300D65FF7 /* ChoiceWorkView.h in Sources */,
 				83B0147E1E08D79300D65FF7 /* ChoiceWorkView.m in Sources */,
 				83B0147F1E08D79300D65FF7 /* ApprovalsView.h in Sources */,
+				83FAEF4E1F0B221100C00722 /* ZZZC_ViewController.m in Sources */,
 				83B014801E08D79300D65FF7 /* ApprovalsView.m in Sources */,
 				83B014811E08D79300D65FF7 /* FauWorkModel.h in Sources */,
 				83B014821E08D79300D65FF7 /* FauWorkModel.m in Sources */,
@@ -4501,6 +4560,7 @@
 				83B0155C1E08D79400D65FF7 /* ToolingManagementModel.m in Sources */,
 				83B0155D1E08D79400D65FF7 /* ToolingManagementDetailsController.h in Sources */,
 				83B0155E1E08D79400D65FF7 /* ToolingManagementDetailsController.m in Sources */,
+				83DAB38F1F04AC4900C379C4 /* NSArray+Extension.m in Sources */,
 				83B0155F1E08D79400D65FF7 /* ToolingManagementDetailsController.xib in Sources */,
 				83B015601E08D79400D65FF7 /* DailyWorkController.h in Sources */,
 				83B015611E08D79400D65FF7 /* DailyWorkController.m in Sources */,
@@ -4595,6 +4655,7 @@
 				83B015B51E08D79400D65FF7 /* ProblemDetailsLLICells.h in Sources */,
 				83B015B61E08D79400D65FF7 /* ProblemDetailsLLICells.m in Sources */,
 				83B015B71E08D79400D65FF7 /* ProblemDetailsLLICells.xib in Sources */,
+				83FAEF541F0B225400C00722 /* CLXGSZZC_ViewController.m in Sources */,
 				83B015B81E08D79400D65FF7 /* ProblemDetailsLTCells.h in Sources */,
 				83B015B91E08D79400D65FF7 /* ProblemDetailsLTCells.m in Sources */,
 				83B015BA1E08D79400D65FF7 /* ProblemDetailsLTCells.xib in Sources */,
@@ -4634,6 +4695,7 @@
 				83B015DE1E08D79400D65FF7 /* PromptView.h in Sources */,
 				83B015DF1E08D79400D65FF7 /* PromptView.m in Sources */,
 				83B015E01E08D79400D65FF7 /* PromptView.xib in Sources */,
+				836557D61F00EFFB009A96EC /* TableViewController.m in Sources */,
 				83B015E11E08D79400D65FF7 /* Default.h in Sources */,
 				83B015E21E08D79400D65FF7 /* HTTPSessionManager.h in Sources */,
 				83B015E31E08D79400D65FF7 /* HTTPSessionManager.m in Sources */,
@@ -4665,6 +4727,7 @@
 				83B015FC1E08D79400D65FF7 /* ApprovalPopupSheetBackView.xib in Sources */,
 				83B015FD1E08D79400D65FF7 /* BINCell.h in Sources */,
 				83B015FE1E08D79400D65FF7 /* BINCell.m in Sources */,
+				83DAB3891F04919B00C379C4 /* YJPC_ViewController.m in Sources */,
 				83B015FF1E08D79400D65FF7 /* BINCell.xib in Sources */,
 				83B016001E08D79400D65FF7 /* BINNUMTableViewCell.h in Sources */,
 				83B016011E08D79400D65FF7 /* BINNUMTableViewCell.m in Sources */,
@@ -4687,6 +4750,7 @@
 				83B016111E08D79400D65FF7 /* StockQueryViewController.h in Sources */,
 				83B016121E08D79400D65FF7 /* StockQueryViewController.m in Sources */,
 				83B016131E08D79400D65FF7 /* StockQueryViewController.xib in Sources */,
+				83FAEF511F0B223600C00722 /* FDJZC_ViewController.m in Sources */,
 				83B016141E08D79400D65FF7 /* StockQueryTableViewCell.h in Sources */,
 				83B016151E08D79400D65FF7 /* StockQueryTableViewCell.m in Sources */,
 				83B016161E08D79400D65FF7 /* StockQueryTableViewCell.xib in Sources */,
@@ -4783,6 +4847,7 @@
 				83B016751E08D79500D65FF7 /* ZLPhotoPickerBrowserPhotoImageView.h in Sources */,
 				83B016761E08D79500D65FF7 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
 				83B016771E08D79500D65FF7 /* ZLPhotoPickerBrowserPhotoScrollView.h in Sources */,
+				83F45A671F0333F000662991 /* UDWARNINGWO.m in Sources */,
 				83B016781E08D79500D65FF7 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */,
 				83B016791E08D79500D65FF7 /* ZLPhotoPickerBrowserPhotoView.h in Sources */,
 				83B0167A1E08D79500D65FF7 /* ZLPhotoPickerBrowserPhotoView.m in Sources */,
@@ -4796,6 +4861,7 @@
 				83B016821E08D79500D65FF7 /* ZLPhotoPickerGroup.m in Sources */,
 				83B016831E08D79500D65FF7 /* UIViewController+Alert.h in Sources */,
 				83B016841E08D79500D65FF7 /* UIViewController+Alert.m in Sources */,
+				836557D21F00E895009A96EC /* MetaTableViewController.m in Sources */,
 				83B016851E08D79500D65FF7 /* ZLNavigationController.h in Sources */,
 				83B016861E08D79500D65FF7 /* ZLNavigationController.m in Sources */,
 				83B016871E08D79500D65FF7 /* ZLPhotoPickerAssetsViewController.h in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "NSDictionary+BSJSONAdditions.h"
 @interface DataFactory : NSObject
--(void)readData;
+-(NSMutableArray*)readDataWithName:(NSString*) name;
 @end

@@ -217,6 +217,8 @@
         cell = [StockViewCell stockViewCell];
     }
     cell.dailyWork = [self.dataArray objectAtIndex:indexPath.section];
+    [cell.index setText:[NSString stringWithFormat:@"%ld",(long)indexPath.section+1]];
+
     return cell;
 }
 

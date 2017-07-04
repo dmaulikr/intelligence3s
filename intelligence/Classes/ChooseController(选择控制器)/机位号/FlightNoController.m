@@ -221,6 +221,8 @@
         cell = [StockViewCell stockViewCell];
     }
     cell.flightNo = [self modelTypeWithIndex:indexPath.section];
+    [cell.index setText:[NSString stringWithFormat:@"%ld",(long)indexPath.section+1]];
+
     return cell;
 }
 

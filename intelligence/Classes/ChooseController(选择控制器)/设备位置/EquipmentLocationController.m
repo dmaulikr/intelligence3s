@@ -227,6 +227,8 @@
         cell = [StockViewCell stockViewCell];
     }
     cell.equipmentLocation = [self modelTypeWithIndex:indexPath.section];
+    [cell.index setText:[NSString stringWithFormat:@"%ld",(long)indexPath.section+1]];
+
     return cell;
 }
 

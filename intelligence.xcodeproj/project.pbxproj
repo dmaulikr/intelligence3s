@@ -1689,6 +1689,7 @@
 		83B0A4E81DE6EB3400F5DBD6 /* RunlineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunlineCell.h; sourceTree = "<group>"; };
 		83B0A4E91DE6EB3400F5DBD6 /* RunlineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunlineCell.m; sourceTree = "<group>"; };
 		83B0A4EA1DE6EB3400F5DBD6 /* RunlineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RunlineCell.xib; sourceTree = "<group>"; };
+		83CA383B1F0CCF800059A3C1 /* arrays.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = arrays.json; sourceTree = "<group>"; };
 		83CCE3D61DF10528003DB584 /* StockQueryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockQueryViewController.h; sourceTree = "<group>"; };
 		83CCE3D71DF10528003DB584 /* StockQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockQueryViewController.m; sourceTree = "<group>"; };
 		83CCE3D81DF10528003DB584 /* StockQueryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StockQueryViewController.xib; sourceTree = "<group>"; };
@@ -2211,6 +2212,7 @@
 			children = (
 				83988F551E207CF00058E307 /* intelligence.entitlements */,
 				834EEE531EFCF3800055C0EC /* workOrder.json */,
+				83CA383B1F0CCF800059A3C1 /* arrays.json */,
 				227802FB1D41E62000B10BF6 /* Classes */,
 				2259042D1D41239D005C2E15 /* Resource */,
 				225904151D41170E005C2E15 /* Supporting Files */,

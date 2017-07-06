@@ -10,4 +10,5 @@
 #import "NSDictionary+BSJSONAdditions.h"
 @interface DataFactory : NSObject
 -(NSMutableArray*)readDataWithName:(NSString*) name;
+-(NSArray*)arrayWithName:(NSString*) name;
 @end

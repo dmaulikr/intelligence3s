@@ -7,15 +7,27 @@
 //
 
 #import "ZZZC_ViewController.h"
-
+#import "NSArray+Extension.h"
 @interface ZZZC_ViewController ()
-
+@property(nonatomic,strong)UIPickerView * BEARINGSUPPLIERPicker;
+@property(nonatomic,strong)UIPickerView * SEALFORMPicker;
+@property(nonatomic,strong)UIPickerView * BRANDTYPEPicker;
+@property(nonatomic,strong)UIPickerView * GREASECOLORPicker;
+@property(nonatomic,strong)UIPickerView * GREASEILEPicker;
+@property(nonatomic,strong)UIPickerView * GREASEAMOUNTPicker;
+@property(nonatomic,strong)UIPickerView * LEAKAGEPicker;
+@property(nonatomic,strong)UIPickerView * GREASECOVERPicker;
+@property(nonatomic,strong)UIPickerView * ROLLERWEARPicker;
+@property(nonatomic,strong)UIPickerView * GROOVEWEARPicker;
+@property(nonatomic,strong)UIPickerView * SPINDLEPicker;
 @end
 
 @implementation ZZZC_ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initData];
+    CGRect pickerFrame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 300);
     // Do any additional setup after loading the view.
 }
 
@@ -23,15 +35,44 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)initData
+{
+    if (self.Kmodel) {
+        NSArray *names = [NSArray getProperties:[self.Kmodel class]];
+        
+        for (NSString *name in names) {
+            
+            if ([self.Kmodel valueForKey:name]) {
+                NSString * value = [self.Kmodel valueForKey:name];
+                if (value.length>0) {
+                    NSLog(@"反射值 %@   反射键 %@",value,name);
+                }
+                [self modifyFieldByFieldName:name newValue:value];
+            }
+        }
+    }
 }
-*/
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+     DataFactory * df = [[DataFactory alloc] init];
+     
+    return @"";
+}
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+// returns the # of rows in each component..
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    
+    return 0;
+    
+}
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+
+    
+}
 
 @end

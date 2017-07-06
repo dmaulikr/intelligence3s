@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DataFactory.h"
 @interface MetaTableViewController : UITableViewController
 @property(nonatomic,strong)NSMutableArray * array;
 @property(nonatomic,strong)NSString * key;

@@ -7,7 +7,7 @@
 //
 
 #import "MetaTableViewController.h"
-
-@interface ZZZC_ViewController : MetaTableViewController
-
+#import "UDWARNINGWO.h"
+@interface ZZZC_ViewController : MetaTableViewController<UIPickerViewDelegate,UIPickerViewDataSource>
+@property(nonatomic,strong)UDWARNINGWO * Kmodel;
 @end

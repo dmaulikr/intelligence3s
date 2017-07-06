@@ -7,7 +7,6 @@
 //
 
 #import "MetaTableViewController.h"
-#import "DataFactory.h"
 #import "TextInputViewController.h"
 #import "UIViewController+MJPopupViewController.h"
 @interface MetaTableViewController ()
@@ -31,7 +30,6 @@
         }
     }
 
-    
     [self setTitle:self.key];
     [self.tableView reloadData];
     [self.view setBackgroundColor:[UIColor grayColor]];
@@ -81,6 +79,7 @@
     NSString * type = [dictionary valueForKey:@"类型"];
     NSString * name = [dictionary valueForKey:@"名称"];
     NSString * value = [dictionary valueForKey:@"值"];
+    NSString * field = [dictionary valueForKey:@"字段名"];
     cell.textLabel.text = name;
     cell.detailTextLabel.text = value;
     cell.detailTextLabel.textColor= [UIColor blackColor];
@@ -124,6 +123,7 @@
     }
     if ([type isEqualToString:@"picker"]) {
         [self addPickerIncell:cell name:name];
+        [self addPickerIncell:cell fieldName:field];
     }
     if ([type isEqualToString:@"隐藏"]) {
         [cell setHidden:YES];
@@ -241,6 +241,10 @@
 }
 //行中添加选择器
 -(void)addPickerIncell:(UITableViewCell* )cell name:(NSString*) name
+{
+    
+}
+-(void)addPickerIncell:(UITableViewCell* )cell fieldName:(NSString*) fieldName
 {
     
 }

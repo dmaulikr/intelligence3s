@@ -12,6 +12,10 @@
 #import "FDJZC_ViewController.h"
 #import "CLXGSZZC_ViewController.h"
 #import "PCXXXX_ViewController.h"
+#import "ChooseItemNoController.h"
+#import "FlightNoController.h"
+#import "DailyDetailChoosePersonController.h"
+
 @interface YJPC_ViewController ()
 
 @end
@@ -126,6 +130,67 @@
     if ([fieldName isEqualToString:@"FREQUENCYCONVERSION"]) {
         [self modifyTypeByFieldName:fieldName newType:@"picker"];
     }
+    if([fieldName isEqualToString:@"PRONUM"]){
+        ChooseItemNoController *choose = [[ChooseItemNoController alloc]init];
+        choose.executeClickCell = ^(ChooseItemNoModel *model){
+            //项目编号
+            NSLog(@"%@",model.PRONUM);
+            [self modifyField:@"项目编号" newValue:model.PRONUM];
+            //项目描述
+            NSLog(@"%@",model.DESCRIPTION);
+            [self modifyField:@"项目名称" newValue:model.DESCRIPTION];
+            [self queryProjectNameByProjectNum:model.PRONUM];
+            [self modifyField:@"机位号" newValue:@""];
+            [self modifyField:@"机组型号" newValue:@""];
+            [self modifyField:@"程序版本号" newValue:@""];
+
+        };
+        [self.navigationController pushViewController:choose animated:YES];
+    }
+    if ([fieldName isEqualToString:@"LOCNUM"]) {
+        FlightNoController *choose = [[FlightNoController alloc]init];
+        choose.executeCellClick = ^(FlightNoModel *model){
+            
+            [self modifyField:@"机位号" newValue:model.LOCNUM];
+            [self queryMODELTYPEByProjectNum:[self valueByname:@"项目编号"] Locnum:model.LOCNUM];
+        };
+        choose.requestCoding = [self valueByname:@"项目编号"];
+        [self.navigationController pushViewController:choose animated:YES];
+    }
+    if ([fieldName isEqualToString:@"SCREENINGUSER"])
+    {
+        DailyDetailChoosePersonController *daily = [[DailyDetailChoosePersonController alloc]init];
+        daily.exetuceClickCell = ^(ChoosePersonModel *model){
+            
+            [self modifyField:@"排查人1" newValue:model.PERSONID];
+            [self modifyField:@"排查人1姓名" newValue:model.DISPLAYNAME];
+
+        };
+        [self.navigationController pushViewController:daily animated:YES];
+    }
+    if ([fieldName isEqualToString:@"SCREENINGUSER2"])
+    {
+        DailyDetailChoosePersonController *daily = [[DailyDetailChoosePersonController alloc]init];
+        daily.exetuceClickCell = ^(ChoosePersonModel *model){
+            
+            [self modifyField:@"排查人2" newValue:model.PERSONID];
+            [self modifyField:@"排查人2姓名" newValue:model.DISPLAYNAME];
+            
+        };
+        [self.navigationController pushViewController:daily animated:YES];
+    }
+    if ([fieldName isEqualToString:@"SCREENINGUSER3"])
+    {
+        DailyDetailChoosePersonController *daily = [[DailyDetailChoosePersonController alloc]init];
+        daily.exetuceClickCell = ^(ChoosePersonModel *model){
+            
+            [self modifyField:@"排查人3" newValue:model.PERSONID];
+            [self modifyField:@"排查人3姓名" newValue:model.DISPLAYNAME];
+            
+        };
+        [self.navigationController pushViewController:daily animated:YES];
+    }
+    
 }
 -(void)jumpToDetial:(NSString *)name
 {

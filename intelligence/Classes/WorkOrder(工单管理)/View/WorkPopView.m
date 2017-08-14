@@ -9,7 +9,7 @@
 #import "WorkPopView.h"
 
 @interface WorkPopView ()<UITableViewDelegate,UITableViewDataSource>{
-    NSArray *_dataArray;
+    
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
@@ -30,14 +30,22 @@
         case ChoiceTypeFR:{
             _dataArray = @[
                            @"新建",@"待审批",@"进行中",@"待反馈",@"等待物料",@"已反馈",@"物料已申请",
-                           @"驳回",@"已完成",@"已关闭",@"全部",@"本地记录"
+                           @"驳回",@"已完成",@"已关闭",@"全部"
                            ];
         }break;
+            
         case ChoiceTypeAA:{
             _dataArray = @[
-                           @"新建",@"待审批",@"待整改",@"已完成",@"已关闭",@"已取消",@"全部",@"本地记录"
+                           @"新建",@"待审批",@"待整改",@"已完成",@"已关闭",@"已取消",@"全部"
                            ];
         }break;
+            
+        case ChoiceTypeCC:{
+            _dataArray = @[
+                           @"新建",@"待审批",@"已审批",@"已完成",@"全部"
+                           ];
+        }break;
+            
         case ChoiceTypeJiGai:{
             _dataArray = @[
                            @"供应商",@"技术系统",@"运行系统",
@@ -45,9 +53,17 @@
         }break;
         case ChoiceTypeClose:{
             _dataArray = @[
-                           @"新建",@"待审批",@"待整改",@"已完成",@"已关闭",@"已取消",@"全部",@"本地记录"
+                           @"新建",@"待审批",@"待整改",@"已完成",@"已关闭",@"已取消",@"全部"
                            ];
         }break;
+        case ChoiceTypeXJ:{
+            _dataArray = @[
+                           @"新建",@"待执行",@"待审批",@"已完成",@"驳回",@"全部"
+                           ];
+        }break;
+            
+            
+            
         case ChoiceTypeMaintain:{
             _dataArray = @[
                            @"事故维修",@"保养",@"正常维修",
@@ -65,12 +81,12 @@
         }break;
         case ChoiceTypeTPS:{
             _dataArray = @[
-                           @"新建",@"进行中",@"已完成",@"驳回",@"已关闭",@"全部",@"本地记录",
+                           @"新建",@"进行中",@"已完成",@"驳回",@"已关闭",@"全部"
                            ];
         }break;
         case ChoiceTypeTP:{
             _dataArray = @[
-                           @"新建",@"待审批",@"进行中",@"待反馈",@"等待物料",@"已反馈",@"物料已申请",@"驳回",@"已完成",@"已关闭",@"全部",@"本地记录",
+                           @"新建",@"待审批",@"进行中",@"待反馈",@"等待物料",@"已反馈",@"物料已申请",@"驳回",@"已完成",@"已关闭",@"全部"
                            ];
         }break;
         case ChoiceTypeBANH:{
@@ -80,7 +96,7 @@
         }break;
         case ChoiceTypeDC:{
             _dataArray = @[
-                           @"已审批",@"新建",@"待审批",@"已完成",@"全部",@"本地记录"
+                           @"已审批",@"新建",@"待审批",@"已完成",@"全部"
                            ];
         }break;
             
@@ -91,31 +107,6 @@
         }break;
             
         case ChoiceTypeDailYear:{
-            //            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-            //            formatter.dateFormat = @"yyyy";
-            //            NSString *str = [formatter stringFromDate:[NSDate date]];
-            //            NSInteger year = [str integerValue];
-            //            NSMutableArray *array = [NSMutableArray array];
-            //            for (int i = 0; i < 3; i++) {
-            //                switch (i) {
-            //                    case 0:{
-            //                        NSString *yearStr = [NSString stringWithFormat:@"%ld",year-1];
-            //                        [array addObject:yearStr];
-            //                    } break;
-            //                    case 1:{
-            //                        NSString *yearStr = [NSString stringWithFormat:@"%ld",year];
-            //                        [array addObject:yearStr];
-            //                    } break;
-            //                    case 2:{
-            //                        NSString *yearStr = [NSString stringWithFormat:@"%ld",year+1];
-            //                        [array addObject:yearStr];
-            //                    } break;
-            //
-            //                    default:
-            //                        break;
-            //                }
-            //            }
-            //            _dataArray = array;
             _dataArray = @[
                            @"2016",@"2017",@"2018",@"2019",@"2020",@"2021"
                            ];
@@ -129,7 +120,6 @@
         }break;
             
         case ChoiceTypeFaultType:{
-//            _dataArray = @[@"备件", @"村民阻工", @"技术支持", @"人员", @"资料",@"车辆问题和其他问题"];
             _dataArray = @[@"备件", @"村民阻工", @"技术支持", @"人员", @"资料",@"车辆问题",@"其他问题"];
         }break;
             
@@ -146,7 +136,7 @@
         }break;
             
         case ChoiceTypePollingAll:{
-            _dataArray = @[@"新建", @"待执行", @"待审批", @"已完成", @"驳回", @"全部", @"本地记录"];
+            _dataArray = @[@"新建", @"待执行", @"待审批", @"已完成", @"驳回", @"全部"];
         }break;
         case ChoiceTypePai:{
             _dataArray = @[@"风机安全排查", @"管理质量排查"];

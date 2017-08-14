@@ -10,8 +10,7 @@
 
 @interface StockViewCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *topName;
-@property (weak, nonatomic) IBOutlet UILabel *bottomName;
+
 @property (strong, nonatomic) IBOutlet UILabel *rightlabel;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topWidth;
@@ -37,7 +36,7 @@
     self.bottomName.text = @"凭证号:";
     //self.rightlabel.text =stock.LOCDESC.length?stock.LOCDESC:@"";
     self.top.text = stock.STOCKNUM;
-    self.bottom.text = stock.DESCRIPTION.length?stock.DESCRIPTION:@"暂无描述";;
+    self.bottom.text = stock.ZPDNUM.length?stock.ZPDNUM:@"暂无描述";;
 }
 //故障工单
 -(void)setFauWork:(FauWorkModel *)fauWork{

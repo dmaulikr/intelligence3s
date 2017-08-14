@@ -3,11 +3,12 @@
 //  intelligence
 //
 //  Created by chris on 2017/6/29.
-//  Copyright © 2017年 guangyao. All rights reserved.
+//  Copyright © 2017年 Mywind. All rights reserved.
 //
 
 #import "MetaTableViewController.h"
 #import "UDWARNINGWO.h"
+
 @interface YJPC_ViewController : MetaTableViewController<UIPickerViewDelegate,UIPickerViewDataSource>
 @property(nonatomic,strong)UDWARNINGWO * Kmodel;
 @property(nonatomic,strong)UIPickerView *typePicker;

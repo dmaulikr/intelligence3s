@@ -20,25 +20,25 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Phq-xU-THe">
-                        <rect key="frame" x="15" y="4" width="75" height="75"/>
+                        <rect key="frame" x="24" y="12" width="57" height="57"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Phq-xU-THe" secondAttribute="height" multiplier="1:1" id="kad-pH-01q"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="故障" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9V-sI-4Ix">
                         <rect key="frame" x="38.5" y="77" width="28" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="Phq-xU-THe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="Csx-WB-tyD"/>
+                <constraint firstItem="Phq-xU-THe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="24" id="Csx-WB-tyD"/>
                 <constraint firstItem="Phq-xU-THe" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="VfD-Li-XEt"/>
                 <constraint firstItem="d9V-sI-4Ix" firstAttribute="centerX" secondItem="Phq-xU-THe" secondAttribute="centerX" id="dTZ-q2-jRv"/>
-                <constraint firstItem="d9V-sI-4Ix" firstAttribute="top" secondItem="Phq-xU-THe" secondAttribute="bottom" constant="4" id="fMb-Rr-JNY"/>
-                <constraint firstItem="Phq-xU-THe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="kT7-Je-VXW"/>
-                <constraint firstAttribute="trailing" secondItem="Phq-xU-THe" secondAttribute="trailing" constant="15" id="uAI-21-5Ep"/>
+                <constraint firstItem="d9V-sI-4Ix" firstAttribute="top" secondItem="Phq-xU-THe" secondAttribute="bottom" constant="12" id="fMb-Rr-JNY"/>
+                <constraint firstItem="Phq-xU-THe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="kT7-Je-VXW"/>
+                <constraint firstAttribute="trailing" secondItem="Phq-xU-THe" secondAttribute="trailing" constant="24" id="uAI-21-5Ep"/>
             </constraints>
             <size key="customSize" width="111" height="105"/>
             <variation key="default">

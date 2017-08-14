@@ -95,6 +95,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.SetingItems = [NSMutableDictionary dictionary];
     self.rootViewHeight.constant = 1150;
     [self addViews];
     [self addBlocks];
@@ -102,7 +103,7 @@
     [self addNotification];
     [self addRightNavBarItem];
     
-    self.SetingItems = [NSMutableDictionary dictionary];
+    
     [self checkWFPRequiredWithAppId:@"UDREPORT" objectName:@"UDREPORT" status:self.pault.STATUSTYPE compeletion:^(NSArray *fields) {
         NSLog(@"故障提报单必填字段 %@",fields);
         self.RequiredFields=[NSMutableArray array];

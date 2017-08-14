@@ -100,6 +100,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"定检工单详情";
+    self.SetingItems = [NSMutableDictionary dictionary];
     if ([_stock.UDSTATUS isEqualToString:@"新建"]) {
         _isEditor = YES;
     }else{
@@ -118,7 +119,7 @@
     [self addTwo];
     [self addThree];
     [self addFour];
-    self.SetingItems = [NSMutableDictionary dictionary];
+    
     [self checkWFPRequiredWithAppId:@"UDDJWO" objectName:@"WORKORDER" status:self.stock.UDSTATUS compeletion:^(NSArray *fields) {
         NSLog(@"定检工单必填字段 %@",fields);
         self.RequiredFields=[NSMutableArray array];

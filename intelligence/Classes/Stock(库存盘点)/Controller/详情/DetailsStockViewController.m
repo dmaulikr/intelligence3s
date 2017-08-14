@@ -30,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"盘点详情";
+    self.SetingItems = [NSMutableDictionary dictionary];
     self.dataArray = [NSMutableArray array];
     _number = 1;
     [self addRightNavBarItem];
@@ -37,7 +38,7 @@
     [self initTableView];
     [self request];
     
-    self.SetingItems = [NSMutableDictionary dictionary];
+    
     [self checkWFPRequiredWithAppId:@"UDSTOCKLINE" objectName:@"UDSTOCKLINE" status:self.stock.STATUS compeletion:^(NSArray *fields) {
         NSLog(@"库存盘点必填字段 %@",fields);
         self.RequiredFields=[NSMutableArray array];

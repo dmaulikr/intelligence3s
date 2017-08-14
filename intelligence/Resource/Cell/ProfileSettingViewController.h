@@ -14,7 +14,5 @@
     NSMutableArray *_allGroups; // 所有的组模型
 }
 @property (nonatomic, weak, readonly) UITableView *tableView;
-@property (nonatomic,strong) __block NSMutableArray *RequiredFields;
-@property (nonatomic,strong) __block NSMutableDictionary *SetingItems;
 -(void)checkWFPRequiredWithAppId:(NSString*)appId objectName:(NSString*)objectName status:(NSString*)status compeletion:(void(^)(NSArray *fields))compeletion;
 @end

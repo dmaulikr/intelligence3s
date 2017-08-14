@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by chris on 2017/6/29.
-//  Copyright © 2017年 guangyao. All rights reserved.
+//  Copyright © 2017年 Mywind. All rights reserved.
 //
 
 #import "YJPC_ViewController.h"
@@ -15,8 +15,13 @@
 #import "ChooseItemNoController.h"
 #import "FlightNoController.h"
 #import "DailyDetailChoosePersonController.h"
+#import "DTKDropdownMenuView.h"
+#import "UploadPicturesViewController.h"
+#import "ApprovalsView.h"
+#import "SoapUtil.h"
+#import "WfmListanceListViewController.h"
 
-@interface YJPC_ViewController ()
+@interface YJPC_ViewController ()<ZZZC_ViewControllerDelegate,FDJZC_ViewControllerDelegate,CLXGSZZC_ViewControllerDelegate,PCXXXX_ViewControllerDelegate>
 
 @end
 
@@ -24,17 +29,38 @@
 {
     NSMutableArray * UDWARNINGNORMs;
     NSMutableArray * PCXXXXs;
+    NSMutableDictionary *ZZZC_DATAs;
+    NSMutableDictionary *FDJZC_DATAs;
+    NSMutableDictionary *CLXGSZZC_DATAs;
+    NSMutableArray *PCXXXX_DATAs;
+    
 }
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     [self initData];
-    [self queryDisplayNameByUserName:self.Kmodel.CREATEBY FieldName:@"创建人姓名"];
-    [self queryDisplayNameByUserName:self.Kmodel.SCREENINGUSER FieldName:@"排查人1姓名"];
-    [self queryProjectNameByProjectNum:self.Kmodel.PRONUM];
-    [self queryMODELTYPEByProjectNum:self.Kmodel.PRONUM Locnum:self.Kmodel.LOCNUM];
+    if (self.Kmodel) {
+        [self queryDisplayNameByUserName:self.Kmodel.CREATEBY FieldName:@"创建人姓名"];
+        [self queryDisplayNameByUserName:self.Kmodel.SCREENINGUSER FieldName:@"排查人1姓名"];
+        [self queryDisplayNameByUserName:self.Kmodel.SCREENINGUSER2 FieldName:@"排查人2姓名"];
+        [self queryDisplayNameByUserName:self.Kmodel.SCREENINGUSER3 FieldName:@"排查人3姓名"];
+        [self queryProjectNameByProjectNum:self.Kmodel.PRONUM];
+        [self queryMODELTYPEByProjectNum:self.Kmodel.PRONUM Locnum:self.Kmodel.LOCNUM];
+        
+    }
+    else
+    {
+        AccountModel *model = [AccountManager account];
+        [self modifyField:@"状态" newValue:@"新建"];
+        [self modifyField:@"创建时间" newValue:[self.dateFormtter stringFromDate:[NSDate date]]];
+        [self modifyField:@"创建人" newValue:model.userName];
+        [self modifyField:@"创建人姓名" newValue:model.displayName];
+        [self modifyTypeByFieldName:@"DESCRIPTION" newType:@"隐藏"];
+        [self modifyTypeByFieldName:@"WONUM" newType:@"隐藏"];
+    }
     [self queryUDWARNINGNORM];
+
     
     CGRect pickerFrame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 300);
     self.typePicker = [[UIPickerView alloc] initWithFrame:pickerFrame];
@@ -86,7 +112,7 @@
     [self modifyTypeByFieldName:@"排查详细信息" newType:@"隐藏"];
     
     NSLog(@"排查类型 %@",[self valueByname:@"排查类型"]);
-    
+    if (self.Kmodel) {
     if ([[self valueByname:@"排查类型"] isEqualToString:@"主轴轴承故障"]) {
         
         [self modifyTypeByFieldName:@"主轴轴承故障" newType:@"跳转"];
@@ -103,8 +129,103 @@
         [self modifyTypeByFieldName:@"排查详细信息" newType:@"跳转"];
         [self queryNORMNUMByWARNTYPE:[self valueByname:@"排查类型"]];
     }
+    }
+    [self addRightNavBarItem];
+
+}
+- (void)addRightNavBarItem{
+    WEAKSELF
+    DTKDropdownItem *item0 = [DTKDropdownItem itemWithTitle:@"发送工作流" iconName:@"ic_flower" callBack:^(NSUInteger index, id info) {
+        //[weakSelf checkRequiredFieldcompeletion:^(BOOL isOk) {
+            //if (isOk) {
+                [weakSelf sendData];
+            //}
+        //}];
+    }];
+    
+    DTKDropdownItem *item1 = [DTKDropdownItem itemWithTitle:@"图片上传" iconName:@"ic_gzgl" callBack:^(NSUInteger index, id info) {
+        
+        UploadPicturesViewController *vc = [[UploadPicturesViewController alloc] init];
+        vc.ownertable = @"";
+        vc.ownerid =@"";
+        [self.navigationController pushViewController:vc animated:YES];
+
+    }];
+    
+    DTKDropdownItem *item2 = [DTKDropdownItem itemWithTitle:@"保存更改" iconName:@"" callBack:^(NSUInteger index, id info) {
+        [self saveData];
+    }];
+    
+    DTKDropdownItem *item3 = [DTKDropdownItem itemWithTitle:@"放弃更改" iconName:@"" callBack:^(NSUInteger index, id info) {
+        [self.navigationController popoverPresentationController];
+    }];
+    DTKDropdownItem *item4 = [DTKDropdownItem itemWithTitle:@"工作流任务分配" iconName:@"ic_tujian" callBack:^(NSUInteger index, id info) {
+        NSLog(@"rightItem%lu",(unsigned long)index);
+        NSLog(@"工作流任务分配");
+        WfmListanceListViewController* vc= [[WfmListanceListViewController alloc] init];
+        vc.OWNERID=self.Kmodel.UDWARNINGWOID;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    }];
+    
+    NSArray * items;
+    if (self.Kmodel) {
+        items =@[item0,item1,item2,item3,item4];
+    }
+    else
+    {
+        items =@[item2,item3];
+    }
+    
+    DTKDropdownMenuView *menuView = [DTKDropdownMenuView dropdownMenuViewWithType:dropDownTypeRightItem frame:CGRectMake(0, 0,40.f, 40.f) dropdownItems:items icon:@"more"];
+    
+    
+    menuView.currentNav = self.navigationController;
+    
+    menuView.dropWidth = 150.f;
+    //    menuView.titleFont = [UIFont systemFontOfSize:18.f];
+    menuView.textColor = RGBCOLOR(102, 102, 102);
+    menuView.textFont = [UIFont systemFontOfSize:13.f];
+    menuView.cellSeparatorColor = RGBCOLOR(229, 229, 229);
+    //    menuView.textFont = [UIFont systemFontOfSize:14.f];
+    menuView.animationDuration = 0.2f;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:menuView];
 }
 
+//发送工作流
+-(void)sendData{
+    if ([self.Kmodel.UDSTATUS isEqualToString:@"已取消"]||[self.Kmodel.UDSTATUS isEqualToString:@"已关闭"]||[self.Kmodel.UDSTATUS isEqualToString:@"已完成"]) {
+        NSString *str = [NSString stringWithFormat:@"%@状态,不能发起工作流",self.Kmodel.UDSTATUS];
+        HUDJuHua(str);
+        return;
+    }
+    NSString *str;
+    NSString *str1;
+    BOOL isOne;
+    if([self.Kmodel.UDSTATUS isEqualToString:@"新建"]){
+        str = @"工作流启动成功";
+        str1 = @"工作流启动失败";
+        isOne = YES;
+    }else{
+        str = @"审批成功";
+        str1 = @"审批失败";
+        isOne = NO;
+    }
+    ApprovalsView *popupView = [[ApprovalsView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) withNumber:isOne];
+    popupView.processname = @"UDWARNWO";
+    popupView.mbo = @"UDWARNINGWO";
+    popupView.keyValue = self.Kmodel.WONUM;
+    popupView.key = @"WONUM";
+    popupView.CloseBlick = ^(NSDictionary *dic){
+        
+        if ([dic[@"success"] isEqualToString:@"成功"]||[dic[@"msg"] isEqualToString:@"工作流启动成功"]||[dic[@"status"] isEqualToString:@"等待批准"]) {
+            HUDNormal(str);
+        }else{
+            HUDNormal(str1);
+        }
+        
+    };
+    [popupView show];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -198,27 +319,36 @@
     if ([name isEqualToString:@"主轴轴承故障"]) {
         
         ZZZC_ViewController * vc = [[ZZZC_ViewController alloc] init];
+        vc.delegate = self;
         vc.key = name;
+        vc.Kmodel = self.Kmodel;
         [self.navigationController pushViewController:vc animated:YES];
         
     }else if ([name isEqualToString:@"发电机轴承"]) {
         
         FDJZC_ViewController * vc = [[FDJZC_ViewController alloc] init];
+        vc.delegate = self;
         vc.key = name;
+        vc.Kmodel = self.Kmodel;
         [self.navigationController pushViewController:vc animated:YES];
         
     }else if ([name isEqualToString:@"齿轮箱高速轴轴承"]) {
         
         CLXGSZZC_ViewController * vc = [[CLXGSZZC_ViewController alloc] init];
+        vc.delegate = self;
         vc.key = name;
+        vc.Kmodel = self.Kmodel;
         [self.navigationController pushViewController:vc animated:YES];
         
     }else{
-        
+        if ([PCXXXXs count]==0) {
+            return;
+        }
         PCXXXX_ViewController * vc = [[PCXXXX_ViewController alloc] init];
+        vc.WONUM = self.Kmodel.WONUM;
+        vc.delegate = self;
         vc.key = name;
-        if (PCXXXXs.count>1) {
-            [PCXXXXs addObject:[NSMutableDictionary dictionaryWithDictionary:@{@"名称":@"-",@"值":@"请补充" ,@"类型":@"文本",@"必填":@"否",@"字段名":@"-"}]];
+        if (PCXXXXs.count>=1) {
             vc.array = PCXXXXs;
         }
         [self.navigationController pushViewController:vc animated:YES];
@@ -397,6 +527,7 @@
                            @"showcount":@(100),
                            @"option":@"read",
                            @"orderby":@"NORMNUM"};
+    
     NSString *requestJson = kDictionaryToJson(dic)
     NSDictionary *dataDic = @{@"data":requestJson};
     
@@ -405,6 +536,7 @@
         NSArray * array = response[@"result"][@"resultlist"];
         UDWARNINGNORMs=[NSMutableArray array];
         [UDWARNINGNORMs addObjectsFromArray:array];
+        
         [UDWARNINGNORMs addObject:@{@"NORMNUM":@"1",@"WARNTYPE":@"主轴轴承故障"}];
         [UDWARNINGNORMs addObject:@{@"NORMNUM":@"2",@"WARNTYPE":@"发电机轴承温度异常"}];
         [UDWARNINGNORMs addObject:@{@"NORMNUM":@"3",@"WARNTYPE":@"齿轮箱高速轴轴承温度异常"}];
@@ -416,14 +548,17 @@
 }
 -(void)queryUDWARNINGNORMLINE:(NSString*)NORMNUM;
 {
+    if (self.Kmodel) {
+        NORMNUM = self.Kmodel.WONUM;
+    }
     NSString * url = @"/maximo/mobile/common/api";
-    NSDictionary * dic = @{@"appid":@"UDWARNINGNORMLINE",
-                           @"objectname":@"UDWARNINGNORMLINE",
+    NSDictionary * dic = @{@"appid":@"UDWARNINGWOLINE",
+                           @"objectname":@"UDWARNINGWOLINE",
                            @"curpage":@(1),
                            @"showcount":@(100),
                            @"option":@"read",
-                           @"orderby":@"SERIALNUM",
-                           @"condition":@{@"NORMNUM":NORMNUM}};
+                           @"orderby":@"SERNUM",
+                           @"condition":@{@"WONUM":NORMNUM}};
     NSString *requestJson = kDictionaryToJson(dic)
     NSDictionary *dataDic = @{@"data":requestJson};
     
@@ -438,12 +573,15 @@
                 
                 NSString *CHECKITEM = dic[@"CHECKITEM"]?dic[@"CHECKITEM"]:@"";
                 NSString *CHECKCONTENT = dic[@"CHECKCONTENT"]?dic[@"CHECKCONTENT"]:@"";
+                NSString *CHECKRESULT = dic[@"CHECKRESULT"]?dic[@"CHECKRESULT"]:@"";
+                NSString *PROBLEMDESC = dic[@"PROBLEMDESC"]?dic[@"PROBLEMDESC"]:@"";
+                NSString *UDWARNINGWOLINEID = [NSString stringWithFormat:@"%@",dic[@"UDWARNINGWOLINEID"]?dic[@"UDWARNINGWOLINEID"]:@""];
                 
                 [PCXXXXs addObject:[NSMutableDictionary dictionaryWithDictionary:@{@"名称":CHECKITEM,@"值":@"" ,@"类型":@"标题",@"必填":@"否",@"字段名":@"NONAME3"}]];
                 [PCXXXXs addObject:[NSMutableDictionary dictionaryWithDictionary:@{@"名称":CHECKCONTENT,@"值":@"" ,@"类型":@"标题",@"必填":@"否",@"字段名":@"NONAME3"}]];
-                [PCXXXXs addObject:[NSMutableDictionary dictionaryWithDictionary:@{@"名称":[NSString stringWithFormat:@"%ld、%@",(long)index,@"排查结果(是否合格)"],@"值":@"N" ,@"类型":@"是否",@"必填":@"否",@"字段名":@"CHECKRESULT"}]];
-        
-                [PCXXXXs addObject:[NSMutableDictionary dictionaryWithDictionary:@{@"名称":[NSString stringWithFormat:@"%ld、%@",(long)index,@"问题描述"],@"值":@"请补充" ,@"类型":@"文本",@"必填":@"否",@"字段名": @"PROBLEMDESC"}]];
+                [PCXXXXs addObject:[NSMutableDictionary dictionaryWithDictionary:@{@"名称":[NSString stringWithFormat:@"%ld、%@",(long)index,@"排查结果(是否合格)"],@"值":CHECKRESULT,@"类型":@"是否",@"必填":@"否",@"字段名":@"CHECKRESULT"}]];
+                [PCXXXXs addObject:[NSMutableDictionary dictionaryWithDictionary:@{@"名称":[NSString stringWithFormat:@"%ld、%@",(long)index,@"问题描述"],@"值":PROBLEMDESC ,@"类型":@"文本",@"必填":@"否",@"字段名": @"PROBLEMDESC"}]];
+                [PCXXXXs addObject:[NSMutableDictionary dictionaryWithDictionary:@{@"名称":UDWARNINGWOLINEID,@"值":@"" ,@"类型":@"隐藏",@"必填":@"否",@"字段名": @"-"}]];
                 
                 index++;
             }
@@ -456,6 +594,7 @@
 }
 -(void)queryNORMNUMByWARNTYPE:(NSString*)WARNTYPE
 {
+    
     NSString * url = @"/maximo/mobile/common/api";
     NSDictionary * dic = @{@"appid":@"UDWARNNORM",
                            @"objectname":@"UDWARNINGNORM",
@@ -556,21 +695,27 @@
         
         if ([NORMNUM isEqualToString:@"1"]) {
             
-            [self modifyTypeByFieldName:@"主轴轴承故障" newType:@"跳转"];
+            
+                [self modifyTypeByFieldName:@"主轴轴承故障" newType:@"跳转"];
+            
+            
             
         }else if([NORMNUM isEqualToString:@"2"]){
-                
-                [self modifyTypeByFieldName:@"发电机轴承" newType:@"跳转"];
-                
-        }else if([NORMNUM isEqualToString:@"3"]){
-                
-                [self modifyTypeByFieldName:@"齿轮箱高速轴轴承" newType:@"跳转"];
-                
-        }else{
-                
-            [self modifyTypeByFieldName:@"排查详细信息" newType:@"跳转"];
             
-            [self queryUDWARNINGNORMLINE:NORMNUM];
+                [self modifyTypeByFieldName:@"发电机轴承" newType:@"跳转"];
+            
+        }else if([NORMNUM isEqualToString:@"3"]){
+            
+                [self modifyTypeByFieldName:@"齿轮箱高速轴轴承" newType:@"跳转"];
+             
+        }else{
+            
+            if (self.Kmodel) {
+                [self modifyTypeByFieldName:@"排查详细信息" newType:@"跳转"];
+                
+                [self queryUDWARNINGNORMLINE:NORMNUM];
+            }
+
         }
         [self modifyTypeByFieldName:@"TYPE" newType:@"选择"];
     }
@@ -619,23 +764,203 @@
     if ([sender isEqual:self.LIFTINGDATEDatePicker]) {
         [self.LIFTINGDATEDatePicker removeFromSuperview];
         date = self.LIFTINGDATEDatePicker.date;
-        NSString *dateString = [self.dateFormtter stringFromDate:date];
+        NSString *dateString = [self.dateAndTimeFormtter stringFromDate:date];
         [self modifyField:@"吊装时间" newValue:dateString];
         [self modifyTypeByFieldName:@"LIFTINGDATE" newType:@"日期"];
     }
     if ([sender isEqual:self.INTERCONNECTIONDATEDatePicker]) {
         [self.INTERCONNECTIONDATEDatePicker removeFromSuperview];
         date = self.INTERCONNECTIONDATEDatePicker.date;
-        NSString *dateString = [self.dateFormtter stringFromDate:date];
+        NSString *dateString = [self.dateAndTimeFormtter stringFromDate:date];
         [self modifyField:@"并网时间" newValue:dateString];
         [self modifyTypeByFieldName:@"INTERCONNECTIONDATE" newType:@"日期"];
     }
     if ([sender isEqual:self.SCREENINGDATEDatePicker]) {
         [self.SCREENINGDATEDatePicker removeFromSuperview];
         date = self.SCREENINGDATEDatePicker.date;
-        NSString *dateString = [self.dateFormtter stringFromDate:date];
+        NSString *dateString = [self.dateAndTimeFormtter stringFromDate:date];
         [self modifyField:@"排查时间" newValue:dateString];
         [self modifyTypeByFieldName:@"SCREENINGDATE" newType:@"日期"];
     }
+}
+-(void)saveData
+{
+    
+   //[self testLine];return;
+    
+    if (![self checkField]) {
+        return;
+    }
+    SoapUtil *soap = [[SoapUtil alloc]initWithNameSpace:@"http://www.ibm.com/maximo" andEndpoint:[NSString stringWithFormat:@"%@/meaweb/services/MOBILESERVICE",BASE_URL]];
+    
+    soap.DicBlock = ^(NSDictionary *dic){
+        SVHUD_Stop
+        NSLog(@"保存结果 %@",dic);
+        if ([dic[@"success"] isEqualToString:@"成功"]) {
+            HUDNormal(@"保存成功");
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                });
+            });
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"UDCARMAINLOG",@"ACTIONNAME":@"新建或修改预警排查工单"}];
+        }else
+        {
+            HUDNormal(@"保存失败")
+        }
+    };
+
+    AccountModel *model = [AccountManager account];
+    
+    NSDictionary *dicy = @{};
+    
+    NSMutableDictionary * md = [self dictionaryData];
+    
+    if (ZZZC_DATAs) {
+        [md addEntriesFromDictionary:ZZZC_DATAs];
+    }
+    if (FDJZC_DATAs) {
+        [md addEntriesFromDictionary:FDJZC_DATAs];
+    }
+    if (CLXGSZZC_DATAs) {
+        [md addEntriesFromDictionary:CLXGSZZC_DATAs];
+    }
+    NSArray *arrays = @[dicy];
+    [md setObject:arrays forKey:@"relationShip"];
+    
+    if (!self.Kmodel) {
+        
+        NSArray *arr = @[
+                         @{@"json":[self dictionaryToJson:md]},
+                         @{@"flag":@"1"},
+                         @{@"mboObjectName":@"UDWARNINGWO"},
+                         @{@"mboKey":@"UDWARNINGWOID"},
+                         @{@"personId":model.personId},
+                         ];
+        
+        [soap requestMethods:@"mobileserviceInsertMbo" withDate:arr];
+    }
+    else
+    {
+        NSArray *arr = @[
+                         @{@"json":[self dictionaryToJson:md]},
+                         @{@"flag":@"1"},
+                         @{@"mboObjectName":@"UDWARNINGWO"},
+                         @{@"mboKey":@"UDWARNINGWOID"},
+                         @{@"mboKeyValue":self.Kmodel.UDWARNINGWOID},
+                         ];
+        
+        [soap requestMethods:@"mobileserviceUpdateMbo" withDate:arr];
+    }
+
+}
+-(NSString*)dictionaryToJson:(NSDictionary *)dic
+{
+    NSError *parseError = nil;
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
+    
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+}
+-(void)ZZZC_DATA:(NSMutableDictionary *)data
+{
+    NSLog(@"代理返回数据 %@",data);
+    ZZZC_DATAs = data;
+}
+-(void)FDJZC_DATA:(NSMutableDictionary *)data
+{
+    NSLog(@"代理返回数据 %@",data);
+    FDJZC_DATAs = data;
+}
+-(void)CLXGSZZC_DATA:(NSMutableDictionary *)data
+{
+    NSLog(@"代理返回数据 %@",data);
+    CLXGSZZC_DATAs = data;
+}
+-(void)PCXXXX_DATA:(NSMutableArray *)data
+{
+    NSLog(@"代理返回数据 %@",data);
+    PCXXXX_DATAs = data;
+    if ([PCXXXX_DATAs count]>0) {
+        for (NSMutableDictionary *dic in PCXXXX_DATAs) {
+            [self updateUDWARNINGWOLINEID:dic];
+        }
+    }
+}
+-(BOOL)checkField
+{
+    NSString* string =[self valueByname:@"项目编号"];
+    if (string.length==0||[string isEqualToString:@"请补充"]) {
+        HUDNormal(@"项目编号未填写")
+        return NO;
+    }
+    string =[self valueByname:@"机位号"];
+    if (string.length==0||[string isEqualToString:@"请补充"]) {
+        HUDNormal(@"机位号未填写")
+        return NO;
+    }
+    string =[self valueByname:@"排查类型"];
+    if (string.length==0||[string isEqualToString:@"请补充"]) {
+        HUDNormal(@"排查类型未填写")
+        return NO;
+    }
+    string =[self valueByname:@"预警等级"];
+    if (string.length==0||[string isEqualToString:@"请补充"]) {
+        HUDNormal(@"预警等级未填写")
+        return NO;
+    }
+    string =[self valueByname:@"问题描述"];
+    if (string.length==0||[string isEqualToString:@"请补充"]) {
+        HUDNormal(@"问题描述未填写")
+        return NO;
+    }
+    string =[self valueByname:@"吊装时间"];
+    if (string.length==0||[string isEqualToString:@"请补充"]) {
+        HUDNormal(@"吊装时间未填写")
+        return NO;
+    }
+    string =[self valueByname:@"并网时间"];
+    if (string.length==0||[string isEqualToString:@"请补充"]) {
+        HUDNormal(@"并网时间未填写")
+        return NO;
+    }
+    string =[self valueByname:@"排查时间"];
+    if (string.length==0||[string isEqualToString:@"请补充"]) {
+        HUDNormal(@"排查时间未填写")
+        return NO;
+    }
+    return YES;
+}
+-(void)updateUDWARNINGWOLINEID:(NSDictionary*)dic
+{
+    SoapUtil *soap = [[SoapUtil alloc]initWithNameSpace:@"http://www.ibm.com/maximo" andEndpoint:[NSString stringWithFormat:@"%@/meaweb/services/MOBILESERVICE",BASE_URL]];
+    
+    soap.DicBlock = ^(NSDictionary *dic){
+        SVHUD_Stop
+        
+        NSLog(@"保存结果 %@",dic);
+        
+        if ([dic[@"success"] isEqualToString:@"成功"]) {
+            HUDNormal(@"排查详细信息 保存成功");
+        }else{
+            HUDNormal(@"排查详细信息 保存失败")
+        }
+        
+    };
+
+    NSDictionary *dicy = @{};
+    NSArray *arrays = @[dicy];
+    NSDictionary * md = @{@"PROBLEMDESC":dic[@"PROBLEMDESC"],
+                          @"CHECKRESULT":dic[@"CHECKRESULT"],
+                          @"relationShip":arrays};
+        NSArray *arr = @[
+                         @{@"json":[self dictionaryToJson:md]},
+                         @{@"flag":@"1"},
+                         @{@"mboObjectName":@"UDWARNINGWOLINE"},
+                         @{@"mboKey":@"UDWARNINGWOLINEID"},
+                         @{@"mboKeyValue":dic[@"UDWARNINGWOLINEID"]},
+                         ];
+        [soap requestMethods:@"mobileserviceUpdateMbo" withDate:arr];
 }
 @end

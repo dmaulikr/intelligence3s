@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by chris on 2017/6/23.
-//  Copyright © 2017年 guangyao. All rights reserved.
+//  Copyright © 2017年 Mywind. All rights reserved.
 //
 
 #import "DataFactory.h"
@@ -31,7 +31,7 @@
 }
 -(NSArray*)arrayWithName:(NSString*) name
 {
-    NSData *JSONData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"arrays" ofType:@"json"]];
+    NSData *JSONData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"workOrder3" ofType:@"json"]];
     NSString * data = [[NSString alloc] initWithData:JSONData encoding:NSUTF8StringEncoding];
     
     NSArray * array =[[NSDictionary dictionaryWithJSONString:data] objectForKey:name];

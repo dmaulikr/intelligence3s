@@ -222,9 +222,7 @@
     if (arrayst.count) {
         [dicy setObject:arrayst forKey:@"WOACTIVITY"];
     }
-    NSArray *arrays = @[
-                        dicy,
-                        ];
+    NSArray *arrays = @[dicy,];
     NSDictionary *dic1 = @{
                            @"ACTFINISH":@"",
                            @"ACTSTART":@"",

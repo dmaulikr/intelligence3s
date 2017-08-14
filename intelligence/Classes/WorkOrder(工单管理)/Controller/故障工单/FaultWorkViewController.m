@@ -135,6 +135,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"故障工单详情";
+    self.SetingItems = [NSMutableDictionary dictionary];
     NSLog(@"%@",[self.stock mj_keyValues]);
     self.workArray = [NSMutableArray array];
     self.materielsArray = [NSMutableArray array];
@@ -164,7 +165,7 @@
     [self addTwo];
     [self addThree];
     
-    self.SetingItems = [NSMutableDictionary dictionary];
+    
     [self checkWFPRequiredWithAppId:@"UDREPORTWO" objectName:@"WORKORDER" status:self.stock.UDSTATUS compeletion:^(NSArray *fields) {
         NSLog(@"故障工单必填字段 %@",fields);
         self.RequiredFields=[NSMutableArray array];
@@ -177,10 +178,6 @@
         
     }];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"WORKORDER",@"ACTIONNAME":@"查看故障工单"}];
-}
--(void)viewDidAppear:(BOOL)animated
-{
-
 }
 -(void)addFooter{
     FooterView *footer = [FooterView footerView];

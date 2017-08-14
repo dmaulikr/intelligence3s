@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by chris on 2017/6/26.
-//  Copyright © 2017年 guangyao. All rights reserved.
+//  Copyright © 2017年 Mywind. All rights reserved.
 //
 
 #import "MetaTableViewController.h"
@@ -80,13 +80,16 @@
     NSString * name = [dictionary valueForKey:@"名称"];
     NSString * value = [dictionary valueForKey:@"值"];
     NSString * field = [dictionary valueForKey:@"字段名"];
-    cell.textLabel.text = name;
+    
+    cell.textLabel.adjustsFontSizeToFitWidth=YES;
+    cell.detailTextLabel.adjustsFontSizeToFitWidth=YES;
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",name];
     cell.detailTextLabel.text = value;
     cell.detailTextLabel.textColor= [UIColor blackColor];
     cell.detailTextLabel.numberOfLines=2;
-    cell.detailTextLabel.adjustsFontSizeToFitWidth=YES;
     cell.textLabel.numberOfLines=3;
-    cell.textLabel.adjustsFontSizeToFitWidth=YES;
+    
     
     if ([type isEqualToString:@"标题"]) {
         [cell setBackgroundColor:[UIColor clearColor]];
@@ -135,7 +138,7 @@
 {
     NSMutableDictionary *dictionary = [self.array objectAtIndex:indexPath.row];
     NSString * type = [dictionary valueForKey:@"类型"];
-    NSString * name = [dictionary valueForKey:@"名称"];
+    NSString * name =[NSString stringWithFormat:@"%@",[dictionary valueForKey:@"名称"]];
     NSString * field = [dictionary valueForKey:@"字段名"];
     NSString * value = [dictionary valueForKey:@"值"];
     NSLog(@"%@",type);
@@ -184,6 +187,7 @@
         [dic setValue:newValue forKey:@"值"];
         }
     }
+         [self dictionaryData];
          [self.tableView reloadData];
 }
 -(void)modifyFieldByFieldName:(NSString*) fieldName newValue:(NSString*) newValue
@@ -197,6 +201,7 @@
         [dic setValue:newValue forKey:@"值"];
         }
     }
+        [self dictionaryData];
         [self.tableView reloadData];
 }
 -(void)modifyTypeByFieldName:(NSString*) fieldName newType:(NSString*) newType
@@ -248,9 +253,34 @@
 {
     
 }
--(NSDictionary*)dictionaryData
+-(NSMutableDictionary*)dictionaryData
 {
-    return nil;
+    NSMutableDictionary * data = [NSMutableDictionary dictionary];
+    for (NSMutableDictionary * dic in self.array) {
+        
+        NSString * field = dic[@"字段名"];
+        NSString * value = dic[@"值"];
+        NSString * type = dic[@"类型"];
+        if([type isEqualToString:@"标题"]||[type isEqualToString:@"跳转"]||[type isEqualToString:@"隐藏"])
+        {
+            continue;
+        }
+        
+        if([field isEqualToString:@""])
+        {
+            continue;
+        }
+        if ([value isEqualToString:@"请补充"]) {
+            value = @"";
+            continue;
+        }
+        if(![field isEqualToString:@"-"])
+        {
+            [data setValue:value forKey:field];
+        }
+    }
+    NSLog(@"%@",data);
+    return data;
 }
 -(void)popInputTextViewContent:(NSString*)content title:(NSString*)title  compeletion:(void(^)(NSString * value))compeletion
 {

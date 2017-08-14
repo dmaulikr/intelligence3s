@@ -26,5 +26,4 @@
 @property (nonatomic,copy)NSString *TIME1;                     //静态调试日期
 @property (nonatomic,copy)NSString *TIME2;                     //动态调试日期
 @property (nonatomic,copy)NSString *CREW;                      //调试工程师1
-@property (nonatomic,assign)NSInteger isnumber;
 @end

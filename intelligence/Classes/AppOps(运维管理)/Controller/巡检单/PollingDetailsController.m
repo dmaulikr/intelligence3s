@@ -121,7 +121,8 @@
         [self addScrollFooterView];
     }
     
-    self.SetingItems = [NSMutableDictionary dictionary];
+    
+    
     [self checkWFPRequiredWithAppId:@"UDINSPOAPP" objectName:@"UDINSPO" status:self.polling.STATUS compeletion:^(NSArray *fields) {
         NSLog(@"巡检单单必填字段 %@",fields);
         self.RequiredFields=[NSMutableArray array];
@@ -312,6 +313,7 @@
 }
 
 - (void)addViews{
+    self.SetingItems = [NSMutableDictionary dictionary];
     self.firstRow = [ProblemItemLLIView showXibView];
     self.firstRow.type = ProblemItemTypeDefaultLL;
     self.firstRow.frame = CGRectMake(0, 0, ScreenWidth, 45);
@@ -752,6 +754,7 @@
         self.twentyeighthRow.contentLabel.textColor = [UIColor blackColor];
     }
     [self.SetingItems setValue:@"上次巡查时间" forKey:@"LASTRUNDATE"];
+    
     [self.rootView addSubview:self.twentyeighthRow];
     [self.twentyeighthRow mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.twentyseventhRow.mas_bottom).offset(0);
@@ -768,6 +771,7 @@
         self.twentyninthRow.contentLabel.textColor = [UIColor blackColor];
     }
     [self.SetingItems setValue:@"下次巡查时间" forKey:@"NEXTRUNDATE"];
+    
     [self.rootView addSubview:self.twentyninthRow];
     [self.twentyninthRow mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.twentyeighthRow.mas_bottom).offset(0);
@@ -775,6 +779,7 @@
         make.right.equalTo(self.view.mas_right).offset(0);
         make.height.mas_equalTo(45);
     }];
+    NSLog(@"必填字段名称 %@",self.SetingItems);
 }
 
 - (void)addBlocks{
@@ -1025,6 +1030,7 @@
             if (value.length==0) {
                 
                 NSString *value2 = [self.SetingItems valueForKey:str];
+                NSLog(@"%@",self.SetingItems);
                 if (value2.length>0) {
                     [nullFields addObject:value2];
                 }

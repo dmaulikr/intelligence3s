@@ -27,7 +27,11 @@
     
     if([method isEqualToString:@"mobileserviceInsertMbo"])
     {
-        NSLog(@"新增、修改 %@",array);
+        NSLog(@"新增%@",array);
+    }
+    else if([method isEqualToString:@"mobileserviceUpdateMbo"])
+    {
+        NSLog(@"修改%@",array);
     }
     else if([method isEqualToString:@"wfservicewfGoOn"])
     {
@@ -38,7 +42,7 @@
         NSLog(@"启动工作流%@",array);
     }
 
-    
+    //
    NSString *methods = [NSString stringWithFormat:@"%@ xmlns=\"http://www.ibm.com/maximo\"",method];
     NSData *data = [self soapInvoke:methods params:array];
     

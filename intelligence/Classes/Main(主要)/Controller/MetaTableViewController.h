@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by chris on 2017/6/26.
-//  Copyright © 2017年 guangyao. All rights reserved.
+//  Copyright © 2017年 Mywind. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -23,4 +23,5 @@
 -(void)addPickerIncell:(UITableViewCell* )cell name:(NSString*) name;
 -(void)datePickerValueChanged:(id)sender;
 -(NSString*)valueByname:(NSString*)name;
+-(NSMutableDictionary*)dictionaryData;
 @end

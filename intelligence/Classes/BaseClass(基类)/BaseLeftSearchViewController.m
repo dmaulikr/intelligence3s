@@ -72,7 +72,7 @@
     }];
     //改变searchBar颜色
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 64)];
-    view.backgroundColor = RGBCOLOR(189, 189, 195);
+    view.backgroundColor = RGBCOLOR(47, 93, 154);
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[self imageWithUIView:view]];
     [_searchBar insertSubview:imageView atIndex:1];
 }

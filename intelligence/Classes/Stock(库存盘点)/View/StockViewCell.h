@@ -92,6 +92,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *top;
 @property (weak, nonatomic) IBOutlet UILabel *bottom;
 @property (strong, nonatomic) IBOutlet UILabel *index;
-
+@property (weak, nonatomic) IBOutlet UILabel *topName;
+@property (weak, nonatomic) IBOutlet UILabel *bottomName;
 +(instancetype)stockViewCell;
 @end

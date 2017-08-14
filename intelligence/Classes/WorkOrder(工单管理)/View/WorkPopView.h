@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface WorkPopView : UICollectionReusableView
+@property (nonatomic,copy)NSArray *dataArray;
 @property (nonatomic,copy)void (^WorkBlock)(NSString *str);
 -(void)addData:(ChoiceType)type;
 +(instancetype)workPopView;

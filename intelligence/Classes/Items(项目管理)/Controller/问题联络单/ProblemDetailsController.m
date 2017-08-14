@@ -122,6 +122,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"联络单详情";
+     self.SetingItems = [NSMutableDictionary dictionary];
     self.view.backgroundColor = [UIColor whiteColor];
     self.rootViewHeight.constant = 1590 + 60;
     id1 = self.problem.CREATEBY;
@@ -141,7 +142,7 @@
     [self addScrollFooterView];
     [self addRightNavBarItem];
     
-    self.SetingItems = [NSMutableDictionary dictionary];
+   
     [self checkWFPRequiredWithAppId:@"UDFEDBKCON" objectName:@"UDFEEDBACK" status:self.problem.STATUS compeletion:^(NSArray *fields) {
         NSLog(@"问题联络单单必填字段 %@",fields);
         self.RequiredFields=[NSMutableArray array];

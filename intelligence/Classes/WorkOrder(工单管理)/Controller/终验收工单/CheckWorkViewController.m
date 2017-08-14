@@ -67,6 +67,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"终验收工单详情";
+    self.SetingItems = [NSMutableDictionary dictionary];
     if ([_stock.UDSTATUS isEqualToString:@"新建"]) {
         _isEdit = YES;
     }else{
@@ -79,7 +80,7 @@
     [self addOne];
     [self addTwo];
     
-    self.SetingItems = [NSMutableDictionary dictionary];
+    
     [self checkWFPRequiredWithAppId:@"UDZYSWO" objectName:@"WORKORDER" status:self.stock.UDSTATUS compeletion:^(NSArray *fields) {
         NSLog(@"终验收工单必填字段 %@",fields);
         self.RequiredFields=[NSMutableArray array];

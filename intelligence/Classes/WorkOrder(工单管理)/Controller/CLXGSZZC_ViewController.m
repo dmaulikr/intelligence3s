@@ -3,7 +3,7 @@
 //  intelligence
 //
 //  Created by chris on 2017/7/4.
-//  Copyright © 2017年 guangyao. All rights reserved.
+//  Copyright © 2017年 Mywind. All rights reserved.
 //
 
 #import "CLXGSZZC_ViewController.h"
@@ -130,9 +130,9 @@
     
     DataFactory * df = [[DataFactory alloc] init];
     NSArray * array = nil;
+    [pickerView removeFromSuperview];
     
     if ([pickerView isEqual:self.ROLLERWEAR2Picker]) {
-        [self.ROLLERWEAR2Picker removeFromSuperview];
         array = [df arrayWithName:@"ROLLERWEAR2"];
         [self modifyFieldByFieldName:@"ROLLERWEAR2" newValue:array[row]];
         [self modifyTypeByFieldName:@"ROLLERWEAR2" newType:@"选择"];
@@ -148,5 +148,8 @@
         [self modifyTypeByFieldName:@"GEAROIL" newType:@"选择"];
     }
 }
-
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self.delegate CLXGSZZC_DATA:[self dictionaryData]];
+}
 @end

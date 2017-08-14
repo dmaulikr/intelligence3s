@@ -77,7 +77,6 @@
 		22A45E6E1D6A8EB200AF48BA /* MaterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A45E6C1D6A8EB200AF48BA /* MaterViewController.xib */; };
 		22A5498C1D60A4E3009E9168 /* RelatedRepairOrderController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A5498A1D60A4E3009E9168 /* RelatedRepairOrderController.xib */; };
 		22A7CD5E1D4389F6008B3638 /* ItemsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7CD5C1D4389F6008B3638 /* ItemsCollectionViewCell.xib */; };
-		22A7CD691D43B9EC008B3638 /* StockViewControllers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7CD671D43B9EC008B3638 /* StockViewControllers.xib */; };
 		22A7CD6E1D43CE73008B3638 /* StockViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7CD6C1D43CE73008B3638 /* StockViewCell.xib */; };
 		22A7CD8B1D4463FA008B3638 /* WorkPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7CD891D4463FA008B3638 /* WorkPopView.xib */; };
 		22A7CDAE1D44946A008B3638 /* FaultWorkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7CDAC1D44946A008B3638 /* FaultWorkViewController.xib */; };
@@ -86,14 +85,6 @@
 		22A7CDBD1D4494B5008B3638 /* CheckingWorkController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7CDBB1D4494B5008B3638 /* CheckingWorkController.xib */; };
 		22A7CDC21D4494D9008B3638 /* TechnologyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7CDC01D4494D9008B3638 /* TechnologyViewController.xib */; };
 		22A7CDC71D449504008B3638 /* CheckWorksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7CDC51D449504008B3638 /* CheckWorksViewController.xib */; };
-		22A7CDCF1D44D876008B3638 /* LedgerItemsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7CDCD1D44D876008B3638 /* LedgerItemsController.xib */; };
-		22A7CDD41D44D89C008B3638 /* DailyItemsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7CDD21D44D89C008B3638 /* DailyItemsController.xib */; };
-		22A7CDD91D44D8C3008B3638 /* ProblemItemsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7CDD71D44D8C3008B3638 /* ProblemItemsController.xib */; };
-		22A7CDE91D44EF95008B3638 /* PollingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7CDE71D44EF95008B3638 /* PollingViewController.xib */; };
-		22A7CDEE1D44EFB6008B3638 /* FaultAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7CDEC1D44EFB6008B3638 /* FaultAppViewController.xib */; };
-		22A7CDFC1D44FA2A008B3638 /* MaintainRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7CDFA1D44FA2A008B3638 /* MaintainRViewController.xib */; };
-		22A7CE011D44FA48008B3638 /* OilRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7CDFF1D44FA48008B3638 /* OilRViewController.xib */; };
-		22A7CE061D44FA60008B3638 /* TravelRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A7CE041D44FA60008B3638 /* TravelRViewController.xib */; };
 		22AF0F8B1D5468310094A498 /* ProfileSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22AF0F891D5468310094A498 /* ProfileSettingViewController.xib */; };
 		22AF0F9C1D5471E80094A498 /* ArrowCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22AF0F9A1D5471E80094A498 /* ArrowCellView.xib */; };
 		22AF0FA11D5473300094A498 /* LabelCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22AF0F9F1D5473300094A498 /* LabelCellView.xib */; };
@@ -136,11 +127,13 @@
 		22DED6251D69A5F400BE4E57 /* InspectProjectDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DED6231D69A5F400BE4E57 /* InspectProjectDetailsController.xib */; };
 		22EAEB0B1D73036B0039DCFD /* FanTypeDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EAEB091D73036B0039DCFD /* FanTypeDetailsController.xib */; };
 		22EBC3081DACE35600C4F92A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EBC3071DACE35600C4F92A /* LoginViewController.xib */; };
+		83084D5D1F385B1500A42D54 /* RequestJsonFactry.m in Sources */ = {isa = PBXBuildFile; fileRef = 83084D5C1F385B1500A42D54 /* RequestJsonFactry.m */; };
 		832353771E15FF7C0024BA4D /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 832353751E15FF7C0024BA4D /* WebViewController.m */; };
 		832353781E15FF7C0024BA4D /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 832353761E15FF7C0024BA4D /* WebViewController.xib */; };
 		832A69021E66CA9800B5C657 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 832A69001E66CA9800B5C657 /* QRCodeViewController.m */; };
 		832A69031E66CA9800B5C657 /* QRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 832A69011E66CA9800B5C657 /* QRCodeViewController.xib */; };
-		832BF22C1DE3EA62006973E0 /* TripReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 832BF22A1DE3EA62006973E0 /* TripReportViewController.xib */; };
+		832AD9701F3E848800C67EDD /* TSGD_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 832AD96F1F3E848800C67EDD /* TSGD_ViewController.m */; };
+		832AD9731F3ED00200C67EDD /* TSGDZB_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 832AD9721F3ED00200C67EDD /* TSGDZB_ViewController.m */; };
 		832BF2331DE3EBA9006973E0 /* TripReportAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 832BF2311DE3EBA9006973E0 /* TripReportAddViewController.xib */; };
 		832BF2391DE3EC50006973E0 /* TripReportDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 832BF2371DE3EC50006973E0 /* TripReportDetailsViewController.xib */; };
 		8342A5E31E63F6BB0078B161 /* CollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8342A5E11E63F6BB0078B161 /* CollectionReusableView.m */; };
@@ -162,7 +155,6 @@
 		835F19FA1EA4A83B00788BD9 /* ProrunlogcDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F19F81EA4A83B00788BD9 /* ProrunlogcDetailViewController.m */; };
 		835F19FB1EA4A83B00788BD9 /* ProrunlogcDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835F19F91EA4A83B00788BD9 /* ProrunlogcDetailViewController.xib */; };
 		835F19FE1EA4AAD600788BD9 /* UDPRORUNLOGC.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F19FD1EA4AAD600788BD9 /* UDPRORUNLOGC.m */; };
-		835FBD441DE288C9006CBC43 /* RunLogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835FBD421DE288C9006CBC43 /* RunLogViewController.xib */; };
 		835FBD4E1DE2D090006CBC43 /* RunLogAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835FBD4C1DE2D090006CBC43 /* RunLogAddViewController.xib */; };
 		835FBD531DE2D0C8006CBC43 /* RunLogDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835FBD511DE2D0C8006CBC43 /* RunLogDetailsViewController.xib */; };
 		836557D21F00E895009A96EC /* MetaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836557D11F00E895009A96EC /* MetaTableViewController.m */; };
@@ -181,6 +173,7 @@
 		838DD3811DF26C3A002198B5 /* ITEMDESCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838DD37F1DF26C3A002198B5 /* ITEMDESCTableViewCell.xib */; };
 		838DD38A1DF26DC1002198B5 /* LOCATIONTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838DD3881DF26DC1002198B5 /* LOCATIONTableViewCell.xib */; };
 		838DD38F1DF26DD9002198B5 /* BINNUMTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838DD38D1DF26DD9002198B5 /* BINNUMTableViewCell.xib */; };
+		839499CF1F0DE9B90032678A /* workOrder3.json in Resources */ = {isa = PBXBuildFile; fileRef = 839499CE1F0DE9B90032678A /* workOrder3.json */; };
 		83988F5A1E2086A60058E307 /* jpush-ios-3.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83988F571E2086A60058E307 /* jpush-ios-3.0.0.a */; };
 		83988F5C1E2086CF0058E307 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83988F5B1E2086CF0058E307 /* CFNetwork.framework */; };
 		83988F5E1E2086E10058E307 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83988F5D1E2086E10058E307 /* CoreFoundation.framework */; };
@@ -340,8 +333,6 @@
 		83B014A91E08D79300D65FF7 /* FaultWorkViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDAA1D44946A008B3638 /* FaultWorkViewController.h */; };
 		83B014AA1E08D79300D65FF7 /* FaultWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDAB1D44946A008B3638 /* FaultWorkViewController.m */; };
 		83B014AB1E08D79300D65FF7 /* FaultWorkViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDAC1D44946A008B3638 /* FaultWorkViewController.xib */; };
-		83B014AF1E08D79300D65FF7 /* FauWorkViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CD761D445101008B3638 /* FauWorkViewController.h */; };
-		83B014B01E08D79300D65FF7 /* FauWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CD771D445101008B3638 /* FauWorkViewController.m */; };
 		83B014B61E08D79300D65FF7 /* LeftHeaderView.h in Sources */ = {isa = PBXBuildFile; fileRef = 224C41D71D4345A6004A0797 /* LeftHeaderView.h */; };
 		83B014B71E08D79300D65FF7 /* LeftHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 224C41D81D4345A6004A0797 /* LeftHeaderView.m */; };
 		83B014B81E08D79300D65FF7 /* LeftHeaderView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 224C41D91D4345A6004A0797 /* LeftHeaderView.xib */; };
@@ -367,9 +358,6 @@
 		83B014CF1E08D79300D65FF7 /* RunLogAddViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 835FBD4A1DE2D090006CBC43 /* RunLogAddViewController.h */; };
 		83B014D01E08D79300D65FF7 /* RunLogAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835FBD4B1DE2D090006CBC43 /* RunLogAddViewController.m */; };
 		83B014D11E08D79300D65FF7 /* RunLogAddViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 835FBD4C1DE2D090006CBC43 /* RunLogAddViewController.xib */; };
-		83B014D21E08D79300D65FF7 /* RunLogViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 835FBD401DE288C9006CBC43 /* RunLogViewController.h */; };
-		83B014D31E08D79300D65FF7 /* RunLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835FBD411DE288C9006CBC43 /* RunLogViewController.m */; };
-		83B014D41E08D79300D65FF7 /* RunLogViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 835FBD421DE288C9006CBC43 /* RunLogViewController.xib */; };
 		83B014D51E08D79300D65FF7 /* InspectProjectController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22DED6141D69953E00BE4E57 /* InspectProjectController.h */; };
 		83B014D61E08D79300D65FF7 /* InspectProjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DED6151D69953E00BE4E57 /* InspectProjectController.m */; };
 		83B014D71E08D79300D65FF7 /* InspectProjectController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 22DED6161D69953E00BE4E57 /* InspectProjectController.xib */; };
@@ -386,9 +374,6 @@
 		83B014E21E08D79300D65FF7 /* UploadPicturesViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 223CBE3B1D5AFBEC002129E0 /* UploadPicturesViewController.h */; };
 		83B014E31E08D79300D65FF7 /* UploadPicturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CBE3C1D5AFBEC002129E0 /* UploadPicturesViewController.m */; };
 		83B014E41E08D79300D65FF7 /* UploadPicturesViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 223CBE3D1D5AFBEC002129E0 /* UploadPicturesViewController.xib */; };
-		83B014E51E08D79300D65FF7 /* PollingViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDE51D44EF95008B3638 /* PollingViewController.h */; };
-		83B014E61E08D79300D65FF7 /* PollingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDE61D44EF95008B3638 /* PollingViewController.m */; };
-		83B014E71E08D79300D65FF7 /* PollingViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDE71D44EF95008B3638 /* PollingViewController.xib */; };
 		83B014E81E08D79300D65FF7 /* PollingDetailsController.h in Sources */ = {isa = PBXBuildFile; fileRef = 223CBE301D59AF56002129E0 /* PollingDetailsController.h */; };
 		83B014E91E08D79300D65FF7 /* PollingDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CBE311D59AF56002129E0 /* PollingDetailsController.m */; };
 		83B014EA1E08D79300D65FF7 /* PollingDetailsController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 223CBE321D59AF56002129E0 /* PollingDetailsController.xib */; };
@@ -409,9 +394,6 @@
 		83B014F91E08D79400D65FF7 /* FaultAppAddController.h in Sources */ = {isa = PBXBuildFile; fileRef = 2216AB461D58D749007B7ACF /* FaultAppAddController.h */; };
 		83B014FA1E08D79400D65FF7 /* FaultAppAddController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2216AB471D58D749007B7ACF /* FaultAppAddController.m */; };
 		83B014FB1E08D79400D65FF7 /* FaultAppAddController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 2216AB481D58D749007B7ACF /* FaultAppAddController.xib */; };
-		83B014FC1E08D79400D65FF7 /* FaultAppViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDEA1D44EFB6008B3638 /* FaultAppViewController.h */; };
-		83B014FD1E08D79400D65FF7 /* FaultAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDEB1D44EFB6008B3638 /* FaultAppViewController.m */; };
-		83B014FE1E08D79400D65FF7 /* FaultAppViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDEC1D44EFB6008B3638 /* FaultAppViewController.xib */; };
 		83B014FF1E08D79400D65FF7 /* FaultAppDetailsViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 223CBE2B1D597B31002129E0 /* FaultAppDetailsViewController.h */; };
 		83B015001E08D79400D65FF7 /* FaultAppDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CBE2C1D597B31002129E0 /* FaultAppDetailsViewController.m */; };
 		83B015011E08D79400D65FF7 /* FaultAppDetailsViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 223CBE2D1D597B31002129E0 /* FaultAppDetailsViewController.xib */; };
@@ -474,17 +456,11 @@
 		83B015421E08D79400D65FF7 /* TripReportAddViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 832BF22F1DE3EBA9006973E0 /* TripReportAddViewController.h */; };
 		83B015431E08D79400D65FF7 /* TripReportAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 832BF2301DE3EBA9006973E0 /* TripReportAddViewController.m */; };
 		83B015441E08D79400D65FF7 /* TripReportAddViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 832BF2311DE3EBA9006973E0 /* TripReportAddViewController.xib */; };
-		83B015451E08D79400D65FF7 /* TripReportViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 832BF2281DE3EA62006973E0 /* TripReportViewController.h */; };
-		83B015461E08D79400D65FF7 /* TripReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 832BF2291DE3EA62006973E0 /* TripReportViewController.m */; };
-		83B015471E08D79400D65FF7 /* TripReportViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 832BF22A1DE3EA62006973E0 /* TripReportViewController.xib */; };
 		83B015481E08D79400D65FF7 /* ProblemDetailsControllerViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22AF0FA31D5489020094A498 /* ProblemDetailsControllerViewController.h */; };
 		83B015491E08D79400D65FF7 /* ProblemDetailsControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF0FA41D5489020094A498 /* ProblemDetailsControllerViewController.m */; };
 		83B0154A1E08D79400D65FF7 /* ProblemAddController.h in Sources */ = {isa = PBXBuildFile; fileRef = 2216AB341D57321F007B7ACF /* ProblemAddController.h */; };
 		83B0154B1E08D79400D65FF7 /* ProblemAddController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2216AB351D57321F007B7ACF /* ProblemAddController.m */; };
 		83B0154C1E08D79400D65FF7 /* ProblemAddController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 2216AB361D57321F007B7ACF /* ProblemAddController.xib */; };
-		83B0154D1E08D79400D65FF7 /* ProblemItemsController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDD51D44D8C3008B3638 /* ProblemItemsController.h */; };
-		83B0154E1E08D79400D65FF7 /* ProblemItemsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDD61D44D8C3008B3638 /* ProblemItemsController.m */; };
-		83B0154F1E08D79400D65FF7 /* ProblemItemsController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDD71D44D8C3008B3638 /* ProblemItemsController.xib */; };
 		83B015501E08D79400D65FF7 /* ProblemDetailsController.h in Sources */ = {isa = PBXBuildFile; fileRef = 220327F81D4DF7E00015A664 /* ProblemDetailsController.h */; };
 		83B015511E08D79400D65FF7 /* ProblemDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220327F91D4DF7E00015A664 /* ProblemDetailsController.m */; };
 		83B015521E08D79400D65FF7 /* ProblemDetailsController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 220327FA1D4DF7E00015A664 /* ProblemDetailsController.xib */; };
@@ -537,9 +513,6 @@
 		83B015811E08D79400D65FF7 /* DailyAddController.h in Sources */ = {isa = PBXBuildFile; fileRef = 2216AB401D58C38A007B7ACF /* DailyAddController.h */; };
 		83B015821E08D79400D65FF7 /* DailyAddController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2216AB411D58C38A007B7ACF /* DailyAddController.m */; };
 		83B015831E08D79400D65FF7 /* DailyAddController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 2216AB421D58C38A007B7ACF /* DailyAddController.xib */; };
-		83B015841E08D79400D65FF7 /* DailyItemsController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDD01D44D89C008B3638 /* DailyItemsController.h */; };
-		83B015851E08D79400D65FF7 /* DailyItemsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDD11D44D89C008B3638 /* DailyItemsController.m */; };
-		83B015861E08D79400D65FF7 /* DailyItemsController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDD21D44D89C008B3638 /* DailyItemsController.xib */; };
 		83B015871E08D79400D65FF7 /* DailyDetailController.h in Sources */ = {isa = PBXBuildFile; fileRef = 220327E41D4DC2980015A664 /* DailyDetailController.h */; };
 		83B015881E08D79400D65FF7 /* DailyDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220327E51D4DC2980015A664 /* DailyDetailController.m */; };
 		83B015891E08D79400D65FF7 /* DailyDetailController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 220327E61D4DC2980015A664 /* DailyDetailController.xib */; };
@@ -564,9 +537,6 @@
 		83B0159C1E08D79400D65FF7 /* ProjectCarsViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 221F5ED51D47B628007B3AAF /* ProjectCarsViewController.h */; };
 		83B0159D1E08D79400D65FF7 /* ProjectCarsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221F5ED61D47B628007B3AAF /* ProjectCarsViewController.m */; };
 		83B0159E1E08D79400D65FF7 /* ProjectCarsViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 221F5ED71D47B628007B3AAF /* ProjectCarsViewController.xib */; };
-		83B0159F1E08D79400D65FF7 /* LedgerItemsController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDCB1D44D876008B3638 /* LedgerItemsController.h */; };
-		83B015A01E08D79400D65FF7 /* LedgerItemsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDCC1D44D876008B3638 /* LedgerItemsController.m */; };
-		83B015A11E08D79400D65FF7 /* LedgerItemsController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDCD1D44D876008B3638 /* LedgerItemsController.xib */; };
 		83B015A21E08D79400D65FF7 /* LedgerDetailsController.h in Sources */ = {isa = PBXBuildFile; fileRef = 2208BBB31D44F1A300C84888 /* LedgerDetailsController.h */; };
 		83B015A31E08D79400D65FF7 /* LedgerDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2208BBB41D44F1A300C84888 /* LedgerDetailsController.m */; };
 		83B015A41E08D79400D65FF7 /* LedgerDetailsController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 2208BBB51D44F1A300C84888 /* LedgerDetailsController.xib */; };
@@ -690,27 +660,18 @@
 		83B0161D1E08D79400D65FF7 /* DetailsSearchController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22AF10031D578CA80094A498 /* DetailsSearchController.h */; };
 		83B0161E1E08D79400D65FF7 /* DetailsSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF10041D578CA80094A498 /* DetailsSearchController.m */; };
 		83B0161F1E08D79400D65FF7 /* DetailsSearchController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 22AF10051D578CA80094A498 /* DetailsSearchController.xib */; };
-		83B016201E08D79400D65FF7 /* MaintainRViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDF81D44FA2A008B3638 /* MaintainRViewController.h */; };
-		83B016211E08D79500D65FF7 /* MaintainRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDF91D44FA2A008B3638 /* MaintainRViewController.m */; };
-		83B016221E08D79500D65FF7 /* MaintainRViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDFA1D44FA2A008B3638 /* MaintainRViewController.xib */; };
 		83B016231E08D79500D65FF7 /* DetailsOilViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22AF0FDB1D5726610094A498 /* DetailsOilViewController.h */; };
 		83B016241E08D79500D65FF7 /* DetailsOilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF0FDC1D5726610094A498 /* DetailsOilViewController.m */; };
 		83B016251E08D79500D65FF7 /* DetailsOilViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 22AF0FDD1D5726610094A498 /* DetailsOilViewController.xib */; };
 		83B016261E08D79500D65FF7 /* OilRAddViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22AF0FC81D56FE8C0094A498 /* OilRAddViewController.h */; };
 		83B016271E08D79500D65FF7 /* OilRAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF0FC91D56FE8C0094A498 /* OilRAddViewController.m */; };
 		83B016281E08D79500D65FF7 /* OilRAddViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 22AF0FCA1D56FE8C0094A498 /* OilRAddViewController.xib */; };
-		83B016291E08D79500D65FF7 /* OilRViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDFD1D44FA48008B3638 /* OilRViewController.h */; };
-		83B0162A1E08D79500D65FF7 /* OilRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDFE1D44FA48008B3638 /* OilRViewController.m */; };
-		83B0162B1E08D79500D65FF7 /* OilRViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CDFF1D44FA48008B3638 /* OilRViewController.xib */; };
 		83B0162C1E08D79500D65FF7 /* DetailsTravelViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22AF0FD51D57117E0094A498 /* DetailsTravelViewController.h */; };
 		83B0162D1E08D79500D65FF7 /* DetailsTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF0FD61D57117E0094A498 /* DetailsTravelViewController.m */; };
 		83B0162E1E08D79500D65FF7 /* DetailsTravelViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 22AF0FD71D57117E0094A498 /* DetailsTravelViewController.xib */; };
 		83B0162F1E08D79500D65FF7 /* TracelViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 227E05AE1D522FD4000768AC /* TracelViewController.h */; };
 		83B016301E08D79500D65FF7 /* TracelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227E05AF1D522FD4000768AC /* TracelViewController.m */; };
 		83B016311E08D79500D65FF7 /* TracelViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 227E05B01D522FD4000768AC /* TracelViewController.xib */; };
-		83B016321E08D79500D65FF7 /* TravelRViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CE021D44FA60008B3638 /* TravelRViewController.h */; };
-		83B016331E08D79500D65FF7 /* TravelRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CE031D44FA60008B3638 /* TravelRViewController.m */; };
-		83B016341E08D79500D65FF7 /* TravelRViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CE041D44FA60008B3638 /* TravelRViewController.xib */; };
 		83B016381E08D79500D65FF7 /* TravelRModel.h in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CE071D44FDA1008B3638 /* TravelRModel.h */; };
 		83B016391E08D79500D65FF7 /* TravelRModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CE081D44FDA1008B3638 /* TravelRModel.m */; };
 		83B0163A1E08D79500D65FF7 /* OilRModel.h in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CE0A1D44FF06008B3638 /* OilRModel.h */; };
@@ -725,9 +686,6 @@
 		83B016461E08D79500D65FF7 /* HitStockViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22AF10231D58DDA40094A498 /* HitStockViewController.h */; };
 		83B016471E08D79500D65FF7 /* HitStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF10241D58DDA40094A498 /* HitStockViewController.m */; };
 		83B016481E08D79500D65FF7 /* HitStockViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 22AF10251D58DDA40094A498 /* HitStockViewController.xib */; };
-		83B016491E08D79500D65FF7 /* StockViewControllers.h in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CD651D43B9EC008B3638 /* StockViewControllers.h */; };
-		83B0164A1E08D79500D65FF7 /* StockViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CD661D43B9EC008B3638 /* StockViewControllers.m */; };
-		83B0164B1E08D79500D65FF7 /* StockViewControllers.xib in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CD671D43B9EC008B3638 /* StockViewControllers.xib */; };
 		83B0164C1E08D79500D65FF7 /* StockModel.h in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CD6F1D43D5C1008B3638 /* StockModel.h */; };
 		83B0164D1E08D79500D65FF7 /* StockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CD701D43D5C1008B3638 /* StockModel.m */; };
 		83B0164E1E08D79500D65FF7 /* DetailStockModel.h in Sources */ = {isa = PBXBuildFile; fileRef = 22AF10161D58D1730094A498 /* DetailStockModel.h */; };
@@ -904,6 +862,7 @@
 		83B0A4DF1DE6DD5D00F5DBD6 /* DailylogActivityDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83B0A4DD1DE6DD5D00F5DBD6 /* DailylogActivityDetailsViewController.xib */; };
 		83B0A4E41DE6DD6D00F5DBD6 /* DailylogActivityAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83B0A4E21DE6DD6D00F5DBD6 /* DailylogActivityAddViewController.xib */; };
 		83B0A4EC1DE6EB3400F5DBD6 /* RunlineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83B0A4EA1DE6EB3400F5DBD6 /* RunlineCell.xib */; };
+		83C2E49B1F4123F600ABD8EC /* GZGD_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C2E49A1F4123F600ABD8EC /* GZGD_ViewController.m */; };
 		83CCE3DA1DF10528003DB584 /* StockQueryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83CCE3D81DF10528003DB584 /* StockQueryViewController.xib */; };
 		83CCE3E01DF11393003DB584 /* ConditionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83CCE3DE1DF11393003DB584 /* ConditionViewController.xib */; };
 		83CCE3E51DF11DAE003DB584 /* StockQueryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83CCE3E31DF11DAE003DB584 /* StockQueryTableViewCell.xib */; };
@@ -1312,9 +1271,6 @@
 		22A7CD5C1D4389F6008B3638 /* ItemsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemsCollectionViewCell.xib; sourceTree = "<group>"; };
 		22A7CD5F1D43AFBA008B3638 /* BaseSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSearchViewController.h; sourceTree = "<group>"; };
 		22A7CD601D43AFBA008B3638 /* BaseSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseSearchViewController.m; sourceTree = "<group>"; };
-		22A7CD651D43B9EC008B3638 /* StockViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockViewControllers.h; sourceTree = "<group>"; };
-		22A7CD661D43B9EC008B3638 /* StockViewControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockViewControllers.m; sourceTree = "<group>"; };
-		22A7CD671D43B9EC008B3638 /* StockViewControllers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StockViewControllers.xib; sourceTree = "<group>"; };
 		22A7CD6A1D43CE73008B3638 /* StockViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockViewCell.h; sourceTree = "<group>"; };
 		22A7CD6B1D43CE73008B3638 /* StockViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockViewCell.m; sourceTree = "<group>"; };
 		22A7CD6C1D43CE73008B3638 /* StockViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StockViewCell.xib; sourceTree = "<group>"; };
@@ -1322,8 +1278,6 @@
 		22A7CD701D43D5C1008B3638 /* StockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockModel.m; sourceTree = "<group>"; };
 		22A7CD731D444475008B3638 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
 		22A7CD741D444475008B3638 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
-		22A7CD761D445101008B3638 /* FauWorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FauWorkViewController.h; sourceTree = "<group>"; };
-		22A7CD771D445101008B3638 /* FauWorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FauWorkViewController.m; sourceTree = "<group>"; };
 		22A7CD7A1D4454EA008B3638 /* FauWorkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FauWorkModel.h; sourceTree = "<group>"; };
 		22A7CD7B1D4454EA008B3638 /* FauWorkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FauWorkModel.m; sourceTree = "<group>"; };
 		22A7CD7E1D445B05008B3638 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
@@ -1356,40 +1310,16 @@
 		22A7CDC31D449504008B3638 /* CheckWorksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckWorksViewController.h; sourceTree = "<group>"; };
 		22A7CDC41D449504008B3638 /* CheckWorksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckWorksViewController.m; sourceTree = "<group>"; };
 		22A7CDC51D449504008B3638 /* CheckWorksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckWorksViewController.xib; sourceTree = "<group>"; };
-		22A7CDCB1D44D876008B3638 /* LedgerItemsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LedgerItemsController.h; sourceTree = "<group>"; };
-		22A7CDCC1D44D876008B3638 /* LedgerItemsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LedgerItemsController.m; sourceTree = "<group>"; };
-		22A7CDCD1D44D876008B3638 /* LedgerItemsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LedgerItemsController.xib; sourceTree = "<group>"; };
-		22A7CDD01D44D89C008B3638 /* DailyItemsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyItemsController.h; sourceTree = "<group>"; };
-		22A7CDD11D44D89C008B3638 /* DailyItemsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyItemsController.m; sourceTree = "<group>"; };
-		22A7CDD21D44D89C008B3638 /* DailyItemsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyItemsController.xib; sourceTree = "<group>"; };
-		22A7CDD51D44D8C3008B3638 /* ProblemItemsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemItemsController.h; sourceTree = "<group>"; };
-		22A7CDD61D44D8C3008B3638 /* ProblemItemsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemItemsController.m; sourceTree = "<group>"; };
-		22A7CDD71D44D8C3008B3638 /* ProblemItemsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProblemItemsController.xib; sourceTree = "<group>"; };
 		22A7CDDA1D44DEB4008B3638 /* LedgerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LedgerModel.h; sourceTree = "<group>"; };
 		22A7CDDB1D44DEB4008B3638 /* LedgerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LedgerModel.m; sourceTree = "<group>"; };
 		22A7CDDD1D44E21A008B3638 /* DailyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyModel.h; sourceTree = "<group>"; };
 		22A7CDDE1D44E21A008B3638 /* DailyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyModel.m; sourceTree = "<group>"; };
 		22A7CDE01D44EC67008B3638 /* ProblemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemModel.h; sourceTree = "<group>"; };
 		22A7CDE11D44EC67008B3638 /* ProblemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemModel.m; sourceTree = "<group>"; };
-		22A7CDE51D44EF95008B3638 /* PollingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollingViewController.h; sourceTree = "<group>"; };
-		22A7CDE61D44EF95008B3638 /* PollingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollingViewController.m; sourceTree = "<group>"; };
-		22A7CDE71D44EF95008B3638 /* PollingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PollingViewController.xib; sourceTree = "<group>"; };
-		22A7CDEA1D44EFB6008B3638 /* FaultAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaultAppViewController.h; sourceTree = "<group>"; };
-		22A7CDEB1D44EFB6008B3638 /* FaultAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaultAppViewController.m; sourceTree = "<group>"; };
-		22A7CDEC1D44EFB6008B3638 /* FaultAppViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FaultAppViewController.xib; sourceTree = "<group>"; };
 		22A7CDEF1D44F1CA008B3638 /* PollingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollingModel.h; sourceTree = "<group>"; };
 		22A7CDF01D44F1CA008B3638 /* PollingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollingModel.m; sourceTree = "<group>"; };
 		22A7CDF21D44F6CB008B3638 /* PaultAppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaultAppModel.h; sourceTree = "<group>"; };
 		22A7CDF31D44F6CB008B3638 /* PaultAppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaultAppModel.m; sourceTree = "<group>"; };
-		22A7CDF81D44FA2A008B3638 /* MaintainRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaintainRViewController.h; sourceTree = "<group>"; };
-		22A7CDF91D44FA2A008B3638 /* MaintainRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaintainRViewController.m; sourceTree = "<group>"; };
-		22A7CDFA1D44FA2A008B3638 /* MaintainRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MaintainRViewController.xib; sourceTree = "<group>"; };
-		22A7CDFD1D44FA48008B3638 /* OilRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OilRViewController.h; sourceTree = "<group>"; };
-		22A7CDFE1D44FA48008B3638 /* OilRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OilRViewController.m; sourceTree = "<group>"; };
-		22A7CDFF1D44FA48008B3638 /* OilRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OilRViewController.xib; sourceTree = "<group>"; };
-		22A7CE021D44FA60008B3638 /* TravelRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelRViewController.h; sourceTree = "<group>"; };
-		22A7CE031D44FA60008B3638 /* TravelRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelRViewController.m; sourceTree = "<group>"; };
-		22A7CE041D44FA60008B3638 /* TravelRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TravelRViewController.xib; sourceTree = "<group>"; };
 		22A7CE071D44FDA1008B3638 /* TravelRModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelRModel.h; sourceTree = "<group>"; };
 		22A7CE081D44FDA1008B3638 /* TravelRModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelRModel.m; sourceTree = "<group>"; };
 		22A7CE0A1D44FF06008B3638 /* OilRModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OilRModel.h; sourceTree = "<group>"; };
@@ -1552,15 +1482,18 @@
 		22EAEB081D73036B0039DCFD /* FanTypeDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FanTypeDetailsController.m; sourceTree = "<group>"; };
 		22EAEB091D73036B0039DCFD /* FanTypeDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FanTypeDetailsController.xib; sourceTree = "<group>"; };
 		22EBC3071DACE35600C4F92A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		83084D5B1F385B1500A42D54 /* RequestJsonFactry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestJsonFactry.h; sourceTree = "<group>"; };
+		83084D5C1F385B1500A42D54 /* RequestJsonFactry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestJsonFactry.m; sourceTree = "<group>"; };
 		832353741E15FF7C0024BA4D /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		832353751E15FF7C0024BA4D /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		832353761E15FF7C0024BA4D /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		832A68FF1E66CA9800B5C657 /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		832A69001E66CA9800B5C657 /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
 		832A69011E66CA9800B5C657 /* QRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QRCodeViewController.xib; sourceTree = "<group>"; };
-		832BF2281DE3EA62006973E0 /* TripReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripReportViewController.h; sourceTree = "<group>"; };
-		832BF2291DE3EA62006973E0 /* TripReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripReportViewController.m; sourceTree = "<group>"; };
-		832BF22A1DE3EA62006973E0 /* TripReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TripReportViewController.xib; sourceTree = "<group>"; };
+		832AD96E1F3E848800C67EDD /* TSGD_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSGD_ViewController.h; sourceTree = "<group>"; };
+		832AD96F1F3E848800C67EDD /* TSGD_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSGD_ViewController.m; sourceTree = "<group>"; };
+		832AD9711F3ED00200C67EDD /* TSGDZB_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSGDZB_ViewController.h; sourceTree = "<group>"; };
+		832AD9721F3ED00200C67EDD /* TSGDZB_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSGDZB_ViewController.m; sourceTree = "<group>"; };
 		832BF22F1DE3EBA9006973E0 /* TripReportAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripReportAddViewController.h; sourceTree = "<group>"; };
 		832BF2301DE3EBA9006973E0 /* TripReportAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripReportAddViewController.m; sourceTree = "<group>"; };
 		832BF2311DE3EBA9006973E0 /* TripReportAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TripReportAddViewController.xib; sourceTree = "<group>"; };
@@ -1609,9 +1542,6 @@
 		835F19F91EA4A83B00788BD9 /* ProrunlogcDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProrunlogcDetailViewController.xib; sourceTree = "<group>"; };
 		835F19FC1EA4AAD600788BD9 /* UDPRORUNLOGC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPRORUNLOGC.h; sourceTree = "<group>"; };
 		835F19FD1EA4AAD600788BD9 /* UDPRORUNLOGC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPRORUNLOGC.m; sourceTree = "<group>"; };
-		835FBD401DE288C9006CBC43 /* RunLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunLogViewController.h; sourceTree = "<group>"; };
-		835FBD411DE288C9006CBC43 /* RunLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunLogViewController.m; sourceTree = "<group>"; };
-		835FBD421DE288C9006CBC43 /* RunLogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RunLogViewController.xib; sourceTree = "<group>"; };
 		835FBD451DE29670006CBC43 /* RunlogModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunlogModel.h; sourceTree = "<group>"; };
 		835FBD461DE29670006CBC43 /* RunlogModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunlogModel.m; sourceTree = "<group>"; };
 		835FBD4A1DE2D090006CBC43 /* RunLogAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunLogAddViewController.h; sourceTree = "<group>"; };
@@ -1652,6 +1582,7 @@
 		838DD38B1DF26DD9002198B5 /* BINNUMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINNUMTableViewCell.h; sourceTree = "<group>"; };
 		838DD38C1DF26DD9002198B5 /* BINNUMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BINNUMTableViewCell.m; sourceTree = "<group>"; };
 		838DD38D1DF26DD9002198B5 /* BINNUMTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BINNUMTableViewCell.xib; sourceTree = "<group>"; };
+		839499CE1F0DE9B90032678A /* workOrder3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = workOrder3.json; sourceTree = "<group>"; };
 		83988F551E207CF00058E307 /* intelligence.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = intelligence.entitlements; sourceTree = "<group>"; };
 		83988F571E2086A60058E307 /* jpush-ios-3.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-3.0.0.a"; sourceTree = "<group>"; };
 		83988F581E2086A60058E307 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
@@ -1689,7 +1620,8 @@
 		83B0A4E81DE6EB3400F5DBD6 /* RunlineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunlineCell.h; sourceTree = "<group>"; };
 		83B0A4E91DE6EB3400F5DBD6 /* RunlineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunlineCell.m; sourceTree = "<group>"; };
 		83B0A4EA1DE6EB3400F5DBD6 /* RunlineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RunlineCell.xib; sourceTree = "<group>"; };
-		83CA383B1F0CCF800059A3C1 /* arrays.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = arrays.json; sourceTree = "<group>"; };
+		83C2E4991F4123F600ABD8EC /* GZGD_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GZGD_ViewController.h; sourceTree = "<group>"; };
+		83C2E49A1F4123F600ABD8EC /* GZGD_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GZGD_ViewController.m; sourceTree = "<group>"; };
 		83CCE3D61DF10528003DB584 /* StockQueryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockQueryViewController.h; sourceTree = "<group>"; };
 		83CCE3D71DF10528003DB584 /* StockQueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockQueryViewController.m; sourceTree = "<group>"; };
 		83CCE3D81DF10528003DB584 /* StockQueryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StockQueryViewController.xib; sourceTree = "<group>"; };
@@ -2144,6 +2076,8 @@
 				836557D31F00EFFB009A96EC /* TableViewController.h */,
 				836557D41F00EFFB009A96EC /* TableViewController.m */,
 				836557D51F00EFFB009A96EC /* TableViewController.xib */,
+				83084D5B1F385B1500A42D54 /* RequestJsonFactry.h */,
+				83084D5C1F385B1500A42D54 /* RequestJsonFactry.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2212,7 +2146,7 @@
 			children = (
 				83988F551E207CF00058E307 /* intelligence.entitlements */,
 				834EEE531EFCF3800055C0EC /* workOrder.json */,
-				83CA383B1F0CCF800059A3C1 /* arrays.json */,
+				839499CE1F0DE9B90032678A /* workOrder3.json */,
 				227802FB1D41E62000B10BF6 /* Classes */,
 				2259042D1D41239D005C2E15 /* Resource */,
 				225904151D41170E005C2E15 /* Supporting Files */,
@@ -2548,7 +2482,6 @@
 			children = (
 				22A7CD281D43736B008B3638 /* Controller */,
 				22A7CD2A1D43739D008B3638 /* Model */,
-				22A7CD291D43738B008B3638 /* View */,
 			);
 			path = "Resources(资源管理)";
 			sourceTree = "<group>";
@@ -2567,9 +2500,6 @@
 			isa = PBXGroup;
 			children = (
 				22AF100B1D58BE5F0094A498 /* 详情 */,
-				22A7CD651D43B9EC008B3638 /* StockViewControllers.h */,
-				22A7CD661D43B9EC008B3638 /* StockViewControllers.m */,
-				22A7CD671D43B9EC008B3638 /* StockViewControllers.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2930,13 +2860,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		22A7CD291D43738B008B3638 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		22A7CD2A1D43739D008B3638 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -3059,8 +2982,6 @@
 				22A7CD971D449267008B3638 /* 调试工单 */,
 				22A7CD961D449250008B3638 /* 终验收工单 */,
 				22A7CD951D44923F008B3638 /* 故障工单 */,
-				22A7CD761D445101008B3638 /* FauWorkViewController.h */,
-				22A7CD771D445101008B3638 /* FauWorkViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3147,6 +3068,8 @@
 				22A7CDAA1D44946A008B3638 /* FaultWorkViewController.h */,
 				22A7CDAB1D44946A008B3638 /* FaultWorkViewController.m */,
 				22A7CDAC1D44946A008B3638 /* FaultWorkViewController.xib */,
+				83C2E4991F4123F600ABD8EC /* GZGD_ViewController.h */,
+				83C2E49A1F4123F600ABD8EC /* GZGD_ViewController.m */,
 			);
 			path = "故障工单";
 			sourceTree = "<group>";
@@ -3169,6 +3092,10 @@
 				22A7CDB41D449496008B3638 /* DebugWorkViewController.h */,
 				22A7CDB51D449496008B3638 /* DebugWorkViewController.m */,
 				22A7CDB61D449496008B3638 /* DebugWorkViewController.xib */,
+				832AD96E1F3E848800C67EDD /* TSGD_ViewController.h */,
+				832AD96F1F3E848800C67EDD /* TSGD_ViewController.m */,
+				832AD9711F3ED00200C67EDD /* TSGDZB_ViewController.h */,
+				832AD9721F3ED00200C67EDD /* TSGDZB_ViewController.m */,
 			);
 			path = "调试工单";
 			sourceTree = "<group>";
@@ -3208,9 +3135,6 @@
 			isa = PBXGroup;
 			children = (
 				221F5ECA1D47B570007B3AAF /* 右上菜单控制器 */,
-				22A7CDCB1D44D876008B3638 /* LedgerItemsController.h */,
-				22A7CDCC1D44D876008B3638 /* LedgerItemsController.m */,
-				22A7CDCD1D44D876008B3638 /* LedgerItemsController.xib */,
 				2208BBB31D44F1A300C84888 /* LedgerDetailsController.h */,
 				2208BBB41D44F1A300C84888 /* LedgerDetailsController.m */,
 				2208BBB51D44F1A300C84888 /* LedgerDetailsController.xib */,
@@ -3223,9 +3147,6 @@
 			children = (
 				22C6555C1D5DA4FA00E80BCC /* 下拉表 */,
 				2216AB3E1D58C2B7007B7ACF /* Add */,
-				22A7CDD01D44D89C008B3638 /* DailyItemsController.h */,
-				22A7CDD11D44D89C008B3638 /* DailyItemsController.m */,
-				22A7CDD21D44D89C008B3638 /* DailyItemsController.xib */,
 				220327E41D4DC2980015A664 /* DailyDetailController.h */,
 				220327E51D4DC2980015A664 /* DailyDetailController.m */,
 				220327E61D4DC2980015A664 /* DailyDetailController.xib */,
@@ -3240,9 +3161,6 @@
 			isa = PBXGroup;
 			children = (
 				22AF0FA21D54886B0094A498 /* Add */,
-				22A7CDD51D44D8C3008B3638 /* ProblemItemsController.h */,
-				22A7CDD61D44D8C3008B3638 /* ProblemItemsController.m */,
-				22A7CDD71D44D8C3008B3638 /* ProblemItemsController.xib */,
 				220327F81D4DF7E00015A664 /* ProblemDetailsController.h */,
 				220327F91D4DF7E00015A664 /* ProblemDetailsController.m */,
 				220327FA1D4DF7E00015A664 /* ProblemDetailsController.xib */,
@@ -3255,9 +3173,6 @@
 			children = (
 				22DED5F41D6829B500BE4E57 /* 详情下拉选择控制器 */,
 				2216AB451D58D6A6007B7ACF /* Add */,
-				22A7CDEA1D44EFB6008B3638 /* FaultAppViewController.h */,
-				22A7CDEB1D44EFB6008B3638 /* FaultAppViewController.m */,
-				22A7CDEC1D44EFB6008B3638 /* FaultAppViewController.xib */,
 				223CBE2B1D597B31002129E0 /* FaultAppDetailsViewController.h */,
 				223CBE2C1D597B31002129E0 /* FaultAppDetailsViewController.m */,
 				223CBE2D1D597B31002129E0 /* FaultAppDetailsViewController.xib */,
@@ -3270,9 +3185,6 @@
 			children = (
 				22DED6131D6994F700BE4E57 /* 下拉表控制器 */,
 				223CBE3A1D5AFBAF002129E0 /* 图片上传 */,
-				22A7CDE51D44EF95008B3638 /* PollingViewController.h */,
-				22A7CDE61D44EF95008B3638 /* PollingViewController.m */,
-				22A7CDE71D44EF95008B3638 /* PollingViewController.xib */,
 				223CBE301D59AF56002129E0 /* PollingDetailsController.h */,
 				223CBE311D59AF56002129E0 /* PollingDetailsController.m */,
 				223CBE321D59AF56002129E0 /* PollingDetailsController.xib */,
@@ -3285,9 +3197,6 @@
 			children = (
 				22AF0FD41D57114C0094A498 /* 详情 */,
 				22FF88B51D506EE2007268F4 /* 添加 */,
-				22A7CE021D44FA60008B3638 /* TravelRViewController.h */,
-				22A7CE031D44FA60008B3638 /* TravelRViewController.m */,
-				22A7CE041D44FA60008B3638 /* TravelRViewController.xib */,
 			);
 			path = "行驶记录";
 			sourceTree = "<group>";
@@ -3297,9 +3206,6 @@
 			children = (
 				22AF0FDA1D5722B60094A498 /* 详情 */,
 				22AF0FC71D56FE530094A498 /* 添加 */,
-				22A7CDFD1D44FA48008B3638 /* OilRViewController.h */,
-				22A7CDFE1D44FA48008B3638 /* OilRViewController.m */,
-				22A7CDFF1D44FA48008B3638 /* OilRViewController.xib */,
 			);
 			path = "加油记录";
 			sourceTree = "<group>";
@@ -3309,9 +3215,6 @@
 			children = (
 				22AF0FE51D572CA80094A498 /* 详情 */,
 				22AF0FCD1D5701980094A498 /* 添加 */,
-				22A7CDF81D44FA2A008B3638 /* MaintainRViewController.h */,
-				22A7CDF91D44FA2A008B3638 /* MaintainRViewController.m */,
-				22A7CDFA1D44FA2A008B3638 /* MaintainRViewController.xib */,
 			);
 			path = "维修记录";
 			sourceTree = "<group>";
@@ -3752,9 +3655,6 @@
 			children = (
 				832BF22E1DE3EA73006973E0 /* 详情 */,
 				832BF22D1DE3EA6B006973E0 /* Add */,
-				832BF2281DE3EA62006973E0 /* TripReportViewController.h */,
-				832BF2291DE3EA62006973E0 /* TripReportViewController.m */,
-				832BF22A1DE3EA62006973E0 /* TripReportViewController.xib */,
 			);
 			name = "出差总结报告";
 			sourceTree = "<group>";
@@ -3762,12 +3662,11 @@
 		835FBD3F1DE2887C006CBC43 /* 运行记录 */ = {
 			isa = PBXGroup;
 			children = (
+				835FBD4F1DE2D0C8006CBC43 /* RunLogDetailsViewController.h */,
+				835FBD501DE2D0C8006CBC43 /* RunLogDetailsViewController.m */,
+				835FBD511DE2D0C8006CBC43 /* RunLogDetailsViewController.xib */,
 				83B0A4D31DE6DC9600F5DBD6 /* 工作日志活动 */,
-				835FBD491DE2CE7D006CBC43 /* 详情 */,
 				835FBD481DE2CE6D006CBC43 /* Add */,
-				835FBD401DE288C9006CBC43 /* RunLogViewController.h */,
-				835FBD411DE288C9006CBC43 /* RunLogViewController.m */,
-				835FBD421DE288C9006CBC43 /* RunLogViewController.xib */,
 			);
 			name = "运行记录";
 			sourceTree = "<group>";
@@ -3780,16 +3679,6 @@
 				835FBD4C1DE2D090006CBC43 /* RunLogAddViewController.xib */,
 			);
 			name = Add;
-			sourceTree = "<group>";
-		};
-		835FBD491DE2CE7D006CBC43 /* 详情 */ = {
-			isa = PBXGroup;
-			children = (
-				835FBD4F1DE2D0C8006CBC43 /* RunLogDetailsViewController.h */,
-				835FBD501DE2D0C8006CBC43 /* RunLogDetailsViewController.m */,
-				835FBD511DE2D0C8006CBC43 /* RunLogDetailsViewController.xib */,
-			);
-			name = "详情";
 			sourceTree = "<group>";
 		};
 		838394841ED5392F005A007E /* popview */ = {
@@ -4045,6 +3934,7 @@
 				83CCE3DA1DF10528003DB584 /* StockQueryViewController.xib in Resources */,
 				8342A5E41E63F6BB0078B161 /* CollectionReusableView.xib in Resources */,
 				227FE2B21D52351900B30171 /* ProblemDetailsLLCell.xib in Resources */,
+				839499CF1F0DE9B90032678A /* workOrder3.json in Resources */,
 				22A7CDBD1D4494B5008B3638 /* CheckingWorkController.xib in Resources */,
 				838DD38F1DF26DD9002198B5 /* BINNUMTableViewCell.xib in Resources */,
 				224C41E01D434AB2004A0797 /* LeftViewCell.xib in Resources */,
@@ -4078,7 +3968,6 @@
 				22DED6121D684C5300BE4E57 /* RemedialMeasuresCell.xib in Resources */,
 				225904251D41170E005C2E15 /* LaunchScreen.storyboard in Resources */,
 				8378BB0F1E63C9260060DB8A /* MyselfViewController.xib in Resources */,
-				22A7CD691D43B9EC008B3638 /* StockViewControllers.xib in Resources */,
 				22A45DF31D63234E00AF48BA /* FaultTaskViewController.xib in Resources */,
 				838DD38A1DF26DC1002198B5 /* LOCATIONTableViewCell.xib in Resources */,
 				223CBE3F1D5AFBEC002129E0 /* UploadPicturesViewController.xib in Resources */,
@@ -4103,7 +3992,6 @@
 				225905041D413FBB005C2E15 /* SVProgressHUD.bundle in Resources */,
 				22DED6081D6844E100BE4E57 /* RemediaMeasuresController.xib in Resources */,
 				8351B7D61DFA7F1900F2E30E /* BINCell.xib in Resources */,
-				22A7CE011D44FA48008B3638 /* OilRViewController.xib in Resources */,
 				83B0A4E41DE6DD6D00F5DBD6 /* DailylogActivityAddViewController.xib in Resources */,
 				220327E81D4DC2980015A664 /* DailyDetailController.xib in Resources */,
 				22C655661D5DAAF700E80BCC /* ConstructionPhaseDailyListController.xib in Resources */,
@@ -4119,11 +4007,9 @@
 				227E05B21D522FD4000768AC /* TracelViewController.xib in Resources */,
 				22AF101D1D58D3130094A498 /* DetailsViewCell.xib in Resources */,
 				22AF10221D58D3B60094A498 /* DetailViewHeader.xib in Resources */,
-				22A7CDCF1D44D876008B3638 /* LedgerItemsController.xib in Resources */,
 				83AC9ED01ED7CA6A00A549D3 /* WfmListanceListViewController.xib in Resources */,
 				8383948F1ED56038005A007E /* TextInputViewController.xib in Resources */,
 				22EBC3081DACE35600C4F92A /* LoginViewController.xib in Resources */,
-				22A7CE061D44FA60008B3638 /* TravelRViewController.xib in Resources */,
 				22A7CDB31D449480008B3638 /* CheckWorkViewController.xib in Resources */,
 				22A7CDC71D449504008B3638 /* CheckWorksViewController.xib in Resources */,
 				22DED6251D69A5F400BE4E57 /* InspectProjectDetailsController.xib in Resources */,
@@ -4134,10 +4020,8 @@
 				22AF0FD91D57117E0094A498 /* DetailsTravelViewController.xib in Resources */,
 				221F5EC61D465AD3007B3AAF /* ApprovalPopupSheetBackView.xib in Resources */,
 				838DD3811DF26C3A002198B5 /* ITEMDESCTableViewCell.xib in Resources */,
-				22A7CDFC1D44FA2A008B3638 /* MaintainRViewController.xib in Resources */,
 				22C655831D5F143F00E80BCC /* DailyWorkController.xib in Resources */,
 				834EEE541EFCF3800055C0EC /* workOrder.json in Resources */,
-				835FBD441DE288C9006CBC43 /* RunLogViewController.xib in Resources */,
 				225905021D413FBB005C2E15 /* CoreSVP.bundle in Resources */,
 				22AF0FD21D5701BC0094A498 /* AddMaintain.xib in Resources */,
 				22BED9CC1DC78CFC00E46E3F /* RegularViewController.xib in Resources */,
@@ -4147,7 +4031,6 @@
 				22DED5F91D682A6300BE4E57 /* CauseProblemViewController.xib in Resources */,
 				225904221D41170E005C2E15 /* Assets.xcassets in Resources */,
 				220328071D4F4DD90015A664 /* 联络单选择.png in Resources */,
-				832BF22C1DE3EA62006973E0 /* TripReportViewController.xib in Resources */,
 				22A45E341D67EEF600AF48BA /* CheckNumViewController.xib in Resources */,
 				22C6557C1D5E101300E80BCC /* HoistingDebugAddController.xib in Resources */,
 				22A45E5C1D681CA600AF48BA /* AddMaterielsViewController.xib in Resources */,
@@ -4163,7 +4046,6 @@
 				223CBE2F1D597B31002129E0 /* FaultAppDetailsViewController.xib in Resources */,
 				224C41DB1D4345A6004A0797 /* LeftHeaderView.xib in Resources */,
 				835F19FB1EA4A83B00788BD9 /* ProrunlogcDetailViewController.xib in Resources */,
-				22A7CDD41D44D89C008B3638 /* DailyItemsController.xib in Resources */,
 				22AF102D1D5978620094A498 /* AddFaultViewController.xib in Resources */,
 				832BF2391DE3EC50006973E0 /* TripReportDetailsViewController.xib in Resources */,
 				835FBD4E1DE2D090006CBC43 /* RunLogAddViewController.xib in Resources */,
@@ -4185,16 +4067,13 @@
 				220327ED1D4DC4A60015A664 /* DailyDetailsCell.xib in Resources */,
 				2216AB4A1D58D749007B7ACF /* FaultAppAddController.xib in Resources */,
 				2288CA821D6ADF8D0084973D /* DTKDropdownMenuCell.xib in Resources */,
-				22A7CDE91D44EF95008B3638 /* PollingViewController.xib in Resources */,
 				22A45E161D64167B00AF48BA /* SurfaceAddViewController.xib in Resources */,
 				2216AB291D5715F5007B7ACF /* ProblemItemLLIView.xib in Resources */,
 				2216AB331D573144007B7ACF /* ProblemItemTitleView.xib in Resources */,
-				22A7CDD91D44D8C3008B3638 /* ProblemItemsController.xib in Resources */,
 				22A45E6E1D6A8EB200AF48BA /* MaterViewController.xib in Resources */,
 				223CBEA61D5AFE42002129E0 /* ZLPhotoLib.bundle in Resources */,
 				835FBD531DE2D0C8006CBC43 /* RunLogDetailsViewController.xib in Resources */,
 				22A45E2B1D65C5B900AF48BA /* FinalNumViewController.xib in Resources */,
-				22A7CDEE1D44EFB6008B3638 /* FaultAppViewController.xib in Resources */,
 				838DD37C1DF26C11002198B5 /* ITEMNUMTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4320,6 +4199,7 @@
 				83B0145A1E08D79300D65FF7 /* FaultClassModel.h in Sources */,
 				83B0145B1E08D79300D65FF7 /* FaultClassModel.m in Sources */,
 				83B0145C1E08D79300D65FF7 /* EquipmentLocationController.h in Sources */,
+				832AD9701F3E848800C67EDD /* TSGD_ViewController.m in Sources */,
 				83B0145D1E08D79300D65FF7 /* EquipmentLocationController.m in Sources */,
 				83B0145E1E08D79300D65FF7 /* EquipmentLocationModel.h in Sources */,
 				83B0145F1E08D79300D65FF7 /* EquipmentLocationModel.m in Sources */,
@@ -4401,8 +4281,6 @@
 				83B014A91E08D79300D65FF7 /* FaultWorkViewController.h in Sources */,
 				83B014AA1E08D79300D65FF7 /* FaultWorkViewController.m in Sources */,
 				83B014AB1E08D79300D65FF7 /* FaultWorkViewController.xib in Sources */,
-				83B014AF1E08D79300D65FF7 /* FauWorkViewController.h in Sources */,
-				83B014B01E08D79300D65FF7 /* FauWorkViewController.m in Sources */,
 				83B014B61E08D79300D65FF7 /* LeftHeaderView.h in Sources */,
 				83B014B71E08D79300D65FF7 /* LeftHeaderView.m in Sources */,
 				83B014B81E08D79300D65FF7 /* LeftHeaderView.xib in Sources */,
@@ -4428,9 +4306,6 @@
 				83B014CF1E08D79300D65FF7 /* RunLogAddViewController.h in Sources */,
 				83B014D01E08D79300D65FF7 /* RunLogAddViewController.m in Sources */,
 				83B014D11E08D79300D65FF7 /* RunLogAddViewController.xib in Sources */,
-				83B014D21E08D79300D65FF7 /* RunLogViewController.h in Sources */,
-				83B014D31E08D79300D65FF7 /* RunLogViewController.m in Sources */,
-				83B014D41E08D79300D65FF7 /* RunLogViewController.xib in Sources */,
 				83B014D51E08D79300D65FF7 /* InspectProjectController.h in Sources */,
 				83B014D61E08D79300D65FF7 /* InspectProjectController.m in Sources */,
 				83B014D71E08D79300D65FF7 /* InspectProjectController.xib in Sources */,
@@ -4447,9 +4322,6 @@
 				83B014E21E08D79300D65FF7 /* UploadPicturesViewController.h in Sources */,
 				83B014E31E08D79300D65FF7 /* UploadPicturesViewController.m in Sources */,
 				83B014E41E08D79300D65FF7 /* UploadPicturesViewController.xib in Sources */,
-				83B014E51E08D79300D65FF7 /* PollingViewController.h in Sources */,
-				83B014E61E08D79300D65FF7 /* PollingViewController.m in Sources */,
-				83B014E71E08D79300D65FF7 /* PollingViewController.xib in Sources */,
 				83B014E81E08D79300D65FF7 /* PollingDetailsController.h in Sources */,
 				83B014E91E08D79300D65FF7 /* PollingDetailsController.m in Sources */,
 				83B014EA1E08D79300D65FF7 /* PollingDetailsController.xib in Sources */,
@@ -4470,9 +4342,6 @@
 				83B014F91E08D79400D65FF7 /* FaultAppAddController.h in Sources */,
 				83B014FA1E08D79400D65FF7 /* FaultAppAddController.m in Sources */,
 				83B014FB1E08D79400D65FF7 /* FaultAppAddController.xib in Sources */,
-				83B014FC1E08D79400D65FF7 /* FaultAppViewController.h in Sources */,
-				83B014FD1E08D79400D65FF7 /* FaultAppViewController.m in Sources */,
-				83B014FE1E08D79400D65FF7 /* FaultAppViewController.xib in Sources */,
 				83B014FF1E08D79400D65FF7 /* FaultAppDetailsViewController.h in Sources */,
 				83B015001E08D79400D65FF7 /* FaultAppDetailsViewController.m in Sources */,
 				83B015011E08D79400D65FF7 /* FaultAppDetailsViewController.xib in Sources */,
@@ -4536,17 +4405,11 @@
 				83B015421E08D79400D65FF7 /* TripReportAddViewController.h in Sources */,
 				83B015431E08D79400D65FF7 /* TripReportAddViewController.m in Sources */,
 				83B015441E08D79400D65FF7 /* TripReportAddViewController.xib in Sources */,
-				83B015451E08D79400D65FF7 /* TripReportViewController.h in Sources */,
-				83B015461E08D79400D65FF7 /* TripReportViewController.m in Sources */,
-				83B015471E08D79400D65FF7 /* TripReportViewController.xib in Sources */,
 				83B015481E08D79400D65FF7 /* ProblemDetailsControllerViewController.h in Sources */,
 				83B015491E08D79400D65FF7 /* ProblemDetailsControllerViewController.m in Sources */,
 				83B0154A1E08D79400D65FF7 /* ProblemAddController.h in Sources */,
 				83B0154B1E08D79400D65FF7 /* ProblemAddController.m in Sources */,
 				83B0154C1E08D79400D65FF7 /* ProblemAddController.xib in Sources */,
-				83B0154D1E08D79400D65FF7 /* ProblemItemsController.h in Sources */,
-				83B0154E1E08D79400D65FF7 /* ProblemItemsController.m in Sources */,
-				83B0154F1E08D79400D65FF7 /* ProblemItemsController.xib in Sources */,
 				83B015501E08D79400D65FF7 /* ProblemDetailsController.h in Sources */,
 				83B015511E08D79400D65FF7 /* ProblemDetailsController.m in Sources */,
 				83B015521E08D79400D65FF7 /* ProblemDetailsController.xib in Sources */,
@@ -4602,10 +4465,7 @@
 				83B015811E08D79400D65FF7 /* DailyAddController.h in Sources */,
 				83B015821E08D79400D65FF7 /* DailyAddController.m in Sources */,
 				83B015831E08D79400D65FF7 /* DailyAddController.xib in Sources */,
-				83B015841E08D79400D65FF7 /* DailyItemsController.h in Sources */,
-				83B015851E08D79400D65FF7 /* DailyItemsController.m in Sources */,
 				834EEE521EFCEF2B0055C0EC /* DataFactory.m in Sources */,
-				83B015861E08D79400D65FF7 /* DailyItemsController.xib in Sources */,
 				83B015871E08D79400D65FF7 /* DailyDetailController.h in Sources */,
 				83B015881E08D79400D65FF7 /* DailyDetailController.m in Sources */,
 				83B015891E08D79400D65FF7 /* DailyDetailController.xib in Sources */,
@@ -4631,9 +4491,6 @@
 				83B0159C1E08D79400D65FF7 /* ProjectCarsViewController.h in Sources */,
 				83B0159D1E08D79400D65FF7 /* ProjectCarsViewController.m in Sources */,
 				83B0159E1E08D79400D65FF7 /* ProjectCarsViewController.xib in Sources */,
-				83B0159F1E08D79400D65FF7 /* LedgerItemsController.h in Sources */,
-				83B015A01E08D79400D65FF7 /* LedgerItemsController.m in Sources */,
-				83B015A11E08D79400D65FF7 /* LedgerItemsController.xib in Sources */,
 				83B015A21E08D79400D65FF7 /* LedgerDetailsController.h in Sources */,
 				83B015A31E08D79400D65FF7 /* LedgerDetailsController.m in Sources */,
 				83B015A41E08D79400D65FF7 /* LedgerDetailsController.xib in Sources */,
@@ -4722,6 +4579,7 @@
 				83B015F51E08D79400D65FF7 /* ProcessApprovalPopupWindowView.h in Sources */,
 				83B015F61E08D79400D65FF7 /* ProcessApprovalPopupWindowView.m in Sources */,
 				83B015F71E08D79400D65FF7 /* ApprovalPopupSheetFrontView.h in Sources */,
+				832AD9731F3ED00200C67EDD /* TSGDZB_ViewController.m in Sources */,
 				83B015F81E08D79400D65FF7 /* ApprovalPopupSheetFrontView.m in Sources */,
 				83B015F91E08D79400D65FF7 /* ApprovalPopupSheetFrontView.xib in Sources */,
 				83B015FA1E08D79400D65FF7 /* ApprovalPopupSheetBackView.h in Sources */,
@@ -4757,6 +4615,7 @@
 				83B016151E08D79400D65FF7 /* StockQueryTableViewCell.m in Sources */,
 				83B016161E08D79400D65FF7 /* StockQueryTableViewCell.xib in Sources */,
 				83B016171E08D79400D65FF7 /* DetailsMaintainViewController.h in Sources */,
+				83084D5D1F385B1500A42D54 /* RequestJsonFactry.m in Sources */,
 				83B016181E08D79400D65FF7 /* DetailsMaintainViewController.m in Sources */,
 				83B016191E08D79400D65FF7 /* DetailsMaintainViewController.xib in Sources */,
 				83B0161A1E08D79400D65FF7 /* AddMaintain.h in Sources */,
@@ -4765,27 +4624,18 @@
 				83B0161D1E08D79400D65FF7 /* DetailsSearchController.h in Sources */,
 				83B0161E1E08D79400D65FF7 /* DetailsSearchController.m in Sources */,
 				83B0161F1E08D79400D65FF7 /* DetailsSearchController.xib in Sources */,
-				83B016201E08D79400D65FF7 /* MaintainRViewController.h in Sources */,
-				83B016211E08D79500D65FF7 /* MaintainRViewController.m in Sources */,
-				83B016221E08D79500D65FF7 /* MaintainRViewController.xib in Sources */,
 				83B016231E08D79500D65FF7 /* DetailsOilViewController.h in Sources */,
 				83B016241E08D79500D65FF7 /* DetailsOilViewController.m in Sources */,
 				83B016251E08D79500D65FF7 /* DetailsOilViewController.xib in Sources */,
 				83B016261E08D79500D65FF7 /* OilRAddViewController.h in Sources */,
 				83B016271E08D79500D65FF7 /* OilRAddViewController.m in Sources */,
 				83B016281E08D79500D65FF7 /* OilRAddViewController.xib in Sources */,
-				83B016291E08D79500D65FF7 /* OilRViewController.h in Sources */,
-				83B0162A1E08D79500D65FF7 /* OilRViewController.m in Sources */,
-				83B0162B1E08D79500D65FF7 /* OilRViewController.xib in Sources */,
 				83B0162C1E08D79500D65FF7 /* DetailsTravelViewController.h in Sources */,
 				83B0162D1E08D79500D65FF7 /* DetailsTravelViewController.m in Sources */,
 				83B0162E1E08D79500D65FF7 /* DetailsTravelViewController.xib in Sources */,
 				83B0162F1E08D79500D65FF7 /* TracelViewController.h in Sources */,
 				83B016301E08D79500D65FF7 /* TracelViewController.m in Sources */,
 				83B016311E08D79500D65FF7 /* TracelViewController.xib in Sources */,
-				83B016321E08D79500D65FF7 /* TravelRViewController.h in Sources */,
-				83B016331E08D79500D65FF7 /* TravelRViewController.m in Sources */,
-				83B016341E08D79500D65FF7 /* TravelRViewController.xib in Sources */,
 				83B016381E08D79500D65FF7 /* TravelRModel.h in Sources */,
 				83B016391E08D79500D65FF7 /* TravelRModel.m in Sources */,
 				83B0163A1E08D79500D65FF7 /* OilRModel.h in Sources */,
@@ -4801,9 +4651,6 @@
 				83B016461E08D79500D65FF7 /* HitStockViewController.h in Sources */,
 				83B016471E08D79500D65FF7 /* HitStockViewController.m in Sources */,
 				83B016481E08D79500D65FF7 /* HitStockViewController.xib in Sources */,
-				83B016491E08D79500D65FF7 /* StockViewControllers.h in Sources */,
-				83B0164A1E08D79500D65FF7 /* StockViewControllers.m in Sources */,
-				83B0164B1E08D79500D65FF7 /* StockViewControllers.xib in Sources */,
 				83B0164C1E08D79500D65FF7 /* StockModel.h in Sources */,
 				83B0164D1E08D79500D65FF7 /* StockModel.m in Sources */,
 				83B0164E1E08D79500D65FF7 /* DetailStockModel.h in Sources */,
@@ -4871,6 +4718,7 @@
 				83B016891E08D79500D65FF7 /* ZLPhotoPickerGroupViewController.h in Sources */,
 				83B0168A1E08D79500D65FF7 /* ZLPhotoPickerGroupViewController.m in Sources */,
 				83B0168B1E08D79500D65FF7 /* ZLPhotoPickerViewController.h in Sources */,
+				83C2E49B1F4123F600ABD8EC /* GZGD_ViewController.m in Sources */,
 				83B0168C1E08D79500D65FF7 /* ZLPhotoPickerViewController.m in Sources */,
 				83B0168D1E08D79500D65FF7 /* ZLPhotoPickerCollectionView.h in Sources */,
 				83B0168E1E08D79500D65FF7 /* ZLPhotoPickerCollectionView.m in Sources */,

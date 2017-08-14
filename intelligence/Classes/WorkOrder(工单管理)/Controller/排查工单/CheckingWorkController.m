@@ -90,6 +90,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     self.SetingItems = [NSMutableDictionary dictionary];
     self.title = @"排查工单详情";
     _isClick = YES;
     _workArray = [NSMutableArray array];
@@ -100,7 +101,7 @@
     [self addTwo];
     [self addThree];
     
-    self.SetingItems = [NSMutableDictionary dictionary];
+   
     [self checkWFPRequiredWithAppId:@"UDPCWO" objectName:@"WORKORDER" status:self.stock.UDSTATUS compeletion:^(NSArray *fields) {
         NSLog(@"排查工单必填字段 %@",fields);
         self.RequiredFields=[NSMutableArray array];

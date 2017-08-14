@@ -47,6 +47,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"调试工单详情";
+    self.SetingItems = [NSMutableDictionary dictionary];
     _workArray = [NSMutableArray array];
     _updataworkArray = [NSMutableArray array];
     [self addRightNavBarItem];
@@ -54,7 +55,7 @@
     
     _isEdit = YES;
     [self addOne];
-    self.SetingItems = [NSMutableDictionary dictionary];
+    
     [self checkWFPRequiredWithAppId:@"DEBUGORDER" objectName:@"DEBUGWORKORDER" status:self.stock.STATUS compeletion:^(NSArray *fields) {
         NSLog(@"调试工单必填字段 %@",fields);
         self.RequiredFields=[NSMutableArray array];

@@ -91,7 +91,7 @@
     model.CREW3 = SettingContent(_LLI12);
     model.QUESTION = SettingContent(_LT13);
     model.DISPOSE = SettingContent(_LT14);
-    model.isnumber = 1;
+   
     if (self.backModel) {
         self.backModel(model);
     }

@@ -253,7 +253,7 @@
         debuges.TIME1 = model.TIME1;
         debuges.TIME2 = model.TIME2;
         debuges.CREW = model.CREW;
-        debuges.isnumber = 1;
+        
         [weakSelf.tableview reloadData];
         weakSelf.isModify = YES;
     };

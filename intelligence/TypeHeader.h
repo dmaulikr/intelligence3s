@@ -21,6 +21,8 @@ typedef enum {
     ChoiceTypeSP,
     /** 调试*/
     ChoiceTypeDC,
+    /** 巡检*/
+    ChoiceTypeXJ,
     /** 关闭*/
     ChoiceTypeClose,
     /** 日报时间-年*/
@@ -41,6 +43,8 @@ typedef enum {
     ChoiceTypeFaultState,
     /** 运维管理-巡检单-全部*/
     ChoiceTypePollingAll,
+    /** 运维管理-巡检单-全部*/
+    ChoiceTypeCC,
     /** 排查类型*/
     ChoiceTypePai,
     /** 技改类型*/

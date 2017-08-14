@@ -8,23 +8,10 @@
 #import "MyFlowLayout.h"
 #import "FunctionViewController.h"
 #import "ItemsCollectionViewCell.h"
-#import "FauWorkViewController.h"
 #import "CollectionReusableView.h"
-#import "FaultAppViewController.h"
-#import "PollingViewController.h"
-#import "RunLogViewController.h"
-#import "TravelRViewController.h"
-#import "OilRViewController.h"
-#import "MaintainRViewController.h"
 #import "StockQueryViewController.h"
 #import "JSChartViewController.h"
 #import "TableViewController.h"
-
-#import "LedgerItemsController.h"
-#import "DailyItemsController.h"
-#import "ProblemItemsController.h"
-#import "TripReportViewController.h"
-#import "StockViewControllers.h"
 #import "LoginViewController.h"
 #import "DataFactory.h"
 static NSString * cellIdentifier = @"FunctionItemsCollectionViewCell";
@@ -219,125 +206,131 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.section==0){
-    NSString *worktype;
-    NSString *name;
-    NSString *appid;
-    NSString *objectname;
-    NSString *orderby;
-    ChoiceType type = ChoiceTypeClose;
+        
+    UIViewController *view;
     switch (indexPath.row) {
         case 0:
-            worktype = @"FR";//故障工单
-            appid = @"UDREPORTWO";
-            objectname = @"WORKORDER";
-            orderby = @"WORKORDERID desc";
-            name = @"故障工单";
-            type = ChoiceTypeFR;
+            {
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"故障工单";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
+            }
             break;
         case 1:
-            worktype = @"DC";//调试工单
-            appid = @"DEBUGORDER";
-            objectname = @"DEBUGWORKORDER";
-            orderby = @"DEBUGWORKORDERNUM desc";
-            name = @"调试工单";
-            type = ChoiceTypeDC;
+            {
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"调试工单";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
+            }
             break;
         case 2:
             {
-            PollingViewController *polling = [[PollingViewController alloc]init];
-            polling.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:polling animated:YES];
-                return;
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"巡检工单";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
             }
             break;
         case 3:
-            worktype = @"WS";//定检工单
-            appid = @"UDDJWO";
-            objectname = @"WORKORDER";
-            orderby = @"WORKORDERID desc";
-            name = @"定检工单";
-            type = ChoiceTypeTP;
-          
+            {
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"定检工单";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
+            }
             break;
         case 4:
-            worktype = @"SP";//排查工单
-            appid = @"UDPCWO";
-            objectname = @"WORKORDER";
-            orderby = @"WORKORDERID desc";
-            name = @"排查工单";
-            type = ChoiceTypeSP;
+            {
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"排查工单";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
+            }
             break;
         case 5:
-            worktype = @"TP";//技改工单
-            appid = @"UDJGWO";
-            objectname = @"WORKORDER";
-            orderby = @"WONUM desc";
-            name = @"技改工单";
-            type = ChoiceTypeTPS;
+            {
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"技改工单";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
+            }
             break;
         case 6:
-            worktype = @"AA";//终验收工单
-            appid = @"UDZYSWO";
-            objectname = @"WORKORDER";
-            orderby = @"WONUM desc";
-            name = @"终验收工单";
-            type = ChoiceTypeAA;
+            {
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"终验收工单";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
+            }
             break;
         case 7:
             {
-                NSLog(@"预警排查工单");
-                TableViewController *tableView = [[TableViewController alloc]init];
-                tableView.type=@"预警排查工单";
-                tableView.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:tableView animated:YES];
-                return;
+            NSLog(@"预警排查工单");
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"预警排查工单";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
+            
             }
             break;
-        default:
-            break;
     }
-    FauWorkViewController *fauWork = [[FauWorkViewController alloc]init];
-    fauWork.worktype = worktype;
-    fauWork.name = name;
-    fauWork.Choice = type;
-    fauWork.appid = appid;
-    fauWork.objectname = objectname;
-    fauWork.orderby = orderby;
-    fauWork.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:fauWork animated:YES];
+        view.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:view animated:YES];
     }
+    
     if(indexPath.section==1)
     {
         UIViewController *view;
-        if (indexPath.row == 0) {
-            LedgerItemsController *ledger = [[LedgerItemsController alloc]init];
-            view = ledger;
-        }else if (indexPath.row == 1){
-            DailyItemsController *daily = [[DailyItemsController alloc]init];
-            view = daily;
-        }else if (indexPath.row == 2){
-            ProblemItemsController *problem = [[ProblemItemsController alloc]init];
-            view = problem;
+        if (indexPath.row == 0)
+        {
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"项目台账";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
         }
-        else if (indexPath.row == 3){
-            NSLog(@"跳到出差总结报告");
-            TripReportViewController * trip = [[TripReportViewController alloc] init];
-            trip.title = @"出差总结报告";
-            view = trip;
+        else if (indexPath.row == 1)
+        {
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"项目日报";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
+        }
+        else if (indexPath.row == 2)
+        {
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"问题联络单";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
+        }
+        else if (indexPath.row == 3)
+        {
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"出差报告";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
         }
         view.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:view animated:YES];
     }
+    
     if(indexPath.section==2)
     {
         UIViewController *view;
-        if (indexPath.row == 0) {
-            NSLog(@"跳转到运行记录");
-            RunLogViewController *runlog = [[RunLogViewController alloc] init];
-            view = runlog;
-        }else if (indexPath.row == 1){
-            FaultAppViewController *fault = [[FaultAppViewController alloc]init];
-            view = fault;
+        if (indexPath.row == 0)
+        {
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"运行记录";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
+        }
+        else if (indexPath.row == 1)
+        {
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"故障提报单";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
         }
         view.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:view animated:YES];
@@ -345,27 +338,44 @@ static NSString * kfooterIdentifier =@"footerIdentifier";
     if(indexPath.section==3)
     {
         UIViewController *view;
-        if (indexPath.row == 0) {
-            TravelRViewController *travel = [[TravelRViewController alloc]init];
-            view = travel;
-        }else if (indexPath.row == 1){
-            OilRViewController *oil = [[OilRViewController alloc]init];
-            view = oil;
-        }else if (indexPath.row == 2){
-            MaintainRViewController *maintain = [[MaintainRViewController alloc]init];
-            view = maintain;
-        }else if (indexPath.row == 3){
-            StockViewControllers *stock = [[StockViewControllers alloc]init];
-            view = stock;
-        
-        }else if (indexPath.row == 4){
+        if (indexPath.row == 0)
+        {
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"行驶记录";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
+        }
+        else if (indexPath.row == 1)
+        {
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"加油记录";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
+        }
+        else if (indexPath.row == 2)
+        {
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"车辆维修";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
+        }
+        else if (indexPath.row == 3)
+        {
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"库存盘点";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
+        }
+        else if (indexPath.row == 4){
             NSLog(@"库存查询");
             StockQueryViewController * stockQuery = [[StockQueryViewController alloc] init];
             view = stockQuery;
         }else if (indexPath.row == 5){
             NSLog(@"图表");
-            JSChartViewController * chartView = [[JSChartViewController alloc] init];
-            view = chartView;
+            TableViewController *tableView = [[TableViewController alloc]init];
+            tableView.type=@"库存盘点";
+            tableView.hidesBottomBarWhenPushed = YES;
+            view = tableView;
         }
         view.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:view animated:YES];

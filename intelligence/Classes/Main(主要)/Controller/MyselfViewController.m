@@ -63,6 +63,10 @@
     }
     return 0;
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 50;
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 30;
@@ -87,12 +91,29 @@
             
             cell.textLabel.text=@"姓名:";
             cell.detailTextLabel.text=account.displayName;
+           
+            UIImage * icon = [UIImage imageNamed:@"ic_me_down"];
+            CGSize itemSize = CGSizeMake(36, 36);//固定图片大小为36*36
+            UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0);//*1
+            CGRect imageRect = CGRectMake(0, 0, itemSize.width, itemSize.height);
+            [icon drawInRect:imageRect];
+            cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();//*2
+            UIGraphicsEndImageContext();//*3
+            
             
         }
         else
         {
             cell.textLabel.text=@"工号:";
             cell.detailTextLabel.text=account.userName;
+           
+            UIImage * icon = [UIImage imageNamed:@"ic_wonum"];
+            CGSize itemSize = CGSizeMake(36, 36);//固定图片大小为36*36
+            UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0);//*1
+            CGRect imageRect = CGRectMake(0, 0, itemSize.width, itemSize.height);
+            [icon drawInRect:imageRect];
+            cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();//*2
+            UIGraphicsEndImageContext();//*3
         }
     }
     else if(indexPath.section==1)
@@ -111,12 +132,28 @@
                 
             }
             
+            UIImage * icon = [UIImage imageNamed:@"ic_dqhj"];
+            CGSize itemSize = CGSizeMake(36, 36);//固定图片大小为36*36
+            UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0);//*1
+            CGRect imageRect = CGRectMake(0, 0, itemSize.width, itemSize.height);
+            [icon drawInRect:imageRect];
+            cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();//*2
+            UIGraphicsEndImageContext();//*3
         }
         else if (indexPath.row==1)
         {
             cell.textLabel.text=@"地址:";
             [cell.detailTextLabel setAdjustsFontSizeToFitWidth:YES];
             cell.detailTextLabel.text=BASE_URL;
+            [cell.imageView setImage:[UIImage imageNamed:@"ic_ad"]];
+            
+            UIImage * icon = [UIImage imageNamed:@"ic_ad"];
+            CGSize itemSize = CGSizeMake(36, 36);//固定图片大小为36*36
+            UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0);//*1
+            CGRect imageRect = CGRectMake(0, 0, itemSize.width, itemSize.height);
+            [icon drawInRect:imageRect];
+            cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();//*2
+            UIGraphicsEndImageContext();//*3
         }
         else if (indexPath.row==2)
         {
@@ -125,11 +162,29 @@
             NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
             NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
             cell.detailTextLabel.text=[NSString stringWithFormat:@"%@（点击检查新版本)",app_Version];
+            [cell.imageView setImage:[UIImage imageNamed:@"ic_version"]];
+            
+            UIImage * icon = [UIImage imageNamed:@"ic_version"];
+            CGSize itemSize = CGSizeMake(36, 36);//固定图片大小为36*36
+            UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0);//*1
+            CGRect imageRect = CGRectMake(0, 0, itemSize.width, itemSize.height);
+            [icon drawInRect:imageRect];
+            cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();//*2
+            UIGraphicsEndImageContext();//*3
         }
         else
         {
             cell.textLabel.text=@"二维码";
             cell.detailTextLabel.text=@"点击以分享本app";
+            [cell.imageView setImage:[UIImage imageNamed:@"ic_qr"]];
+            
+            UIImage * icon = [UIImage imageNamed:@"ic_qr"];
+            CGSize itemSize = CGSizeMake(36, 36);//固定图片大小为36*36
+            UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0);//*1
+            CGRect imageRect = CGRectMake(0, 0, itemSize.width, itemSize.height);
+            [icon drawInRect:imageRect];
+            cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();//*2
+            UIGraphicsEndImageContext();//*3
         }
     }
     else
@@ -137,9 +192,19 @@
         cell.textLabel.text=@"注销当前用户";
         [cell.textLabel setCenterX:self.view.centerX];
         [cell.textLabel setTextAlignment:NSTextAlignmentCenter];
+        UIImage * icon = [UIImage imageNamed:@"ic_logout"];
+        CGSize itemSize = CGSizeMake(36, 36);//固定图片大小为36*36
+        UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0);//*1
+        CGRect imageRect = CGRectMake(0, 0, itemSize.width, itemSize.height);
+        [icon drawInRect:imageRect];
+        cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();//*2
+        UIGraphicsEndImageContext();//*3
+    }
+    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        
+        [tableView setSeparatorInset:UIEdgeInsetsMake(0, 15, 0, 0)];
         
     }
-    
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

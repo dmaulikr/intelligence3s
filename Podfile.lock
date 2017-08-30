@@ -27,15 +27,15 @@ PODS:
     - Reachability
   - ASIHTTPRequest/S3 (1.8.2):
     - ASIHTTPRequest/Core
-  - IQKeyboardManager (3.3.7)
+  - IQKeyboardManager (4.0.11)
   - JSONKit-NoWarning (1.2)
-  - Masonry (1.0.1)
-  - MJExtension (3.0.12)
-  - MJRefresh (3.1.10)
+  - Masonry (1.0.2)
+  - MJExtension (3.0.13)
+  - MJRefresh (3.1.12)
   - Reachability (3.2)
-  - SDWebImage (3.8.1):
-    - SDWebImage/Core (= 3.8.1)
-  - SDWebImage/Core (3.8.1)
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
 
 DEPENDENCIES:
   - AFNetworking
@@ -50,12 +50,14 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   ASIHTTPRequest: ec013992946676b7978dcbde6396d57312d21db4
-  IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
+  IQKeyboardManager: 83eae5318483a34eb2069ef413d195b97605232e
   JSONKit-NoWarning: 3d27e6f9e6846ecf741e8c64dcadd7d5aa7193cb
-  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
-  MJExtension: 61bcf70d30acf0a09dde48e68502da0fde8eeafa
-  MJRefresh: bb72948c985914b0b5cecac573a2c69a8915fb02
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 2bd492847deafb3d97604ff4d5e066f5db98dbed
+
+COCOAPODS: 1.2.1

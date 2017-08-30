@@ -95,11 +95,7 @@
 -(void)back{
     NSLog(@"返回了");
     if (_numbers == 1) {
-        for (WorksPlanModel *mater in self.dataArray) {
-            if (mater.isnumber ==1) {
-                [self.addArray addObject:mater];
-            }
-        }
+ 
         if (self.updataCellClick) {
             self.updataCellClick(self.addArray,_isModify);
         }
@@ -108,9 +104,6 @@
         }
     }else{
         for (WorksPlanModel *mater in self.dataArray) {
-            if (mater.isnumber ==1) {
-                [self.addArray addObject:mater];
-            }
             for (WorksPlanModel *mater in self.deleArray) {
                 if ([mater.TYPE isEqualToString:@"delete"]) {
                     [self.addArray addObject:mater];
@@ -268,7 +261,7 @@
         plans.OWNER = model.OWNER;
         plans.OWNERNAME = model.OWNERNAME;
         plans.TYPE = model.TYPE;
-        plans.isnumber = 1;
+       
         [weakSelf.tableview reloadData];
         weakSelf.isModify = YES;
     };

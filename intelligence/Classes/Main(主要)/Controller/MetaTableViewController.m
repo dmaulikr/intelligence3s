@@ -32,12 +32,19 @@
 
     [self setTitle:self.key];
     [self.tableView reloadData];
-    [self.view setBackgroundColor:[UIColor grayColor]];
+    [self.view setBackgroundColor:RGBCOLOR(46,92,154)];
     self.dateFormtter = [[NSDateFormatter alloc] init];
     self.dateAndTimeFormtter = [[NSDateFormatter alloc] init];
+    self.timeFormtter = [[NSDateFormatter alloc] init];
+    
     [self.dateFormtter setDateFormat:@"yyyy-MM-dd"];
     [self.dateAndTimeFormtter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-
+    [self.timeFormtter setDateFormat:@"HH:mm:ss"];
+    
+    UIView * footer = [[UIView alloc] init];
+    [footer setBackgroundColor:[UIColor clearColor]];
+    [self.tableView setTableFooterView:footer];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,7 +73,7 @@
         return 0;
     }
     else{
-        return 44;
+        return 50;
     }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -92,7 +99,8 @@
     
     
     if ([type isEqualToString:@"标题"]) {
-        [cell setBackgroundColor:[UIColor clearColor]];
+        [cell setBackgroundColor:RGBCOLOR(46,92,154)];
+        [cell.textLabel setTextColor:[UIColor whiteColor]];
         [cell.detailTextLabel setHidden:YES];
     }
     if ([type isEqualToString:@"文本"]) {
@@ -155,10 +163,12 @@
         if ([value isEqualToString:@"Y"]) {
             
             [self modifyField:name newValue:@"N"];
+            [self setYESorNO:field YN:NO];
             
         }else{
             
             [self modifyField:name newValue:@"Y"];
+            [self setYESorNO:field YN:YES];
         }
         [self.tableView reloadData];
     }
@@ -244,6 +254,11 @@
 {
     
 }
+//设置是否
+-(void)setYESorNO:(NSString *)name YN:(BOOL)YN
+{
+    
+}
 //行中添加选择器
 -(void)addPickerIncell:(UITableViewCell* )cell name:(NSString*) name
 {
@@ -266,7 +281,7 @@
             continue;
         }
         
-        if([field isEqualToString:@""])
+        if([field isEqualToString:@""]||[field isEqualToString:@" "]||[field isEqualToString:@" "])
         {
             continue;
         }
@@ -274,12 +289,15 @@
             value = @"";
             continue;
         }
+        if ([value isEqualToString:@""]) {
+            continue;
+        }
         if(![field isEqualToString:@"-"])
         {
             [data setValue:value forKey:field];
         }
     }
-    NSLog(@"%@",data);
+    NSLog(@"组装数据：%@",data);
     return data;
 }
 -(void)popInputTextViewContent:(NSString*)content title:(NSString*)title  compeletion:(void(^)(NSString * value))compeletion

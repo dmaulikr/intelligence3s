@@ -13,7 +13,7 @@
 @property (nonatomic,strong)NSString *UDCARFUELCHARGEID;
 @property (nonatomic,strong)NSString *PLACE;                        //加油地点
 @property (nonatomic,strong)NSString *DRIVERID1;                    //司机
-@property (nonatomic,strong)NSString *INVOICENUM;                   //发票号
+@property (nonatomic,strong)NSString *INVOICENUM;                   //发票号INVOICENUM
 @property (nonatomic,strong)NSString *LICENSENUM;                    //车牌号
 @property (nonatomic,strong)NSString *NUMBER1;                       //本次加油里程表读数
 @property (nonatomic,strong)NSString *CARFUELCHARGENUM;              //编号
@@ -36,5 +36,6 @@
 @property (nonatomic,strong)NSString *RESPONSID;
 @property (nonatomic,strong)NSString *LASTFUELCONSUMPTION;            //油耗
 @property (nonatomic,strong)NSString *PRICE;                          //单价
-@property (nonatomic,strong)NSString *DESCRIPTION;                    //描述
+@property (nonatomic,strong)NSString *DESCRIPTION;
+@property (nonatomic,strong)NSString *CARNUM;//
 @end

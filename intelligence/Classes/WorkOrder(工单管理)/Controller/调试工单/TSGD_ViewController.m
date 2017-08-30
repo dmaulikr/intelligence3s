@@ -31,36 +31,63 @@
 }
 - (void)addRightNavBarItem{
     WEAKSELF
-    DTKDropdownItem *item0 = [DTKDropdownItem itemWithTitle:@"调试工单子表" iconName:@"ic_woactivity" callBack:^(NSUInteger index, id info) {
-        TableViewController * table  = [[TableViewController alloc] init];
-        table.type=@"调试工单子表";
-        table.search = self.Kmodel.DEBUGWORKORDERNUM;
-        
-        [self.navigationController pushViewController:table animated:YES];
-        
-    }];
-    DTKDropdownItem *item1 = [DTKDropdownItem itemWithTitle:@"发送工作流" iconName:@"ic_flower" callBack:^(NSUInteger index, id info) {
-        
-    }];
-    
-    DTKDropdownItem *item2 = [DTKDropdownItem itemWithTitle:@"图片上传" iconName:@"ic_upload" callBack:^(NSUInteger index, id info) {
-        
-    }];
-    DTKDropdownItem *item3 = [DTKDropdownItem itemWithTitle:@"工作流任务分配" iconName:@"ic_tujian" callBack:^(NSUInteger index, id info) {
+    DTKDropdownItem *item0 = [DTKDropdownItem itemWithTitle:@"工作流任务分配"  callBack:^(NSUInteger index, id info) {
         NSLog(@"rightItem%lu",(unsigned long)index);
         NSLog(@"工作流任务分配");
         WfmListanceListViewController* vc= [[WfmListanceListViewController alloc] init];
         vc.OWNERID=self.Kmodel.DEBUGWORKORDERID;
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
-    DTKDropdownMenuView *menuView = [DTKDropdownMenuView dropdownMenuViewWithType:dropDownTypeRightItem frame:CGRectMake(0, 0, 40.f, 40.f) dropdownItems:@[item0,item1,item2,item3] icon:@"more"];
+    DTKDropdownItem *item1 = [DTKDropdownItem itemWithTitle:@"调试工单子表"  callBack:^(NSUInteger index, id info) {
+        ZB_TableViewController * table  = [[ZB_TableViewController alloc] init];
+        table.type=@"调试工单子表";
+        table.search = self.Kmodel.DEBUGWORKORDERNUM;
+        [self.navigationController pushViewController:table animated:YES];
+        
+    }];
+    
+    DTKDropdownItem *item2 = [DTKDropdownItem itemWithTitle:@"发送工作流"  callBack:^(NSUInteger index, id info) {
+        
+    }];
+    
+    DTKDropdownItem *item3 = [DTKDropdownItem itemWithTitle:@"图片上传"  callBack:^(NSUInteger index, id info) {
+        
+    }];
+
+    DTKDropdownItem *item4 = [DTKDropdownItem itemWithTitle:@"保存修改"  callBack:^(NSUInteger index, id info) {
+
+    }];
+    DTKDropdownItem *item5 = [DTKDropdownItem itemWithTitle:@"放弃修改"  callBack:^(NSUInteger index, id info) {
+
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+    }];
+    
+    DTKDropdownMenuView *menuView = [DTKDropdownMenuView dropdownMenuViewWithType:dropDownTypeRightItem frame:CGRectMake(0, 0, 40.f, 40.f) dropdownItems:@[item0,item1,item2,item3,item4,item5] icon:@"more"];
+    
     menuView.currentNav = self.navigationController;
-    menuView.dropWidth = 150.f;
-    menuView.textColor = RGBCOLOR(102, 102, 102);
-    menuView.textFont = [UIFont systemFontOfSize:13.f];
-    menuView.cellSeparatorColor = RGBCOLOR(229, 229, 229);
-    menuView.animationDuration = 0.2f;
+    menuView.dropWidth = 180.f;
+    menuView.textColor = RGBCOLOR(255, 255, 255);
+    menuView.cellColor = RGBCOLOR(46,92,154);
+    menuView.textFont = [UIFont systemFontOfSize:16.f];
+    menuView.cellSeparatorColor = RGBCOLOR(255, 255, 255);
+    menuView.animationDuration = 0.4f;
+    menuView.cellHeight = 50.0f;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:menuView];
+}
+//选择值
+-(void)selectValue:(NSString *)fieldName
+{
+    NSLog(@"选择值%@",fieldName);
+}
+//跳转到子表
+-(void)jumpToDetial:(NSString *)name
+{
+    NSLog(@"跳转到子表%@",name);
+}
+//设置日期
+-(void)setDate:(NSString *)name
+{
+    NSLog(@"设置日期%@",name);
 }
 -(void)initData
 {
@@ -99,7 +126,7 @@
     NSDictionary *dataDic = @{@"data":requestJson};
     
     [HTTPSessionManager getWithUrl:url params:dataDic success:^(id response) {
-        
+         if ((response[@"result"])&&(response[@"result"][@"resultlist"])&&([response[@"result"][@"resultlist"] count]>0)){
         NSDictionary * info = response[@"result"][@"resultlist"][0];
         NSString * DESCRIPTION = info[@"DESCRIPTION"];
         NSString * RESPONS =  info[@"RESPONS"];
@@ -114,7 +141,7 @@
         [self modifyField:@"业主单位" newValue:OWNER];
         [self modifyField:@"项目阶段" newValue:PROSTAGE];
         [self modifyField:@"总容量（MW）" newValue:CAPACITY];
-        
+         }
     } fail:^(NSError *error) {
         
     }];
@@ -141,13 +168,90 @@
     NSDictionary *dataDic = @{@"data":requestJson};
     
     [HTTPSessionManager getWithUrl:url params:dataDic success:^(id response) {
-        
+         if ((response[@"result"])&&(response[@"result"][@"resultlist"])&&([response[@"result"][@"resultlist"] count]>0)){
         NSDictionary * info = response[@"result"][@"resultlist"][0];
         NSString * displayName = info[@"DISPLAYNAME"];
         [self modifyField:fieldName newValue:displayName];
-        
+         }
     } fail:^(NSError *error) {
         
     }];
 }
+-(void)saveData
+{
+    
+    //[self testLine];return;
+    
+    if (![self checkField]) {
+        return;
+    }
+    SoapUtil *soap = [[SoapUtil alloc]initWithNameSpace:@"http://www.ibm.com/maximo" andEndpoint:[NSString stringWithFormat:@"%@/meaweb/services/MOBILESERVICE",BASE_URL]];
+    
+    soap.DicBlock = ^(NSDictionary *dic){
+        SVHUD_Stop
+        NSLog(@"保存结果 %@",dic);
+        if ([dic[@"success"] isEqualToString:@"成功"]) {
+            HUDNormal(@"保存成功");
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                });
+            });
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"UDPLANSTND",@"ACTIONNAME":@"新建或修改故障工单"}];
+        }
+        else
+        {
+            HUDNormal(@"保存失败")
+        }
+    };
+    
+    AccountModel *model = [AccountManager account];
+    
+    NSDictionary *dicy = @{};
+    
+    NSMutableDictionary * md = [self dictionaryData];
+    
+    NSArray *arrays = @[dicy];
+    
+    [md setObject:arrays forKey:@"relationShip"];
+    
+    [md setValue:@"FR" forKey:@"WORKTYPE"];
+    
+    if (!self.Kmodel) {
+        
+        NSArray *arr = @[
+                         @{@"json":[self dictionaryToJson:md]},
+                         @{@"flag":@"1"},
+                         @{@"mboObjectName":@"DEBUGWORKORDER"},
+                         @{@"mboKey":@"DEBUGWORKORDERNUM"},
+                         @{@"personId":model.personId},
+                         ];
+        
+        [soap requestMethods:@"mobileserviceInsertMbo" withDate:arr];
+    }
+    else
+    {
+        NSArray *arr = @[
+                         @{@"json":[self dictionaryToJson:md]},
+                         @{@"flag":@"1"},
+                         @{@"mboObjectName":@"DEBUGWORKORDER"},
+                         @{@"mboKey":@"DEBUGWORKORDERNUM"},
+                         @{@"mboKeyValue":self.Kmodel.DEBUGWORKORDERNUM},
+                         ];
+        
+        [soap requestMethods:@"mobileserviceUpdateMbo" withDate:arr];
+    }
+    
+}
+-(NSString*)dictionaryToJson:(NSDictionary *)dic
+{
+    NSError *parseError = nil;
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
+    
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+}
+-(BOOL)checkField
+{return YES;}
 @end

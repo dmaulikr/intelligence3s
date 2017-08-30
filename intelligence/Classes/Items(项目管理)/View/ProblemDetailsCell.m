@@ -64,7 +64,6 @@
     leftLabel.sd_layout
     .leftSpaceToView(contentView,margin)
     .topSpaceToView(contentView,margin)
-    .widthIs(_problem.leftLabelWight)
     .heightIs(20);
     
     markLabel.sd_layout
@@ -104,236 +103,236 @@
 
 - (void)setProblem:(ProblemModel *)problem{
     _problem = problem;
-    switch (problem.indexPath.section) {
-        case 0:{
-            switch (problem.indexPath.row) {
-                // 问题联络单基本信息
-                case 0:
-                case 1:
-                case 5:{
-                    if (problem.indexPath.row == 0) {
-                        leftLabel.text = @"编号:";
-                        rightLabel.text = problem.PRONUM;
-                    }else if (problem.indexPath.row == 1){
-                        leftLabel.text = @"描述:";
-                        rightLabel.text = problem.PRODESC;
-                    }else if (problem.indexPath.row == 5){
-                        markLabel.hidden = NO;
-                        leftLabel.text = @"现场问题及进展情况描述:";
-                        rightLabel.text = problem.PROBLEMSITUATION;
-                    }
-                    self.cellType = ProblemDetailsTypeLL;
-                }break;
-                
-                case 2:
-                case 3:
-                case 4:{
-                    if (problem.indexPath.row == 2) {
-                        markLabel.hidden = NO;
-                        leftLabel.text = @"问题类型:";
-                        rightLabel.text = problem.PROBLEMTYPE;
-                    }else if (problem.indexPath.row == 3){
-                        markLabel.hidden = NO;
-                        leftLabel.text = @"紧急程度:";
-                        rightLabel.text = problem.EMERGENCY;
-                    }else if (problem.indexPath.row == 4){
-                        leftLabel.text = @"相关故障工单:";
-                        rightLabel.text = problem.WORKORDERNUM;  //.
-                    }
-                    self.cellType = ProblemDetailsTypeLLV;
-                }break;
-                    
-                default:
-                    break;
-            }
-            
-        }break;
-            
-        case 1:{
-            switch (problem.indexPath.row) {
-                // 项目信息
-                case 0:{
-                    markLabel.hidden = NO;
-                    leftLabel.text = @"项目编号:";
-                    rightLabel.text = problem.PRONUM;
-                    self.cellType = ProblemDetailsTypeLLV;
-                }break;
-                    
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:{
-                    if (problem.indexPath.row == 1) {
-                        leftLabel.text = @"项目描述:";
-                        rightLabel.text = problem.PRODESC;
-                    }else if (problem.indexPath.row == 2){
-                        leftLabel.text = @"项目负责人:";
-                        rightLabel.text = problem.PRORES;
-                    }else if (problem.indexPath.row == 3){
-                        leftLabel.text = @"负责人电话:";
-                        rightLabel.text = problem.PHONE2;  //.
-                    }else if (problem.indexPath.row == 4){
-                        leftLabel.text = @"所属中心:";
-                        rightLabel.text = problem.BRANCH;
-                    }else if (problem.indexPath.row == 5){
-                        leftLabel.text = @"项目阶段:";
-                        rightLabel.text = problem.PROSTAGE;
-                    }
-                    self.cellType = ProblemDetailsTypeLL;
-                }
-                    
-                default:
-                    break;
-            }
-            
-        }break;
-            
-        case 2:{
-            switch (problem.indexPath.row) {
-                // 提出问题
-                case 0:{
-                    markLabel.hidden = NO;
-                    leftLabel.text = @"需求提出人:";
-                    rightLabel.text = problem.CREATENAME;
-                    self.cellType = ProblemDetailsTypeLLV;
-                }break;
-                
-                case 1:
-                case 2:
-                case 3:
-                case 4:{
-                    if (problem.indexPath.row == 1) {
-                        leftLabel.text = @"提出人电话:";
-                        rightLabel.text = problem.PHONE3; //.
-                    }else if (problem.indexPath.row == 2){
-                        leftLabel.text = @"提出人部门:";
-                        rightLabel.text = problem.DEPT1;  //.
-                    }else if (problem.indexPath.row == 3){
-                        leftLabel.text = @"提出时间:";
-                        rightLabel.text = problem.CREATEDATE;
-                    }else if (problem.indexPath.row == 4){
-                        leftLabel.text = @"状态:";
-                        rightLabel.text = problem.STATUS;
-                    }
-                    self.cellType = ProblemDetailsTypeLL;
-                    
-                }break;
-                    
-                default:
-                    break;
-            }
-            
-        }break;
-            
-        case 3:{
-            switch (problem.indexPath.row) {
-                //支持部门
-                case 0:
-                case 1:{
-                    if (problem.indexPath.row == 0) {
-                        markLabel.hidden = NO;
-                        leftLabel.text = @"支持部门:";   //.
-                        rightLabel.text = problem.DEPT2;
-                    }else if (problem.indexPath.row == 1){
-                        markLabel.hidden = NO;
-                        leftLabel.text = @"支持部门领导:";  //.
-                        rightLabel.text = problem.LEADER;
-                    }
-                    self.cellType = ProblemDetailsTypeLLV;
-                    
-                }break;
-                    
-                case 2:{
-                    leftLabel.text = @"需求完成时间";    //.
-                    rightLabel.text = problem.RESPONSETIME;
-                    self.cellType = ProblemDetailsTypeLLT;
-                }break;
-                    
-                default:
-                    break;
-            }
-            
-        }break;
-            
-        case 4:{
-            switch (problem.indexPath.row) {
-                // 问题处理
-                case 0:{
-                    markLabel.hidden = NO;
-                    leftLabel.text = @"问题处理人:";   //.
-                    rightLabel.text = problem.SOLVEDBY;
-                    self.cellType = ProblemDetailsTypeLLV;
-                }break;
-                
-                case 1:
-                case 2:{
-                    if (problem.indexPath.row == 1) {
-                        leftLabel.text = @"联系电话:";  //.
-                        rightLabel.text = problem.PHONE3;
-                    }else if (problem.indexPath.row == 2){
-                        leftLabel.text = @"解决人所属部门:";  //.
-                        rightLabel.text = problem.COMPTIME;
-                    }
-                    self.cellType = ProblemDetailsTypeLL;
-                }break;
-                    
-                default:
-                    break;
-            }
-            
-        }break;
-            
-        case 5:{
-            switch (problem.indexPath.row) {
-                // 问题解决
-                case 0:
-                case 1:
-                case 2:{
-                    if (problem.indexPath.row == 0) {
-                        markLabel.hidden = NO;
-                        leftLabel.text = @"抵达时间:";  //.
-                        rightLabel.text = problem.RESPONSETIME;
-                    }else if (problem.indexPath.row == 1){
-                        leftLabel.text = @"完成时间:";  //.
-                        rightLabel.text = problem.RESPONSETIME;
-                    }else if (problem.indexPath.row == 2){
-//                        self.cellType = ProblemDetailsTypeLT;
-                        leftLabel.text = @"解决问题及反馈:"; //.
-                        rightLabel.text = problem.REMARK;
-                    }
-                    self.cellType = ProblemDetailsTypeLLT;
-                }
-                default:
-                    break;
-            }
-            
-        }break;
-            
-        case 6:{
-            switch (problem.indexPath.row) {
-                // 问题确认
-                case 0:{
-                    leftLabel.text = @"是否解决";  //.
-                    self.cellType = ProblemDetailsTypeLR;
-                }break;
-                    
-                case 1:{
-//                    self.cellType = ProblemDetailsTypeLT;
-                    leftLabel.text = @"说明";  //.
-                    rightLabel.text = problem.REMARK;
-                    self.cellType = ProblemDetailsTypeLL;
-                }break;
-                    
-                default:
-                    break;
-            }
-            
-        }break;
-            
-        default:
-            break;
-    }
+//    switch (problem.indexPath.section) {
+//        case 0:{
+//            switch (problem.indexPath.row) {
+//                // 问题联络单基本信息
+//                case 0:
+//                case 1:
+//                case 5:{
+//                    if (problem.indexPath.row == 0) {
+//                        leftLabel.text = @"编号:";
+//                        rightLabel.text = problem.PRONUM;
+//                    }else if (problem.indexPath.row == 1){
+//                        leftLabel.text = @"描述:";
+//                        rightLabel.text = problem.PRODESC;
+//                    }else if (problem.indexPath.row == 5){
+//                        markLabel.hidden = NO;
+//                        leftLabel.text = @"现场问题及进展情况描述:";
+//                        rightLabel.text = problem.PROBLEMSITUATION;
+//                    }
+//                    self.cellType = ProblemDetailsTypeLL;
+//                }break;
+//                
+//                case 2:
+//                case 3:
+//                case 4:{
+//                    if (problem.indexPath.row == 2) {
+//                        markLabel.hidden = NO;
+//                        leftLabel.text = @"问题类型:";
+//                        rightLabel.text = problem.PROBLEMTYPE;
+//                    }else if (problem.indexPath.row == 3){
+//                        markLabel.hidden = NO;
+//                        leftLabel.text = @"紧急程度:";
+//                        rightLabel.text = problem.EMERGENCY;
+//                    }else if (problem.indexPath.row == 4){
+//                        leftLabel.text = @"相关故障工单:";
+//                        rightLabel.text = problem.WORKORDERNUM;  //.
+//                    }
+//                    self.cellType = ProblemDetailsTypeLLV;
+//                }break;
+//                    
+//                default:
+//                    break;
+//            }
+//            
+//        }break;
+//            
+//        case 1:{
+//            switch (problem.indexPath.row) {
+//                // 项目信息
+//                case 0:{
+//                    markLabel.hidden = NO;
+//                    leftLabel.text = @"项目编号:";
+//                    rightLabel.text = problem.PRONUM;
+//                    self.cellType = ProblemDetailsTypeLLV;
+//                }break;
+//                    
+//                case 1:
+//                case 2:
+//                case 3:
+//                case 4:
+//                case 5:{
+//                    if (problem.indexPath.row == 1) {
+//                        leftLabel.text = @"项目描述:";
+//                        rightLabel.text = problem.PRODESC;
+//                    }else if (problem.indexPath.row == 2){
+//                        leftLabel.text = @"项目负责人:";
+//                        rightLabel.text = problem.PRORES;
+//                    }else if (problem.indexPath.row == 3){
+//                        leftLabel.text = @"负责人电话:";
+//                        rightLabel.text = problem.PHONE2;  //.
+//                    }else if (problem.indexPath.row == 4){
+//                        leftLabel.text = @"所属中心:";
+//                        rightLabel.text = problem.BRANCH;
+//                    }else if (problem.indexPath.row == 5){
+//                        leftLabel.text = @"项目阶段:";
+//                        rightLabel.text = problem.PROSTAGE;
+//                    }
+//                    self.cellType = ProblemDetailsTypeLL;
+//                }
+//                    
+//                default:
+//                    break;
+//            }
+//            
+//        }break;
+//            
+//        case 2:{
+//            switch (problem.indexPath.row) {
+//                // 提出问题
+//                case 0:{
+//                    markLabel.hidden = NO;
+//                    leftLabel.text = @"需求提出人:";
+//                    rightLabel.text = problem.CREATENAME;
+//                    self.cellType = ProblemDetailsTypeLLV;
+//                }break;
+//                
+//                case 1:
+//                case 2:
+//                case 3:
+//                case 4:{
+//                    if (problem.indexPath.row == 1) {
+//                        leftLabel.text = @"提出人电话:";
+//                        rightLabel.text = problem.PHONE3; //.
+//                    }else if (problem.indexPath.row == 2){
+//                        leftLabel.text = @"提出人部门:";
+//                        rightLabel.text = problem.DEPT1;  //.
+//                    }else if (problem.indexPath.row == 3){
+//                        leftLabel.text = @"提出时间:";
+//                        rightLabel.text = problem.CREATEDATE;
+//                    }else if (problem.indexPath.row == 4){
+//                        leftLabel.text = @"状态:";
+//                        rightLabel.text = problem.STATUS;
+//                    }
+//                    self.cellType = ProblemDetailsTypeLL;
+//                    
+//                }break;
+//                    
+//                default:
+//                    break;
+//            }
+//            
+//        }break;
+//            
+//        case 3:{
+//            switch (problem.indexPath.row) {
+//                //支持部门
+//                case 0:
+//                case 1:{
+//                    if (problem.indexPath.row == 0) {
+//                        markLabel.hidden = NO;
+//                        leftLabel.text = @"支持部门:";   //.
+//                        rightLabel.text = problem.DEPT2;
+//                    }else if (problem.indexPath.row == 1){
+//                        markLabel.hidden = NO;
+//                        leftLabel.text = @"支持部门领导:";  //.
+//                        rightLabel.text = problem.LEADER;
+//                    }
+//                    self.cellType = ProblemDetailsTypeLLV;
+//                    
+//                }break;
+//                    
+//                case 2:{
+//                    leftLabel.text = @"需求完成时间";    //.
+//                    rightLabel.text = problem.RESPONSETIME;
+//                    self.cellType = ProblemDetailsTypeLLT;
+//                }break;
+//                    
+//                default:
+//                    break;
+//            }
+//            
+//        }break;
+//            
+//        case 4:{
+//            switch (problem.indexPath.row) {
+//                // 问题处理
+//                case 0:{
+//                    markLabel.hidden = NO;
+//                    leftLabel.text = @"问题处理人:";   //.
+//                    rightLabel.text = problem.SOLVEDBY;
+//                    self.cellType = ProblemDetailsTypeLLV;
+//                }break;
+//                
+//                case 1:
+//                case 2:{
+//                    if (problem.indexPath.row == 1) {
+//                        leftLabel.text = @"联系电话:";  //.
+//                        rightLabel.text = problem.PHONE3;
+//                    }else if (problem.indexPath.row == 2){
+//                        leftLabel.text = @"解决人所属部门:";  //.
+//                        rightLabel.text = problem.COMPTIME;
+//                    }
+//                    self.cellType = ProblemDetailsTypeLL;
+//                }break;
+//                    
+//                default:
+//                    break;
+//            }
+//            
+//        }break;
+//            
+//        case 5:{
+//            switch (problem.indexPath.row) {
+//                // 问题解决
+//                case 0:
+//                case 1:
+//                case 2:{
+//                    if (problem.indexPath.row == 0) {
+//                        markLabel.hidden = NO;
+//                        leftLabel.text = @"抵达时间:";  //.
+//                        rightLabel.text = problem.RESPONSETIME;
+//                    }else if (problem.indexPath.row == 1){
+//                        leftLabel.text = @"完成时间:";  //.
+//                        rightLabel.text = problem.RESPONSETIME;
+//                    }else if (problem.indexPath.row == 2){
+////                        self.cellType = ProblemDetailsTypeLT;
+//                        leftLabel.text = @"解决问题及反馈:"; //.
+//                        rightLabel.text = problem.REMARK;
+//                    }
+//                    self.cellType = ProblemDetailsTypeLLT;
+//                }
+//                default:
+//                    break;
+//            }
+//            
+//        }break;
+//            
+//        case 6:{
+//            switch (problem.indexPath.row) {
+//                // 问题确认
+//                case 0:{
+//                    leftLabel.text = @"是否解决";  //.
+//                    self.cellType = ProblemDetailsTypeLR;
+//                }break;
+//                    
+//                case 1:{
+////                    self.cellType = ProblemDetailsTypeLT;
+//                    leftLabel.text = @"说明";  //.
+//                    rightLabel.text = problem.REMARK;
+//                    self.cellType = ProblemDetailsTypeLL;
+//                }break;
+//                    
+//                default:
+//                    break;
+//            }
+//            
+//        }break;
+//            
+//        default:
+//            break;
+//    }
     
     
 }

@@ -42,10 +42,4 @@
 @property (nonatomic,strong)NSString *BRANCH;           // 所属中心
 @property (nonatomic,strong)NSString *DESCRIPTION;      // 描述
 
-
-@property (nonatomic, strong) NSIndexPath *indexPath;
-@property (nonatomic, assign) CGFloat leftLabelWight;
-
-- (NSComparisonResult)compareParkInfo:(ProblemModel *)parkinfo;
-
 @end

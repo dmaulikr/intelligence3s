@@ -95,35 +95,35 @@
 
 - (void)setLedger:(LedgerModel *)ledger{
     _ledger = ledger;
-    leftLabel.sd_layout.widthIs(_ledger.leftLabelWight);
+
     rightLabel.sd_layout.leftSpaceToView(leftLabel,5);
-    switch (_ledger.index) {
-        case 0: leftLabel.text  = @"项目编号:";
-            rightLabel.text = _ledger.PRONUM; break;
-        case 1: leftLabel.text  = @"项目名称:";
-            rightLabel.text = _ledger.DESCRIPTION; break;
-        case 2: leftLabel.text  = @"所属中心:";
-            rightLabel.text = _ledger.BRANCH; break;
-        case 3: leftLabel.text  = @"责任人:";
-            rightLabel.text = _ledger.RESPONS; break;
-        case 4: leftLabel.text  = @"业主单位:";
-            rightLabel.text = _ledger.OWNER; break;
-        case 5: leftLabel.text  = @"签订时间:";
-            rightLabel.text = _ledger.SIGNDATE; break;
-        case 6: leftLabel.text  = @"合同状态:";
-            rightLabel.text = _ledger.CONTRACTSTATUS; break;
-        case 7: leftLabel.text  = @"项目试点:";
-            rightLabel.text = _ledger.TESTPRO; break;
-        case 8: leftLabel.text  = @"项目当前阶段:";
-            rightLabel.text = _ledger.PROSTAGE; break;
-        case 9: leftLabel.text  = @"总厂容量(MW):";
-            rightLabel.text = _ledger.CAPACITY; break;
-        case 10: leftLabel.text  = @"保质期(年):";
-            rightLabel.text = _ledger.PERIOD; break;
-                    
-        default:
-            break;
-    }
+//    switch (_ledger.index) {
+//        case 0: leftLabel.text  = @"项目编号:";
+//            rightLabel.text = _ledger.PRONUM; break;
+//        case 1: leftLabel.text  = @"项目名称:";
+//            rightLabel.text = _ledger.DESCRIPTION; break;
+//        case 2: leftLabel.text  = @"所属中心:";
+//            rightLabel.text = _ledger.BRANCH; break;
+//        case 3: leftLabel.text  = @"责任人:";
+//            rightLabel.text = _ledger.RESPONS; break;
+//        case 4: leftLabel.text  = @"业主单位:";
+//            rightLabel.text = _ledger.OWNER; break;
+//        case 5: leftLabel.text  = @"签订时间:";
+//            rightLabel.text = _ledger.SIGNDATE; break;
+//        case 6: leftLabel.text  = @"合同状态:";
+//            rightLabel.text = _ledger.CONTRACTSTATUS; break;
+//        case 7: leftLabel.text  = @"项目试点:";
+//            rightLabel.text = _ledger.TESTPRO; break;
+//        case 8: leftLabel.text  = @"项目当前阶段:";
+//            rightLabel.text = _ledger.PROSTAGE; break;
+//        case 9: leftLabel.text  = @"总厂容量(MW):";
+//            rightLabel.text = _ledger.CAPACITY; break;
+//        case 10: leftLabel.text  = @"保质期(年):";
+//            rightLabel.text = _ledger.PERIOD; break;
+//                    
+//        default:
+//            break;
+//    }
     
     if (rightLabel.text.length < 1) {
         rightLabel.text = @"暂无数据";
@@ -139,39 +139,39 @@
 
 - (void)setDaily:(DailyModel *)daily{
     _daily = daily;
-    leftLabel.sd_layout.widthIs(_daily.leftLabelWight);
+    //leftLabel.sd_layout.widthIs(_daily.leftLabelWight);
     rightLabel.sd_layout.leftSpaceToView(leftLabel,5);
-    switch (_daily.index) {
-        case 0: leftLabel.text  = @"日志编号:";
-            rightLabel.text = _daily.PRORUNLOGNUM;
-            break;
-        case 1: leftLabel.text  = @"描述:";
-            rightLabel.text = _daily.DESCRIPTION;
-            break;
-        case 2: leftLabel.text  = @"项目编号:";break;
-            
-        case 3: leftLabel.text  = @"所属中心:";
-            rightLabel.text = _daily.BRANCH;
-            break;
-        case 4: leftLabel.text  = @"现场负责人:";
-            rightLabel.text = _daily.UDPRORESC;
-            break;
-        case 5: leftLabel.text  = @"现场联系人:";break;
-            
-        case 6: leftLabel.text  = @"年:";break;
-            
-        case 7: leftLabel.text  = @"月:";break;
-            
-        case 8: leftLabel.text  = @"项目阶段:";
-            rightLabel.text = _daily.PROSTAGE;
-            break;
-        case 9: leftLabel.text  = @"状态:";
-            rightLabel.text = _daily.STATUS;
-            break;
-            
-        default:
-            break;
-    }
+//    switch (_daily.index) {
+//        case 0: leftLabel.text  = @"日志编号:";
+//            rightLabel.text = _daily.PRORUNLOGNUM;
+//            break;
+//        case 1: leftLabel.text  = @"描述:";
+//            rightLabel.text = _daily.DESCRIPTION;
+//            break;
+//        case 2: leftLabel.text  = @"项目编号:";break;
+//            
+//        case 3: leftLabel.text  = @"所属中心:";
+//            rightLabel.text = _daily.BRANCH;
+//            break;
+//        case 4: leftLabel.text  = @"现场负责人:";
+//            rightLabel.text = _daily.UDPRORESC;
+//            break;
+//        case 5: leftLabel.text  = @"现场联系人:";break;
+//            
+//        case 6: leftLabel.text  = @"年:";break;
+//            
+//        case 7: leftLabel.text  = @"月:";break;
+//            
+//        case 8: leftLabel.text  = @"项目阶段:";
+//            rightLabel.text = _daily.PROSTAGE;
+//            break;
+//        case 9: leftLabel.text  = @"状态:";
+//            rightLabel.text = _daily.STATUS;
+//            break;
+//            
+//        default:
+//            break;
+//    }
     
     if (rightLabel.text.length < 1) {
         rightLabel.text = @"暂无数据";

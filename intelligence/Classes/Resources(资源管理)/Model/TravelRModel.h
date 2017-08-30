@@ -35,4 +35,5 @@
 @property (nonatomic,strong)NSString *BRANCHDESC;                  //所属中心
 @property (nonatomic,strong)NSString *LASTFUELCONSUMPTION;         //上次油耗
 @property (nonatomic,strong)NSString *DESCRIPTION;                 //描述
+
 @end

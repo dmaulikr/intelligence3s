@@ -34,18 +34,21 @@
 #import "MaterielsModel.h"
 #import "MaterielsModel.h"
 #import "FanTypeModel.h"
-
+#import "InspectProjectModel.h"
 #import "DailyWorkModel.h"
 #import "ConstructionModel.h"
 #import "HoistingModel.h"
 #import "ToolingManagementModel.h"
-
+#import "ProjectPersonModel.h"
+#import "ProjectCarsModel.h"
 #import "WorkDebugsModel.h"
 #import "RegularModel.h"
 #import "BusinessModel.h"
 #import "RunlogModel.h"
 #import "TripReportModel.h"
 #import "UDPRORUNLOGC.h"
+#import "Runliner.h"
+#import "DetailStockModel.h"
 
 @interface StockViewCell : UITableViewCell
 @property (nonatomic,strong)RegularModel  *regular;
@@ -70,6 +73,7 @@
 @property (nonatomic,strong)RunlogModel *runlog;
 @property (nonatomic,strong)TravelRModel *travel;
 @property (nonatomic,strong)OilRModel *oil;
+@property (nonatomic,strong)InspectProjectModel * inspectProject;
 @property (nonatomic,strong)MaintainModel *maintain;
 @property (nonatomic,strong)OptionsMaintainModel *options;
 @property (nonatomic, strong) ChooseItemNoModel *chooseItemNo;

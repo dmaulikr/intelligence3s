@@ -55,8 +55,11 @@
 @property (nonatomic,copy)NSString *LEAD;
 @property (nonatomic,copy)NSString *UDINSPOBY2;
 @property (nonatomic,copy)NSString *CREATENAME;      // 创建人
+@property (nonatomic,copy)NSString *WOLO2;
 
-
+@property (nonatomic,copy)NSString *LOSTFDL;
+@property (nonatomic,copy)NSString *UDDESCRIP;
+@property (nonatomic,copy)NSString *WOJO7;
 //调试工单
 @property (nonatomic,copy)NSString *PRONUM;
 @property (nonatomic,copy)NSString *STATUS;
@@ -64,6 +67,18 @@
 @property (nonatomic,copy)NSString *PLANSTART;
 @property (nonatomic,copy)NSString *DEBUGWORKORDERNUM;
 @property (nonatomic,copy)NSString *DEBUGWORKORDERID;
+
+@property (nonatomic,copy)NSString *REALCOMPLETENUM;
+@property (nonatomic,copy)NSString *ACTUALSTART;
+@property (nonatomic,copy)NSString *ACTUALEND;
+@property (nonatomic,copy)NSString *UDINSPOBY4;
+@property (nonatomic,copy)NSString *UDINSPOBY5;
+@property (nonatomic,copy)NSString *UDINSPOBY6;
+
+@property (nonatomic,copy)NSString *WORKER1;
+@property (nonatomic,copy)NSString *WORKER2;
+@property (nonatomic,copy)NSString *UDPRORES;
+@property (nonatomic,copy)NSString *UDWPTYPE;
 //技改工单
 //技改标准
 @property (nonatomic,copy)NSString *UDJPNUM;

@@ -75,73 +75,73 @@
 - (void)setProblem:(ProblemModel *)problem{
     
     _problem = problem;
-    leftLabel.sd_layout.widthIs(problem.leftLabelWight);
+    
     rightLabel.sd_layout.leftSpaceToView(leftLabel,5);
-    switch (problem.indexPath.section) {
-        case 0:{
-            switch (problem.indexPath.row) {
-                    // 问题联络单基本信息
-                case 0: leftLabel.text = @"编号:";
-                        rightLabel.text = problem.PRONUM; break;
-                case 1: leftLabel.text = @"描述:";
-                        rightLabel.text = problem.PRODESC; break;
-                default:
-                    break;
-            }
-            
-        }break;
-            
-        case 1:{
-            switch (problem.indexPath.row) {
-                case 1: leftLabel.text = @"项目描述:";
-                        rightLabel.text = problem.PRODESC; break;
-                case 2: leftLabel.text = @"项目负责人:";
-                        rightLabel.text = problem.PRORES; break;
-                case 3: leftLabel.text = @"负责人电话:";
-                        rightLabel.text = problem.PHONE2; break;//.
-                case 4: leftLabel.text = @"所属中心:";
-                        rightLabel.text = problem.BRANCH; break;
-                case 5: leftLabel.text = @"项目阶段:";
-                        rightLabel.text = problem.PROSTAGE; break;
-                default:
-                    break;
-            }
-            
-        }break;
-            
-        case 2:{
-            switch (problem.indexPath.row) {
-              // 提出问题
-                case 1: leftLabel.text = @"提出人电话:";
-                        rightLabel.text = problem.PHONE3; break;//.
-                case 2: leftLabel.text = @"提出人部门:";
-                        rightLabel.text = problem.DEPT1; break; //.
-                case 3: leftLabel.text = @"提出时间:";
-                        rightLabel.text = problem.CREATEDATE; break;
-                case 4: leftLabel.text = @"状态:";
-                        rightLabel.text = problem.STATUS; break;
-                default:
-                    break;
-            }
-            
-        }break;
-            
-        case 4:{
-            switch (problem.indexPath.row) {
-                    // 问题处理
-                case 1:  leftLabel.text = @"联系电话:";  //.
-                         rightLabel.text = problem.PHONE3; break;
-                case 2:  leftLabel.text = @"解决人所属部门:";  //.
-                         rightLabel.text = problem.COMPTIME; break;
-                    default:
-                    break;
-            }
-            
-        }break;
-            
-        default:
-            break;
-    }
+//    switch (problem.indexPath.section) {
+//        case 0:{
+//            switch (problem.indexPath.row) {
+//                    // 问题联络单基本信息
+//                case 0: leftLabel.text = @"编号:";
+//                        rightLabel.text = problem.PRONUM; break;
+//                case 1: leftLabel.text = @"描述:";
+//                        rightLabel.text = problem.PRODESC; break;
+//                default:
+//                    break;
+//            }
+//            
+//        }break;
+//            
+//        case 1:{
+//            switch (problem.indexPath.row) {
+//                case 1: leftLabel.text = @"项目描述:";
+//                        rightLabel.text = problem.PRODESC; break;
+//                case 2: leftLabel.text = @"项目负责人:";
+//                        rightLabel.text = problem.PRORES; break;
+//                case 3: leftLabel.text = @"负责人电话:";
+//                        rightLabel.text = problem.PHONE2; break;//.
+//                case 4: leftLabel.text = @"所属中心:";
+//                        rightLabel.text = problem.BRANCH; break;
+//                case 5: leftLabel.text = @"项目阶段:";
+//                        rightLabel.text = problem.PROSTAGE; break;
+//                default:
+//                    break;
+//            }
+//            
+//        }break;
+//            
+//        case 2:{
+//            switch (problem.indexPath.row) {
+//              // 提出问题
+//                case 1: leftLabel.text = @"提出人电话:";
+//                        rightLabel.text = problem.PHONE3; break;//.
+//                case 2: leftLabel.text = @"提出人部门:";
+//                        rightLabel.text = problem.DEPT1; break; //.
+//                case 3: leftLabel.text = @"提出时间:";
+//                        rightLabel.text = problem.CREATEDATE; break;
+//                case 4: leftLabel.text = @"状态:";
+//                        rightLabel.text = problem.STATUS; break;
+//                default:
+//                    break;
+//            }
+//            
+//        }break;
+//            
+//        case 4:{
+//            switch (problem.indexPath.row) {
+//                    // 问题处理
+//                case 1:  leftLabel.text = @"联系电话:";  //.
+//                         rightLabel.text = problem.PHONE3; break;
+//                case 2:  leftLabel.text = @"解决人所属部门:";  //.
+//                         rightLabel.text = problem.COMPTIME; break;
+//                    default:
+//                    break;
+//            }
+//            
+//        }break;
+//            
+//        default:
+//            break;
+//    }
     
     if (rightLabel.text.length < 1) {
         rightLabel.text = @"暂无数据";

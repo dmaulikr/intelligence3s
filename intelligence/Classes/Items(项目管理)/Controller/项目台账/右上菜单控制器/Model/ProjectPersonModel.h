@@ -23,4 +23,5 @@
 @property (nonatomic, copy) NSString *DEPTNAME;
 @property (nonatomic, copy) NSString *PHONE;
 @property (nonatomic, copy) NSString *EMAIL;
+@property (nonatomic, copy) NSString *PRONUM;
 @end

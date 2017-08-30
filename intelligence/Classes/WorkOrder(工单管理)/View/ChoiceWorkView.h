@@ -10,6 +10,7 @@
 @interface ChoiceWorkView : UIView
 @property (nonatomic,copy)void (^WorkBlock)(NSString *str);
 -(id)initWithFrame:(CGRect)frame choice:(ChoiceType)choice;
+-(id)initWithFrame:(CGRect)frame dataArray:(NSArray*) dataArray;
 /** 展示到view上*/
 -(void)ShowInView:(UIView *)view;
 @end

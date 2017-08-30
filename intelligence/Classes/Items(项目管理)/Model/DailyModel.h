@@ -23,17 +23,8 @@
 @property (nonatomic,copy)NSString *RESPONSID;       // F00433
 @property (nonatomic, copy) NSString *UDPRORUNLOGID; // 965
 @property (nonatomic, copy) NSString *PHONENUN;      // 电话
-
 @property (nonatomic, copy) NSString *CHANGEDATE;
-
 @property (nonatomic, copy) NSString *CONTDNAME;
 @property (nonatomic, copy) NSString *CHANGEBY;
-
-
-
-
-
-@property (nonatomic, assign) NSInteger index;
-@property (nonatomic, assign) NSInteger leftLabelWight;
 
 @end

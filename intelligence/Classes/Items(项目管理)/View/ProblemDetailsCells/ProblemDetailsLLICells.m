@@ -82,99 +82,99 @@
 
 - (void)setProblem:(ProblemModel *)problem{
     _problem = problem;
-    leftLabel.sd_layout.widthIs(_problem.leftLabelWight);
+//    leftLabel.sd_layout.widthIs(_problem.leftLabelWight);
     rightLabel.sd_layout.leftSpaceToView(leftLabel,5);
-    switch (problem.indexPath.section) {
-        case 0:{
-            switch (problem.indexPath.row) {
-                    // 问题联络单基本信息
-                case 2: leftLabel.text = @"问题类型:";
-                        redMark.hidden = NO;
-                        rightLabel.text = problem.PROBLEMTYPE; break;
-                case 3: leftLabel.text = @"紧急程度:";
-                        redMark.hidden = NO;
-                        rightLabel.text = problem.EMERGENCY; break;
-                case 4: leftLabel.text = @"相关故障工单:";
-                        rightLabel.text = problem.WORKORDERNUM; break; //.
-                default:
-                    break;
-            }
-        }break;
-            
-        case 1:{
-            switch (problem.indexPath.row) {
-                // 项目信息
-                case 0: leftLabel.text = @"项目编号:";
-                        redMark.hidden = NO;
-                        rightLabel.text = problem.PRONUM; break;
-                default:
-                    break;
-            }
-        }break;
-            
-        case 2:{
-            switch (problem.indexPath.row) {
-                    // 提出问题
-                case 0: leftLabel.text = @"需求提出人:";
-                        redMark.hidden = NO;
-                        rightLabel.text = problem.CREATENAME; break;
-                default:
-                    break;
-            }
-        }break;
-            
-        case 3:{
-            switch (problem.indexPath.row) {
-                    //支持部门
-                case 0: leftLabel.text = @"支持部门:";
-                        redMark.hidden = NO;
-                        rightLabel.text = problem.DEPT2; break;
-                case 1: leftLabel.text = @"支持部门领导:";
-                        redMark.hidden = NO;
-                        rightLabel.text = problem.LEADER; break;
-                case 2: leftLabel.text = @"支持部门领导:";
-                        rightLabel.text = problem.LEADER;
-                        rightImageView.sd_layout.widthIs(20);
-                        rightImageView.image = [UIImage imageNamed:@"日历"]; break;
-                default:
-                    break;
-            }
-        }break;
-            
-        case 4:{
-            switch (problem.indexPath.row) {
-                    // 问题处理
-                case 0: leftLabel.text = @"问题处理人:";   //.
-                        redMark.hidden = NO;
-                        rightLabel.text = problem.SOLVEDBY; break;
-                default:
-                    break;
-            }
-            
-        }break;
-            
-        case 5:{
-            switch (problem.indexPath.row) {
-                    // 问题解决
-                case 0: leftLabel.text = @"抵达时间:";  //.
-                        redMark.hidden = NO;
-                        rightLabel.text = problem.RESPONSETIME;
-                        rightImageView.sd_layout.widthIs(20);
-                        rightImageView.image = [UIImage imageNamed:@"日历"]; break;
-
-                case 1: leftLabel.text = @"完成时间:";  //.
-                        rightLabel.text = problem.RESPONSETIME;
-                        rightImageView.sd_layout.widthIs(20);
-                        rightImageView.image = [UIImage imageNamed:@"日历"]; break;
-
-                default:
-                    break;
-            }
-        }break;
-            
-        default:
-            break;
-    }
+//    switch (problem.indexPath.section) {
+//        case 0:{
+//            switch (problem.indexPath.row) {
+//                    // 问题联络单基本信息
+//                case 2: leftLabel.text = @"问题类型:";
+//                        redMark.hidden = NO;
+//                        rightLabel.text = problem.PROBLEMTYPE; break;
+//                case 3: leftLabel.text = @"紧急程度:";
+//                        redMark.hidden = NO;
+//                        rightLabel.text = problem.EMERGENCY; break;
+//                case 4: leftLabel.text = @"相关故障工单:";
+//                        rightLabel.text = problem.WORKORDERNUM; break; //.
+//                default:
+//                    break;
+//            }
+//        }break;
+//            
+//        case 1:{
+//            switch (problem.indexPath.row) {
+//                // 项目信息
+//                case 0: leftLabel.text = @"项目编号:";
+//                        redMark.hidden = NO;
+//                        rightLabel.text = problem.PRONUM; break;
+//                default:
+//                    break;
+//            }
+//        }break;
+//            
+//        case 2:{
+//            switch (problem.indexPath.row) {
+//                    // 提出问题
+//                case 0: leftLabel.text = @"需求提出人:";
+//                        redMark.hidden = NO;
+//                        rightLabel.text = problem.CREATENAME; break;
+//                default:
+//                    break;
+//            }
+//        }break;
+//            
+//        case 3:{
+//            switch (problem.indexPath.row) {
+//                    //支持部门
+//                case 0: leftLabel.text = @"支持部门:";
+//                        redMark.hidden = NO;
+//                        rightLabel.text = problem.DEPT2; break;
+//                case 1: leftLabel.text = @"支持部门领导:";
+//                        redMark.hidden = NO;
+//                        rightLabel.text = problem.LEADER; break;
+//                case 2: leftLabel.text = @"支持部门领导:";
+//                        rightLabel.text = problem.LEADER;
+//                        rightImageView.sd_layout.widthIs(20);
+//                        rightImageView.image = [UIImage imageNamed:@"日历"]; break;
+//                default:
+//                    break;
+//            }
+//        }break;
+//            
+//        case 4:{
+//            switch (problem.indexPath.row) {
+//                    // 问题处理
+//                case 0: leftLabel.text = @"问题处理人:";   //.
+//                        redMark.hidden = NO;
+//                        rightLabel.text = problem.SOLVEDBY; break;
+//                default:
+//                    break;
+//            }
+//            
+//        }break;
+//            
+//        case 5:{
+//            switch (problem.indexPath.row) {
+//                    // 问题解决
+//                case 0: leftLabel.text = @"抵达时间:";  //.
+//                        redMark.hidden = NO;
+//                        rightLabel.text = problem.RESPONSETIME;
+//                        rightImageView.sd_layout.widthIs(20);
+//                        rightImageView.image = [UIImage imageNamed:@"日历"]; break;
+//
+//                case 1: leftLabel.text = @"完成时间:";  //.
+//                        rightLabel.text = problem.RESPONSETIME;
+//                        rightImageView.sd_layout.widthIs(20);
+//                        rightImageView.image = [UIImage imageNamed:@"日历"]; break;
+//
+//                default:
+//                    break;
+//            }
+//        }break;
+//            
+//        default:
+//            break;
+//    }
     
     if (rightLabel.text.length < 1) {
         rightLabel.text = @"暂无数据";

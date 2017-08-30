@@ -27,4 +27,5 @@
 @property (nonatomic, copy) NSString * WORKCONTENT;//工作内容
 @property (nonatomic, copy) NSString * UDTRIPREPORTID;//表ID
 @property (nonatomic, copy) NSString * STATUS;//状态
+@property (nonatomic, copy) NSString * DEPTLEADER;//部门领导
 @end

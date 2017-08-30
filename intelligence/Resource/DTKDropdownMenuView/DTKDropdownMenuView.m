@@ -26,7 +26,7 @@ static CGFloat DDPMAX_TABLEVIEW_HEIGHT(){
 }
 
 static CGFloat DDP_TABLEVIEW_HEIGHT = 0.f;
-static const CGFloat DDP_PADDING = 5.f;
+static const CGFloat DDP_PADDING = 10.f;
 
 @interface UIViewController (topest)
 - (UIViewController *)topestViewController;
@@ -205,7 +205,7 @@ UITableViewDataSource
     }];
     
     [self.tableViewTopArrow mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(navBar.mas_bottom);
+        make.top.equalTo(navBar.mas_bottom).offset(10);
         if (self.dropDownType == dropDownTypeTitle) {
             make.centerX.equalTo(self.mas_centerX);
         }else{

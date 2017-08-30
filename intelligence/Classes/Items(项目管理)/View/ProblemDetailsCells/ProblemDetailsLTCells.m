@@ -79,45 +79,45 @@
 
 - (void)setProblem:(ProblemModel *)problem{
     _problem = problem;
-    leftLabel.sd_layout.widthIs(_problem.leftLabelWight);
+    //leftLabel.sd_layout.widthIs(_problem.leftLabelWight);
     rightTextView.sd_layout.leftSpaceToView(leftLabel,5);
-    switch (problem.indexPath.section) {
-        case 0:{
-            switch (problem.indexPath.row) {
-            // 问题联络单基本信息
-                case 5: leftLabel.text = @"现场问题及进展情况描述:";
-                        redMark.hidden = NO;
-                         rightTextView.text = problem.PROBLEMSITUATION; break;
-                default:
-                    break;
-            }
-        }break;
-            
-        case 5:{
-            switch (problem.indexPath.row) {
-                    // 问题解决
-                case 2: leftLabel.text = @"解决问题及反馈:"; //.
-                        rightTextView.text = problem.REMARK; break;
-                    default:
-                    break;
-            }
-            
-        }break;
-            
-        case 6:{
-            switch (problem.indexPath.row) {
-                    // 问题确认
-                case 1: leftLabel.text = @"说明";  //.
-                        rightTextView.text = problem.REMARK;  break;
-                default:
-                    break;
-            }
-            
-        }break;
-            
-        default:
-            break;
-    }
+//    switch (problem.indexPath.section) {
+//        case 0:{
+//            switch (problem.indexPath.row) {
+//            // 问题联络单基本信息
+//                case 5: leftLabel.text = @"现场问题及进展情况描述:";
+//                        redMark.hidden = NO;
+//                         rightTextView.text = problem.PROBLEMSITUATION; break;
+//                default:
+//                    break;
+//            }
+//        }break;
+//            
+//        case 5:{
+//            switch (problem.indexPath.row) {
+//                    // 问题解决
+//                case 2: leftLabel.text = @"解决问题及反馈:"; //.
+//                        rightTextView.text = problem.REMARK; break;
+//                    default:
+//                    break;
+//            }
+//            
+//        }break;
+//            
+//        case 6:{
+//            switch (problem.indexPath.row) {
+//                    // 问题确认
+//                case 1: leftLabel.text = @"说明";  //.
+//                        rightTextView.text = problem.REMARK;  break;
+//                default:
+//                    break;
+//            }
+//            
+//        }break;
+//            
+//        default:
+//            break;
+//    }
     if (rightTextView.text.length < 1) {
         rightTextView.text = @"暂无数据";
         rightTextView.textColor = [UIColor grayColor];

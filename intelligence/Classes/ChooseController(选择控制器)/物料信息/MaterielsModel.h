@@ -26,6 +26,6 @@
 
 @property (nonatomic,copy)NSString *WPITEMID;
 
-@property (nonatomic,assign)NSInteger isnumber;
+
 
 @end

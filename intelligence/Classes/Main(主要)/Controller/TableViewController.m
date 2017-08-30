@@ -44,6 +44,21 @@
 #import "WorkDebugsModel.h"
 #import "TSGDZB_ViewController.h"
 #import "GZGD_ViewController.h"
+#import "XJGD_ViewController.h"
+#import "DJGD_ViewController.h"
+#import "PCGD_ViewController.h"
+#import "JGGD_ViewController.h"
+#import "ZYSGD_ViewController.h"
+#import "XMTJ_ViewController.h"
+#import "XMRB_ViewController.h"
+#import "CCBG_ViewController.h"
+#import "WTLLD_ViewController.h"
+#import "YXJL_ViewController.h"
+#import "GZTBD_ViewController.h"
+#import "CLWX_ViewController.h"
+#import "JYJL_ViewController.h"
+#import "XSJL_ViewController.h"
+#import "KCPD_ViewController.h"
 @interface TableViewController ()
 
 @end
@@ -68,7 +83,7 @@
         _searchBar.keyboardType = UIKeyboardAppearanceDefault;
         _searchBar.placeholder = @"搜索";
         _searchBar.delegate = self;
-        _searchBar.barTintColor = RGBCOLOR(46, 93, 154);
+        _searchBar.barTintColor = RGBCOLOR(46,92,154);
         _searchBar.searchBarStyle = UISearchBarStyleDefault;
         _searchBar.barStyle = UIBarStyleDefault;
         //改变searchBar颜色
@@ -82,7 +97,7 @@
         [_searchbar setHidden:YES];
         [_searchBar setHidden:YES];
     }
-   // self.search = @"";
+
 }
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -133,7 +148,6 @@
         self.navigationItem.rightBarButtonItems = @[rightItem2];
     }
     if ([self.type isEqualToString:@"项目日报"]||[self.type isEqualToString:@"问题联络单"]||[self.type isEqualToString:@"运行记录"]||[self.type isEqualToString:@"故障提报单"]||[self.type isEqualToString:@"行驶记录"]||[self.type isEqualToString:@"加油记录"]||[self.type isEqualToString:@"车辆维修"]||[self.type isEqualToString:@"预警排查工单"]) {
-        
         self.navigationItem.rightBarButtonItems = @[rightItem1];
     }
 }
@@ -141,7 +155,8 @@
 -(void)rightButtonPress{
     
     if ([self.type isEqualToString:@"故障工单"]) {
-        AddFaultViewController * vc = [[AddFaultViewController alloc] init];
+         GZGD_ViewController * vc = [[GZGD_ViewController alloc] init];
+         vc.key = @"故障工单";
          [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"调试工单"])
@@ -154,7 +169,8 @@
     }
     else if ([self.type isEqualToString:@"定检工单"])
     {
-        AddChecksViewController * vc = [[AddChecksViewController alloc] init];
+        DJGD_ViewController * vc = [[DJGD_ViewController alloc] init];
+        vc.key = @"定检工单";
         [self.navigationController pushViewController:vc animated:YES];
         
     }
@@ -168,8 +184,9 @@
     }
     else if ([self.type isEqualToString:@"终验收工单"])
     {
-        AddCheckViewController * vc = [[AddCheckViewController alloc] init];
-         [self.navigationController pushViewController:vc animated:YES];
+        ZYSGD_ViewController * vc = [[ZYSGD_ViewController alloc] init];
+        vc.key = @"终验收工单";
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"预警排查工单"])
     {
@@ -184,44 +201,52 @@
     }
     else if ([self.type isEqualToString:@"项目日报"])
     {
-        DailyAddController * vc = [[DailyAddController alloc] init];
+        XMRB_ViewController * vc = [[XMRB_ViewController alloc] init];
+        vc.key = @"项目日报";
         [self.navigationController pushViewController:vc animated:YES];
         
     }
     else if ([self.type isEqualToString:@"问题联络单"])
     {
-        ProblemAddController * vc = [[ProblemAddController alloc] init];
+        WTLLD_ViewController * vc = [[WTLLD_ViewController alloc] init];
+        vc.key = @"问题联络单";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"出差报告"])
     {
-        TripReportAddViewController * vc = [[TripReportAddViewController alloc] init];
-         [self.navigationController pushViewController:vc animated:YES];
+        CCBG_ViewController * vc = [[CCBG_ViewController alloc] init];
+        vc.key = @"出差报告";
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"运行记录"])
     {
-        RunLogAddViewController * vc = [[RunLogAddViewController alloc] init];
+        YXJL_ViewController * vc = [[YXJL_ViewController alloc] init];
+        vc.key = @"运行记录";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"故障提报单"])
     {
-        FaultAppAddController * vc = [[FaultAppAddController alloc] init];
+        GZTBD_ViewController * vc = [[GZTBD_ViewController alloc] init];
+        vc.key = @"故障提报单";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"行驶记录"])
     {
-        TracelViewController * vc = [[TracelViewController alloc] init];
+        XSJL_ViewController * vc = [[XSJL_ViewController alloc] init];
+        vc.key = @"行驶记录";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"加油记录"])
     {
-        OilRAddViewController * vc = [[OilRAddViewController alloc] init];
+        JYJL_ViewController * vc = [[JYJL_ViewController alloc] init];
+        vc.key = @"加油记录";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"车辆维修"])
     {
-        AddMaintain * vc = [[AddMaintain alloc] init];
-         [self.navigationController pushViewController:vc animated:YES];
+        CLWX_ViewController * vc = [[CLWX_ViewController alloc] init];
+        vc.key = @"车辆维修";
+        [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"库存盘点"])
     {
@@ -374,7 +399,7 @@
     {
         dataDic = [RequestJsonFactry getRequestJsonfor_TSGDZB_With:self.search page:page];
     }
-    
+
     self.task = [HTTPSessionManager getWithUrl:@"/maximo/mobile/common/api" params:dataDic success:^(id response) {
         NSLog(@"response %@",response);
         SVHUD_Stop
@@ -491,6 +516,7 @@
             }
         
     } fail:^(NSError *error) {
+        NSLog(@"111%@",error);
         SVHUD_ERROR(@"网络异常")
         [self.table.mj_header endRefreshing];
         [self.table.mj_footer endRefreshing];
@@ -623,7 +649,7 @@
     {
         WorkDebugsModel * stock = [self.array objectAtIndex:indexPath.row];
         cell.top.text = @"";
-        cell.bottom.text = [NSString stringWithFormat:@"调试区域负责人: %@ 调试组长: %@",stock.RESPONSIBLEPERSON,stock.DEBUGLEADER];
+        cell.bottom.text = [NSString stringWithFormat:@"\n调试区域负责人: %@ \n调试组长: %@",stock.RESPONSIBLEPERSON,stock.DEBUGLEADER];
         [cell.index setText:[NSString stringWithFormat:@"%ld",(long)indexPath.row+1]];
     }
     
@@ -655,36 +681,54 @@
     }
     else if ([self.type isEqualToString:@"巡检工单"])
     {
-        PollingDetailsController * vc = [[PollingDetailsController alloc] init];
-        vc.polling = [self.array objectAtIndex:indexPath.row];
+//        PollingDetailsController * vc = [[PollingDetailsController alloc] init];
+//        vc.polling = [self.array objectAtIndex:indexPath.row];
+        XJGD_ViewController * vc = [[XJGD_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
+        vc.key = @"巡检工单";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"定检工单"])
     {
-        FaultWorkViewController*vc = [[FaultWorkViewController alloc] init];
-        vc.stock = [self.array objectAtIndex:indexPath.row];
-        vc.objectname = @"WORKORDER";
+//        FaultWorkViewController*vc = [[FaultWorkViewController alloc] init];
+//        vc.stock = [self.array objectAtIndex:indexPath.row];
+//        vc.objectname = @"WORKORDER";
+        
+        DJGD_ViewController * vc = [[DJGD_ViewController alloc] init];
+        vc.Kmodel =[self.array objectAtIndex:indexPath.row];
+        vc.key = @"定检工单";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"排查工单"])
     {
-        FaultWorkViewController*vc = [[FaultWorkViewController alloc] init];
-        vc.stock = [self.array objectAtIndex:indexPath.row];
-        vc.objectname = @"WORKORDER";
+//        FaultWorkViewController*vc = [[FaultWorkViewController alloc] init];
+//        vc.stock = [self.array objectAtIndex:indexPath.row];
+//        vc.objectname = @"WORKORDER";
+        
+        PCGD_ViewController * vc = [[PCGD_ViewController alloc] init];
+        FauWorkModel *model = [self.array objectAtIndex:indexPath.row];
+        vc.Kmodel = model;
+        vc.key = @"排查工单";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"技改工单"])
     {
-        FaultWorkViewController*vc = [[FaultWorkViewController alloc] init];
-        vc.stock = [self.array objectAtIndex:indexPath.row];
-        vc.objectname = @"WORKORDER";
+//        FaultWorkViewController*vc = [[FaultWorkViewController alloc] init];
+//        vc.stock = [self.array objectAtIndex:indexPath.row];
+//        vc.objectname = @"WORKORDER";
+        JGGD_ViewController * vc = [[JGGD_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
+        vc.key = @"技改工单";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"终验收工单"])
     {
-        FaultWorkViewController*vc = [[FaultWorkViewController alloc] init];
-        vc.stock = [self.array objectAtIndex:indexPath.row];
-        vc.objectname = @"WORKORDER";
+//        FaultWorkViewController*vc = [[FaultWorkViewController alloc] init];
+//        vc.stock = [self.array objectAtIndex:indexPath.row];
+//        vc.objectname = @"WORKORDER";
+        ZYSGD_ViewController * vc = [[ZYSGD_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
+        vc.key = @"终验收工单";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"预警排查工单"])
@@ -699,66 +743,96 @@
     }
     else if ([self.type isEqualToString:@"项目台账"])
     {
-        LedgerDetailsController *vc = [[LedgerDetailsController alloc] init];
-        vc.ledger = [self.array objectAtIndex:indexPath.row];
+//        LedgerDetailsController *vc = [[LedgerDetailsController alloc] init];
+//        vc.ledger = [self.array objectAtIndex:indexPath.row];
+        XMTJ_ViewController * vc = [[XMTJ_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
+        vc.key = @"项目台账";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"项目日报"])
     {
-        DailyDetailController * vc = [[DailyDetailController alloc] init];
-        vc.daily = [self.array objectAtIndex:indexPath.row];
+//        DailyDetailController * vc = [[DailyDetailController alloc] init];
+//        vc.daily = [self.array objectAtIndex:indexPath.row];
+        XMRB_ViewController * vc = [[XMRB_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
+        vc.key = @"项目日报";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"问题联络单"])
     {
-        ProblemDetailsController * vc = [[ProblemDetailsController alloc] init];
-        vc.problem = [self.array objectAtIndex:indexPath.row];
+//        ProblemDetailsController * vc = [[ProblemDetailsController alloc] init];
+//        vc.problem = [self.array objectAtIndex:indexPath.row];
+        WTLLD_ViewController * vc = [[WTLLD_ViewController alloc] init];
+        vc.Kmodel =[self.array objectAtIndex:indexPath.row];
+        vc.key = @"问题联络单";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"出差报告"])
     {
-        TripReportDetailsViewController * vc = [[TripReportDetailsViewController alloc] init];
-        vc.model = [self.array objectAtIndex:indexPath.row];
+//        TripReportDetailsViewController * vc = [[TripReportDetailsViewController alloc] init];
+//        vc.model = [self.array objectAtIndex:indexPath.row];
+        CCBG_ViewController * vc = [[CCBG_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
+        vc.key = @"出差报告";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"运行记录"])
     {
-        RunLogDetailsViewController * vc = [[RunLogDetailsViewController alloc] init];
-        vc.runlogModel = [self.array objectAtIndex:indexPath.row];
+//        RunLogDetailsViewController * vc = [[RunLogDetailsViewController alloc] init];
+//        vc.runlogModel = [self.array objectAtIndex:indexPath.row];
+        YXJL_ViewController *vc = [[YXJL_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
+        vc.key = @"运行记录";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"故障提报单"])
     {
-        FaultAppDetailsViewController * vc =[[FaultAppDetailsViewController alloc] init];
-        vc.pault = [self.array objectAtIndex:indexPath.row];
+//        FaultAppDetailsViewController * vc =[[FaultAppDetailsViewController alloc] init];
+//        vc.pault = [self.array objectAtIndex:indexPath.row];
+        GZTBD_ViewController * vc = [[GZTBD_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
+        vc.key = @"故障提报单";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"行驶记录"])
     {
-        DetailsTravelViewController * vc = [[DetailsTravelViewController alloc] init];
-        vc.stock =[self.array objectAtIndex:indexPath.row];
-        vc.objectname = @"UDCARDRIVELOG";
+//        DetailsTravelViewController * vc = [[DetailsTravelViewController alloc] init];
+//        vc.stock =[self.array objectAtIndex:indexPath.row];
+//        vc.objectname = @"UDCARDRIVELOG";
+        XSJL_ViewController * vc = [[XSJL_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
+        vc.key = @"行驶记录";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"加油记录"])
     {
-        DetailsOilViewController * vc = [[DetailsOilViewController alloc] init];
-        vc.stock =[self.array objectAtIndex:indexPath.row];
-        vc.objectname = @"UDCARFUELCHARGE";
+//        DetailsOilViewController * vc = [[DetailsOilViewController alloc] init];
+//        vc.stock =[self.array objectAtIndex:indexPath.row];
+//        vc.objectname = @"UDCARFUELCHARGE";
+        JYJL_ViewController * vc = [[JYJL_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
+        vc.key = @"加油记录";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"车辆维修"])
     {
-        DetailsMaintainViewController * vc = [[DetailsMaintainViewController alloc] init];
-        vc.maintain =[self.array objectAtIndex:indexPath.row];
-        vc.objectname = @"UDCARMAINLOG";
+//        DetailsMaintainViewController * vc = [[DetailsMaintainViewController alloc] init];
+//        vc.maintain =[self.array objectAtIndex:indexPath.row];
+//        vc.objectname = @"UDCARMAINLOG";
+        CLWX_ViewController * vc = [[CLWX_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
+        vc.key = @"车辆维修";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"库存盘点"])
     {
-        DetailsStockViewController * vc = [[DetailsStockViewController alloc] init];
-        vc.stock = [self.array objectAtIndex:indexPath.row];
-        vc.objectname = @"UDSTOCK";
+//        DetailsStockViewController * vc = [[DetailsStockViewController alloc] init];
+//        vc.stock = [self.array objectAtIndex:indexPath.row];
+//        vc.objectname = @"UDSTOCK";
+        KCPD_ViewController * vc = [[KCPD_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
+        vc.key = @"库存盘点";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"调试工单子表"])

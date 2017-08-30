@@ -96,11 +96,6 @@
 
 -(void)back{
     NSLog(@"返回了");
-        for (WorksPlanModel *mater in self.dataArray) {
-            if (mater.isnumber ==1) {
-                [self.addArray addObject:mater];
-            }
-        }
         if (self.updataCellClick) {
             self.updataCellClick(self.addArray,_isModify);
         }

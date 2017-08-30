@@ -47,7 +47,7 @@
 
 -(void)createNav{
     _naView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, 44)];
-    _naView.backgroundColor = RGBCOLOR(46, 93, 154);
+    _naView.backgroundColor = RGBCOLOR(46,92,154);
     [self.view addSubview:_naView];
     [_naView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_top).offset(64);
@@ -63,7 +63,7 @@
     _searchBar.keyboardType = UIKeyboardAppearanceDefault;
     _searchBar.placeholder = @"搜索";
     _searchBar.delegate = self;
-    _searchBar.barTintColor = RGBCOLOR(46, 93, 154);
+    _searchBar.barTintColor = RGBCOLOR(46,92,154);
     _searchBar.searchBarStyle = UISearchBarStyleDefault;
     _searchBar.barStyle = UIBarStyleDefault;
     [_naView addSubview:_searchBar];

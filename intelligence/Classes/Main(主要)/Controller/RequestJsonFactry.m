@@ -393,4 +393,274 @@
 {
     return nil;
 }
+//工单任务
++(NSDictionary*)getRequestJsonfor_GDRW_With:(NSString*) search page:(NSInteger)page{
+    
+    search = search.length>0?search:@"";
+    
+    NSDictionary *requestDic = @{@"appid":@"UDWOACTIVITY",
+                                 @"objectname":@"UDWOACTIVITY",
+                                 @"curpage":@(page),
+                                 @"showcount":@(20),
+                                 @"option":@"read",
+                                 @"condition":@{@"PARENT":search}
+                                 };
+    NSString *requestJson = kDictionaryToJson(requestDic)
+    NSDictionary *dataDic = @{@"data":requestJson};
+    return dataDic;
+}
++(NSDictionary*)getRequestJsonfor_GDRW2_With:(NSString*) search page:(NSInteger)page{
+    
+    search = search.length>0?search:@"";
+    
+    NSDictionary *requestDic = @{@"appid":@"WOACTIVITY",
+                                 @"objectname":@"WOACTIVITY",
+                                 @"curpage":@(page),
+                                 @"showcount":@(20),
+                                 @"option":@"read",
+                                 @"condition":@{@"PARENT":search}
+                                 };
+    NSString *requestJson = kDictionaryToJson(requestDic)
+    NSDictionary *dataDic = @{@"data":requestJson};
+    return dataDic;
+}
+//物料信息
++(NSDictionary*)getRequestJsonfor_WLXX_With:(NSString*) search page:(NSInteger)page
+{
+    search = search.length>0?search:@"";
+    
+   NSDictionary *requestDic = @{@"appid":@"WPMATERIAL",
+                                 @"objectname":@"WPMATERIAL",
+                                 @"curpage":@(page),
+                                 @"showcount":@(20),
+                                 @"option":@"read",
+                                 @"condition":@{@"WONUM":search}};
+    NSString *requestJson = kDictionaryToJson(requestDic)
+    NSDictionary *dataDic = @{@"data":requestJson};
+    return dataDic;
+}
+//巡检项目
++(NSDictionary*)getRequestJsonfor_XJXM_With:(NSString*) search page:(NSInteger)page
+{
+    search = search.length>0?search:@"";
+    
+    NSDictionary *requestDic = @{@"appid":@"UDINSPROJECT",
+                                 @"objectname":@"UDINSPROJECT",
+                                 @"curpage":@(page),
+                                 @"showcount":@(20),
+                                 @"option":@"read",
+                                 @"orderby":@"JPTASK DESC",
+                                 @"condition":@{@"INSPONUM":search}};
+    NSString *requestJson = kDictionaryToJson(requestDic)
+    NSDictionary *dataDic = @{@"data":requestJson};
+    return dataDic;
+}
+//不合格项目
++(NSDictionary*)getRequestJsonfor_BHGXM_With:(NSString*) search page:(NSInteger)page
+{
+    search = search.length>0?search:@"";
+    
+    NSDictionary *requestDic = @{@"appid":@"UDINSPROJECT",
+                                 @"objectname":@"UDINSPROJECT",
+                                 @"curpage":@(page),
+                                 @"showcount":@(20),
+                                 @"option":@"read",
+                                 @"orderby":@"JPTASK DESC",
+                                 @"condition":@{@"INSPONUM":search,@"OK":@(0)}};
+    NSString *requestJson = kDictionaryToJson(requestDic)
+    NSDictionary *dataDic = @{@"data":requestJson};
+    return dataDic;
+}
+//风机子表
++(NSDictionary*)getRequestJsonfor_FJZB_With:(NSString*) search page:(NSInteger)page
+{
+    search = search.length>0?search:@"";
+    
+
+        NSDictionary * requestDic = @{
+                       @"appid"     :@"UDFANDETAILS",
+                       @"objectname":@"UDFANDETAILS",
+                       @"curpage"   :@(page),
+                       @"showcount" :@(20),
+                       @"option"    :@"read",
+                       @"condition" :@{@"siteid":@"=MWSITE",
+                                       @"PRONUM":search}
+                       };
+    
+    NSString *requestJson = kDictionaryToJson(requestDic)
+    NSDictionary *dataDic = @{@"data":requestJson};
+    return dataDic;
+}
+//项目人员
++(NSDictionary*)getRequestJsonfor_XMRY_With:(NSString*) search page:(NSInteger)page
+{
+    search = search.length>0?search:@"";
+    
+    NSDictionary *requestDic = @{
+                                 @"appid"     :@"PERSONPRO",
+                                 @"objectname":@"PERSONPRO",
+                                 @"curpage"   :@(page),
+                                 @"showcount" :@(20),
+                                 @"option"    :@"read",
+                                 @"condition" :@{@"PRONUM":search,@"MAINPROJECT":@"Y"}
+                                 };
+    
+    NSString *requestJson = kDictionaryToJson(requestDic)
+    NSDictionary *dataDic = @{@"data":requestJson};
+    return dataDic;
+}
+//项目车辆
++(NSDictionary*)getRequestJsonfor_XMCL_With:(NSString*) search page:(NSInteger)page
+{
+    search = search.length>0?search:@"";
+    
+    NSDictionary *requestDic = @{
+                                 @"appid"     :@"UDVEHICLE",
+                                 @"objectname":@"UDVEHICLE",
+                                 @"curpage"   :@(page),
+                                 @"showcount" :@(20),
+                                 @"option"    :@"read",
+                                 @"condition" :@{@"PRONUM":search}
+                                 };
+    
+    NSString *requestJson = kDictionaryToJson(requestDic)
+    NSDictionary *dataDic = @{@"data":requestJson};
+    return dataDic;
+}
+//土建阶段日报
++(NSDictionary*)getRequestJsonfor_TJJDRB_With:(NSString*) search page:(NSInteger)page
+{
+    search = search.length>0?search:@"";
+        
+    NSDictionary *requestDic = @{
+                                 @"appid"     :@"UDPRORUNLOGLINE1",
+                                 @"objectname":@"UDPRORUNLOGLINE1",
+                                 @"curpage"   :@(page),
+                                 @"showcount" :@(20),
+                                 @"option"    :@"read",
+                                 @"condition" :@{@"PRORUNLOGNUM":search},
+                                 };
+    
+    NSString *requestJson = kDictionaryToJson(requestDic)
+    NSDictionary *dataDic = @{@"data":requestJson};
+    return dataDic;
+}
+//吊装调试日报
++(NSDictionary*)getRequestJsonfor_DJTSRB_With:(NSString*) search page:(NSInteger)page
+{
+    
+    search = search.length>0?search:@"";
+    
+    NSDictionary *requestDic = @{
+                                 @"appid"     :@"UDPRORUNLOGLINE2",
+                                 @"objectname":@"UDPRORUNLOGLINE2",
+                                 @"curpage"   :@(page),
+                                 @"showcount" :@(20),
+                                 @"option"    :@"read",
+                                 @"condition" :@{@"PRORUNLOGNUM":search},
+                                 };
+    
+    NSString *requestJson = kDictionaryToJson(requestDic)
+    NSDictionary *dataDic = @{@"data":requestJson};
+    return dataDic;
+}
+//工作日报
++(NSDictionary*)getRequestJsonfor_GZRB_With:(NSString*) search page:(NSInteger)page
+{
+    search = search.length>0?search:@"";
+    
+    NSDictionary *dic = @{
+                          @"PRORUNLOGNUM":search,
+                          };
+    
+    NSDictionary *requestDic = @{
+                                 @"appid"     :@"UDPRORUNLOGLINE",
+                                 @"objectname":@"UDPRORUNLOGLINE",
+                                 @"curpage"   :@(page),
+                                 @"showcount" :@(20),
+                                 @"option"    :@"read",
+                                 @"orderby"   :@"RUNLOGDATE DESC",
+                                 @"condition" :dic,
+                                 };
+    
+    NSString *requestJson = kDictionaryToJson(requestDic)
+    NSDictionary *dataDic = @{@"data":requestJson};
+    return dataDic;
+}
+//工装管理
++(NSDictionary*)getRequestJsonfor_GZGL_With:(NSString*) search page:(NSInteger)page
+{
+    search = search.length>0?search:@"";
+    
+    NSDictionary *dic = @{
+                          @"PRORUNLOGNUM":search,
+                          };
+    
+    NSDictionary *requestDic = @{
+                                 @"appid"     :@"UDPRORUNLOGLINE4",
+                                 @"objectname":@"UDPRORUNLOGLINE4",
+                                 @"curpage"   :@(page),
+                                 @"showcount" :@(20),
+                                 @"option"    :@"read",
+                                 @"condition" :dic,
+                                 };
+    
+    NSString *requestJson = kDictionaryToJson(requestDic)
+    NSDictionary *dataDic = @{@"data":requestJson};
+    return dataDic;
+}
+//运行日志
++(NSDictionary*)getRequestJsonfor_YXRZ_With:(NSString*) search page:(NSInteger)page
+{
+    search = search.length>0?search:@"";
+
+    NSDictionary *requestDic = @{
+                                 @"appid"     :@"UDRUNLOG",
+                                 @"objectname":@"UDRUNLOGR",
+                                 @"curpage"   :@(page),
+                                 @"showcount" :@(20),
+                                 @"option"    :@"read",
+                                 @"orderby"   :@"LOGNUM DESC",
+                                 @"sinorsearch":@{@"INSPONUM":search,@"DESCRIPTION":search}
+                                 };
+    
+    NSString *requestJson = kDictionaryToJson(requestDic)
+    NSDictionary *dataDic = @{@"data":requestJson};
+    return dataDic;
+}
+//盘点明细行
++(NSDictionary*)getRequestJsonfor_PDMXH_With:(NSString*) search1 search2:(NSString*) search2 page:(NSInteger)page
+{
+    search1 = search1.length>0?search1:@"";
+    search2 = search2.length>0?search2:@"";
+    
+    NSDictionary *requestDic = @{
+                                 @"appid"     :@"UDSTOCKLINE",
+                                 @"objectname":@"UDSTOCKLINE",
+                                 @"curpage"   :@(page),
+                                 @"showcount" :@(20),
+                                 @"option"    :@"read",
+                                 @"condition" :@{@"LGORT":search1,@"STOCKNUM":search2}
+                                 };
+    NSString *requestJson = kDictionaryToJson(requestDic)
+    NSDictionary *dataDic = @{@"data":requestJson};
+    return dataDic;
+}
++(NSDictionary*)getRequestJsonfor_DVXX_With:(NSString*) search1 search2:(NSString*) search2 page:(NSInteger)page
+{
+    search1 = search1.length>0?search1:@"";
+
+    
+    NSDictionary *requestDic = @{
+                                 @"appid"     :@"ANALYSIS",
+                                 @"objectname":@"ANALYSIS",
+                                 @"curpage"   :@(page),
+                                 @"showcount" :@(20000),
+                                 @"option"    :@"read",
+                                 @"condition" :@{@"LGORT":search1,@"STOCKNUM":search2}
+                                 };
+    NSString *requestJson = kDictionaryToJson(requestDic)
+    NSDictionary *dataDic = @{@"data":requestJson};
+    return dataDic;
+}
 @end

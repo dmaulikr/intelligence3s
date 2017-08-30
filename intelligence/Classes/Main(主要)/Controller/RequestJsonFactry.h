@@ -75,4 +75,46 @@
 //风机
 +(NSDictionary*)getRequestJsonfor_FJ_With:(NSString*) search page:(NSInteger)page;
 
+//工单任务
++(NSDictionary*)getRequestJsonfor_GDRW_With:(NSString*) search page:(NSInteger)page;
+
+//工单任务
++(NSDictionary*)getRequestJsonfor_GDRW2_With:(NSString*) search page:(NSInteger)page;
+
+//物料信息
++(NSDictionary*)getRequestJsonfor_WLXX_With:(NSString*) search page:(NSInteger)page;
+
+//巡检项目
++(NSDictionary*)getRequestJsonfor_XJXM_With:(NSString*) search page:(NSInteger)page;
+
+//不合格项目
++(NSDictionary*)getRequestJsonfor_BHGXM_With:(NSString*) search page:(NSInteger)page;
+
+//风机子表
++(NSDictionary*)getRequestJsonfor_FJZB_With:(NSString*) search page:(NSInteger)page;
+
+//项目人员
++(NSDictionary*)getRequestJsonfor_XMRY_With:(NSString*) search page:(NSInteger)page;
+
+//项目车辆
++(NSDictionary*)getRequestJsonfor_XMCL_With:(NSString*) search page:(NSInteger)page;
+
+//土建阶段日报
++(NSDictionary*)getRequestJsonfor_TJJDRB_With:(NSString*) search page:(NSInteger)page;
+
+//吊装调试日报
++(NSDictionary*)getRequestJsonfor_DJTSRB_With:(NSString*) search page:(NSInteger)page;
+
+//工作日报
++(NSDictionary*)getRequestJsonfor_GZRB_With:(NSString*) search page:(NSInteger)page;
+
+//工装管理
++(NSDictionary*)getRequestJsonfor_GZGL_With:(NSString*) search page:(NSInteger)page;
+
+//运行日志
++(NSDictionary*)getRequestJsonfor_YXRZ_With:(NSString*) search page:(NSInteger)page;
+
+//盘点明细行
++(NSDictionary*)getRequestJsonfor_PDMXH_With:(NSString*) search page:(NSInteger)page;
+
 @end

@@ -77,7 +77,6 @@
     model.OWNERNAME = SettingContent(_LLI3);
 //    model.shijiwancheng = SettingContent(_LLI5);
     model.TYPE = @"add";
-    model.isnumber = 1;
     if (self.backModel) {
         self.backModel(model);
     }

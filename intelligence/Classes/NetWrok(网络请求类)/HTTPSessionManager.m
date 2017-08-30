@@ -2,7 +2,7 @@
 //  HTTPSessionManager.m
 //  Recreation
 //
-//  Created by 闫chris on 16/5/11.
+//  Created by chris on 16/5/11.
 //  Copyright © 2016年 chris. All rights reserved.
 //
 
@@ -96,7 +96,7 @@ static NSMutableArray *tasks;
         sessionTask = [manager GET:urlStr parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//            DLog(@"请求结果=%@",responseObject);
+
             if (success) {
                 
                 if (params[@"data"]) {

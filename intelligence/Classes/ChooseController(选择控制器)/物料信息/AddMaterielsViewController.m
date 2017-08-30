@@ -65,7 +65,6 @@
     model.LOCATION = SettingContent(_LLI5);
     model.LOCDESC = SettingContent(_LL6);
     model.TYPE = @"add";
-    model.isnumber = 1;
     if (self.backMater) {
         self.backMater(model);
     }

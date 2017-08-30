@@ -424,8 +424,7 @@
         case 6:
         case 7:{
             DailyDetailsCell *cell = [DailyDetailsCell cellWithTableView:tableView];
-            _daily.leftLabelWight = 110;
-            _daily.index = indexPath.section;
+
             cell.daily = _daily;
             [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             return cell;
@@ -437,8 +436,7 @@
         case 8:
         case 9:{
             ProcessDetailsCell *cell = [ProcessDetailsCell cellWithTableView:tableView];
-            _daily.leftLabelWight = 110;
-            _daily.index = indexPath.section;
+    
             cell.daily = _daily;
             [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             return cell;
@@ -448,7 +446,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    _daily.index = indexPath.section;
+
     switch (indexPath.section) {
         case 2:
         case 5:
@@ -544,14 +542,6 @@
     
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

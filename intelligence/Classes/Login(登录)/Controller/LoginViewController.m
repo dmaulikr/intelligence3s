@@ -39,7 +39,7 @@
     [super viewDidLoad];
     [self createUI];
     [self.remember setHidden:YES];
-    
+    _number = 1;
         //检查更新
 }
 -(void)update
@@ -54,7 +54,6 @@
     NSString * version=app_Version;
     
     if (data) {
-        
         version = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"最新版本 %@",version);
     }
@@ -108,7 +107,7 @@
     self.login.layer.cornerRadius = 5;
     //读取账号
     self.userName.text = [USERDEFAULT objectForKey:@"userName"];
-    self.passWord.text = [USERDEFAULT objectForKey:@"password"];
+    //self.passWord.text = [USERDEFAULT objectForKey:@"password"];
     if (self.userName.text.length) {
         self.remember.selected = YES;
     }
@@ -220,15 +219,15 @@
             }
             account.name = str;
             [AccountManager saveAccount:account];
-            if (self.remember.selected) {
+            
+            
                 //存储帐号
                 [USERDEFAULT setObject:self.userName.text forKey:@"userName"];
                 [USERDEFAULT setObject:self.passWord.text forKey:@"password"];
-            }else{
-                [USERDEFAULT removeObjectForKey:@"userName"];
-                [USERDEFAULT removeObjectForKey:@"password"];
-            }
+            
+            
             [self dismissViewControllerAnimated:YES completion:^{
+                
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindUpdateNumberOfTask" object:nil];
                 
                 //通知上报统计信息
@@ -240,7 +239,6 @@
         }else if(KCode(@"USER-E-103")){
             SVHUD_ERROR(@"不能重复登录");
         }
-        
     } fail:^(NSError *error) {
         SVHUD_ERROR(@"网络异常");
     }];

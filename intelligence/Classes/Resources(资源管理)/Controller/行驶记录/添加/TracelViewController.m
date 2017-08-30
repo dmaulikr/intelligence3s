@@ -185,6 +185,7 @@
     WEAKSELF
     self.LLI1 = [PersonalSettingItem itemWithIcon:@"more_next_icon" withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"车牌号:" type:PersonalSettingItemTypeArrow];
     _LLI1.operation = ^{
+        
         DetailsSearchController *details = [[DetailsSearchController alloc]init];
         details.BackBlock = ^(id model){
             OptionsMaintainModel *options = (OptionsMaintainModel *)model;

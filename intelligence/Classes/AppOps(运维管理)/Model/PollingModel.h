@@ -31,6 +31,9 @@
 @property (nonatomic,strong)NSString *BRANCHDESC;
 @property (nonatomic,strong)NSString *FJDESC;
 @property (nonatomic,strong)NSString *INSPOBY3;
+@property (nonatomic,strong)NSString *INSPOBY4;
+@property (nonatomic,strong)NSString *INSPOBY5;
+@property (nonatomic,strong)NSString *INSPOBY6;
 @property (nonatomic,strong)NSString *JPNUM;
 @property (nonatomic,strong)NSString *CHANGEBYNAME;      // 创建人
 @property (nonatomic,strong)NSString *OKTIME;

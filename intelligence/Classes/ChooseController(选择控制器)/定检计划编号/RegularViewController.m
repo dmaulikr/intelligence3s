@@ -76,7 +76,8 @@
                                  @"objectname":@"REGULARINSPECTIONPLANLINK",
                                  @"curpage":@(page),
                                  @"showcount":@(20),
-                                 @"option":@"read"};
+                                 @"option":@"read",
+                                 @"orderby":@"SERIALNUMBER DESC"};
     NSString *requestJson = kDictionaryToJson(requestDic)
     NSDictionary *dataDic = @{@"data":requestJson};
     
@@ -152,6 +153,7 @@
                                  @"showcount":@(20),
                                  @"option":@"read",
                                  @"sinorsearch":dic,
+                                 @"orderby":@"SERIALNUMBER DESC"
                                  };
     
     NSString *requestJson = kDictionaryToJson(requestDic)

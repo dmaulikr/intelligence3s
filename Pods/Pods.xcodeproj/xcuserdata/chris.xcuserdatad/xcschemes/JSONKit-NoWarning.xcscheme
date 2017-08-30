@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "153298C28F171DAB34506507A8E1A36C"
-               BuildableName = "libJSONKit-NoWarning.a"
+               BlueprintIdentifier = "C34907BE5BD26093A30DECD374885C1E"
+               BuildableName = "JSONKit_NoWarning.framework"
                BlueprintName = "JSONKit-NoWarning"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "153298C28F171DAB34506507A8E1A36C"
-            BuildableName = "libJSONKit-NoWarning.a"
+            BlueprintIdentifier = "C34907BE5BD26093A30DECD374885C1E"
+            BuildableName = "JSONKit_NoWarning.framework"
             BlueprintName = "JSONKit-NoWarning"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "153298C28F171DAB34506507A8E1A36C"
-            BuildableName = "libJSONKit-NoWarning.a"
-            BlueprintName = "JSONKit-NoWarning"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

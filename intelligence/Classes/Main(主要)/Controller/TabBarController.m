@@ -56,7 +56,10 @@
     
     items = self.tabBar.items;
     self.tabBar.tintColor=[UIColor colorWithRed:43.0/255.0 green:90.0/255.0 blue:156.0/255.0 alpha:1];
-    self.tabBar.unselectedItemTintColor = [UIColor blackColor];
+    
+    if ([self.tabBar respondsToSelector:@selector(setUnselectedItemTintColor:)]) {
+        [self.tabBar setUnselectedItemTintColor:[UIColor blackColor]];
+    }
     UITabBarItem *functionItem = items[0];
     functionItem.image = [[UIImage imageNamed:@"ic_function.png"]
                       imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -72,7 +75,11 @@
     processItem.selectedImage = [[UIImage imageNamed:@"ic_float_down.png"]
                             imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //processItem.badgeColor=[UIColor colorWithRed:43.0/255.0 green:90.0/255.0 blue:156.0/255.0 alpha:1];
-    processItem.badgeColor=[UIColor redColor];
+    if([processItem respondsToSelector:@selector(setBadgeColor:)])
+    {
+        processItem.badgeColor=[UIColor redColor];
+    }
+    
     UITabBarItem *myselfItem = items[2];
     myselfItem.image = [[UIImage imageNamed:@"ic_me.png"]
                          imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

@@ -1,4 +1,6 @@
-platform :ios,’7.0’
+platform :ios,’8.3’
+use_frameworks!
+target 'intelligence’ do
 pod 'SDWebImage'
 pod 'AFNetworking'
 pod 'MJRefresh'
@@ -7,5 +9,4 @@ pod 'Masonry'
 pod 'IQKeyboardManager'
 pod 'ASIHTTPRequest'
 pod 'JSONKit-NoWarning'
-pod 'Pgyer'
-pod 'PgyUpdate'
+end

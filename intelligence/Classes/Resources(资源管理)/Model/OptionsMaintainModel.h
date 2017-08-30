@@ -19,4 +19,6 @@
 @property (nonatomic,copy) NSString *PRONUM;
 @property (nonatomic,copy) NSString *PRODESC;
 @property (nonatomic,copy) NSString *TOTALMILEAGE;
+@property (nonatomic,copy) NSString *VEHICLENAME;
+@property (nonatomic,copy) NSString *PERSON;
 @end

@@ -23,6 +23,21 @@
     [super didReceiveMemoryWarning];
     
 }
+//选择值
+-(void)selectValue:(NSString *)fieldName
+{
+    NSLog(@"选择值%@",fieldName);
+}
+//跳转到子表
+-(void)jumpToDetial:(NSString *)name
+{
+    NSLog(@"跳转到子表%@",name);
+}
+//设置日期
+-(void)setDate:(NSString *)name
+{
+    NSLog(@"设置日期%@",name);
+}
 -(void)initData
 {
     if (self.Kmodel) {

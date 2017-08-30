@@ -47,15 +47,15 @@
 - (void)addRightNavBarItem{
     __weak typeof(self) weakSelf = self;
     DTKDropdownItem *item0 = [DTKDropdownItem itemWithTitle:@"风机型号" iconName:@"ic_udfandetails" callBack:^(NSUInteger index, id info) {
-        NSLog(@"rightItem%lu",(unsigned long)index);
+        
         [weakSelf pushWithIndex:index];
     }];
     DTKDropdownItem *item1 = [DTKDropdownItem itemWithTitle:@"项目人员" iconName:@"ic_person" callBack:^(NSUInteger index, id info) {
-        NSLog(@"rightItem%lu",(unsigned long)index);
+       
         [weakSelf pushWithIndex:index];
     }];
     DTKDropdownItem *item2 = [DTKDropdownItem itemWithTitle:@"项目车辆" iconName:@"ic_udvehicle" callBack:^(NSUInteger index, id info) {
-        NSLog(@"rightItem%lu",(unsigned long)index);
+       
         [weakSelf pushWithIndex:index];
     }];
 
@@ -114,8 +114,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     ProcessDetailsCell *cell = [ProcessDetailsCell cellWithTableView:tableView];
-    _ledger.leftLabelWight = 120;
-    _ledger.index = indexPath.section;
+
     cell.ledger = _ledger;
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     
@@ -123,7 +122,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    _ledger.index = indexPath.section;
+
     CGFloat cellHeight = [self.tableView cellHeightForIndexPath:indexPath model:_ledger keyPath:@"ledger" cellClass:[ProcessDetailsCell class] contentViewWidth:[self cellContentViewWith]];
     return cellHeight;
 }
@@ -158,14 +157,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

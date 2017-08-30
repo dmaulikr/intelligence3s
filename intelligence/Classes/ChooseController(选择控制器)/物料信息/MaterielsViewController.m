@@ -87,9 +87,7 @@
 -(void)back{
     NSLog(@"返回了");
     for (MaterielsModel *mater in self.dataArray) {
-        if (mater.isnumber ==1) {
-           [self.addArray addObject:mater];
-        }
+        
         for (MaterielsModel *mater in self.deleArray) {
             if ([mater.TYPE isEqualToString:@"delete"]) {
                 [self.addArray addObject:mater];
@@ -241,7 +239,7 @@
         ma.LOCATION = model.LOCATION;
         ma.LOCDESC = model.LOCDESC;
         ma.TYPE = model.TYPE;
-        ma.isnumber = 1;
+       
         [weakSelf.tableview reloadData];
         weakSelf.isModify = YES;
     };

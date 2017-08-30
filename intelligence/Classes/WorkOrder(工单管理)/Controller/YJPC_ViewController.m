@@ -7,7 +7,6 @@
 //
 
 #import "YJPC_ViewController.h"
-#import "NSArray+Extension.h"
 #import "ZZZC_ViewController.h"
 #import "FDJZC_ViewController.h"
 #import "CLXGSZZC_ViewController.h"
@@ -18,7 +17,7 @@
 #import "DTKDropdownMenuView.h"
 #import "UploadPicturesViewController.h"
 #import "ApprovalsView.h"
-#import "SoapUtil.h"
+
 #import "WfmListanceListViewController.h"
 
 @interface YJPC_ViewController ()<ZZZC_ViewControllerDelegate,FDJZC_ViewControllerDelegate,CLXGSZZC_ViewControllerDelegate,PCXXXX_ViewControllerDelegate>
@@ -135,7 +134,7 @@
 }
 - (void)addRightNavBarItem{
     WEAKSELF
-    DTKDropdownItem *item0 = [DTKDropdownItem itemWithTitle:@"发送工作流" iconName:@"ic_flower" callBack:^(NSUInteger index, id info) {
+    DTKDropdownItem *item0 = [DTKDropdownItem itemWithTitle:@"发送工作流"  callBack:^(NSUInteger index, id info) {
         //[weakSelf checkRequiredFieldcompeletion:^(BOOL isOk) {
             //if (isOk) {
                 [weakSelf sendData];
@@ -143,7 +142,7 @@
         //}];
     }];
     
-    DTKDropdownItem *item1 = [DTKDropdownItem itemWithTitle:@"图片上传" iconName:@"ic_gzgl" callBack:^(NSUInteger index, id info) {
+    DTKDropdownItem *item1 = [DTKDropdownItem itemWithTitle:@"图片上传"  callBack:^(NSUInteger index, id info) {
         
         UploadPicturesViewController *vc = [[UploadPicturesViewController alloc] init];
         vc.ownertable = @"";
@@ -151,21 +150,22 @@
         [self.navigationController pushViewController:vc animated:YES];
 
     }];
-    
-    DTKDropdownItem *item2 = [DTKDropdownItem itemWithTitle:@"保存更改" iconName:@"" callBack:^(NSUInteger index, id info) {
-        [self saveData];
-    }];
-    
-    DTKDropdownItem *item3 = [DTKDropdownItem itemWithTitle:@"放弃更改" iconName:@"" callBack:^(NSUInteger index, id info) {
-        [self.navigationController popoverPresentationController];
-    }];
-    DTKDropdownItem *item4 = [DTKDropdownItem itemWithTitle:@"工作流任务分配" iconName:@"ic_tujian" callBack:^(NSUInteger index, id info) {
+    DTKDropdownItem *item2 = [DTKDropdownItem itemWithTitle:@"工作流任务分配"  callBack:^(NSUInteger index, id info) {
         NSLog(@"rightItem%lu",(unsigned long)index);
         NSLog(@"工作流任务分配");
         WfmListanceListViewController* vc= [[WfmListanceListViewController alloc] init];
         vc.OWNERID=self.Kmodel.UDWARNINGWOID;
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
+    
+    DTKDropdownItem *item3 = [DTKDropdownItem itemWithTitle:@"保存更改"  callBack:^(NSUInteger index, id info) {
+        [self saveData];
+    }];
+    
+    DTKDropdownItem *item4 = [DTKDropdownItem itemWithTitle:@"放弃更改"  callBack:^(NSUInteger index, id info) {
+        [self.navigationController popoverPresentationController];
+    }];
+
     
     NSArray * items;
     if (self.Kmodel) {
@@ -178,16 +178,14 @@
     
     DTKDropdownMenuView *menuView = [DTKDropdownMenuView dropdownMenuViewWithType:dropDownTypeRightItem frame:CGRectMake(0, 0,40.f, 40.f) dropdownItems:items icon:@"more"];
     
-    
     menuView.currentNav = self.navigationController;
-    
-    menuView.dropWidth = 150.f;
-    //    menuView.titleFont = [UIFont systemFontOfSize:18.f];
-    menuView.textColor = RGBCOLOR(102, 102, 102);
-    menuView.textFont = [UIFont systemFontOfSize:13.f];
-    menuView.cellSeparatorColor = RGBCOLOR(229, 229, 229);
-    //    menuView.textFont = [UIFont systemFontOfSize:14.f];
-    menuView.animationDuration = 0.2f;
+    menuView.dropWidth = 180.f;
+    menuView.textColor = RGBCOLOR(255, 255, 255);
+    menuView.cellColor = RGBCOLOR(46,92,154);
+    menuView.textFont = [UIFont systemFontOfSize:16.f];
+    menuView.cellSeparatorColor = RGBCOLOR(255, 255, 255);
+    menuView.animationDuration = 0.4f;
+    menuView.cellHeight = 50.0f;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:menuView];
 }
 
@@ -441,10 +439,12 @@
 
     [HTTPSessionManager getWithUrl:url params:dataDic success:^(id response) {
 
+         if ((response[@"result"])&&(response[@"result"][@"resultlist"])&&([response[@"result"][@"resultlist"] count]>0)){
+             
         NSDictionary * info = response[@"result"][@"resultlist"][0];
         NSString * displayName = info[@"DISPLAYNAME"];
         [self modifyField:fieldName newValue:displayName];
-        
+         }
     } fail:^(NSError *error) {
         
     }];
@@ -470,6 +470,8 @@
     
     [HTTPSessionManager getWithUrl:url params:dataDic success:^(id response) {
         
+         if ((response[@"result"])&&(response[@"result"][@"resultlist"])&&([response[@"result"][@"resultlist"] count]>0)){
+             
         NSDictionary * info = response[@"result"][@"resultlist"][0];
         NSString * DESCRIPTION = info[@"DESCRIPTION"];
         NSString * RESPONS =  info[@"RESPONS"];
@@ -478,7 +480,7 @@
         [self modifyField:@"项目名称" newValue:DESCRIPTION];
         [self modifyField:@"项目负责人" newValue:RESPONS];
         [self modifyField:@"姓名" newValue:RESPONSNAME];
-        
+         }
     } fail:^(NSError *error) {
         
     }];
@@ -505,7 +507,7 @@
     NSDictionary *dataDic = @{@"data":requestJson};
     
     [HTTPSessionManager getWithUrl:url params:dataDic success:^(id response) {
-        
+         if ((response[@"result"])&&(response[@"result"][@"resultlist"])&&([response[@"result"][@"resultlist"] count]>0)){
         NSDictionary * info = response[@"result"][@"resultlist"][0];
         
         NSString * MODELTYPE = info[@"MODELTYPE"];
@@ -513,7 +515,7 @@
         
         [self modifyField:@"机组型号" newValue:MODELTYPE];
         [self modifyField:@"程序版本号" newValue:UDFJAPPNUM];
-       
+         }
     } fail:^(NSError *error) {
         
     }];
@@ -541,6 +543,7 @@
         [UDWARNINGNORMs addObject:@{@"NORMNUM":@"2",@"WARNTYPE":@"发电机轴承温度异常"}];
         [UDWARNINGNORMs addObject:@{@"NORMNUM":@"3",@"WARNTYPE":@"齿轮箱高速轴轴承温度异常"}];
         NSLog(@"预警排查类型 %@",UDWARNINGNORMs);
+        
     } fail:^(NSError *error) {
         
     }];
@@ -607,12 +610,12 @@
     NSDictionary *dataDic = @{@"data":requestJson};
     
     [HTTPSessionManager getWithUrl:url params:dataDic success:^(id response) {
-        
+         if ((response[@"result"])&&(response[@"result"][@"resultlist"])&&([response[@"result"][@"resultlist"] count]>0)){
         NSString * NORMNUM = response[@"result"][@"resultlist"][0][@"NORMNUM"];
         if (NORMNUM.length>0) {
             [self queryUDWARNINGNORMLINE:NORMNUM];
         }
-        
+         }
     } fail:^(NSError *error) {
         
     }];
@@ -805,7 +808,8 @@
             });
             
             [[NSNotificationCenter defaultCenter] postNotificationName:@"MywindsendAnalysisInfo" object:nil userInfo:@{@"ACTIONCODE":@"UDCARMAINLOG",@"ACTIONNAME":@"新建或修改预警排查工单"}];
-        }else
+        }
+        else
         {
             HUDNormal(@"保存失败")
         }
@@ -827,6 +831,7 @@
         [md addEntriesFromDictionary:CLXGSZZC_DATAs];
     }
     NSArray *arrays = @[dicy];
+    
     [md setObject:arrays forKey:@"relationShip"];
     
     if (!self.Kmodel) {

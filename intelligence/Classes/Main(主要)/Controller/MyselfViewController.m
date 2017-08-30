@@ -41,6 +41,10 @@
 {
     [self.table reloadData];
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.table reloadData];
+}
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 3;

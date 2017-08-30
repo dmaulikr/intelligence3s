@@ -26,8 +26,26 @@
 @property (nonatomic,strong)NSString *OWNER;           // 业主单位
 @property (nonatomic,strong)NSString *UDPROID;
 
-@property (nonatomic, assign) NSInteger index;
-@property (nonatomic, assign) NSInteger leftLabelWight;
+@property (nonatomic,strong)NSString *WINDSPEED3;
+@property (nonatomic,strong)NSString *WINDSPEED1;
+@property (nonatomic,strong)NSString *WINDSPEED2;
+@property (nonatomic,strong)NSString *TEMPERATURE1;
+@property (nonatomic,strong)NSString *TEMPERATURE2;
 
+@property (nonatomic,strong)NSString *BOND;
+@property (nonatomic,strong)NSString *TRANSPORT;
+@property (nonatomic,strong)NSString *ADDRESS;
+@property (nonatomic,strong)NSString *EXPRESSWAY;
+@property (nonatomic,strong)NSString *LOGISTICSCONT;
+@property (nonatomic,strong)NSString *TPOP;
+
+@property (nonatomic,strong)NSString *CYCLE;
+@property (nonatomic,strong)NSString *REQ1;
+@property (nonatomic,strong)NSString *REQ2;
+@property (nonatomic,strong)NSString *UTILIZATION;
+@property (nonatomic,strong)NSString *SPECIALCON;
+@property (nonatomic,strong)NSString *REMARKS;
+@property (nonatomic,strong)NSString *LOCDESC;
+@property (nonatomic,strong)NSString *LOCATION;
 
 @end

@@ -192,6 +192,7 @@
     SVHUD_NO_Stop(@"提交中");
     WEAKSELF
     SoapUtil *soap = [[SoapUtil alloc]initWithNameSpace:@"http://www.ibm.com/maximo" andEndpoint:[NSString stringWithFormat:@"%@/meaweb/services/MOBILESERVICE",BASE_URL]];
+    
     soap.DicBlock = ^(NSDictionary *dic){
         SVHUD_Stop
         if ([dic[@"success"] isEqualToString:@"成功"]) {
@@ -438,6 +439,7 @@
     
     self.LL17 = [PersonalSettingItem itemWithIcon:nil withContent:nil withHeight:CELLHEIGHT  withClick:NO withStar:YES title:@"定检计划编号:" type:PersonalSettingItemTypeArrow];
     _LL17.operation =^{
+        
         RegularViewController *regular = [[RegularViewController alloc]init];
         regular.executeCellClick = ^(RegularModel *model){
             weakSelf.LL17.content = model.PLANNO;

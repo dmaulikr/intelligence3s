@@ -68,6 +68,9 @@
     /*{'appid':'UDINSPROJECT','objectname':'UDINSPROJECT','curpage':1,'showcount':20,'option':'read','orderby':'JPTASK','condition':{'INSPONUM':'1942'}}
      */
     NSDictionary *dic = @{@"INSPONUM":self.requestCode};
+    if ([self.OK isEqualToString:@"0"]) {
+        dic = @{@"INSPONUM":self.requestCode,@"OK":@"0"};
+    }
     NSDictionary *requestDic = @{@"appid":@"UDINSPROJECT",
                                  @"objectname":@"UDINSPROJECT",
                                  @"curpage":@(page),

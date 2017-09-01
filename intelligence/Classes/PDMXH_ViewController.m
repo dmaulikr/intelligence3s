@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initData];
+    [self addRightNavBarItem];
     // Do any additional setup after loading the view.
 }
 
@@ -41,4 +42,36 @@
         }
     }
 }
+- (void)addRightNavBarItem{
+    WEAKSELF
+    DTKDropdownItem *item0 = [DTKDropdownItem itemWithTitle:@"保存更改"  callBack:^(NSUInteger index, id info) {
+        
+    }];
+    DTKDropdownItem *item1 = [DTKDropdownItem itemWithTitle:@"放弃更改"  callBack:^(NSUInteger index, id info) {
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+    }];
+    NSArray * items =@[item0,item1];
+    DTKDropdownMenuView *menuView = [DTKDropdownMenuView dropdownMenuViewWithType:dropDownTypeRightItem frame:CGRectMake(0, 0,40.f, 40.f) dropdownItems:items icon:@"more"];
+    
+    menuView.currentNav = self.navigationController;
+    menuView.dropWidth = 180.f;
+    menuView.textColor = RGBCOLOR(255, 255, 255);
+    menuView.cellColor = RGBCOLOR(46,92,154);
+    menuView.textFont = [UIFont systemFontOfSize:16.f];
+    menuView.cellSeparatorColor = RGBCOLOR(255, 255, 255);
+    menuView.animationDuration = 0.4f;
+    menuView.cellHeight = 50.0f;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:menuView];
+}
+
+-(NSString*)dictionaryToJson:(NSDictionary *)dic
+{
+    NSError *parseError = nil;
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
+    
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+}
+-(BOOL)checkField
+{return YES;}
 @end

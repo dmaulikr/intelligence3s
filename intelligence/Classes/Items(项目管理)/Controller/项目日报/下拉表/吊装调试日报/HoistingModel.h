@@ -26,7 +26,13 @@
 @property (nonatomic, copy) NSString *COMPRUNNING;
 @property (nonatomic, copy) NSString *COMPCHECKING;
 @property (nonatomic, copy) NSString *mboObjectName;
-
+@property (nonatomic, copy) NSString *DATE1;
+@property (nonatomic, copy) NSString *DATE2;
+@property (nonatomic, copy) NSString *DATE3;
+@property (nonatomic, copy) NSString *BASECOMP;
+@property (nonatomic, copy) NSString *BPQPRODUCTION;
+@property (nonatomic, copy) NSString *PERSONID;
+@property (nonatomic, copy) NSString *UDPRORUNLOGLINE2ID;
 @property (nonatomic, strong) NSDictionary *dic;
 
 @end

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Runliner : NSObject
-
+@property (nonatomic,strong)NSString * UDPRORUNLOGLINEID;
 @property (nonatomic,strong)NSString * UDRUNLINERID;//id
 @property (nonatomic,strong)NSString * UDRUNLOGLINENUM;//
 @property (nonatomic,strong)NSString * LOGDATE;//日期

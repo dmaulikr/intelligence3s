@@ -62,4 +62,6 @@
 @property (nonatomic,copy)NSString * LEAD;
 @property (nonatomic,copy)NSString * UDINSPOBY;
 @property (nonatomic,copy)NSString * ALLPOWER;
+@property (nonatomic,copy)NSString * WOACTIVITYID;
+@property (nonatomic,copy)NSString * UDWOACTIVITYID;
 @end

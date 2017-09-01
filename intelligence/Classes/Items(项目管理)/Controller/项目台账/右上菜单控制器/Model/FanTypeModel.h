@@ -32,7 +32,8 @@
 @property (nonatomic, copy) NSString *BWDATE;
 @property (nonatomic, copy) NSString *ZYYDATE;
 @property (nonatomic, copy) NSString *DJDATE2;
-
+@property (nonatomic, copy) NSString *UDFJAPPNUM;
+@property (nonatomic, copy) NSString *SCDJDATE;
 - (NSComparisonResult)compareParkInfo:(FanTypeModel *)parkinfo;
 
 @end

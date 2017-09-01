@@ -640,7 +640,8 @@
                                  @"curpage"   :@(page),
                                  @"showcount" :@(20),
                                  @"option"    :@"read",
-                                 @"condition" :@{@"LGORT":search1,@"STOCKNUM":search2}
+                                 @"orderby"   :@"ZPDROW",
+                                 @"condition" :@{@"ZPDNUM":search2}
                                  };
     NSString *requestJson = kDictionaryToJson(requestDic)
     NSDictionary *dataDic = @{@"data":requestJson};

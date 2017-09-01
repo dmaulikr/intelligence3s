@@ -23,7 +23,7 @@
 #import "BusinessXViewController.h"
 #import "SoapUtil.h"
 #import "ZB_TableViewController.h"
-
+#import "ApprovalsView.h"
 @interface MetaTableViewController : UITableViewController
 @property(nonatomic,strong)NSMutableArray * array;
 @property(nonatomic,strong)NSString * key;

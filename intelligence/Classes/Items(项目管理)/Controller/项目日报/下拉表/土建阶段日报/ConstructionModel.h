@@ -27,7 +27,7 @@
 @property (nonatomic, copy) NSString *VEHICLERECORDS;
 @property (nonatomic, copy) NSString *mboObjectName;
 @property (nonatomic, copy) NSString *PERSONDESC;
-
+@property (nonatomic, copy) NSString *UDPRORUNLOGLINE1ID;
 @property (nonatomic, strong) NSDictionary *dic;
 
 @end

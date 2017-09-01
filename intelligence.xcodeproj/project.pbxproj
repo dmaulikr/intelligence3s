@@ -202,7 +202,6 @@
 		83A7B8D01F54F53500BF2291 /* TJJDRB_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A7B8CF1F54F53500BF2291 /* TJJDRB_ViewController.m */; };
 		83A7B8D31F54F54F00BF2291 /* DJTSRB_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A7B8D21F54F54F00BF2291 /* DJTSRB_ViewController.m */; };
 		83A7B8D61F54F7AC00BF2291 /* YXRB_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A7B8D51F54F7AC00BF2291 /* YXRB_ViewController.m */; };
-		83A7B8D91F54F7BE00BF2291 /* GZGL_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A7B8D81F54F7BE00BF2291 /* GZGL_ViewController.m */; };
 		83A7B8DC1F54F7D600BF2291 /* GZRZHD_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A7B8DB1F54F7D600BF2291 /* GZRZHD_ViewController.m */; };
 		83A7B8DF1F54F7FE00BF2291 /* YXRZXX_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A7B8DE1F54F7FE00BF2291 /* YXRZXX_ViewController.m */; };
 		83A7B8E21F54F83200BF2291 /* PDMXH_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A7B8E11F54F83200BF2291 /* PDMXH_ViewController.m */; };
@@ -1527,8 +1526,8 @@
 		832A69011E66CA9800B5C657 /* QRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QRCodeViewController.xib; sourceTree = "<group>"; };
 		832AD96E1F3E848800C67EDD /* TSGD_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSGD_ViewController.h; sourceTree = "<group>"; };
 		832AD96F1F3E848800C67EDD /* TSGD_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSGD_ViewController.m; sourceTree = "<group>"; };
-		832AD9711F3ED00200C67EDD /* TSGDZB_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSGDZB_ViewController.h; sourceTree = "<group>"; };
-		832AD9721F3ED00200C67EDD /* TSGDZB_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSGDZB_ViewController.m; sourceTree = "<group>"; };
+		832AD9711F3ED00200C67EDD /* TSGDZB_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSGDZB_ViewController.h; path = "WorkOrder(工单管理)/Controller/调试工单/TSGDZB_ViewController.h"; sourceTree = "<group>"; };
+		832AD9721F3ED00200C67EDD /* TSGDZB_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSGDZB_ViewController.m; path = "WorkOrder(工单管理)/Controller/调试工单/TSGDZB_ViewController.m"; sourceTree = "<group>"; };
 		832BF22F1DE3EBA9006973E0 /* TripReportAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripReportAddViewController.h; sourceTree = "<group>"; };
 		832BF2301DE3EBA9006973E0 /* TripReportAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripReportAddViewController.m; sourceTree = "<group>"; };
 		832BF2311DE3EBA9006973E0 /* TripReportAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TripReportAddViewController.xib; sourceTree = "<group>"; };
@@ -1663,8 +1662,6 @@
 		83A7B8D21F54F54F00BF2291 /* DJTSRB_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJTSRB_ViewController.m; sourceTree = "<group>"; };
 		83A7B8D41F54F7AC00BF2291 /* YXRB_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXRB_ViewController.h; sourceTree = "<group>"; };
 		83A7B8D51F54F7AC00BF2291 /* YXRB_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXRB_ViewController.m; sourceTree = "<group>"; };
-		83A7B8D71F54F7BE00BF2291 /* GZGL_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GZGL_ViewController.h; sourceTree = "<group>"; };
-		83A7B8D81F54F7BE00BF2291 /* GZGL_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GZGL_ViewController.m; sourceTree = "<group>"; };
 		83A7B8DA1F54F7D600BF2291 /* GZRZHD_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GZRZHD_ViewController.h; sourceTree = "<group>"; };
 		83A7B8DB1F54F7D600BF2291 /* GZRZHD_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GZRZHD_ViewController.m; sourceTree = "<group>"; };
 		83A7B8DD1F54F7FE00BF2291 /* YXRZXX_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXRZXX_ViewController.h; sourceTree = "<group>"; };
@@ -2362,7 +2359,6 @@
 				227803021D41E62000B10BF6 /* BaseClass(基类) */,
 				227803051D41E62000B10BF6 /* General(通用类) */,
 				2278030F1D41E62000B10BF6 /* Items(项目管理) */,
-				227803101D41E62000B10BF6 /* Login(登录) */,
 				2278031B1D41E62000B10BF6 /* NetWrok(网络请求类) */,
 				2278031F1D41E62000B10BF6 /* Other(其他) */,
 				227803231D41E62000B10BF6 /* Process(流程审批) */,
@@ -2461,7 +2457,8 @@
 				227803111D41E62000B10BF6 /* Controller */,
 				227803151D41E62000B10BF6 /* View */,
 			);
-			path = "Login(登录)";
+			name = "Login(登录)";
+			path = "../Login(登录)";
 			sourceTree = "<group>";
 		};
 		227803111D41E62000B10BF6 /* Controller */ = {
@@ -2489,6 +2486,7 @@
 		2278031B1D41E62000B10BF6 /* NetWrok(网络请求类) */ = {
 			isa = PBXGroup;
 			children = (
+				227803101D41E62000B10BF6 /* Login(登录) */,
 				2278031C1D41E62000B10BF6 /* Default.h */,
 				2278031D1D41E62000B10BF6 /* HTTPSessionManager.h */,
 				2278031E1D41E62000B10BF6 /* HTTPSessionManager.m */,
@@ -3202,8 +3200,6 @@
 				22A7CDB61D449496008B3638 /* DebugWorkViewController.xib */,
 				832AD96E1F3E848800C67EDD /* TSGD_ViewController.h */,
 				832AD96F1F3E848800C67EDD /* TSGD_ViewController.m */,
-				832AD9711F3ED00200C67EDD /* TSGDZB_ViewController.h */,
-				832AD9721F3ED00200C67EDD /* TSGDZB_ViewController.m */,
 			);
 			path = "调试工单";
 			sourceTree = "<group>";
@@ -3855,8 +3851,6 @@
 			children = (
 				83A7B8D41F54F7AC00BF2291 /* YXRB_ViewController.h */,
 				83A7B8D51F54F7AC00BF2291 /* YXRB_ViewController.m */,
-				83A7B8D71F54F7BE00BF2291 /* GZGL_ViewController.h */,
-				83A7B8D81F54F7BE00BF2291 /* GZGL_ViewController.m */,
 				83A7B8B61F54ED8D00BF2291 /* WLXX_ViewController.h */,
 				83A7B8B71F54ED8D00BF2291 /* WLXX_ViewController.m */,
 				83A7B8B91F54F42600BF2291 /* DJGDRW_ViewController.h */,
@@ -3883,6 +3877,8 @@
 				83A7B8DE1F54F7FE00BF2291 /* YXRZXX_ViewController.m */,
 				83A7B8E01F54F83200BF2291 /* PDMXH_ViewController.h */,
 				83A7B8E11F54F83200BF2291 /* PDMXH_ViewController.m */,
+				832AD9711F3ED00200C67EDD /* TSGDZB_ViewController.h */,
+				832AD9721F3ED00200C67EDD /* TSGDZB_ViewController.m */,
 			);
 			name = "子表";
 			sourceTree = "<group>";
@@ -4542,7 +4538,6 @@
 				83B015191E08D79400D65FF7 /* BaseLeftSearchViewController.h in Sources */,
 				83B0151A1E08D79400D65FF7 /* BaseLeftSearchViewController.m in Sources */,
 				83B0151D1E08D79400D65FF7 /* BSJSONEncoder.h in Sources */,
-				83A7B8D91F54F7BE00BF2291 /* GZGL_ViewController.m in Sources */,
 				83B0151E1E08D79400D65FF7 /* BSJSONEncoder.m in Sources */,
 				83B0151F1E08D79400D65FF7 /* NSArray+BSJSONAdditions.h in Sources */,
 				83B015201E08D79400D65FF7 /* NSArray+BSJSONAdditions.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import "MetaTableViewController.h"
-
+#import "Runliner.h"
 @interface YXRB_ViewController : MetaTableViewController
-
+@property (nonatomic, strong) Runliner *Kmodel;
 @end

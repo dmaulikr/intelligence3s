@@ -1,30 +1,24 @@
 //
-//  JGGD_ViewController.m
+//  KCPD_ViewController.m
 //  intelligence
 //
 //  Created by chris on 2017/8/15.
 //  Copyright © 2017年 guangyao. All rights reserved.
 //
 
-#import "JGGD_ViewController.h"
+#import "KCPD_ViewController.h"
 
-@interface JGGD_ViewController ()
+@interface KCPD_ViewController ()
 
 @end
 
-@implementation JGGD_ViewController
+@implementation KCPD_ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initData];
     if (self.Kmodel) {
-        
-        [self queryProjectNameByProjectNum:self.Kmodel.UDPROJECTNUM];
-        [self queryDisplayNameByUserName:self.Kmodel.LEAD FieldName:@"技改执行人1姓名"];
-        [self queryDisplayNameByUserName:self.Kmodel.WORKER1 FieldName:@"技改执行人2姓名"];
-        [self queryDisplayNameByUserName:self.Kmodel.WORKER2 FieldName:@"技改执行人3姓名"];
-        [self queryDisplayNameByUserName:self.Kmodel.CREATEBY FieldName:@"创建人"];
-        
+        [self queryDisplayNameByUserName:self.Kmodel.CREATEDBY FieldName:@"创建人姓名"];
     }
     [self addRightNavBarItem];
 }
@@ -35,18 +29,14 @@
 }
 - (void)addRightNavBarItem{
     WEAKSELF
-    DTKDropdownItem *item0 = [DTKDropdownItem itemWithTitle:@"工作流任务分配"  callBack:^(NSUInteger index, id info) {
 
-    }];
-    
-    DTKDropdownItem *item1 = [DTKDropdownItem itemWithTitle:@"工单任务"  callBack:^(NSUInteger index, id info) {
+    DTKDropdownItem *item0 = [DTKDropdownItem itemWithTitle:@"盘点明细行"  callBack:^(NSUInteger index, id info) {
         ZB_TableViewController * vc = [[ZB_TableViewController alloc] init];
-        vc.type = @"技改工单任务";
-        vc.search = self.Kmodel.WONUM;
+        vc.type = @"盘点明细行";
+        vc.search = [NSString stringWithFormat:@"%@:%@",self.Kmodel.ZPDNUM,self.Kmodel.ZPDNUM];
         [self.navigationController pushViewController:vc animated:YES];
     }];
-    
-    DTKDropdownItem *item2 = [DTKDropdownItem itemWithTitle:@"发送工作流"  callBack:^(NSUInteger index, id info) {
+    DTKDropdownItem *item1 = [DTKDropdownItem itemWithTitle:@"发送工作流"  callBack:^(NSUInteger index, id info) {
         //[weakSelf checkRequiredFieldcompeletion:^(BOOL isOk) {
         //if (isOk) {
         //[weakSelf sendData];
@@ -54,7 +44,7 @@
         //}];
     }];
     
-    DTKDropdownItem *item3 = [DTKDropdownItem itemWithTitle:@"图片上传"  callBack:^(NSUInteger index, id info) {
+    DTKDropdownItem *item2 = [DTKDropdownItem itemWithTitle:@"图片上传"  callBack:^(NSUInteger index, id info) {
         
         UploadPicturesViewController *vc = [[UploadPicturesViewController alloc] init];
         vc.ownertable = @"";
@@ -62,24 +52,22 @@
         [self.navigationController pushViewController:vc animated:YES];
         
     }];
-    
-    
-    DTKDropdownItem *item4 = [DTKDropdownItem itemWithTitle:@"保存更改"  callBack:^(NSUInteger index, id info) {
+    DTKDropdownItem *item3 = [DTKDropdownItem itemWithTitle:@"保存更改"  callBack:^(NSUInteger index, id info) {
         
     }];
     
-    DTKDropdownItem *item5 = [DTKDropdownItem itemWithTitle:@"放弃更改"  callBack:^(NSUInteger index, id info) {
-        [self.navigationController popoverPresentationController];
+    DTKDropdownItem *item4 = [DTKDropdownItem itemWithTitle:@"放弃更改"  callBack:^(NSUInteger index, id info) {
+        [weakSelf.navigationController popViewControllerAnimated:YES];
     }];
     
     
     NSArray * items;
     if (self.Kmodel) {
-        items =@[item0,item1,item2,item3,item4,item5];
+        items =@[item0,item1,item2,item3,item4];
     }
     else
     {
-        items =@[item4,item5];
+        items =@[item3,item4];
     }
     
     DTKDropdownMenuView *menuView = [DTKDropdownMenuView dropdownMenuViewWithType:dropDownTypeRightItem frame:CGRectMake(0, 0,40.f, 40.f) dropdownItems:items icon:@"more"];
@@ -94,32 +82,17 @@
     menuView.cellHeight = 50.0f;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:menuView];
 }
-//选择值
--(void)selectValue:(NSString *)fieldName
-{
-    NSLog(@"选择值%@",fieldName);
-}
-//跳转到子表
--(void)jumpToDetial:(NSString *)name
-{
-    NSLog(@"跳转到子表%@",name);
-}
-//设置日期
--(void)setDate:(NSString *)name
-{
-    NSLog(@"设置日期%@",name);
-}
 //发送工作流
 -(void)sendData{
-    if ([self.Kmodel.UDSTATUS isEqualToString:@"已取消"]||[self.Kmodel.UDSTATUS isEqualToString:@"已关闭"]||[self.Kmodel.UDSTATUS isEqualToString:@"已完成"]) {
-        NSString *str = [NSString stringWithFormat:@"%@状态,不能发起工作流",self.Kmodel.UDSTATUS];
+    if ([self.Kmodel.STATUS isEqualToString:@"已取消"]||[self.Kmodel.STATUS isEqualToString:@"已关闭"]||[self.Kmodel.STATUS isEqualToString:@"已完成"]) {
+        NSString *str = [NSString stringWithFormat:@"%@状态,不能发起工作流",self.Kmodel.STATUS];
         HUDJuHua(str);
         return;
     }
     NSString *str;
     NSString *str1;
     BOOL isOne;
-    if([self.Kmodel.UDSTATUS isEqualToString:@"新建"]){
+    if([self.Kmodel.STATUS isEqualToString:@"新建"]){
         str = @"工作流启动成功";
         str1 = @"工作流启动失败";
         isOne = YES;
@@ -129,10 +102,10 @@
         isOne = NO;
     }
     ApprovalsView *popupView = [[ApprovalsView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) withNumber:isOne];
-    popupView.processname = @"UDWARNWO";
-    popupView.mbo = @"UDWARNINGWO";
-    popupView.keyValue = self.Kmodel.WONUM;
-    popupView.key = @"WONUM";
+    popupView.processname = @"UDSTOCK";
+    popupView.mbo = @"UDSTOCK";
+    popupView.keyValue = self.Kmodel.STOCKNUM;
+    popupView.key = @"STOCKNUM";
     popupView.CloseBlick = ^(NSDictionary *dic){
         
         if ([dic[@"success"] isEqualToString:@"成功"]||[dic[@"msg"] isEqualToString:@"工作流启动成功"]||[dic[@"status"] isEqualToString:@"等待批准"]) {
@@ -182,39 +155,11 @@
     NSDictionary *dataDic = @{@"data":requestJson};
     
     [HTTPSessionManager getWithUrl:url params:dataDic success:^(id response) {
-         if ((response[@"result"])&&(response[@"result"][@"resultlist"])&&([response[@"result"][@"resultlist"] count]>0)){
+        
         NSDictionary * info = response[@"result"][@"resultlist"][0];
         NSString * displayName = info[@"DISPLAYNAME"];
         [self modifyField:fieldName newValue:displayName];
-         }
-    } fail:^(NSError *error) {
         
-    }];
-}
--(void)queryProjectNameByProjectNum:(NSString*) projectNum
-{
-    if(projectNum.length<=0)
-    {
-        return;
-    }
-    NSString * url = @"/maximo/mobile/common/api";
-    NSDictionary * dic = @{@"appid":@"UDPROJECT",
-                           @"objectname":@"UDPRO",
-                           @"curpage":@(1),
-                           @"showcount":@(20),
-                           @"option":@"read",
-                           @"condition":@{@"TESTPRO":@"Y",
-                                          @"PRONUM":projectNum}};
-    
-    NSString *requestJson = kDictionaryToJson(dic)
-    NSDictionary *dataDic = @{@"data":requestJson};
-    
-    [HTTPSessionManager getWithUrl:url params:dataDic success:^(id response) {
-         if ((response[@"result"])&&(response[@"result"][@"resultlist"])&&([response[@"result"][@"resultlist"] count]>0)){
-        NSDictionary * info = response[@"result"][@"resultlist"][0];
-        NSString * DESCRIPTION = info[@"DESCRIPTION"];
-        [self modifyField:@"项目名称" newValue:DESCRIPTION];
-         }
     } fail:^(NSError *error) {
         
     }];

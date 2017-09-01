@@ -2,7 +2,7 @@
 //  MaterielsModel.h
 //  intelligence
 //
-//  Created by chris on 16/8/20.
+//  Created by ;;;;; on 16/8/20.
 //  Copyright © 2016年 chris. All rights reserved.
 //
 
@@ -26,6 +26,7 @@
 
 @property (nonatomic,copy)NSString *WPITEMID;
 
+@property (nonatomic,copy)NSString *WPMATERIALID;
 
 
 @end

@@ -152,6 +152,41 @@
         [dateView ShowInView:self.view];
     }
 }
+//发送工作流
+-(void)sendData{
+    if ([self.Kmodel.STATUS isEqualToString:@"已取消"]||[self.Kmodel.STATUS isEqualToString:@"已关闭"]||[self.Kmodel.STATUS isEqualToString:@"已完成"]) {
+        NSString *str = [NSString stringWithFormat:@"%@状态,不能发起工作流",self.Kmodel.STATUS];
+        HUDJuHua(str);
+        return;
+    }
+    NSString *str;
+    NSString *str1;
+    BOOL isOne;
+    if([self.Kmodel.STATUS isEqualToString:@"新建"]){
+        str = @"工作流启动成功";
+        str1 = @"工作流启动失败";
+        isOne = YES;
+    }else{
+        str = @"审批成功";
+        str1 = @"审批失败";
+        isOne = NO;
+    }
+    ApprovalsView *popupView = [[ApprovalsView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) withNumber:isOne];
+    popupView.processname = @"TRIPREPORT";
+    popupView.mbo = @"UDTRIPREPORT";
+    popupView.keyValue = self.Kmodel.UDTRIPREPORTID;
+    popupView.key = @"UDTRIPREPORTID";
+    popupView.CloseBlick = ^(NSDictionary *dic){
+        
+        if ([dic[@"success"] isEqualToString:@"成功"]||[dic[@"msg"] isEqualToString:@"工作流启动成功"]||[dic[@"status"] isEqualToString:@"等待批准"]) {
+            HUDNormal(str);
+        }else{
+            HUDNormal(str1);
+        }
+        
+    };
+    [popupView show];
+}
 -(void)initData
 {
     if (self.Kmodel) {

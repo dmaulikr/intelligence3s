@@ -115,6 +115,6 @@
 +(NSDictionary*)getRequestJsonfor_YXRZ_With:(NSString*) search page:(NSInteger)page;
 
 //盘点明细行
-+(NSDictionary*)getRequestJsonfor_PDMXH_With:(NSString*) search page:(NSInteger)page;
++(NSDictionary*)getRequestJsonfor_PDMXH_With:(NSString*) search1 search2:(NSString*) search2 page:(NSInteger)page;
 
 @end

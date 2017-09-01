@@ -42,6 +42,7 @@
     self.page=1;
     [self requestData:self.page=1];
     self.array = [NSMutableArray array];
+    [self setupRightMenuButton];
 }
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -57,7 +58,94 @@
     UIGraphicsEndImageContext();
     return tImage;
 }
+-(void)setupRightMenuButton{
+    
+    UIButton *addImg = [UIButton buttonWithType:UIButtonTypeCustom];
+    [addImg setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+    [addImg addTarget:self action:@selector(rightButtonPress) forControlEvents:UIControlEventTouchUpInside];
+    addImg.frame = CGRectMake(0, 0, 30, 30);
+    
+    UIBarButtonItem * rightItem2 = [[UIBarButtonItem alloc]initWithCustomView:addImg];
+    //导航栏上添加按钮
+    self.navigationItem.rightBarButtonItems = @[rightItem2];
+}
+-(void)rightButtonPress{
+    NSLog(@"新建%@",self.type);
+    if ([self.type isEqualToString:@"定检工单任务"])
+    {
+        DJGDRW_ViewController * vc = [[DJGDRW_ViewController alloc] init];
+        vc.key = @"定检工单任务";
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if ([self.type isEqualToString:@"排查工单任务"])
+    {
+        PCGDRW_ViewController * vc = [[PCGDRW_ViewController alloc] init];
+        vc.key = @"排查工单任务";
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if ([self.type isEqualToString:@"技改工单任务"])
+    {
+        JGGDRW_ViewController * vc = [[JGGDRW_ViewController alloc] init];
+        vc.key = @"技改工单任务";
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if ([self.type isEqualToString:@"终验收工单任务"])
+    {
+        ZYSGDRW_ViewController * vc = [[ZYSGDRW_ViewController alloc] init];
+        vc.key = @"终验收工单任务";
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    //物料信息
+    else if ([self.type isEqualToString:@"物料信息"])
+    {
+        WLXX_ViewController * vc = [[WLXX_ViewController alloc] init];
+        vc.key = @"物料信息";
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    //风机子表
+    else if ([self.type isEqualToString:@"风机子表"])
+    {
+        FJZB_ViewController * vc = [[FJZB_ViewController alloc] init];
+        vc.key = @"风机子表";
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    //土建阶段日报
+    else if ([self.type isEqualToString:@"土建阶段日报"])
+    {
+        TJJDRB_ViewController *vc =[[TJJDRB_ViewController alloc] init];
+        vc.key = @"土建阶段日报";
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    //吊装调试日报
+    else if ([self.type isEqualToString:@"吊装调试日报"])
+    {
+        DJTSRB_ViewController * vc = [[DJTSRB_ViewController alloc] init];
+        vc.key = @"吊装调试日报";
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    //工作日报
+    else if ([self.type isEqualToString:@"工作日报"])
+    {
+        YXRZXX_ViewController * vc = [[YXRZXX_ViewController alloc] init];
 
+        vc.key = @"运行日报";
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    //运行日志
+    else if ([self.type isEqualToString:@"运行日志"])
+    {
+        YXRZXX_ViewController * vc = [[YXRZXX_ViewController alloc] init];
+        vc.key = @"运行日志";
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if ([self.type isEqualToString:@"调试工单子表"])
+    {
+        
+        TSGDZB_ViewController * vc = [[TSGDZB_ViewController alloc] init];
+        vc.key = @"调试工单子表";
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
 -(void)initTable{
     WEAKSELF
     // 下拉加载
@@ -139,12 +227,15 @@
     }
     else if ([self.type isEqualToString:@"盘点明细行"])
     {
-        dataDic = [RequestJsonFactry getRequestJsonfor_TSGD_With:self.search page:page];
+        NSString *serach1 = [self.search componentsSeparatedByString:@":"][0];
+        NSString *serach2 = [self.search componentsSeparatedByString:@":"][1];
+        dataDic = [RequestJsonFactry getRequestJsonfor_PDMXH_With: serach1 search2: serach2 page:page];
     }
     else if ([self.type isEqualToString:@"调试工单子表"])
     {
         dataDic = [RequestJsonFactry getRequestJsonfor_TSGDZB_With:self.search page:page];
     }
+    
     self.task = [HTTPSessionManager getWithUrl:@"/maximo/mobile/common/api" params:dataDic success:^(id response) {
         NSLog(@"response %@",response);
         SVHUD_Stop
@@ -312,7 +403,7 @@
     {
         WorksPlanModel * object= [self.array objectAtIndex:indexPath.row];
         [cell.top setText:object.TASKID];
-        [cell.bottom setText:[NSString stringWithFormat:@"%@ %@",object.UDZYSCORN]];
+        [cell.bottom setText:[NSString stringWithFormat:@"%@ ",object.UDZYSCORN]];
         [cell.index setText:[NSString stringWithFormat:@"%ld",(long)indexPath.row+1]];
         
     }
@@ -385,6 +476,13 @@
         cell.bottom.text = [NSString stringWithFormat:@"\n调试区域负责人: %@ \n调试组长: %@",stock.RESPONSIBLEPERSON,stock.DEBUGLEADER];
         [cell.index setText:[NSString stringWithFormat:@"%ld",(long)indexPath.row+1]];
     }
+    else if ([self.type isEqualToString:@"盘点明细行"])
+    {
+        DetailStockModel* stock = [self.array objectAtIndex:indexPath.row];
+        cell.top.text = stock.ZPDROW;
+        cell.bottom.text = [NSString stringWithFormat:@"%@ %@",stock.MATNR,stock.MAKTX];
+        [cell.index setText:[NSString stringWithFormat:@"%ld",(long)indexPath.row+1]];
+    }
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -396,24 +494,28 @@
     if ([self.type isEqualToString:@"定检工单任务"])
     {
         DJGDRW_ViewController * vc = [[DJGDRW_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
         vc.key = @"定检工单任务";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"排查工单任务"])
     {
         PCGDRW_ViewController * vc = [[PCGDRW_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
         vc.key = @"排查工单任务";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"技改工单任务"])
     {
         JGGDRW_ViewController * vc = [[JGGDRW_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
         vc.key = @"技改工单任务";
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([self.type isEqualToString:@"终验收工单任务"])
     {
         ZYSGDRW_ViewController * vc = [[ZYSGDRW_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
         vc.key = @"终验收工单任务";
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -439,6 +541,7 @@
     else if ([self.type isEqualToString:@"风机子表"])
     {
         FJZB_ViewController * vc = [[FJZB_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
         vc.key = @"风机子表";
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -446,6 +549,7 @@
     else if ([self.type isEqualToString:@"项目人员"])
     {
         XMRY_ViewController * vc = [[XMRY_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
         vc.key = @"项目人员";
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -453,6 +557,7 @@
     else if ([self.type isEqualToString:@"项目车辆"])
     {
         XMCL_ViewController * vc = [[XMCL_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
         vc.key = @"项目车辆";
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -460,6 +565,7 @@
     else if ([self.type isEqualToString:@"土建阶段日报"])
     {
         TJJDRB_ViewController *vc =[[TJJDRB_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
         vc.key = @"土建阶段日报";
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -467,6 +573,7 @@
     else if ([self.type isEqualToString:@"吊装调试日报"])
     {
         DJTSRB_ViewController * vc = [[DJTSRB_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
         vc.key = @"吊装调试日报";
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -474,6 +581,7 @@
     else if ([self.type isEqualToString:@"工作日报"])
     {
         YXRZXX_ViewController * vc = [[YXRZXX_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
         vc.key = @"运行日报";
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -486,6 +594,7 @@
     else if ([self.type isEqualToString:@"运行日志"])
     {
         YXRZXX_ViewController * vc = [[YXRZXX_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
         vc.key = @"运行日志";
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -493,6 +602,7 @@
     else if ([self.type isEqualToString:@"盘点明细行"])
     {
         PDMXH_ViewController * vc = [[PDMXH_ViewController alloc] init];
+        vc.Kmodel = [self.array objectAtIndex:indexPath.row];
         vc.key = @"盘点明细行";
         [self.navigationController pushViewController:vc animated:YES];
     }
